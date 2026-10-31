@@ -13,7 +13,7 @@
 
 | Tool | Stand vorher | Stand nachher | verbraucht | Budget |
 |---|---|---|---|---|
-| Seobility | 3.018 | siehe Abschlussbericht (ca. 2.740) | ca. 280 | 1.500 |
+| Seobility | 3.018 | 2.742 | 276 | 1.500 |
 | OpenSEO | 227 | 156 | 71 | 150 |
 
 Teuerste Einzelaufrufe: Seobility `seo_check` 100 Credits, OpenSEO `get_keyword_metrics` (151 Keywords) 25 Credits, OpenSEO organische SERP ca. 5 Credits je Keyword, Maps-SERP ca. 3 Credits.
@@ -36,7 +36,7 @@ Volumen = Ø Suchen/Monat Deutschland (Google Ads). Bei Begriffen mit Ort entspr
 | Suchbegriff | Volumen | KD | Ads-Wettbewerb | CPC | Intention | Bewertung |
 |---|---|---|---|---|---|---|
 | sperrmüll bruchsal | 590 | 0 | niedrig | 1,70 | Info/Behörde | Nutzer suchen den städtischen Sperrmülltermin. Nicht als Ziel, höchstens Erwähnung im Entrümpelungs-Ratgeber. |
-| schlüsseldienst bruchsal | 390 | 0 | niedrig | – | Notfall (Türöffnung) | Nicht zielen: Gebäudewerke bietet keine Notöffnung rund um die Uhr an. |
+| schlüsseldienst bruchsal | 390 | 0 | niedrig | k. A. | Notfall (Türöffnung) | Nicht zielen: Gebäudewerke bietet keine Notöffnung rund um die Uhr an. |
 | hausverwaltung bruchsal | 140 | 3 | mittel | 2,03 | navigational | Fremde Dienstleistung, aber Zielgruppe. Nur für Offpage (Kooperationen). |
 | entrümpelung bruchsal | 110 | 0 | hoch | 10,76 | transaktional | **Top-Ziel**, höchster CPC im Set. |
 | gebäudereinigung bruchsal | 70 | 0 | mittel | 4,29 | kommerziell | **Top-Ziel**. |
@@ -45,16 +45,16 @@ Volumen = Ø Suchen/Monat Deutschland (Google Ads). Bei Begriffen mit Ort entspr
 | reinigungsfirma bruchsal | 50 | 0 | hoch | 1,04 | kommerziell | Gebäudereinigung. |
 | gartenbau bruchsal | 50 | 0 | niedrig | 1,14 | GaLaBau (Neuanlage) | Nicht zielen, andere Leistung. |
 | schlosser bruchsal / schlosserei bruchsal | je 50 | 13 | niedrig | 0,59 | gemischt | Metallarbeiten-Seite. |
-| hausmeisterservice bruchsal | 40 | 0 | niedrig | – | kommerziell | **Haupt-Keyword der Hausmeisterseite**, Hauptkategorie im Google-Profil. |
+| hausmeisterservice bruchsal | 40 | 0 | niedrig | k. A. | kommerziell | **Haupt-Keyword der Hausmeisterseite**, Hauptkategorie im Google-Profil. |
 | metallbau bruchsal | 40 | 0 | mittel | 0,58 | navigational | Nebenkeyword Metallarbeiten. |
-| gartenpflege bruchsal | 20 | – | mittel | 5,42 | kommerziell | **Ziel**, Gebäudewerke rankt bereits organisch auf Platz 7. |
+| gartenpflege bruchsal | 20 | k. A. | mittel | 5,42 | kommerziell | **Ziel**, Gebäudewerke rankt bereits organisch auf Platz 7. |
 | gärtner bruchsal | 20 | 51 | mittel | 1,87 | navigational | Nebenkeyword Gartenpflege (Kategorie „Gärtner“ im Profil). |
-| handwerker bruchsal | 20 | – | mittel | 1,76 | navigational | Nebenkeyword Kleinreparaturen. |
-| fensterputzer bruchsal | 20 | – | hoch | 2,72 | transaktional | Nebenkeyword Gebäudereinigung. |
-| hausmeister bruchsal | 10 | – | mittel | 0,38 | navigational | Hausmeisterseite. |
-| fensterreinigung bruchsal | 10 | – | hoch | 1,63 | transaktional | Gebäudereinigung. |
-| putzfirma bruchsal | 10 | – | hoch | 0,48 | transaktional | Gebäudereinigung. |
-| unterhaltsreinigung bruchsal | 10 | – | – | – | kommerziell | Gebäudereinigung / Büroreinigung. |
+| handwerker bruchsal | 20 | k. A. | mittel | 1,76 | navigational | Nebenkeyword Kleinreparaturen. |
+| fensterputzer bruchsal | 20 | k. A. | hoch | 2,72 | transaktional | Nebenkeyword Gebäudereinigung. |
+| hausmeister bruchsal | 10 | k. A. | mittel | 0,38 | navigational | Hausmeisterseite. |
+| fensterreinigung bruchsal | 10 | k. A. | hoch | 1,63 | transaktional | Gebäudereinigung. |
+| putzfirma bruchsal | 10 | k. A. | hoch | 0,48 | transaktional | Gebäudereinigung. |
+| unterhaltsreinigung bruchsal | 10 | k. A. | k. A. | k. A. | kommerziell | Gebäudereinigung / Büroreinigung. |
 | winterdienst, treppenhausreinigung, büroreinigung, praxisreinigung, bauendreinigung, objektbetreuung, gebäudemanagement + bruchsal | keine Daten (0 bis 10) | | | | kommerziell | trotzdem Zielbegriffe, hohe Abschlussnähe, sehr wenig Wettbewerb mit passenden Seiten (siehe SERP-Analyse). |
 
 ### 2.2 Lokal: Karlsruhe, Landkreis, Nachbarorte
@@ -73,10 +73,10 @@ Volumen = Ø Suchen/Monat Deutschland (Google Ads). Bei Begriffen mit Ort entspr
 | gartenpflege karlsruhe | 70 | 0 | mittel | 1,63 | |
 | winterdienst karlsruhe | 50 | 0 | mittel | 3,64 | |
 | treppenhausreinigung karlsruhe | 30 | 0 | mittel | 2,53 | |
-| bauendreinigung karlsruhe | 20 | – | mittel | 4,49 | |
-| entrümpelung waghäusel | 20 | – | mittel | 5,59 | Waghäusel liegt direkt bei Hambrücken. Einsatzgebietsseite. |
+| bauendreinigung karlsruhe | 20 | k. A. | mittel | 4,49 | |
+| entrümpelung waghäusel | 20 | k. A. | mittel | 5,59 | Waghäusel liegt direkt bei Hambrücken. Einsatzgebietsseite. |
 | gartenpflege bretten, winterdienst bretten | je 20 | 0 | | | |
-| gebäudereinigung waghäusel, gebäudereinigung östringen | je 10 | – | | | Östringen ist Referenzort (Reinigung bereits ausgeführt). |
+| gebäudereinigung waghäusel, gebäudereinigung östringen | je 10 | k. A. | | | Östringen ist Referenzort (Reinigung bereits ausgeführt). |
 | hausmeisterservice + hambrücken/waghäusel/philippsburg/bad schönborn/östringen/ubstadt-weiher/graben-neudorf/stutensee/heidelsheim/untergrombach, hausmeister forst/karlsdorf-neuthard/kronau | keine Daten | | | | Ergebnis: Ortsseiten lohnen nicht (keine Nachfrage messbar, Doorway-Risiko). Eine gebündelte Einsatzgebietsseite reicht. |
 
 ### 2.3 Ohne Ort (bundesweit, mit lokaler Ausspielung)
@@ -86,38 +86,38 @@ Diese Begriffe werden bei Google mit Local Pack bzw. „in der Nähe“-Logik au
 | Suchbegriff | Volumen | KD | Intention | Zielseite |
 |---|---|---|---|---|
 | hausmeisterservice | 14.800 | 4 | kommerziell | hausmeisterservice.html (+ Google-Profil) |
-| haushaltsauflösung | 8.100 | – | gemischt | entruempelung.html |
+| haushaltsauflösung | 8.100 | k. A. | gemischt | entruempelung.html |
 | entrümpelung in der nähe | 4.400 | 16 | lokal | entruempelung.html / Profil |
 | entrümpelung kosten | 3.600 | 0 | Info/kommerziell | entruempelung.html (Kostenabschnitt) + Ratgeber Ablauf |
 | gebäudereinigung in der nähe | 3.600 | 0 | lokal | gebaeudereinigung.html / Profil |
 | hausmeisterservice in der nähe | 2.900 | 0 | lokal | Profil + hausmeisterservice.html |
-| hausmeisterservice in meiner nähe | 1.300 | – | lokal | dito |
+| hausmeisterservice in meiner nähe | 1.300 | k. A. | lokal | dito |
 | gartenpflege in der nähe | 2.900 | 0 | lokal | gartenpflege.html / Profil |
 | treppenhausreinigung | 2.900 | 0 | kommerziell | **neue Seite treppenhausreinigung.html** |
 | glasreinigung | 2.400 | 0 | kommerziell | gebaeudereinigung.html, Ratgeber Glas |
 | winterdienst in der nähe | 1.300 | 0 | lokal | winterdienst.html / Profil |
 | winterdienst kosten | 1.300 | 0 | kommerziell | winterdienst.html + preise.html#winterdienst |
 | treppenhausreinigung kosten | 590 | 0 | Info/kommerziell | treppenhausreinigung.html |
-| garten und hausmeisterservice | 480 | – | kommerziell | Startseite / gartenpflege.html |
-| hausmeisterservice preisliste pdf | 590 | – | kommerziell | preise.html |
+| garten und hausmeisterservice | 480 | k. A. | kommerziell | Startseite / gartenpflege.html |
+| hausmeisterservice preisliste pdf | 590 | k. A. | kommerziell | preise.html |
 | kosten für hausmeisterservice / hausmeisterservice kosten / kosten hausmeisterservice | 390 / 320 / 320 | 0 | kommerziell | Ratgeber kosten-hausmeisterservice (Info) + preise.html (Liste) |
 | hausmeisterservice preise / preise für hausmeisterservice | je 260 | 0 | kommerziell | preise.html |
-| hausmeisterservice stundenlohn | 390 | – | Info | Ratgeber Kosten (nur wenn ein Stundensatz veröffentlicht wird; aktuell steht keiner auf der Seite, daher nicht bedienen) |
-| hausmeisterservice gartenpflege / gartenpflege hausmeisterservice | je 260 | – | kommerziell | gartenpflege.html (Kombi-Abschnitt) |
-| hausmeisterservice gartenpflege preise | 170 | – | kommerziell | preise.html#gruenpflege |
-| hausmeisterservice winterdienst preise | 140 | – | kommerziell | preise.html#winterdienst |
+| hausmeisterservice stundenlohn | 390 | k. A. | Info | Ratgeber Kosten (nur wenn ein Stundensatz veröffentlicht wird; aktuell steht keiner auf der Seite, daher nicht bedienen) |
+| hausmeisterservice gartenpflege / gartenpflege hausmeisterservice | je 260 | k. A. | kommerziell | gartenpflege.html (Kombi-Abschnitt) |
+| hausmeisterservice gartenpflege preise | 170 | k. A. | kommerziell | preise.html#gruenpflege |
+| hausmeisterservice winterdienst preise | 140 | k. A. | kommerziell | preise.html#winterdienst |
 | was kostet ein hausmeisterservice | 140 | 0 | kommerziell | Ratgeber kosten-hausmeisterservice |
 | hausmeister kosten pro monat | 90 | 0 | kommerziell | Ratgeber kosten-hausmeisterservice |
-| hausmeisterservice kosten 6 familienhaus | 70 | – | kommerziell | Ratgeber + preise (bis 6 Einheiten ab 130 € netto) |
+| hausmeisterservice kosten 6 familienhaus | 70 | k. A. | kommerziell | Ratgeber + preise (bis 6 Einheiten ab 130 € netto) |
 | tiefgaragenreinigung | 170 | 0 | kommerziell (CPC 13,46) | Ratgeber Tiefgarage + gebaeudereinigung.html |
 | tiefgarage reinigen | 90 | 0 | kommerziell | Ratgeber Tiefgarage |
 | kellerreinigung | 70 | 0 | kommerziell | gebaeudereinigung.html |
 | mülltonnenservice | 110 | 0 | kommerziell | Ratgeber Mülltonnendienst + preise.html#muelltonnen |
-| mülltonnen rausstellen service | 30 | – | kommerziell | dito |
+| mülltonnen rausstellen service | 30 | k. A. | kommerziell | dito |
 | büroreinigung kosten | 40 | 0 | Info | neue Seite bueroreinigung.html |
 | hausmeister und gartenservice | 110 | 0 | kommerziell | Startseite |
-| wohnungsübergabe service | 20 | – | kommerziell | wohnungsuebergabe.html |
-| hausmeister kleinreparaturen | 10 | – | kommerziell | kleinreparaturen.html |
+| wohnungsübergabe service | 20 | k. A. | kommerziell | wohnungsuebergabe.html |
+| hausmeister kleinreparaturen | 10 | k. A. | kommerziell | kleinreparaturen.html |
 
 ### 2.4 Ratgeber-Long-Tails (informational, bundesweit)
 
@@ -125,8 +125,8 @@ Diese Begriffe werden bei Google mit Local Pack bzw. „in der Nähe“-Logik au
 |---|---|---|---|
 | wohnungsübergabe protokoll / wohnungsübergabeprotokoll | 12.100 | 1 | wohnungsuebergabe-protokoll-bruchsal |
 | übergabeprotokoll wohnung | 9.900 | 0 | dito |
-| wohnungsübergabeprotokoll vorlage | 2.900 | – | dito (nur wenn Checkliste ergänzt wird) |
-| wohnungsübergabe auszug / nach mietende | 720 / 170 | – | dito |
+| wohnungsübergabeprotokoll vorlage | 2.900 | k. A. | dito (nur wenn Checkliste ergänzt wird) |
+| wohnungsübergabe auszug / nach mietende | 720 / 170 | k. A. | dito |
 | wann darf man hecke schneiden | 8.100 | 20 | hecke-schneiden-erlaubt |
 | hecke schneiden erlaubt | 3.600 | 14 | dito |
 | zählerstände ablesen | 4.400 | 0 | zaehlerstaende-ablesen-jahreswechsel |
@@ -136,8 +136,8 @@ Diese Begriffe werden bei Google mit Local Pack bzw. „in der Nähe“-Logik au
 | schuhregal treppenhaus | 210 | 0 | treppenhaus-rettungsweg (Intention ist teils Produktkauf, der Rechtsanteil ist aber sicher dabei) |
 | hausmeisterkosten umlagefähig | 170 | 0 | hausmeisterkosten-umlagefaehig |
 | unkraut pflaster entfernen | 50 | 0 | unkraut-pflaster-entfernen-bruchsal |
-| streugut entfernen | 30 | – | streugut-entfernen-fruehjahr |
-| hausmeister kündigen | 10 | – | dienstleister-wechseln-hausmeister |
+| streugut entfernen | 30 | k. A. | streugut-entfernen-fruehjahr |
+| hausmeister kündigen | 10 | k. A. | dienstleister-wechseln-hausmeister |
 
 Fragen aus Seobility (ohne Volumen, als FAQ-Sprache genutzt): „was kostet eine treppenhausreinigung für ein mehrfamilienhaus“, „wie viel kann man für eine treppenhausreinigung verlangen“, „was gehört zur treppenhausreinigung durch mieter“, „was verlangt eine gebäudereinigung“, „wie viel kostet die schneeräumung“, „kann ich den winterdienst von der steuer absetzen“, „ist streusalz auf dem eigenen grundstück erlaubt“, „was verlangt eine entrümpelungsfirma pro stunde“, „ist die entrümpelung einer wohnung eine haushaltsnahe dienstleistung“, „wer muss die wohnung eines verstorbenen ausräumen“ (20), „wie laufen haushaltsauflösungen ab“, „was kostet ein hausmeister pro jahr“, „was verlangt man für gartenarbeit“.
 

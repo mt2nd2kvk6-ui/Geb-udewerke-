@@ -62,7 +62,7 @@ Heute steht das volle Firmenobjekt (inkl. OfferCatalog mit 8 Services) auf jeder
   ],
   "areaServed": [ "…siehe 3.2…" ],
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:00"}],
-  "contactPoint": [ "…wie bisher: customer service Mo–Fr 7–17, emergency täglich 17:00–23:59…" ],
+  "contactPoint": [ "…wie bisher: customer service Mo bis Fr 7 bis 17 Uhr, emergency täglich 17:00 bis 23:59…" ],
   "employee": [{"@id": "https://gebaeudewerke.de/ueber-uns.html#person-fatih-altun"}, {"@id": "…#person-enes-yesildag"}, {"@id": "…#person-burak-kartal"}, {"@id": "…#person-julian-bender"}],
   "knowsAbout": ["Hausmeisterservice", "Treppenhausreinigung", "Gebäudereinigung", "Gartenpflege", "Winterdienst", "Räum- und Streupflicht", "Wohnungsübergabe", "Entrümpelung", "Kleinreparaturen", "Metallarbeiten", "Schließanlagen", "Betriebskostenverordnung"],
   "hasOfferCatalog": { "…wie bisher, plus Treppenhausreinigung und ggf. Büroreinigung…" },
