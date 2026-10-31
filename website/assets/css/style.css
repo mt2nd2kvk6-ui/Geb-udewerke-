@@ -724,3 +724,15 @@ table{font-variant-numeric:tabular-nums}
   .hero__bild{display:none}
   .antwort,.pruefliste,.bewertung{break-inside:avoid}
 }
+
+/* Bewertungshinweis (einzige sichtbare Form, siehe layout_anwenden.py) */
+.google-hinweis{color:inherit;font-weight:600;text-underline-offset:.18em;text-decoration-thickness:1px}
+.google-hinweis:hover{color:inherit;text-decoration-thickness:2px}
+.google-hinweis--leiste{color:#fff;text-decoration:none}
+.google-hinweis--leiste:hover{text-decoration:underline;color:#fff}
+.vertrauen__google .google-hinweis{color:var(--werkblau);font-weight:650;line-height:1.35}
+.hero+.vertrauen .vertrauen__google .google-hinweis{color:#fff}
+.bewertungen__schnitt .google-hinweis{color:var(--werkblau);font-size:1.05rem}
+.fuss .google-hinweis{font-weight:inherit}
+.google-hinweis--fuss{display:inline-block;margin-top:.35rem;color:inherit}
+@media (max-width:1499px){.leiste__adresse{display:none}}

@@ -23,8 +23,7 @@ Was das Skript macht (seitenspezifische Inhalte bleiben unangetastet):
      Startseite und der Leistungsseiten; Autorenbox (<!-- autorenbox:start -->) am
      Ende jedes Ratgeberartikels (Autor aus "von NAME" in .beitrag-meta, Daten aus
      artikel-datum / artikel-aktualisiert, Zuständigkeit aus TEAM unten).
-  4. JSON-LD: Firmen-Entität (#organisation) bekommt aggregateRating, die
-     Startseite zusätzlich review[] (Bewertungen mit Text). Alter Google-Link wird
+  4. JSON-LD: kein aggregateRating und kein review (Vorgabe Inhaber). Alter Google-Link wird
      überall durch den aktuellen ersetzt (auch llms.txt).
 
 BEWERTUNGEN PFLEGEN (Inhaber):
@@ -43,7 +42,7 @@ WEB = os.path.join(BASIS, 'website')
 PROFIL = json.load(open(os.path.join(BASIS, 'projekt', 'google-profil.json'), encoding='utf-8'))
 PRUEFEN = '--pruefen' in sys.argv
 
-ALT_GOOGLE = 'https://share.google/v7XolrfYaCO55YrZz'
+ALT_GOOGLE = 'https://share.google/dHbp6caGIhLZVhp4Y'  # wird überall durch GOOGLE ersetzt
 GOOGLE = PROFIL['profil_link']
 SCHREIBEN = PROFIL['bewertung_schreiben']
 SCHNITT = float(PROFIL['bewertung_schnitt'])
@@ -59,6 +58,13 @@ def monat(datum):
 
 STAND = monat(PROFIL['abgerufen'])
 SCHNITT_DE = f'{SCHNITT:.1f}'.replace('.', ',')
+STAND_TAG = '.'.join(reversed(PROFIL['abgerufen'].split('-')))
+HINWEIS = f'{ANZAHL} Bewertungen, Durchschnitt {SCHNITT_DE} bei Google (Stand {STAND_TAG})'
+
+
+def hinweis(klasse='google-hinweis'):
+    """Einzige erlaubte sichtbare Form des Bewertungshinweises (Vorgabe Inhaber)."""
+    return f'<a class="{klasse}" href="{GOOGLE}" rel="noopener" target="_blank">{HINWEIS}</a>'
 
 LEISTUNGEN = [
     ('hausmeisterservice.html', 'Hausmeisterservice'),
@@ -236,7 +242,7 @@ def header(seite, b):
 <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
 <div class="leiste"><div class="wrap">
 <span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">0163 7221790</a></span>
-<span class="leiste__rechts">{badge('google-badge google-badge--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
+<span class="leiste__rechts">{hinweis('google-hinweis google-hinweis--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
 </div></div>
 <header class="kopf"><div class="wrap">
 <a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite"></a>
@@ -271,7 +277,7 @@ def footer(seite, b, url, titel):
     return f'''
 <footer class="fuss"><div class="wrap">
 <div class="fuss__cta">
-<div><p class="fuss__cta-titel">Ein Ansprechpartner für Ihr Objekt in Bruchsal</p>{badge('google-badge google-badge--fuss')}</div>
+<div><p class="fuss__cta-titel">Ein Ansprechpartner für Ihr Objekt in Bruchsal</p>{hinweis('google-hinweis google-hinweis--fuss')}</div>
 <div class="btn-reihe"><a class="btn btn--hell" href="{b}kontakt.html">Anfrage senden</a><a class="btn btn--hellrand" href="{TEL}">{I_TEL}0163 7221790</a></div>
 </div>
 <div class="fuss__raster">
@@ -280,7 +286,7 @@ def footer(seite, b, url, titel):
 <address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
-<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li><li><a href="{GOOGLE}" rel="noopener" target="_blank">Bewertungen auf Google</a></li></ul></div>
+<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li></ul></div>
 </div>
 <div class="fuss__unten"><span>© 2026 Gebäudewerke GbR</span>{teilen}<ul><li><a href="{b}impressum.html">Impressum</a></li><li><a href="{b}datenschutz.html">Datenschutz</a></li><li><a href="{b}datenschutz.html#google-analytics" data-cookie-einstellungen>Cookie-Einstellungen</a></li></ul></div>
 </div></footer>
@@ -323,16 +329,16 @@ ausführen. Bewertungen ohne Text erscheinen nur in der Anzahl, nicht im Laufban
 <section class="{klasse}" aria-labelledby="bewertungen-titel"><div class="wrap">
 <div class="bewertungen__kopf">
 <div><h2 id="bewertungen-titel">{titel}</h2>
-<p class="bewertungen__schnitt">{sterne()}<strong>{SCHNITT_DE}</strong><span>von 5 · {ANZAHL} Google-Bewertungen</span></p></div>
-<div class="btn-reihe"><a class="btn btn--rand" href="{GOOGLE}" rel="noopener" target="_blank">Alle Bewertungen auf Google</a><a class="btn btn--voll" href="{SCHREIBEN}" rel="noopener" target="_blank">Bewertung schreiben</a></div>
+<p class="bewertungen__schnitt">{hinweis()}</p></div>
+<div class="btn-reihe"><a class="btn btn--voll" href="{SCHREIBEN}" rel="noopener" target="_blank">Bewertung schreiben</a></div>
 </div>
-<div class="laufband" data-laufband tabindex="0" role="region" aria-label="Google-Bewertungen, horizontal scrollbar">
+<div class="laufband" data-laufband tabindex="0" role="region" aria-label="Kundenstimmen, horizontal scrollbar">
 <div class="laufband__spur">
 <ul class="laufband__gruppe">{karten}</ul>
 <ul class="laufband__gruppe" aria-hidden="true">{karten.replace(' role="img" aria-label="5 von 5 Sternen"', ' aria-hidden="true"')}</ul>
 </div>
 </div>
-<div class="bewertungen__fuss"><p class="bewertungen__hinweis">Bewertungen aus unserem Google-Unternehmensprofil, Stand {STAND}.</p><button class="laufband__knopf" type="button" hidden>{I_PAUSE}<span>Laufband anhalten</span></button></div>
+<div class="bewertungen__fuss"><button class="laufband__knopf" type="button" hidden>{I_PAUSE}<span>Laufband anhalten</span></button></div>
 </div></section>
 <!-- bewertungen:ende -->'''
 
@@ -399,8 +405,7 @@ I_PREIS = svg('<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.
 def vertrauen_html():
     return ('<!-- vertrauen:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
             '<div class="vertrauen"><div class="wrap"><ul class="vertrauen__liste">'
-            f'<li><a class="vertrauen__google" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span><strong>{SCHNITT_DE} bei Google</strong>'
-            f'<span>{ANZAHL} Bewertungen<span class="visuell-versteckt">, Durchschnitt {SCHNITT_DE} von 5</span></span></span></a></li>'
+            f'<li class="vertrauen__google">{hinweis()}</li>'
             f'<li>{I_SCHILD}<span><strong>Betriebshaftpflicht</strong><span>bis 5 Mio. Euro</span></span></li>'
             f'<li>{I_TEAM}<span><strong>Eigenes Personal</strong><span>keine Subunternehmer</span></span></li>'
             f'<li>{I_PREIS}<span><strong>Festpreis</strong><span>nach dem Ortstermin</span></span></li>'
@@ -445,8 +450,6 @@ def autorenbox_anwenden(s, main):
     d1 = re.search(r'<meta name="artikel-datum" content="([\d-]+)"', s)
     d2 = re.search(r'<meta name="artikel-aktualisiert" content="([\d-]+)"', s)
     daten = f'Veröffentlicht am {datum_de(d1.group(1))}' if d1 else ''
-    if d2 and (not d1 or d2.group(1) != d1.group(1)):
-        daten += f' · Aktualisiert am {datum_de(d2.group(1))}'
     initial = ''.join(t[0] for t in name.split()[:2]).upper()
     box = ('<!-- autorenbox:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
            f'<aside class="autorenbox" aria-label="Über den Autor"><span class="autorenbox__initial" aria-hidden="true">{initial}</span>'
@@ -488,6 +491,7 @@ def org_vorlage():
         ORG_VORLAGE = next(o for o in j['@graph'] if o.get('@id') == 'https://gebaeudewerke.de/#organisation')
     o = dict(ORG_VORLAGE)
     o.pop('review', None)
+    o.pop('aggregateRating', None)
     return o
 
 
@@ -507,11 +511,8 @@ def jsonld_anwenden(s, seite):
             i = graph.index(org)
             org = org_vorlage()
             graph[i] = org
-        org['aggregateRating'] = rating()
-        if seite == 'index.html':
-            org['review'] = reviews()
-        else:
-            org.pop('review', None)
+        org.pop('aggregateRating', None)   # Vorgabe Inhaber: kein Bewertungs-Markup
+        org.pop('review', None)
         neu = json.dumps(j, ensure_ascii=False, separators=(',', ':'))
         return '<script type="application/ld+json">' + neu + '</script>'
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', ersetzen, s, count=1, flags=re.S)
