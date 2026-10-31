@@ -61,28 +61,31 @@ STAND = monat(PROFIL['abgerufen'])
 SCHNITT_DE = f'{SCHNITT:.1f}'.replace('.', ',')
 
 LEISTUNGEN = [
-    ('hausmeisterservice.html', 'Hausmeisterservice und Objektbetreuung'),
-    ('wohnungsuebergabe.html', 'Wohnungsübergabe und Immobilienservice'),
-    ('gebaeudereinigung.html', 'Gebäudereinigung und Treppenhausreinigung'),
-    ('gartenpflege.html', 'Gartenpflege und Außenanlagen'),
+    ('hausmeisterservice.html', 'Hausmeisterservice'),
+    ('treppenhausreinigung.html', 'Treppenhausreinigung'),
+    ('gebaeudereinigung.html', 'Gebäudereinigung'),
+    ('bueroreinigung.html', 'Büroreinigung'),
+    ('gartenpflege.html', 'Gartenpflege'),
     ('winterdienst.html', 'Winterdienst'),
-    ('entruempelung.html', 'Entrümpelung und Transport'),
-    ('kleinreparaturen.html', 'Kleinreparaturen und Renovierung'),
-    ('metallarbeiten-schloesser.html', 'Metallarbeiten, Türen und Schlösser'),
+    ('entruempelung.html', 'Entrümpelung und Haushaltsauflösung'),
+    ('wohnungsuebergabe.html', 'Wohnungsübergabe'),
+    ('kleinreparaturen.html', 'Kleinreparaturen'),
+    ('metallarbeiten-schloesser.html', 'Metallarbeiten und Schlösser'),
 ]
 FUSS_LEISTUNGEN = [
-    ('hausmeisterservice.html', 'Hausmeister in Bruchsal'),
-    ('wohnungsuebergabe.html', 'Wohnungsübergabe mit Protokoll'),
+    ('hausmeisterservice.html', 'Hausmeisterservice Bruchsal'),
+    ('treppenhausreinigung.html', 'Treppenhausreinigung'),
     ('gebaeudereinigung.html', 'Gebäudereinigung Bruchsal'),
+    ('bueroreinigung.html', 'Büro- und Praxisreinigung'),
     ('gartenpflege.html', 'Gartenpflege Bruchsal'),
     ('winterdienst.html', 'Winterdienst Bruchsal'),
     ('entruempelung.html', 'Entrümpelung Bruchsal'),
-    ('kleinreparaturen.html', 'Handwerkerservice Bruchsal'),
+    ('wohnungsuebergabe.html', 'Wohnungsübergabe mit Protokoll'),
+    ('kleinreparaturen.html', 'Handwerkerservice'),
     ('metallarbeiten-schloesser.html', 'Schlösser und Metallarbeiten'),
-    ('preise.html', 'Richtpreise'),
 ]
-HAUPT = [('preise.html', 'Preise'), ('ueber-uns.html', 'Über uns'), ('karriere.html', 'Karriere'),
-         ('ratgeber/', 'Ratgeber'), ('kontakt.html', 'Kontakt')]
+HAUPT = [('preise.html', 'Preise'), ('einsatzgebiet.html', 'Einsatzgebiet'),
+         ('ratgeber/', 'Ratgeber'), ('ueber-uns.html', 'Über uns'), ('kontakt.html', 'Kontakt')]
 
 # Bewertungen: Seite -> (Variante, bevorzugtes Thema, Einfügen vor diesem Muster)
 BEWERTUNG_SEITEN = {
@@ -91,6 +94,9 @@ BEWERTUNG_SEITEN = {
     'gebaeudereinigung.html': ('kompakt', 'Gebäudereinigung', r'<section class="cta-band"'),
     'metallarbeiten-schloesser.html': ('kompakt', 'Schlösser', r'<section class="cta-band"'),
     'kleinreparaturen.html': ('kompakt', 'Schlösser', r'<section class="cta-band"'),
+    'treppenhausreinigung.html': ('kompakt', 'Gebäudereinigung', r'<section class="cta-band"'),
+    'bueroreinigung.html': ('kompakt', 'Gebäudereinigung', r'<section class="cta-band"'),
+    'einsatzgebiet.html': ('kompakt', None, r'<section class="cta-band"'),
 }
 for _s, _ in LEISTUNGEN:
     BEWERTUNG_SEITEN.setdefault(_s, ('kompakt', None, r'<section class="cta-band"'))
@@ -229,11 +235,11 @@ def header(seite, b):
     return f'''
 <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
 <div class="leiste"><div class="wrap">
-<span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">01637221790</a></span>
-<span class="leiste__rechts">{badge('google-badge google-badge--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 07:00 bis 17:00 Uhr</span></span>
+<span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">0163 7221790</a></span>
+<span class="leiste__rechts">{badge('google-badge google-badge--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
 </div></div>
 <header class="kopf"><div class="wrap">
-<a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer.svg" width="1716" height="442" alt="Gebäudewerke Objekt- und Gebäudeservice, zur Startseite"></a>
+<a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite"></a>
 <nav id="hauptnavigation" class="nav" aria-label="Hauptnavigation">
 <button class="menue-knopf nav__schliessen" type="button" aria-label="Menü schließen">{I_ZU}</button>
 <ul class="nav__liste">
@@ -269,11 +275,12 @@ def footer(seite, b, url, titel):
 <div class="btn-reihe"><a class="btn btn--hell" href="{b}kontakt.html">Anfrage senden</a><a class="btn btn--hellrand" href="{TEL}">{I_TEL}0163 7221790</a></div>
 </div>
 <div class="fuss__raster">
-<div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke" loading="lazy"></a>
-<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">+49 163 7221790</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
+<div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
+<p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
+<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
-<div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}ratgeber/">Alle Ratgeberbeiträge</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li><li><a href="/#fragen">Häufige Fragen</a></li></ul></div>
-<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 07:00 bis 17:00 Uhr</li><li>Notdienst: täglich 17:00 bis 24:00 Uhr</li><li>Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li><li><a href="{GOOGLE}" rel="noopener" target="_blank">Google-Unternehmensprofil</a></li></ul></div>
+<div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
+<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li><li><a href="{GOOGLE}" rel="noopener" target="_blank">Bewertungen auf Google</a></li></ul></div>
 </div>
 <div class="fuss__unten"><span>© 2026 Gebäudewerke GbR</span>{teilen}<ul><li><a href="{b}impressum.html">Impressum</a></li><li><a href="{b}datenschutz.html">Datenschutz</a></li><li><a href="{b}datenschutz.html#google-analytics" data-cookie-einstellungen>Cookie-Einstellungen</a></li></ul></div>
 </div></footer>
@@ -383,7 +390,7 @@ def teaser_anwenden(main, b):
 
 # ---------------------------------------------------------------- Vertrauensstreifen
 
-VERTRAUEN_SEITEN = {'index.html'} | {l[0] for l in LEISTUNGEN}
+VERTRAUEN_SEITEN = {'index.html', 'einsatzgebiet.html'} | {l[0] for l in LEISTUNGEN}
 I_SCHILD = svg('<path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/>')
 I_TEAM = svg('<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 5.5M17.5 14.5a5.5 5.5 0 0 1 3 4.5"/>')
 I_PREIS = svg('<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.8h6V4"/><path d="M8.5 11.5l2 2 4.5-4.5"/><path d="M8.5 17h7"/>')
@@ -412,11 +419,11 @@ def vertrauen_anwenden(main, seite):
 
 # ---------------------------------------------------------------- Autorenbox (Ratgeber)
 
-TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit)
-    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen'),
-    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben'),
-    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege'),
-    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst'),
+TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit, Qualifikation laut Teamseite)
+    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Geprüfter Industriemeister Metall (IHK)'),
+    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', 'Kaufmann, Vertrieb und Vermarktung'),
+    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', 'Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau'),
+    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', 'Gelernter Industriemechaniker'),
 }
 
 
@@ -434,7 +441,7 @@ def autorenbox_anwenden(s, main):
     if not a or a.group(1).strip() not in TEAM:
         return main
     name = a.group(1).strip()
-    anker, rolle = TEAM[name]
+    anker, rolle, quali = TEAM[name]
     d1 = re.search(r'<meta name="artikel-datum" content="([\d-]+)"', s)
     d2 = re.search(r'<meta name="artikel-aktualisiert" content="([\d-]+)"', s)
     daten = f'Veröffentlicht am {datum_de(d1.group(1))}' if d1 else ''
@@ -445,6 +452,7 @@ def autorenbox_anwenden(s, main):
            f'<aside class="autorenbox" aria-label="Über den Autor"><span class="autorenbox__initial" aria-hidden="true">{initial}</span>'
            f'<div><p class="autorenbox__titel">Geschrieben von <a href="/ueber-uns.html#{anker}">{name}</a></p>'
            f'<p class="autorenbox__rolle">Gesellschafter der Gebäudewerke GbR · {rolle}</p>'
+           f'<p class="autorenbox__rolle">{quali}</p>'
            f'<p class="autorenbox__daten">{daten}</p></div></aside>\n'
            '<!-- autorenbox:ende -->\n')
     z = re.search(r'\n</div>\n<aside class="datenblatt"', main)
@@ -494,6 +502,11 @@ def jsonld_anwenden(s, seite):
         if org is None:
             org = org_vorlage()
             graph.insert(0, org)
+        elif 'address' in org and seite != 'index.html':
+            # volle Firmen-Entität überall gleich halten (Quelle: index.html)
+            i = graph.index(org)
+            org = org_vorlage()
+            graph[i] = org
         org['aggregateRating'] = rating()
         if seite == 'index.html':
             org['review'] = reviews()

@@ -597,6 +597,7 @@ table{font-variant-numeric:tabular-nums}
 .fuss ul{list-style:none;padding:0;margin:0}
 .fuss li{margin-bottom:.55rem}
 .fuss address{font-style:normal;line-height:1.75}
+.fuss__text{margin:0 0 1rem;font-size:.92rem;line-height:1.6;max-width:34ch;opacity:.88}
 .fuss__unten{border-top:1px solid rgba(255,255,255,.14);padding:1.35rem 0 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem 1.5rem;flex-wrap:wrap;font-size:.86rem}
 .fuss__unten ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
 .fuss__unten li{margin:0}
