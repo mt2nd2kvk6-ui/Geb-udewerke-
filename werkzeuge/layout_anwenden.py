@@ -19,6 +19,10 @@ Was das Skript macht (seitenspezifische Inhalte bleiben unangetastet):
      Ratgeber-Links in <ul class="weitere"> und <div class="weiterlesen"> werden
      zu Bildkarten (<li><a class="teaser" href="…">…</a></li>, kompatibel mit
      auslieferung.php, das Links auf geplante Beiträge entfernt).
+     Vertrauensstreifen (<!-- vertrauen:start -->) unter dem ersten Abschnitt der
+     Startseite und der Leistungsseiten; Autorenbox (<!-- autorenbox:start -->) am
+     Ende jedes Ratgeberartikels (Autor aus "von NAME" in .beitrag-meta, Daten aus
+     artikel-datum / artikel-aktualisiert, Zuständigkeit aus TEAM unten).
   4. JSON-LD: Firmen-Entität (#organisation) bekommt aggregateRating, die
      Startseite zusätzlich review[] (Bewertungen mit Text). Alter Google-Link wird
      überall durch den aktuellen ersetzt (auch llms.txt).
@@ -377,6 +381,80 @@ def teaser_anwenden(main, b):
     return main
 
 
+# ---------------------------------------------------------------- Vertrauensstreifen
+
+VERTRAUEN_SEITEN = {'index.html'} | {l[0] for l in LEISTUNGEN}
+I_SCHILD = svg('<path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/>')
+I_TEAM = svg('<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 5.5M17.5 14.5a5.5 5.5 0 0 1 3 4.5"/>')
+I_PREIS = svg('<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.8h6V4"/><path d="M8.5 11.5l2 2 4.5-4.5"/><path d="M8.5 17h7"/>')
+
+
+def vertrauen_html():
+    return ('<!-- vertrauen:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
+            '<div class="vertrauen"><div class="wrap"><ul class="vertrauen__liste">'
+            f'<li><a class="vertrauen__google" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span><strong>{SCHNITT_DE} bei Google</strong>'
+            f'<span>{ANZAHL} Bewertungen<span class="visuell-versteckt">, Durchschnitt {SCHNITT_DE} von 5</span></span></span></a></li>'
+            f'<li>{I_SCHILD}<span><strong>Betriebshaftpflicht</strong><span>bis 5 Mio. Euro</span></span></li>'
+            f'<li>{I_TEAM}<span><strong>Eigenes Personal</strong><span>keine Subunternehmer</span></span></li>'
+            f'<li>{I_PREIS}<span><strong>Festpreis</strong><span>nach dem Ortstermin</span></span></li>'
+            '</ul></div></div>\n<!-- vertrauen:ende -->')
+
+
+def vertrauen_anwenden(main, seite):
+    m = re.search(r'<!-- vertrauen:start.*?<!-- vertrauen:ende -->', main, re.S)
+    if m:
+        return main[:m.start()] + vertrauen_html() + main[m.end():] if seite in VERTRAUEN_SEITEN else main[:m.start()] + main[m.end():]
+    if seite not in VERTRAUEN_SEITEN or '</section>' not in main:
+        return main
+    pos = main.index('</section>') + len('</section>')
+    return main[:pos] + '\n' + vertrauen_html() + main[pos:]
+
+
+# ---------------------------------------------------------------- Autorenbox (Ratgeber)
+
+TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit)
+    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen'),
+    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben'),
+    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege'),
+    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst'),
+}
+
+
+def datum_de(d):
+    return f'{d[8:10]}.{d[5:7]}.{d[:4]}'
+
+
+def autorenbox_anwenden(s, main):
+    """Autorenbox am Ende des Artikeltextes. Autor aus <p class="beitrag-meta">… von NAME, …</p>,
+    Daten aus meta artikel-datum / artikel-aktualisiert. Zuständigkeit siehe TEAM."""
+    m = re.search(r'<!-- autorenbox:start.*?<!-- autorenbox:ende -->\n?', main, re.S)
+    if m:
+        main = main[:m.start()] + main[m.end():]
+    a = re.search(r'class="beitrag-meta">[^<]*?von ([^,<]+)', main)
+    if not a or a.group(1).strip() not in TEAM:
+        return main
+    name = a.group(1).strip()
+    anker, rolle = TEAM[name]
+    d1 = re.search(r'<meta name="artikel-datum" content="([\d-]+)"', s)
+    d2 = re.search(r'<meta name="artikel-aktualisiert" content="([\d-]+)"', s)
+    daten = f'Veröffentlicht am {datum_de(d1.group(1))}' if d1 else ''
+    if d2 and (not d1 or d2.group(1) != d1.group(1)):
+        daten += f' · Aktualisiert am {datum_de(d2.group(1))}'
+    initial = ''.join(t[0] for t in name.split()[:2]).upper()
+    box = ('<!-- autorenbox:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
+           f'<aside class="autorenbox" aria-label="Über den Autor"><span class="autorenbox__initial" aria-hidden="true">{initial}</span>'
+           f'<div><p class="autorenbox__titel">Geschrieben von <a href="/ueber-uns.html#{anker}">{name}</a></p>'
+           f'<p class="autorenbox__rolle">Gesellschafter der Gebäudewerke GbR · {rolle}</p>'
+           f'<p class="autorenbox__daten">{daten}</p></div></aside>\n'
+           '<!-- autorenbox:ende -->\n')
+    z = re.search(r'\n</div>\n<aside class="datenblatt"', main)
+    if z:
+        return main[:z.start() + 1] + box + main[z.start() + 1:]
+    z = re.search(r'<div class="hinweisbox">', main)
+    pos = z.start() if z else len(main)
+    return main[:pos] + box + main[pos:]
+
+
 # ---------------------------------------------------------------- JSON-LD
 
 def rating():
@@ -453,6 +531,9 @@ def anwenden(seite):
     main = s[m_main.end():m_mainende]
     main = bewertungen_anwenden(main, seite)
     main = teaser_anwenden(main, b)
+    main = vertrauen_anwenden(main, seite)
+    if seite.startswith('ratgeber/') and seite != 'ratgeber/index.php':
+        main = autorenbox_anwenden(s, main)
     s = (s[:m_body.end()] + header(seite, b) + s[m_main.start():m_main.end()] + main + '</main>'
          + footer(seite, b, url, titel) + s[m_bodyende:])
     if s != alt:

@@ -63,8 +63,14 @@
     pruefen();
   }
 
+  // Effekte erst nach dem Laden einrichten (hält den Seitenaufbau frei)
+  function spaeter(fn) {
+    var los = function () { (window.requestIdleCallback || function (f) { return setTimeout(f, 1); })(fn, { timeout: 1500 }); };
+    if (document.readyState === 'complete') los(); else window.addEventListener('load', los);
+  }
+
   // Sanftes Einblenden beim Scrollen (nur Elemente unterhalb des sichtbaren Bereichs)
-  if (!ruhig && 'IntersectionObserver' in window) {
+  if (!ruhig && 'IntersectionObserver' in window) spaeter(function () {
     var auswahl = '.abschnitt__kopf,.zusage,.lv__zeile,.zielgruppe,.ablauf>li,.team-karte,.faq,.antwort,.umfang__gruppe,' +
       '.ratgeber-karte,.teaser,.kosten,.karte,.steckbrief,.bewertungen__kopf,.laufband,.hinweisbox,.pruefliste,.stelle,.cta-band .wrap,.fuss__cta';
     var hoehe = window.innerHeight || 800;
@@ -80,15 +86,15 @@
       el.classList.add('einblenden');
       beobachter.observe(el);
     });
-  }
+  });
 
   // Bewertungs-Laufband: läuft nur ohne prefers-reduced-motion, sonst statisch und horizontal scrollbar
-  document.querySelectorAll('[data-laufband]').forEach(function (band) {
+  spaeter(function () { document.querySelectorAll('[data-laufband]').forEach(function (band) {
     var knopf = band.parentElement && band.parentElement.querySelector('.laufband__knopf');
     var gruppe = band.querySelector('.laufband__gruppe');
     if (ruhig || !gruppe) return;
     band.classList.add('laufband--laeuft');
-    var dauer = function () { band.style.setProperty('--dauer', Math.max(30, gruppe.scrollWidth / 38) + 's'); };
+    var dauer = function () { band.style.setProperty('--dauer', Math.max(40, gruppe.scrollWidth / 30) + 's'); };
     dauer();
     window.addEventListener('resize', dauer, { passive: true });
     if (knopf) {
@@ -104,7 +110,7 @@
         band.classList.toggle('laufband--aus', !e[0].isIntersecting);
       }).observe(band);
     }
-  });
+  }); });
 })();
 
 // Zwei-Klick-Karte: Google Maps wird erst nach Klick geladen
