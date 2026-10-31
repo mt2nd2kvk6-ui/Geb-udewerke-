@@ -8,8 +8,8 @@ In Google Maps taucht Gebäudewerke für „Hausmeisterservice“ und „Gebäud
 
 ## Priorität 1 (diese und nächste Woche)
 
-### 1. Profilname klären (30 Minuten, Entscheidung)
-Profilname „Gebäudewerke - Hausmeisterservice & Gebäudereinigung“ entspricht nicht dem Namen auf Website und Impressum. Google erlaubt nur den echten Firmennamen. Entweder auf „Gebäudewerke“ ändern oder den Zusatz überall (Fahrzeug, Rechnung, Briefkopf, Website) als festen Namensteil führen. Details: technik-und-schema.md, Abschnitt 7.
+### 1. Profilname (erledigt, Entscheidung des Inhabers)
+Der Profilname „Gebäudewerke - Hausmeisterservice & Gebäudereinigung“ bleibt. Der Inhaber hat das nach dem Hinweis auf die Google-Namensrichtlinie so entschieden. Auf der Website steht der Profilname als `alternateName` im Schema.
 
 ### 2. Echte Fotos ins Profil (1 bis 2 Stunden, dann laufend)
 Im Profil ist derzeit ein KI-gezeichnetes Bild (Transporter mit Logo). Das wirkt auf Kunden unecht und Google bevorzugt echte Fotos. Bitte ersetzen bzw. ergänzen:
@@ -21,7 +21,7 @@ Im Profil ist derzeit ein KI-gezeichnetes Bild (Transporter mit Logo). Das wirkt
 
 ### 3. Leistungen im Profil vollständig anlegen (1 Stunde)
 Unter „Leistungen“ je Kategorie Einträge mit kurzer Beschreibung und, wo vorhanden, Preis „ab“:
-* Hausmeisterservice: Kontrollgänge, Schlüsselverwaltung, Zählerstände, Mülltonnenservice (ab 90 € netto), Objektbericht, Notdienst 17 bis 24 Uhr, Handwerkerkoordination
+* Hausmeisterservice: Kontrollgänge, Schlüsselverwaltung, Zählerstände, Mülltonnenservice (ab 90 € netto im Monat), Objektbericht, Notdienst 17 bis 24 Uhr, Handwerkerkoordination
 * Reinigungsdienst: Treppenhausreinigung, Büroreinigung (ab 449 € netto/Monat bei 50 m²), Praxisreinigung, Fensterreinigung (ab 235 € netto), Keller- und Tiefgaragenreinigung, Grundreinigung, Bauendreinigung, Leerstandsreinigung
 * Gärtner: Rasenpflege, Heckenschnitt, Beetpflege, Laubentfernung, Unkraut auf Wegen, Jahresvertrag
 * Entrümpelungsservice: Haushaltsauflösung, Kellerentrümpelung, Wohnungsauflösung, Gewerberäumung
@@ -125,7 +125,7 @@ Beide einrichten (falls noch nicht), Sitemaps einreichen, monatlich prüfen, fü
 
 | Woche | Aufgabe |
 |---|---|
-| 1 | Profilname klären, Fotos hochladen, Leistungen und Gebiet im Profil, Bewertungsanfrage an alle bisherigen Kunden |
+| 1 | Fotos hochladen, Leistungen und Gebiet im Profil, Bewertungsanfrage an alle bisherigen Kunden |
 | 2 | Bing Places, Apple Business Connect, Gelbe Seiten, Das Örtliche, 11880 |
 | 3 | Restliche Verzeichnisse, Facebook-Seite, erste zwei Profilbeiträge |
 | 4 | Gewerbeverein, Haus & Grund, Gemeinde-Firmenverzeichnisse anfragen |

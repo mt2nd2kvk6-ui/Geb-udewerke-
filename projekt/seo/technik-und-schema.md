@@ -349,7 +349,7 @@ Empfehlungen:
 **Profilname:** Die Google-Richtlinien verlangen den Namen, den das Unternehmen im echten Leben führt (Schild, Briefkopf, Rechnung). Zusätze wie „Hausmeisterservice & Gebäudereinigung“ sind nur erlaubt, wenn sie fester Bestandteil des Markennamens sind. Auf der Website heißt die Firma durchgehend „Gebäudewerke“ mit der Unterzeile „Objekt- und Gebäudeservice“. Damit wirkt der Profilname wie Keyword-Zusatz. Risiko: Wettbewerber melden das, Google ändert den Namen oder sperrt das Profil vorübergehend. Zwei saubere Wege:
 1. Profilname auf „Gebäudewerke“ ändern (sicher, kurzfristig etwas weniger Relevanz).
 2. Den Zusatz wirklich zum Markennamen machen: auf Fahrzeug, Briefkopf, Rechnung, Website-Logo-Unterzeile, Impressum (als Geschäftsbezeichnung) einheitlich „Gebäudewerke Hausmeisterservice & Gebäudereinigung“. Dann im Schema `name` so setzen.
-Entscheidung beim Inhaber. Bis dahin steht der Profilname als `alternateName` im Schema (3.1).
+Entscheidung des Inhabers: Der Profilname bleibt. Er steht als `alternateName` im Schema (3.1).
 
 ## 8. llms.txt
 
