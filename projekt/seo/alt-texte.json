@@ -1,0 +1,1021 @@
+{
+ "stand": "2026-10-31",
+ "regeln": [
+  "Alle Fotos sind Stockfotos: Sie zeigen nicht das eigene Team und nicht nachweislich Bruchsal. Deshalb beschreibt der Alt-Text das Motiv und verbindet es mit Leistung und Ort, ohne zu behaupten, das Foto sei in Bruchsal oder von Gebäudewerke aufgenommen.",
+  "Ort (Bruchsal / Landkreis Karlsruhe) nur dort, wo es natürlich passt, nicht in jedem Alt-Text.",
+  "Großes Bild und -klein-Variante sind dasselbe Motiv: im <img> mit srcset gilt ein alt; die -klein-Variante wird zusätzlich in ratgeber/index.php über <meta name=\"artikel-bildtext\"> als alt ausgegeben. Dort den Wert 'alt_neu' in artikel-bildtext eintragen.",
+  "Logo im Link: alt beschreibt Linkziel. Footer-Logo im Link zur Startseite: alt nötig. Rein dekorative Bilder: alt=\"\"."
+ ],
+ "bilder": [
+  {
+   "bild": "assets/img/fotos/bauendreinigung-bruchsal.webp",
+   "motiv": "Leerer, frisch renovierter Raum mit grüner Wand, Holzboden und gelb-silbernem Nass-Trockensauger (Stockfoto)",
+   "alt_neu": "Nass-Trockensauger in einem frisch renovierten Raum: Bauendreinigung nach dem Umbau in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/bauendreinigung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Baustaubsauger in einer frisch renovierten Wohnung vor der Bauendreinigung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/bauendreinigung-bruchsal-klein.webp",
+   "motiv": "Leerer, frisch renovierter Raum mit grüner Wand, Holzboden und gelb-silbernem Nass-Trockensauger (Stockfoto)",
+   "alt_neu": "Nass-Trockensauger in einem frisch renovierten Raum: Bauendreinigung nach dem Umbau in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/bauendreinigung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Baustaubsauger in einer frisch renovierten Wohnung vor der Bauendreinigung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/besichtigung-vorbereiten-vermietung.webp",
+   "motiv": "Älteres Paar und Mann im Anzug mit Mappe im Treppenhaus am Handlauf (Stockfoto)",
+   "alt_neu": "Interessenten werden bei einer Wohnungsbesichtigung durchs Treppenhaus geführt – Vermietung im Raum Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/besichtigung-vorbereiten-vermietung.html",
+     "element": "img",
+     "alt_bisher": "Ansprechpartner führt Interessenten durch ein Treppenhaus bei einer Besichtigung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/besichtigung-vorbereiten-vermietung-klein.webp",
+   "motiv": "Älteres Paar und Mann im Anzug mit Mappe im Treppenhaus am Handlauf (Stockfoto)",
+   "alt_neu": "Interessenten werden bei einer Wohnungsbesichtigung durchs Treppenhaus geführt – Vermietung im Raum Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/besichtigung-vorbereiten-vermietung.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Ansprechpartner führt Interessenten durch ein Treppenhaus bei einer Besichtigung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/bueroreinigung-praxisreinigung-bruchsal.webp",
+   "motiv": "Heller Behandlungsraum mit grünem Behandlungsstuhl und Gerätewagen (Stockfoto)",
+   "alt_neu": "Sauberer Behandlungsraum mit Behandlungsstuhl – Praxisreinigung außerhalb der Sprechzeiten in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/bueroreinigung-praxisreinigung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Gereinigter Behandlungsraum einer Praxis mit Behandlungsstuhl in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/bueroreinigung-praxisreinigung-bruchsal-klein.webp",
+   "motiv": "Heller Behandlungsraum mit grünem Behandlungsstuhl und Gerätewagen (Stockfoto)",
+   "alt_neu": "Sauberer Behandlungsraum mit Behandlungsstuhl – Praxisreinigung außerhalb der Sprechzeiten in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/bueroreinigung-praxisreinigung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Gereinigter Behandlungsraum einer Praxis mit Behandlungsstuhl in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/dienstleister-wechseln-hausmeister.webp",
+   "motiv": "Frau mit roter Schürze und blauem Eimer in einer Küche (Stockfoto)",
+   "alt_neu": "Reinigungskraft mit Eimer und Schürze bei der Arbeit – Wechsel des Reinigungsdienstleisters ohne Lücke",
+   "verwendung": [
+    {
+     "datei": "ratgeber/dienstleister-wechseln-hausmeister.html",
+     "element": "img",
+     "alt_bisher": "Reinigungskraft mit Eimer bei der Übernahme eines Objekts in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/dienstleister-wechseln-hausmeister-klein.webp",
+   "motiv": "Frau mit roter Schürze und blauem Eimer in einer Küche (Stockfoto)",
+   "alt_neu": "Reinigungskraft mit Eimer und Schürze bei der Arbeit – Wechsel des Reinigungsdienstleisters ohne Lücke",
+   "verwendung": [
+    {
+     "datei": "ratgeber/dienstleister-wechseln-hausmeister.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Reinigungskraft mit Eimer bei der Übernahme eines Objekts in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/entruempelung-ablauf-bruchsal.webp",
+   "motiv": "Barhocker, blaue Müllsäcke, Kartons und Bretter in einem Abstellraum (Stockfoto)",
+   "alt_neu": "Barhocker, Kartons und Müllsäcke im Abstellraum vor einer Kellerentrümpelung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/entruempelung-ablauf-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Abgestellte Möbel, Kartons und Säcke in einem Kellerraum vor der Entrümpelung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/entruempelung-ablauf-bruchsal-klein.webp",
+   "motiv": "Barhocker, blaue Müllsäcke, Kartons und Bretter in einem Abstellraum (Stockfoto)",
+   "alt_neu": "Barhocker, Kartons und Müllsäcke im Abstellraum vor einer Kellerentrümpelung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/entruempelung-ablauf-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Abgestellte Möbel, Kartons und Säcke in einem Kellerraum vor der Entrümpelung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/entruempelung-bruchsal.webp",
+   "motiv": "Haufen aus Geschirr, Vasen, Töpfen und altem Hausrat (Stockfoto)",
+   "alt_neu": "Angesammelter Hausrat aus Geschirr, Vasen und Töpfen – Entrümpelung und Haushaltsauflösung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "entruempelung.html",
+     "element": "img",
+     "alt_bisher": "Hausrat vor einer Entrümpelung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/entruempelung-bruchsal-klein.webp",
+   "motiv": "Haufen aus Geschirr, Vasen, Töpfen und altem Hausrat (Stockfoto)",
+   "alt_neu": "Angesammelter Hausrat aus Geschirr, Vasen und Töpfen – Entrümpelung und Haushaltsauflösung in Bruchsal",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/gartenpflege-bruchsal.webp",
+   "motiv": "Mann in grünem Poloshirt mit Mund-Nasen-Schutz trägt Jungpflanze und Spaten durch eine Grünfläche (Stockfoto)",
+   "alt_neu": "Gärtner trägt Spaten und Jungpflanze über eine Grünfläche – Gartenpflege für Wohnanlagen im Landkreis Karlsruhe",
+   "verwendung": [
+    {
+     "datei": "gartenpflege.html",
+     "element": "img",
+     "alt_bisher": "Gartenpflege und Bepflanzung einer Außenanlage in Bruchsal"
+    }
+   ],
+   "hinweis": "Foto zeigt Maske (Corona-Zeit). Mittelfristig durch eigenes Foto ersetzen."
+  },
+  {
+   "bild": "assets/img/fotos/gartenpflege-bruchsal-klein.webp",
+   "motiv": "Mann in grünem Poloshirt mit Mund-Nasen-Schutz trägt Jungpflanze und Spaten durch eine Grünfläche (Stockfoto)",
+   "alt_neu": "Gärtner trägt Spaten und Jungpflanze über eine Grünfläche – Gartenpflege für Wohnanlagen im Landkreis Karlsruhe",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Foto zeigt Maske (Corona-Zeit). Mittelfristig durch eigenes Foto ersetzen."
+  },
+  {
+   "bild": "assets/img/fotos/gartenpflege-jahresvertrag-bruchsal.webp",
+   "motiv": "Fadenmäher schneidet hohes Gras (Stockfoto)",
+   "alt_neu": "Fadenmäher schneidet hohes Gras am Wegrand – Rasenpflege im Jahresvertrag in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/gartenpflege-jahresvertrag-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Rasentrimmer schneidet hohes Gras an einer Außenanlage in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/gartenpflege-jahresvertrag-bruchsal-klein.webp",
+   "motiv": "Fadenmäher schneidet hohes Gras (Stockfoto)",
+   "alt_neu": "Fadenmäher schneidet hohes Gras am Wegrand – Rasenpflege im Jahresvertrag in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/gartenpflege-jahresvertrag-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Rasentrimmer schneidet hohes Gras an einer Außenanlage in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/gebaeudereinigung-bruchsal.webp",
+   "motiv": "Silhouette eines Mannes, der hinter einer Glasfront eine Eingangshalle wischt, Warnschild am Boden (Stockfoto)",
+   "alt_neu": "Reinigungskraft wischt den Boden einer Eingangshalle mit Glasfront – Gebäudereinigung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "gebaeudereinigung.html",
+     "element": "img",
+     "alt_bisher": "Reinigung des Eingangsbereichs eines Gebäudes in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/gebaeudereinigung-bruchsal-klein.webp",
+   "motiv": "Silhouette eines Mannes, der hinter einer Glasfront eine Eingangshalle wischt, Warnschild am Boden (Stockfoto)",
+   "alt_neu": "Reinigungskraft wischt den Boden einer Eingangshalle mit Glasfront – Gebäudereinigung in Bruchsal",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/glasreinigung-bruchsal.webp",
+   "motiv": "Hand mit gelbem Handschuh zieht Seifenwasser mit einem Fensterabzieher von einer Scheibe (Stockfoto)",
+   "alt_neu": "Fensterabzieher und gelber Handschuh an einer nassen Scheibe – Glasreinigung im Treppenhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/glasreinigung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Fensterreinigung mit Abzieher und Handschuh an einer Glasscheibe in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/glasreinigung-bruchsal-klein.webp",
+   "motiv": "Hand mit gelbem Handschuh zieht Seifenwasser mit einem Fensterabzieher von einer Scheibe (Stockfoto)",
+   "alt_neu": "Fensterabzieher und gelber Handschuh an einer nassen Scheibe – Glasreinigung im Treppenhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/glasreinigung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Fensterreinigung mit Abzieher und Handschuh an einer Glasscheibe in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/grundreinigung-gewerbeboden-bruchsal.webp",
+   "motiv": "Silhouette einer Person mit Besen in einer dunklen Halle vor einem roten Rolltor (Stockfoto)",
+   "alt_neu": "Person kehrt den Hallenboden vor einem roten Rolltor – Grundreinigung eines Gewerbebodens",
+   "verwendung": [
+    {
+     "datei": "ratgeber/grundreinigung-gewerbeboden-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Reinigungskraft kehrt den Boden einer Halle vor der Grundreinigung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/grundreinigung-gewerbeboden-bruchsal-klein.webp",
+   "motiv": "Silhouette einer Person mit Besen in einer dunklen Halle vor einem roten Rolltor (Stockfoto)",
+   "alt_neu": "Person kehrt den Hallenboden vor einem roten Rolltor – Grundreinigung eines Gewerbebodens",
+   "verwendung": [
+    {
+     "datei": "ratgeber/grundreinigung-gewerbeboden-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Reinigungskraft kehrt den Boden einer Halle vor der Grundreinigung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/handwerkerkoordination-bruchsal.webp",
+   "motiv": "Zwei Handwerker in Latzhose besprechen sich an einer Werkbank in einer Werkstatt (Stockfoto)",
+   "alt_neu": "Zwei Handwerker stimmen sich an der Werkbank ab – Handwerkertermine für Eigentümer koordinieren",
+   "verwendung": [
+    {
+     "datei": "ratgeber/handwerkerkoordination-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Zwei Handwerker besprechen einen Auftrag an der Werkbank, Handwerkerkoordination in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/handwerkerkoordination-bruchsal-klein.webp",
+   "motiv": "Zwei Handwerker in Latzhose besprechen sich an einer Werkbank in einer Werkstatt (Stockfoto)",
+   "alt_neu": "Zwei Handwerker stimmen sich an der Werkbank ab – Handwerkertermine für Eigentümer koordinieren",
+   "verwendung": [
+    {
+     "datei": "ratgeber/handwerkerkoordination-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Zwei Handwerker besprechen einen Auftrag an der Werkbank, Handwerkerkoordination in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterkosten-umlagefaehig.webp",
+   "motiv": "Collage: Euromünze fällt in ein leeres Glas vor blauem Hintergrund (Illustration)",
+   "alt_neu": "Euromünze fällt in ein Glas – Symbolbild für umlagefähige Hausmeisterkosten in der Nebenkostenabrechnung",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterkosten-umlagefaehig.html",
+     "element": "img",
+     "alt_bisher": "Euromünze wird in ein Glas gelegt, Symbol für umlagefähige Hausmeisterkosten in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterkosten-umlagefaehig-klein.webp",
+   "motiv": "Collage: Euromünze fällt in ein leeres Glas vor blauem Hintergrund (Illustration)",
+   "alt_neu": "Euromünze fällt in ein Glas – Symbolbild für umlagefähige Hausmeisterkosten in der Nebenkostenabrechnung",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterkosten-umlagefaehig.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Euromünze wird in ein Glas gelegt, Symbol für umlagefähige Hausmeisterkosten in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-bruchsal.webp",
+   "motiv": "Mann von hinten mit Werkzeuggürtel (Schraubendreher, Hammer, Maßband) und gelber Leiter vor einem Transporter (Stockfoto)",
+   "alt_neu": "Werkzeuggürtel und Leiter am Transporter – Hausmeister unterwegs zum Kontrollgang in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "hausmeisterservice.html",
+     "element": "img",
+     "alt_bisher": "Hausmeister von Gebäudewerke mit Werkzeuggürtel und Leiter beim Einsatz in Bruchsal"
+    }
+   ],
+   "hinweis": "Bisheriger alt behauptet 'Hausmeister von Gebäudewerke' – Stockfoto, nicht als eigenes Personal ausgeben."
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-bruchsal-klein.webp",
+   "motiv": "Mann von hinten mit Werkzeuggürtel (Schraubendreher, Hammer, Maßband) und gelber Leiter vor einem Transporter (Stockfoto)",
+   "alt_neu": "Werkzeuggürtel und Leiter am Transporter – Hausmeister unterwegs zum Kontrollgang in Bruchsal",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Bisheriger alt behauptet 'Hausmeister von Gebäudewerke' – Stockfoto, nicht als eigenes Personal ausgeben."
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-hausverwaltung-bruchsal.webp",
+   "motiv": "Mann in schwarzem Poloshirt bedient ein Bedienfeld an einem technischen Gerät (Stockfoto)",
+   "alt_neu": "Techniker prüft ein Bedienfeld an einer technischen Anlage – Objektbetreuung für Hausverwaltungen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Techniker bedient ein Steuergerät bei der Objektbetreuung für eine Hausverwaltung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-hausverwaltung-bruchsal-klein.webp",
+   "motiv": "Mann in schwarzem Poloshirt bedient ein Bedienfeld an einem technischen Gerät (Stockfoto)",
+   "alt_neu": "Techniker prüft ein Bedienfeld an einer technischen Anlage – Objektbetreuung für Hausverwaltungen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Techniker bedient ein Steuergerät bei der Objektbetreuung für eine Hausverwaltung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-weg-bruchsal.webp",
+   "motiv": "Moderne helle Wohnhausfassade mit verglasten Balkonen vor blauem Himmel (Stockfoto)",
+   "alt_neu": "Fassade einer Wohnanlage mit Balkonen – Hausmeisterservice für Eigentümergemeinschaften (WEG)",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterservice-weg-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Fassade einer Wohnanlage einer Eigentümergemeinschaft in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/hausmeisterservice-weg-bruchsal-klein.webp",
+   "motiv": "Moderne helle Wohnhausfassade mit verglasten Balkonen vor blauem Himmel (Stockfoto)",
+   "alt_neu": "Fassade einer Wohnanlage mit Balkonen – Hausmeisterservice für Eigentümergemeinschaften (WEG)",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hausmeisterservice-weg-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Fassade einer Wohnanlage einer Eigentümergemeinschaft in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/hecke-schneiden-erlaubt.webp",
+   "motiv": "Mann im blauen T-Shirt schneidet eine runde Thuja mit einer Akku-Heckenschere (Stockfoto)",
+   "alt_neu": "Formschnitt an einer Thuja mit der Heckenschere – was beim Heckenschneiden im Sommer erlaubt ist",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hecke-schneiden-erlaubt.html",
+     "element": "img",
+     "alt_bisher": "Gärtner schneidet eine Thujahecke mit der Heckenschere in einer Wohnanlage in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/hecke-schneiden-erlaubt-klein.webp",
+   "motiv": "Mann im blauen T-Shirt schneidet eine runde Thuja mit einer Akku-Heckenschere (Stockfoto)",
+   "alt_neu": "Formschnitt an einer Thuja mit der Heckenschere – was beim Heckenschneiden im Sommer erlaubt ist",
+   "verwendung": [
+    {
+     "datei": "ratgeber/hecke-schneiden-erlaubt.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Gärtner schneidet eine Thujahecke mit der Heckenschere in einer Wohnanlage in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/kleinreparaturen-bruchsal.webp",
+   "motiv": "Hand hält einen Akkuschrauber an einem Türbeschlag, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Akkuschrauber an einem Türbeschlag – Kleinreparaturen und Montage in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "kleinreparaturen.html",
+     "element": "img",
+     "alt_bisher": "Montage eines Türbeschlags mit dem Akkuschrauber in Bruchsal"
+    },
+    {
+     "datei": "ratgeber/kleinreparaturen-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Handwerker repariert eine Pumpe in der Werkstatt, Kleinreparaturen in Bruchsal"
+    }
+   ],
+   "hinweis": "Alt im Ratgeber ('repariert eine Pumpe in der Werkstatt') passt nicht zum Bild."
+  },
+  {
+   "bild": "assets/img/fotos/kleinreparaturen-bruchsal-klein.webp",
+   "motiv": "Hand hält einen Akkuschrauber an einem Türbeschlag, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Akkuschrauber an einem Türbeschlag – Kleinreparaturen und Montage in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/kleinreparaturen-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Handwerker repariert eine Pumpe in der Werkstatt, Kleinreparaturen in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Alt im Ratgeber ('repariert eine Pumpe in der Werkstatt') passt nicht zum Bild."
+  },
+  {
+   "bild": "assets/img/fotos/kosten-hausmeisterservice-bruchsal.webp",
+   "motiv": "Hände halten einen 100-Euro-Schein über einem Grundriss mit Flächenangaben auf einem Klemmbrett (Stockfoto)",
+   "alt_neu": "Grundriss mit Quadratmeterangaben und Geldschein – Kosten eines Hausmeisterservice berechnen",
+   "verwendung": [
+    {
+     "datei": "preise.html",
+     "element": "img",
+     "alt_bisher": "Objektbetreuung durch Gebäudewerke in Bruchsal"
+    },
+    {
+     "datei": "ratgeber/kosten-hausmeisterservice-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Grundriss mit Flächenangaben und Banknoten bei der Kalkulation eines Hausmeisterservice in Bruchsal"
+    }
+   ],
+   "hinweis": "Auf preise.html bisher 'Objektbetreuung durch Gebäudewerke' – passt nicht zum Bildinhalt."
+  },
+  {
+   "bild": "assets/img/fotos/kosten-hausmeisterservice-bruchsal-klein.webp",
+   "motiv": "Hände halten einen 100-Euro-Schein über einem Grundriss mit Flächenangaben auf einem Klemmbrett (Stockfoto)",
+   "alt_neu": "Grundriss mit Quadratmeterangaben und Geldschein – Kosten eines Hausmeisterservice berechnen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/kosten-hausmeisterservice-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Grundriss mit Flächenangaben und Banknoten bei der Kalkulation eines Hausmeisterservice in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Auf preise.html bisher 'Objektbetreuung durch Gebäudewerke' – passt nicht zum Bildinhalt."
+  },
+  {
+   "bild": "assets/img/fotos/laub-gehweg-pflicht-bruchsal.webp",
+   "motiv": "Gelbe Herbstblätter auf einer Rasenfläche, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Gelbes Herbstlaub auf dem Rasen – Laub entfernen und Gehwegpflicht im Herbst in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/laub-gehweg-pflicht-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Herbstlaub auf einer Rasenfläche einer Wohnanlage in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/laub-gehweg-pflicht-bruchsal-klein.webp",
+   "motiv": "Gelbe Herbstblätter auf einer Rasenfläche, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Gelbes Herbstlaub auf dem Rasen – Laub entfernen und Gehwegpflicht im Herbst in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/laub-gehweg-pflicht-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Herbstlaub auf einer Rasenfläche einer Wohnanlage in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/muelltonnendienst-bruchsal.webp",
+   "motiv": "Mehrere schwarze Mülltonnen mit gelbem und blauem Deckel am Gehweg vor einem Klinkerhaus (Stockfoto)",
+   "alt_neu": "Mülltonnen mit gelbem und blauem Deckel am Gehweg – Mülltonnendienst für Mehrfamilienhäuser in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/muelltonnendienst-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Restmüll-, Papier- und Wertstofftonnen am Straßenrand vor einer Wohnanlage in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/muelltonnendienst-bruchsal-klein.webp",
+   "motiv": "Mehrere schwarze Mülltonnen mit gelbem und blauem Deckel am Gehweg vor einem Klinkerhaus (Stockfoto)",
+   "alt_neu": "Mülltonnen mit gelbem und blauem Deckel am Gehweg – Mülltonnendienst für Mehrfamilienhäuser in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/muelltonnendienst-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Restmüll-, Papier- und Wertstofftonnen am Straßenrand vor einer Wohnanlage in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/ortstermin-angebot-hausmeisterservice.webp",
+   "motiv": "Mann im Anzug mit Klemmbrett berät ein Paar in einem Autohaus (Stockfoto)",
+   "alt_neu": "Berater mit Klemmbrett im Gespräch mit einem Paar – Beratung vor dem Angebot",
+   "verwendung": [
+    {
+     "datei": "ratgeber/ortstermin-angebot-hausmeisterservice.html",
+     "element": "img",
+     "alt_bisher": "Beratungsgespräch zwischen Ansprechpartner und Kunden beim Ortstermin in Bruchsal"
+    }
+   ],
+   "hinweis": "Bild zeigt erkennbar ein Autohaus. Empfehlung: durch Foto eines Objektrundgangs ersetzen."
+  },
+  {
+   "bild": "assets/img/fotos/ortstermin-angebot-hausmeisterservice-klein.webp",
+   "motiv": "Mann im Anzug mit Klemmbrett berät ein Paar in einem Autohaus (Stockfoto)",
+   "alt_neu": "Berater mit Klemmbrett im Gespräch mit einem Paar – Beratung vor dem Angebot",
+   "verwendung": [
+    {
+     "datei": "ratgeber/ortstermin-angebot-hausmeisterservice.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Beratungsgespräch zwischen Ansprechpartner und Kunden beim Ortstermin in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Bild zeigt erkennbar ein Autohaus. Empfehlung: durch Foto eines Objektrundgangs ersetzen."
+  },
+  {
+   "bild": "assets/img/fotos/schluesselverwaltung-bruchsal.webp",
+   "motiv": "Viele Schlüsselbunde mit Anhängern an Wandhaken, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Schlüsselbunde mit Anhängern an Wandhaken – Schlüsselverwaltung im Mehrfamilienhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/schluesselverwaltung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Schlüsselbrett mit beschrifteten Schlüsseln für die Schlüsselverwaltung eines Objekts in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/schluesselverwaltung-bruchsal-klein.webp",
+   "motiv": "Viele Schlüsselbunde mit Anhängern an Wandhaken, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Schlüsselbunde mit Anhängern an Wandhaken – Schlüsselverwaltung im Mehrfamilienhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/schluesselverwaltung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Schlüsselbrett mit beschrifteten Schlüsseln für die Schlüsselverwaltung eines Objekts in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/stoerungsmeldung-gewerbeobjekt-bruchsal.webp",
+   "motiv": "Hand mit Kugelschreiber unterschreibt ein Formular auf einem Klemmbrett (Stockfoto)",
+   "alt_neu": "Formular wird unterschrieben – Störungsmeldung im Gewerbeobjekt schriftlich dokumentieren",
+   "verwendung": [
+    {
+     "datei": "ratgeber/stoerungsmeldung-gewerbeobjekt-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Mitarbeiter unterschreibt ein Formular zur Störungsmeldung in einem Gewerbeobjekt in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/stoerungsmeldung-gewerbeobjekt-bruchsal-klein.webp",
+   "motiv": "Hand mit Kugelschreiber unterschreibt ein Formular auf einem Klemmbrett (Stockfoto)",
+   "alt_neu": "Formular wird unterschrieben – Störungsmeldung im Gewerbeobjekt schriftlich dokumentieren",
+   "verwendung": [
+    {
+     "datei": "ratgeber/stoerungsmeldung-gewerbeobjekt-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Mitarbeiter unterschreibt ein Formular zur Störungsmeldung in einem Gewerbeobjekt in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/streugut-entfernen-fruehjahr.webp",
+   "motiv": "Kahle Birke und Gräser, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Kahle Birke am Ende des Winters – Zeit, Splitt und Streugut von Wegen zu entfernen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/streugut-entfernen-fruehjahr.html",
+     "element": "img",
+     "alt_bisher": "Kahle Birke und Gräser im Spätwinter an einer Grünfläche in Bruchsal"
+    }
+   ],
+   "hinweis": "Bild zeigt kein Streugut. Empfehlung: Foto von Splitt auf Pflaster/Gehweg verwenden."
+  },
+  {
+   "bild": "assets/img/fotos/streugut-entfernen-fruehjahr-klein.webp",
+   "motiv": "Kahle Birke und Gräser, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Kahle Birke am Ende des Winters – Zeit, Splitt und Streugut von Wegen zu entfernen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/streugut-entfernen-fruehjahr.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Kahle Birke und Gräser im Spätwinter an einer Grünfläche in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Bild zeigt kein Streugut. Empfehlung: Foto von Splitt auf Pflaster/Gehweg verwenden."
+  },
+  {
+   "bild": "assets/img/fotos/streuprotokoll-winterdienst-bruchsal.webp",
+   "motiv": "Frontlader mit Schaufel schiebt Schneehaufen am Straßenrand (Stockfoto)",
+   "alt_neu": "Räumfahrzeug schiebt Schnee vom Weg – jeder Einsatz gehört ins Räum- und Streuprotokoll",
+   "verwendung": [
+    {
+     "datei": "ratgeber/streuprotokoll-winterdienst-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Räumfahrzeug schiebt Schnee von einem Gehweg beim Winterdienst in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/streuprotokoll-winterdienst-bruchsal-klein.webp",
+   "motiv": "Frontlader mit Schaufel schiebt Schneehaufen am Straßenrand (Stockfoto)",
+   "alt_neu": "Räumfahrzeug schiebt Schnee vom Weg – jeder Einsatz gehört ins Räum- und Streuprotokoll",
+   "verwendung": [
+    {
+     "datei": "ratgeber/streuprotokoll-winterdienst-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Räumfahrzeug schiebt Schnee von einem Gehweg beim Winterdienst in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/sturmschaden-kontrolle-gebaeude.webp",
+   "motiv": "Mann in Arbeitskleidung mit Reflexstreifen tritt durch eine Holztür, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Mann in Arbeitskleidung betritt ein Gebäude – Kontrollgang nach Sturm und Unwetter",
+   "verwendung": [
+    {
+     "datei": "ratgeber/sturmschaden-kontrolle-gebaeude.html",
+     "element": "img",
+     "alt_bisher": "Hausmeister kommt zur Kontrolle nach einem Sturm in ein Gebäude in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/sturmschaden-kontrolle-gebaeude-klein.webp",
+   "motiv": "Mann in Arbeitskleidung mit Reflexstreifen tritt durch eine Holztür, schwarz-weiß (Stockfoto)",
+   "alt_neu": "Mann in Arbeitskleidung betritt ein Gebäude – Kontrollgang nach Sturm und Unwetter",
+   "verwendung": [
+    {
+     "datei": "ratgeber/sturmschaden-kontrolle-gebaeude.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Hausmeister kommt zur Kontrolle nach einem Sturm in ein Gebäude in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/tiefgarage-keller-reinigung-bruchsal.webp",
+   "motiv": "Leere Tiefgarage mit Betonstützen, Markierungen und nassem Boden (Stockfoto)",
+   "alt_neu": "Leere Tiefgarage mit Betonstützen und Stellplatzmarkierungen – Tiefgaragenreinigung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/tiefgarage-keller-reinigung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Leere Tiefgarage mit Stellplätzen und Betonstützen vor der Reinigung in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/tiefgarage-keller-reinigung-bruchsal-klein.webp",
+   "motiv": "Leere Tiefgarage mit Betonstützen, Markierungen und nassem Boden (Stockfoto)",
+   "alt_neu": "Leere Tiefgarage mit Betonstützen und Stellplatzmarkierungen – Tiefgaragenreinigung in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/tiefgarage-keller-reinigung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Leere Tiefgarage mit Stellplätzen und Betonstützen vor der Reinigung in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/treppenhaus-rettungsweg.webp",
+   "motiv": "Helles, leeres Treppenhaus mit Terrazzostufen und schwarzem Handlauf (Stockfoto)",
+   "alt_neu": "Leeres Treppenhaus mit Terrazzostufen und Handlauf – frei gehaltener Rettungsweg im Mehrfamilienhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/treppenhaus-rettungsweg.html",
+     "element": "img",
+     "alt_bisher": "Freies Treppenhaus mit Steinstufen und Handlauf in einer Wohnanlage in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/treppenhaus-rettungsweg-klein.webp",
+   "motiv": "Helles, leeres Treppenhaus mit Terrazzostufen und schwarzem Handlauf (Stockfoto)",
+   "alt_neu": "Leeres Treppenhaus mit Terrazzostufen und Handlauf – frei gehaltener Rettungsweg im Mehrfamilienhaus",
+   "verwendung": [
+    {
+     "datei": "ratgeber/treppenhaus-rettungsweg.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Freies Treppenhaus mit Steinstufen und Handlauf in einer Wohnanlage in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/treppenhausreinigung-bruchsal.webp",
+   "motiv": "Dunkle Steintreppe mit Holzhandlauf und verziertem Eisengeländer, heller Flur im Altbau (Stockfoto)",
+   "alt_neu": "Gereinigte Steintreppe mit Holzhandlauf im Altbau – Treppenhausreinigung nach Plan in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/treppenhausreinigung-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Gereinigtes Treppenhaus mit Steinstufen und Holzhandlauf in einem Mehrfamilienhaus in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/treppenhausreinigung-bruchsal-klein.webp",
+   "motiv": "Dunkle Steintreppe mit Holzhandlauf und verziertem Eisengeländer, heller Flur im Altbau (Stockfoto)",
+   "alt_neu": "Gereinigte Steintreppe mit Holzhandlauf im Altbau – Treppenhausreinigung nach Plan in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/treppenhausreinigung-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Gereinigtes Treppenhaus mit Steinstufen und Holzhandlauf in einem Mehrfamilienhaus in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/tueren-schloesser-bruchsal.webp",
+   "motiv": "Mann montiert ein Einsteckschloss an einer geöffneten weißen Innentür (Stockfoto)",
+   "alt_neu": "Einsteckschloss wird an einer Wohnungstür montiert – Schlosstausch und Türreparatur in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "metallarbeiten-schloesser.html",
+     "element": "img",
+     "alt_bisher": "Austausch eines Einsteckschlosses an einer Wohnungstür in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/tueren-schloesser-bruchsal-klein.webp",
+   "motiv": "Mann montiert ein Einsteckschloss an einer geöffneten weißen Innentür (Stockfoto)",
+   "alt_neu": "Einsteckschloss wird an einer Wohnungstür montiert – Schlosstausch und Türreparatur in Bruchsal",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/unkraut-pflaster-entfernen-bruchsal.webp",
+   "motiv": "Unkraut wächst in Rissen einer Asphaltfläche (Stockfoto)",
+   "alt_neu": "Unkraut in Rissen eines Asphaltwegs – Fugen und Wege ohne Unkrautvernichter sauber halten",
+   "verwendung": [
+    {
+     "datei": "ratgeber/unkraut-pflaster-entfernen-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Unkraut wächst in Rissen und Fugen eines Asphaltwegs in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/unkraut-pflaster-entfernen-bruchsal-klein.webp",
+   "motiv": "Unkraut wächst in Rissen einer Asphaltfläche (Stockfoto)",
+   "alt_neu": "Unkraut in Rissen eines Asphaltwegs – Fugen und Wege ohne Unkrautvernichter sauber halten",
+   "verwendung": [
+    {
+     "datei": "ratgeber/unkraut-pflaster-entfernen-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Unkraut wächst in Rissen und Fugen eines Asphaltwegs in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/winterdienst-beauftragen-bruchsal.webp",
+   "motiv": "Verschneite Außentreppe mit Geländer und Schild „kein Winterdienst“ (Stockfoto)",
+   "alt_neu": "Verschneite Außentreppe mit Schild „kein Winterdienst“ – Winterdienst rechtzeitig beauftragen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/winterdienst-beauftragen-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Verschneite Außentreppe mit Schild „kein Winterdienst“, ein Fall für den Winterdienst in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/winterdienst-beauftragen-bruchsal-klein.webp",
+   "motiv": "Verschneite Außentreppe mit Geländer und Schild „kein Winterdienst“ (Stockfoto)",
+   "alt_neu": "Verschneite Außentreppe mit Schild „kein Winterdienst“ – Winterdienst rechtzeitig beauftragen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/winterdienst-beauftragen-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Verschneite Außentreppe mit Schild „kein Winterdienst“, ein Fall für den Winterdienst in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/winterdienst-bruchsal.webp",
+   "motiv": "Mann in schwarzer Jacke schaufelt mit roter Schneeschaufel eine Einfahrt frei (Stockfoto)",
+   "alt_neu": "Mann räumt mit der Schneeschaufel eine Einfahrt – Winterdienst mit Einsatzprotokoll in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/raeum-und-streupflicht-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Schneeräumung einer Einfahrt beim Winterdienst in Bruchsal"
+    },
+    {
+     "datei": "winterdienst.html",
+     "element": "img",
+     "alt_bisher": "Schneeräumung einer Einfahrt beim Winterdienst in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/winterdienst-bruchsal-klein.webp",
+   "motiv": "Mann in schwarzer Jacke schaufelt mit roter Schneeschaufel eine Einfahrt frei (Stockfoto)",
+   "alt_neu": "Mann räumt mit der Schneeschaufel eine Einfahrt – Winterdienst mit Einsatzprotokoll in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "ratgeber/raeum-und-streupflicht-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Schneeräumung einer Einfahrt beim Winterdienst in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/wohnungsuebergabe-bruchsal.webp",
+   "motiv": "Hand hält Schlüssel mit Haus-Anhänger vor einer geöffneten Tür (Stockfoto)",
+   "alt_neu": "Schlüssel mit Hausanhänger an der Wohnungstür – Wohnungsübergabe mit Protokoll in Bruchsal",
+   "verwendung": [
+    {
+     "datei": "wohnungsuebergabe.html",
+     "element": "img",
+     "alt_bisher": "Schlüsselübergabe bei einer Wohnungsübergabe in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/wohnungsuebergabe-bruchsal-klein.webp",
+   "motiv": "Hand hält Schlüssel mit Haus-Anhänger vor einer geöffneten Tür (Stockfoto)",
+   "alt_neu": "Schlüssel mit Hausanhänger an der Wohnungstür – Wohnungsübergabe mit Protokoll in Bruchsal",
+   "verwendung": [],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  },
+  {
+   "bild": "assets/img/fotos/wohnungsuebergabe-protokoll-bruchsal.webp",
+   "motiv": "Gelbes Mehrfamilienhaus mit Balkonen an einer Straße, Bäume, blaues Auto (Stockfoto)",
+   "alt_neu": "Gelbes Mehrfamilienhaus mit Balkonen – Mieterwechsel und Übergabeprotokoll",
+   "verwendung": [
+    {
+     "datei": "ratgeber/wohnungsuebergabe-protokoll-bruchsal.html",
+     "element": "img",
+     "alt_bisher": "Mehrfamilienhaus mit gelber Fassade in Bruchsal bei einer Wohnungsübergabe"
+    }
+   ],
+   "hinweis": "Bisheriger alt verortet das Haus in Bruchsal; der Ort ist auf dem Foto nicht belegt."
+  },
+  {
+   "bild": "assets/img/fotos/wohnungsuebergabe-protokoll-bruchsal-klein.webp",
+   "motiv": "Gelbes Mehrfamilienhaus mit Balkonen an einer Straße, Bäume, blaues Auto (Stockfoto)",
+   "alt_neu": "Gelbes Mehrfamilienhaus mit Balkonen – Mieterwechsel und Übergabeprotokoll",
+   "verwendung": [
+    {
+     "datei": "ratgeber/wohnungsuebergabe-protokoll-bruchsal.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Mehrfamilienhaus mit gelber Fassade in Bruchsal bei einer Wohnungsübergabe"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt.",
+   "hinweis": "Bisheriger alt verortet das Haus in Bruchsal; der Ort ist auf dem Foto nicht belegt."
+  },
+  {
+   "bild": "assets/img/fotos/zaehlerstaende-ablesen-jahreswechsel.webp",
+   "motiv": "Wasserzähler mit Plombe an Rohrleitungen, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Wasserzähler mit Plombe an der Leitung – Zählerstände zum Jahreswechsel ablesen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/zaehlerstaende-ablesen-jahreswechsel.html",
+     "element": "img",
+     "alt_bisher": "Wasserzähler an einer Leitung bei der Ablesung zum Jahreswechsel in Bruchsal"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/fotos/zaehlerstaende-ablesen-jahreswechsel-klein.webp",
+   "motiv": "Wasserzähler mit Plombe an Rohrleitungen, Nahaufnahme (Stockfoto)",
+   "alt_neu": "Wasserzähler mit Plombe an der Leitung – Zählerstände zum Jahreswechsel ablesen",
+   "verwendung": [
+    {
+     "datei": "ratgeber/zaehlerstaende-ablesen-jahreswechsel.html",
+     "element": "meta artikel-bildtext (alt in ratgeber/index.php)",
+     "alt_bisher": "Wasserzähler an einer Leitung bei der Ablesung zum Jahreswechsel in Bruchsal"
+    }
+   ],
+   "hinweis_variante": "Kleine Variante (800 px), über srcset desselben <img> und in der Ratgeber-Übersicht; gleicher alt."
+  }
+ ],
+ "logos_und_icons": [
+  {
+   "bild": "assets/img/logo-quer.svg",
+   "motiv": "Querformat-Logo Gebäudewerke (Bildmarke + Schriftzug), dunkel",
+   "alt_neu": "Gebäudewerke Logo – zur Startseite",
+   "verwendung": [
+    {
+     "datei": "404.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke Objekt- und Gebäudeservice, zur Startseite"
+    },
+    {
+     "datei": "anfrage-fehler.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke Objekt- und Gebäudeservice, zur Startseite"
+    },
+    {
+     "datei": "danke.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke Objekt- und Gebäudeservice, zur Startseite"
+    },
+    {
+     "hinweis": "in allen Seiten im Header-Link identisch"
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/logo-quer-weiss.svg",
+   "motiv": "Querformat-Logo Gebäudewerke, weiß, im Footer-Link",
+   "alt_neu": "Gebäudewerke Logo – Objekt- und Gebäudeservice aus Hambrücken bei Bruchsal",
+   "verwendung": [
+    {
+     "datei": "404.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke"
+    },
+    {
+     "datei": "anfrage-fehler.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke"
+    },
+    {
+     "datei": "danke.html",
+     "element": "img",
+     "alt_bisher": "Gebäudewerke"
+    },
+    {
+     "hinweis": "in allen Seiten im Footer-Link identisch. Wenn der Link zusätzlich sichtbaren Text enthält, alt=\"\" setzen."
+    }
+   ]
+  },
+  {
+   "bild": "assets/img/logo-voll.png",
+   "motiv": "Logo Gebäudewerke mit Unterzeile 'Objekt- & Gebäudeservice'",
+   "alt_neu": "Gebäudewerke Logo",
+   "verwendung": [
+    {
+     "datei": "alle Seiten",
+     "element": "JSON-LD logo (kein <img>)",
+     "alt_bisher": null
+    }
+   ],
+   "hinweis": "Wird nur im Schema genutzt. Falls als <img> eingesetzt: alt wie angegeben."
+  },
+  {
+   "bild": "assets/img/logo-bildmarke.png",
+   "motiv": "Bildmarke (Haus-G-Symbol) ohne Schrift",
+   "alt_neu": "",
+   "verwendung": [],
+   "hinweis": "Derzeit nirgends eingebunden. Als Deko/Icon neben dem Firmennamen alt=\"\"; alleinstehend als Link: alt=\"Gebäudewerke Logo\"."
+  },
+  {
+   "bild": "assets/img/social-vorschau.jpg",
+   "motiv": "Logo Gebäudewerke mit Unterzeile auf hellgrauem Grund, 1200x630",
+   "alt_neu": "Gebäudewerke – Objekt- und Gebäudeservice in Bruchsal und im Landkreis Karlsruhe",
+   "verwendung": [
+    {
+     "datei": "alle Seiten",
+     "element": "og:image / JSON-LD image (kein <img>)",
+     "alt_bisher": null
+    }
+   ],
+   "hinweis": "Zusätzlich <meta property=\"og:image:alt\" content=\"…\"> mit diesem Text ergänzen."
+  },
+  {
+   "bild": "favicon.ico, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png",
+   "motiv": "Icons",
+   "alt_neu": null,
+   "verwendung": [],
+   "hinweis": "Kein alt nötig (link rel=icon / Manifest)."
+  }
+ ]
+}
