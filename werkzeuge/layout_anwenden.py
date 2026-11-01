@@ -23,7 +23,7 @@ Was das Skript macht (seitenspezifische Inhalte bleiben unangetastet):
      Startseite und der Leistungsseiten; Autorenbox (<!-- autorenbox:start -->) am
      Ende jedes Ratgeberartikels (Autor aus "von NAME" in .beitrag-meta, Daten aus
      artikel-datum / artikel-aktualisiert, Zuständigkeit aus TEAM unten).
-  4. JSON-LD: kein aggregateRating und kein review (Vorgabe Inhaber). Alter Google-Link wird
+  4. JSON-LD: aggregateRating auf jeder Seite, Startseite zusätzlich review[] (Entscheidung Inhaber). Alter Google-Link wird
      überall durch den aktuellen ersetzt (auch llms.txt).
 
 BEWERTUNGEN PFLEGEN (Inhaber):
@@ -511,8 +511,12 @@ def jsonld_anwenden(s, seite):
             i = graph.index(org)
             org = org_vorlage()
             graph[i] = org
-        org.pop('aggregateRating', None)   # Vorgabe Inhaber: kein Bewertungs-Markup
-        org.pop('review', None)
+        # Entscheidung Inhaber 01.11.2026: Sterne-Markup auf jeder Seite, Werte aus projekt/google-profil.json
+        org['aggregateRating'] = rating()
+        if seite == 'index.html':
+            org['review'] = reviews()
+        else:
+            org.pop('review', None)
         neu = json.dumps(j, ensure_ascii=False, separators=(',', ':'))
         return '<script type="application/ld+json">' + neu + '</script>'
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', ersetzen, s, count=1, flags=re.S)
