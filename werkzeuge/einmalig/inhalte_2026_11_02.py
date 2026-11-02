@@ -18,22 +18,22 @@ def alle(s, datei):
     # --- Meisterbrief
     for a, b in [
         ('im eigenen Team mit geprüftem Industriemeister Metall', 'im eigenen Team mit Meisterbrief'),
-        ('Im Team arbeiten ein geprüfter Industriemeister Metall und ein gelernter Metallbauer', 'Im Team arbeiten ein Metallmeister mit Meisterbrief und ein gelernter Metallbauer'),
-        ('Im Team arbeiten ein Industriemeister Metall und ein gelernter Metallbauer', 'Im Team arbeiten ein Metallmeister mit Meisterbrief und ein gelernter Metallbauer'),
-        ('Im Team arbeitet ein geprüfter Industriemeister Metall.', 'Im Team arbeitet ein Metallmeister mit Meisterbrief.'),
-        ('Im Team: ein geprüfter Industriemeister Metall.', 'Im Team: ein Metallmeister mit Meisterbrief.'),
+        ('Im Team arbeiten ein geprüfter Industriemeister Metall und ein gelernter Metallbauer', 'Im Team arbeiten ein Kollege mit Meisterbrief und ein gelernter Metallbauer'),
+        ('Im Team arbeiten ein Industriemeister Metall und ein gelernter Metallbauer', 'Im Team arbeiten ein Kollege mit Meisterbrief und ein gelernter Metallbauer'),
+        ('Im Team arbeitet ein geprüfter Industriemeister Metall.', 'Im Team arbeitet ein Kollege mit Meisterbrief.'),
+        ('Im Team: ein geprüfter Industriemeister Metall.', 'Im Team: ein Kollege mit Meisterbrief.'),
         ('vom Industriemeister Metall:', 'vom Meister mit Meisterbrief:'),
-        ('ein geprüfter Industriemeister Metall und ein gelernter Metallbauer mit', 'ein Metallmeister mit Meisterbrief und ein gelernter Metallbauer mit'),
-        ('"credentialCategory":"Meisterbrief","name":"Geprüfter Industriemeister Metall (IHK)"', '"credentialCategory":"Meisterbrief","name":"Meisterbrief Metall"'),
+        ('ein geprüfter Industriemeister Metall und ein gelernter Metallbauer mit', 'ein Kollege mit Meisterbrief und ein gelernter Metallbauer mit'),
+        ('"credentialCategory":"Meisterbrief","name":"Geprüfter Industriemeister Metall (IHK)"', '"credentialCategory":"Meisterbrief","name":"Meisterbrief"'),
         ('<span>Weiterbildung</span>Geprüfter Industriemeister Metall (IHK)', '<span>Meisterbrief</span>Metallmeister'),
-        ('Unser Team kommt aus unterschiedlichen Richtungen: Industriemeister Metall,', 'Wir kommen aus ganz unterschiedlichen Ecken: Metallmeister mit Meisterbrief,'),
+        ('Unser Team kommt aus unterschiedlichen Richtungen: Industriemeister Metall,', 'Wir kommen aus ganz unterschiedlichen Ecken: Meisterbrief,'),
         ('Industriemeister Metall, Metallbauer, Industriemechaniker und Kaufmann: vier Gesellschafter,', 'Metallmeister, Metallbauer, Industriemechaniker und Kaufmann: vier Mann,'),
-        ('Fatih Altun (geprüfter Industriemeister Metall IHK,', 'Fatih Altun (Metallmeister mit Meisterbrief,'),
-        ('Geprüfter Industriemeister Metall (IHK)', 'Metallmeister mit Meisterbrief'),
+        ('Fatih Altun (geprüfter Industriemeister Metall IHK,', 'Fatih Altun (Meisterbrief,'),
+        ('Geprüfter Industriemeister Metall (IHK)', 'Kollege mit Meisterbrief'),
     ]:
         s = s.replace(a, b)
-    s = re.sub(r'geprüfte[rnm]? Industriemeister Metall( \(IHK\)| IHK)?', 'Metallmeister mit Meisterbrief', s)
-    s = s.replace('ein Industriemeister Metall', 'ein Metallmeister mit Meisterbrief')
+    s = re.sub(r'geprüfte[rnm]? Industriemeister Metall( \(IHK\)| IHK)?', 'Kollege mit Meisterbrief', s)
+    s = s.replace('ein Industriemeister Metall', 'ein Kollege mit Meisterbrief')
     if datei == 'impressum.html':
         return s
     # --- vier Mann statt Gesellschafter
@@ -65,7 +65,7 @@ CTA = {  # Seite: Überschrift des einen Kontaktblocks
     'entruempelung.html': 'Ihre Entrümpelung in Bruchsal zum Festpreis',
     'wohnungsuebergabe.html': 'Ihre Wohnungsübergabe in Bruchsal mit Protokoll',
     'kleinreparaturen.html': 'Ihr Handwerker für Kleinreparaturen in Bruchsal',
-    'metallarbeiten-schloesser.html': 'Metallarbeiten vom Meister aus Bruchsal',
+    'metallarbeiten-schloesser.html': 'Ihre Metallarbeiten aus Bruchsal',
     'preise.html': 'Ihr Festpreis nach dem Ortstermin',
     'einsatzgebiet.html': 'Ein Ansprechpartner für Ihr Objekt im Landkreis Karlsruhe',
     'ueber-uns.html': 'Lernen Sie uns beim Ortstermin kennen',

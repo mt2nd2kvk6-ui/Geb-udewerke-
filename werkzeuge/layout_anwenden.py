@@ -405,7 +405,7 @@ I_PREIS = svg('<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.
 def vertrauen_html():
     return ('<!-- vertrauen:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
             '<div class="vertrauen"><div class="wrap"><ul class="vertrauen__liste">'
-            f'<li class="vertrauen__google">{hinweis()}</li>'
+            f'<li class="vertrauen__google">{hinweis_kurz()}</li>'
             f'<li>{I_SCHILD}<span><strong>Betriebshaftpflicht</strong><span>bis 5 Mio. Euro</span></span></li>'
             f'<li>{I_TEAM}<span><strong>Eigenes Personal</strong><span>keine Subunternehmer</span></span></li>'
             f'<li>{I_PREIS}<span><strong>Festpreis</strong><span>nach dem Ortstermin</span></span></li>'
@@ -425,7 +425,7 @@ def vertrauen_anwenden(main, seite):
 # ---------------------------------------------------------------- Autorenbox (Ratgeber)
 
 TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit, Qualifikation laut Teamseite)
-    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Metallmeister mit Meisterbrief'),
+    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Meisterbrief'),
     'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', 'Kaufmann, Vertrieb und Vermarktung'),
     'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', 'Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau'),
     'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', 'Gelernter Industriemechaniker'),
