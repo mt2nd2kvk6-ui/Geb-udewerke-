@@ -62,6 +62,11 @@ STAND_TAG = '.'.join(reversed(PROFIL['abgerufen'].split('-')))
 HINWEIS = f'{ANZAHL} Bewertungen, Durchschnitt {SCHNITT_DE} bei Google (Stand {STAND_TAG})'
 
 
+def hinweis_kurz(klasse='google-hinweis'):
+    """Kurzform für Kopfleiste und Kontaktblock (Wunsch Inhaber 02.11.2026)."""
+    return f'<a class="{klasse}" href="{GOOGLE}" rel="noopener" target="_blank">{SCHNITT_DE} Sterne auf Google</a>'
+
+
 def hinweis(klasse='google-hinweis'):
     """Einzige erlaubte sichtbare Form des Bewertungshinweises (Vorgabe Inhaber)."""
     return f'<a class="{klasse}" href="{GOOGLE}" rel="noopener" target="_blank">{HINWEIS}</a>'
@@ -107,7 +112,7 @@ BEWERTUNG_SEITEN = {
 for _s, _ in LEISTUNGEN:
     BEWERTUNG_SEITEN.setdefault(_s, ('kompakt', None, r'<section class="cta-band"'))
 
-TEL = 'tel:+491637221790'
+TEL = 'tel:+4917674025524'   # Anrufnummer; WhatsApp bleibt 0176 74025524
 WA = ('https://api.whatsapp.com/send?phone=491637221790&text=Hallo%20Geb%C3%A4udewerke%2C%20'
       'ich%20habe%20eine%20Anfrage%20zu%20einem%20Objekt.')
 
@@ -241,8 +246,8 @@ def header(seite, b):
     return f'''
 <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
 <div class="leiste"><div class="wrap">
-<span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">0163 7221790</a></span>
-<span class="leiste__rechts">{hinweis('google-hinweis google-hinweis--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
+<span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">0176 74025524</a></span>
+<span class="leiste__rechts">{hinweis_kurz('google-hinweis google-hinweis--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
 </div></div>
 <header class="kopf"><div class="wrap">
 <a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite"></a>
@@ -252,7 +257,7 @@ def header(seite, b):
 <li><button class="nav__link" type="button" data-untermenue aria-expanded="false" aria-controls="unter-leistungen"{knopf_cur}>Leistungen {I_RUNTER}</button>
 <ul class="nav__unter" id="unter-leistungen">{unter}</ul></li>
 {punkte}</ul>
-<div class="nav__mobil"><a class="btn btn--voll" href="{b}kontakt.html">{I_FORM}Angebot anfragen</a><a class="btn btn--rand" href="{TEL}">{I_TEL}0163 7221790</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank">{I_WA}WhatsApp</a></div>
+<div class="nav__mobil"><a class="btn btn--voll" href="{b}kontakt.html">{I_FORM}Angebot anfragen</a><a class="btn btn--rand" href="{TEL}">{I_TEL}0176 74025524</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank">{I_WA}WhatsApp</a></div>
 </nav>
 <div class="kopf__aktionen">
 <a class="btn btn--rand" href="{TEL}">{I_TEL}Anrufen</a>
@@ -276,14 +281,10 @@ def footer(seite, b, url, titel):
               '<a href="https://www.instagram.com/gebaeudewerke" rel="noopener" target="_blank">Gebäudewerke auf Instagram</a></p>')
     return f'''
 <footer class="fuss"><div class="wrap">
-<div class="fuss__cta">
-<div><p class="fuss__cta-titel">Ein Ansprechpartner für Ihr Objekt in Bruchsal</p>{hinweis('google-hinweis google-hinweis--fuss')}</div>
-<div class="btn-reihe"><a class="btn btn--hell" href="{b}kontakt.html">Anfrage senden</a><a class="btn btn--hellrand" href="{TEL}">{I_TEL}0163 7221790</a></div>
-</div>
 <div class="fuss__raster">
 <div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
 <p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
-<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
+<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">0176 74025524</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
 <div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li></ul></div>
@@ -335,7 +336,6 @@ ausführen. Bewertungen ohne Text erscheinen nur in der Anzahl, nicht im Laufban
 <div class="laufband" data-laufband tabindex="0" role="region" aria-label="Kundenstimmen, horizontal scrollbar">
 <div class="laufband__spur">
 <ul class="laufband__gruppe">{karten}</ul>
-<ul class="laufband__gruppe" aria-hidden="true">{karten.replace(' role="img" aria-label="5 von 5 Sternen"', ' aria-hidden="true"')}</ul>
 </div>
 </div>
 <div class="bewertungen__fuss"><button class="laufband__knopf" type="button" hidden>{I_PAUSE}<span>Laufband anhalten</span></button></div>
@@ -367,7 +367,7 @@ ARTIKEL = {}
 for _p in glob.glob(os.path.join(WEB, 'ratgeber', '*.html')):
     _s = open(_p, encoding='utf-8').read(20000)
     _m = lambda n: (re.search(r'<meta name="' + n + r'" content="([^"]*)"', _s) or [None, ''])[1]
-    ARTIKEL[os.path.basename(_p)[:-5]] = {'bild': _m('artikel-bild'), 'thema': _m('artikel-thema')}
+    ARTIKEL[os.path.basename(_p)[:-5]] = {'bild': _m('artikel-bild'), 'thema': _m('artikel-thema'), 'bildtext': _m('artikel-bildtext')}
 
 TEASER = re.compile(r'<li><a (?:class="teaser" )?href="((?:https://gebaeudewerke\.de)?/?ratgeber/([a-z0-9-]+)\.html)">(.*?)</a></li>', re.S)
 
@@ -381,7 +381,7 @@ def teaser_karte(m, b):
     a = ARTIKEL[slug]
     bild = b + a['bild'].lstrip('/')
     thema = f'<span class="teaser__thema">{a["thema"]}</span>' if a['thema'] else ''
-    return (f'<li><a class="teaser" href="{href}"><span class="teaser__bild"><img src="{bild}" width="800" height="600" alt="" loading="lazy" decoding="async"></span>'
+    return (f'<li><a class="teaser" href="{href}"><span class="teaser__bild"><img src="{bild}" width="800" height="600" alt="{html.escape(html.unescape(a['bildtext'] or ''), quote=True)}" loading="lazy" decoding="async"></span>'
             f'<span class="teaser__text">{thema}<span class="teaser__titel">{titel}</span>'
             f'<span class="teaser__mehr" aria-hidden="true">Weiterlesen {I_PFEIL}</span></span></a></li>')
 
@@ -425,7 +425,7 @@ def vertrauen_anwenden(main, seite):
 # ---------------------------------------------------------------- Autorenbox (Ratgeber)
 
 TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit, Qualifikation laut Teamseite)
-    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Geprüfter Industriemeister Metall (IHK)'),
+    'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Metallmeister mit Meisterbrief'),
     'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', 'Kaufmann, Vertrieb und Vermarktung'),
     'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', 'Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau'),
     'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', 'Gelernter Industriemechaniker'),
@@ -451,12 +451,15 @@ def autorenbox_anwenden(s, main):
     d2 = re.search(r'<meta name="artikel-aktualisiert" content="([\d-]+)"', s)
     daten = f'Veröffentlicht am {datum_de(d1.group(1))}' if d1 else ''
     initial = ''.join(t[0] for t in name.split()[:2]).upper()
+    # Link auf den Hausmeisterservice, wenn der Artikeltext noch keinen hat (Wunsch Inhaber 02.11.2026)
+    hm = '' if re.search(r'<p>(?:(?!</p>).)*href="/hausmeisterservice\.html"', main, re.S) else \
+        '<p class="autorenbox__mehr">Laufende Betreuung für Ihr Haus: <a href="/hausmeisterservice.html">Hausmeisterservice in Bruchsal</a></p>'
     box = ('<!-- autorenbox:start (automatisch: werkzeuge/layout_anwenden.py) -->\n'
            f'<aside class="autorenbox" aria-label="Über den Autor"><span class="autorenbox__initial" aria-hidden="true">{initial}</span>'
            f'<div><p class="autorenbox__titel">Geschrieben von <a href="/ueber-uns.html#{anker}">{name}</a></p>'
-           f'<p class="autorenbox__rolle">Gesellschafter der Gebäudewerke GbR · {rolle}</p>'
+           f'<p class="autorenbox__rolle">Bei Gebäudewerke zuständig für {rolle}</p>'
            f'<p class="autorenbox__rolle">{quali}</p>'
-           f'<p class="autorenbox__daten">{daten}</p></div></aside>\n'
+           f'<p class="autorenbox__daten">{daten}</p>{hm}</div></aside>\n'
            '<!-- autorenbox:ende -->\n')
     z = re.search(r'\n</div>\n<aside class="datenblatt"', main)
     if z:

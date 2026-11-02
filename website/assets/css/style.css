@@ -736,3 +736,7 @@ table{font-variant-numeric:tabular-nums}
 .fuss .google-hinweis{font-weight:inherit}
 .google-hinweis--fuss{display:inline-block;margin-top:.35rem;color:inherit}
 @media (max-width:1499px){.leiste__adresse{display:none}}
+/* Kurzhinweis Google im Kontaktblock, Link in der Autorenbox (02.11.2026) */
+.cta-sterne{margin:.35rem 0 1.25rem;font-size:.98rem}
+.cta-band .cta-sterne .google-hinweis,.abschnitt--blau .cta-sterne .google-hinweis{color:#fff}
+.autorenbox__mehr{margin:.5rem 0 0;font-size:.92rem}

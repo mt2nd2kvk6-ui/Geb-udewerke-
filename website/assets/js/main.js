@@ -93,6 +93,13 @@
     var knopf = band.parentElement && band.parentElement.querySelector('.laufband__knopf');
     var gruppe = band.querySelector('.laufband__gruppe');
     if (ruhig || !gruppe) return;
+    if (!band.querySelector('.laufband__gruppe[aria-hidden="true"]')) {
+      // Kopie nur für die Endlos-Animation, nicht im HTML (keine doppelten Texte für Suchmaschinen)
+      var kopie = gruppe.cloneNode(true);
+      kopie.setAttribute('aria-hidden', 'true');
+      kopie.querySelectorAll('[role="img"]').forEach(function (e) { e.removeAttribute('role'); e.removeAttribute('aria-label'); e.setAttribute('aria-hidden', 'true'); });
+      gruppe.parentNode.appendChild(kopie);
+    }
     band.classList.add('laufband--laeuft');
     var dauer = function () { band.style.setProperty('--dauer', Math.max(40, gruppe.scrollWidth / 30) + 's'); };
     dauer();
