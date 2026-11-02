@@ -124,7 +124,7 @@ def svg(pfade, klasse=''):
 
 
 I_TEL = svg('<path d="M5 3.5h3.2l1.6 4.2-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/>')
-I_WA = svg('<path d="M4 5h16v11H9l-4.5 3.5V16H4z"/><path d="M8 9.5h8M8 12.5h5"/>')
+I_WA = svg('<path d="M12 3.3a8.6 8.6 0 0 0-7.4 13l-1.2 4.4 4.5-1.2A8.6 8.6 0 1 0 12 3.3z"/><path d="M9.1 8.2c.3-.3.6-.3.8 0l.7 1.5c.1.3 0 .5-.2.7l-.5.5c.5 1.1 1.4 2 2.5 2.5l.5-.5c.2-.2.4-.3.7-.2l1.5.7c.3.2.3.5 0 .8-.7.7-1.6 1-2.6.6a7.6 7.6 0 0 1-4-4c-.4-1-.1-1.9.6-2.6z"/>')
 I_FORM = svg('<path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>')
 I_ZU = svg('<path d="M6 6l12 12M18 6L6 18"/>')
 I_MENUE = svg('<path d="M4 7h16M4 12h16M4 17h16"/>')
@@ -260,7 +260,8 @@ def header(seite, b):
 <div class="nav__mobil"><a class="btn btn--voll" href="{b}kontakt.html">{I_FORM}Angebot anfragen</a><a class="btn btn--rand" href="{TEL}">{I_TEL}0176 74025524</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank">{I_WA}WhatsApp</a></div>
 </nav>
 <div class="kopf__aktionen">
-<a class="btn btn--rand" href="{TEL}">{I_TEL}Anrufen</a>
+<a class="btn btn--rand kopf__tel" href="{TEL}">{I_TEL}<span class="kopf__btntext">Anrufen</span></a>
+<a class="btn btn--wa kopf__wa" href="{WA}" rel="noopener" target="_blank">{I_WA}<span class="kopf__btntext">WhatsApp</span></a>
 <a class="btn btn--voll" href="{b}kontakt.html">Angebot anfragen</a>
 <button class="menue-knopf" id="menue-oeffnen" type="button" aria-controls="hauptnavigation" aria-expanded="false" aria-label="Menü öffnen">{I_MENUE}</button>
 </div>

@@ -18,9 +18,9 @@ for u in seiten:
 ziele = {ausgabepfad(u) for u in live}
 assets = set()
 
-HINWEIS = ('<div style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#F0B323;color:#0D2B4F;'
+HINWEIS = ('<div style="position:relative;z-index:60;background:#F0B323;color:#0D2B4F;'
            'font:600 13px/1.35 system-ui,sans-serif;text-align:center;padding:6px max(16px,env(safe-area-inset-left,0px)) '
-           'calc(6px + env(safe-area-inset-bottom,0px))">Vorschau der neuen Website. Formular, Anruf und Karte funktionieren erst auf gebaeudewerke.de.</div>')
+           '6px">Vorschau der neuen Website. Formular, Anruf und Karte funktionieren erst auf gebaeudewerke.de.</div>')
 FORM_JS = ('<script>document.addEventListener("submit",function(e){e.preventDefault();'
            'var f=e.target,m=f.querySelector(".vorschau-meldung");if(!m){m=document.createElement("p");'
            'm.className="vorschau-meldung";m.style.cssText="margin-top:1rem;padding:.8rem 1rem;background:#EEF1F4;'
@@ -48,7 +48,8 @@ for u, h in live.items():
     h = re.sub(r'url\("(/?assets/[^"]+)"\)', lambda m: 'url("%s")' % umschreiben(m.group(1)), h)
     h = re.sub(r'<script[^>]+consent\.js[^>]*></script>', '', h)            # keine Statistik in der Vorschau
     h = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex, nofollow">', h)
-    h = h.replace('</body>', FORM_JS + HINWEIS + '</body>', 1)
+    h = h.replace('</body>', FORM_JS + '</body>', 1)
+    h = h.replace('<a class="sprunglink"', HINWEIS + '<a class="sprunglink"', 1)   # Hinweis oben, verdeckt keine Buttons
     if pfad == 'index.html':   # Startseite: Dokumentrahmen entfernen, das Artifact setzt ihn selbst
         h = re.sub(r'^\s*<!doctype html>\s*<html[^>]*>\s*<head>', '', h, flags=re.I)
         h = re.sub(r'</head>\s*<body[^>]*>', '', h, count=1, flags=re.I)
