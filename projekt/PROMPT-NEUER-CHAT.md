@@ -85,6 +85,48 @@ Das neue Design darf das Ranking nicht schwächen, es soll es stärken. Bei Goog
 - Liste am Ende pro Seite: Title px, Description px, Wortzahl, Keyword-Dichte, Lighthouse-Werte, offene Punkte.
 - Sei ehrlich: Onpage, Technik und Inhalt können 100 erreichen. Backlinks und Domain-Stärke kommen nicht aus dem Code. Dafür nenn mir am Ende konkrete Offpage-Schritte, statt Werte zu beschönigen.
 
+## Tracking und Analyse: alles messbar in GA4, Search Console eingebunden
+
+Ich will sehen, was auf der Seite passiert: wer woher kommt, was gelesen wird, was geklickt wird und was am Ende zu einer Anfrage führt. Bestehende Daten: GA4-Mess-ID **G-PKEXEYK6CG** (Property 561433000), Search Console als Domain-Property **sc-domain:gebaeudewerke.de** (bereits bestätigt).
+
+**Rahmen**
+- Google Analytics lädt weiterhin erst nach Zustimmung im Cookie-Banner. Baue zusätzlich **Google Consent Mode v2** ein (Standard: alles „denied“, nach Zustimmung „granted“ für `analytics_storage`; Werbe-Signale bleiben aus). Die Banner-Logik in `consent.js` darfst du dafür erweitern, ihr Verhalten für den Besucher bleibt gleich.
+- Alle Ereignisse laufen über eine zentrale Funktion mit einheitlichen Namen und Parametern. Jedes Ereignis bekommt mindestens `seite` (Pfad), `zielgruppe` (falls die Seite einer zugeordnet ist) und `position` (wo auf der Seite: kopf, hero, inhalt, kontaktblock, mobilleiste, schnellkontakt, fuss).
+
+**Ereignisse, die gemessen werden sollen**
+- `anruf_klick`, `whatsapp_klick`, `email_klick` (bestehen schon, um `position` ergänzen), damit ich sehe, welcher Button wirklich angerufen wird.
+- `generate_lead` beim erfolgreichen Absenden des Formulars (Danke-Seite, besteht schon), dazu `formular_start` (erstes Feld ausgefüllt) und `formular_fehler` (Fehlerseite aufgerufen).
+- `cta_klick` für „Angebot anfragen“, „Ortstermin anfragen“ und ähnliche Buttons mit `cta_text`.
+- `google_bewertung_klick` (Link „5,0 Sterne auf Google“) und `bewertung_schreiben_klick`.
+- `scroll_tiefe` bei 25, 50, 75 und 90 %.
+- `abschnitt_gesehen`, wenn ein wichtiger Abschnitt sichtbar wird (z. B. Preise, Ablauf, Kontaktblock), über IntersectionObserver.
+- `faq_geoeffnet` mit der Frage, `aufklappen` für aufklappbare Textbereiche.
+- `ratgeber_gelesen`, wenn ein Artikel zu 75 % gelesen wurde, mit `thema`.
+- `preis_ansicht` auf der Preisseite je Preistabelle.
+- `karte_geladen` (Zwei-Klick-Karte), `laufband_pause`, `menue_geoeffnet` (Handy-Menü).
+- `seite_teilen` (WhatsApp/E-Mail teilen), `ausgehender_link` für alle externen Links.
+- `fehlerseite` auf der 404-Seite mit der aufgerufenen Adresse.
+- Die Entscheidung im Cookie-Banner selbst wird nicht gemessen. Ohne Zustimmung geht keine einzige Anfrage an Google.
+
+**Flyer und Google-Profil messbar machen**
+- Erzeuge für jede Flyer-Zielgruppe einen eigenen Link mit UTM-Parametern, z. B. `https://gebaeudewerke.de/?utm_source=flyer&utm_medium=print&utm_campaign=hausverwaltung` (ebenso buero, praxis, gewerbe, privat, winterdienst), und dazu je einen QR-Code als SVG und PNG in `projekt/qr/`. So sehe ich in GA4, welcher Flyer Besucher bringt.
+- Ein Link für das Google-Unternehmensprofil: `https://gebaeudewerke.de/?utm_source=google&utm_medium=organic&utm_campaign=gbp`, den trage ich im Profil als Website ein.
+- Prüfe, dass UTM-Parameter die Seite nicht kaputt machen (Canonical bleibt ohne Parameter, `auslieferung.php` liefert normal aus).
+
+**Was ich selbst in GA4 und Search Console einstellen muss**
+Schreib mir dazu eine kurze Klick-Anleitung (Datei `projekt/tracking-anleitung.md`):
+- Welche Ereignisse ich in GA4 als **Schlüsselereignis** markiere (mindestens `generate_lead`, `anruf_klick`, `whatsapp_klick`, `email_klick`).
+- Welche Parameter ich als **benutzerdefinierte Dimensionen** anlege (`position`, `zielgruppe`, `cta_text`, `thema` usw.), damit sie in Berichten auftauchen.
+- **Search Console mit GA4 verknüpfen** (GA4 Verwaltung → Produktverknüpfungen → Search Console) und die Sitemaps `sitemap.xml` und `ratgeber/sitemap.php` einreichen.
+- Datenaufbewahrung in GA4 (aktuell 2 Monate, so steht es in der Datenschutzerklärung). Wenn du eine längere Aufbewahrung empfiehlst, sag es mir, und passe dann auch die Datenschutzerklärung an.
+- Einen Vorschlag für einen Bericht (GA4-Exploration oder Looker Studio): Anfragen, Anrufe und WhatsApp pro Seite, pro Zielgruppe, pro Button-Position und pro Quelle (Google, Flyer, Google-Profil, direkt).
+
+**Datenschutz**
+- Die Datenschutzerklärung muss zum Tracking passen. Ergänze, was sich ändert (Consent Mode, gemessene Ereignisse in allgemeiner Form), ohne den Rest umzuschreiben. Speicherdauer und Auftragsverarbeitung bleiben wie angegeben, außer ich entscheide anders.
+
+**Prüfung**
+- Teste im Browser, dass ohne Zustimmung keine einzige Anfrage an Google geht und nach „Alle akzeptieren“ jedes Ereignis mit den richtigen Parametern ankommt (dataLayer bzw. Netzwerk mitschneiden). Liste alle Ereignisse mit Beispiel-Parametern in der Abschlussnotiz.
+
 ## Feste Vorgaben, nicht verhandelbar
 
 - **Telefon für Anrufe: 0176 74025524** (`tel:+4917674025524`). **WhatsApp: 0163 7221790** (wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Die Flyer zeigen noch die alte Nummer als Anrufnummer, die darf NICHT übernommen werden.
@@ -107,6 +149,7 @@ Das neue Design darf das Ranking nicht schwächen, es soll es stärken. Bei Goog
 - Danach `gw-installer.php` über `werkzeuge/installer_bauen.py`, im selben Format wie bisher (selbstentpackend, legt `.htaccess` aus `htaccess.txt` an, löscht sich selbst). In einer leeren Testumgebung ausführen und mit dem Quellstand vergleichen.
 - `keywords.md` aktualisiert (Seite, Hauptkeyword, Title, px, Description, px, H1), separat, nicht im Installer.
 - Die SEO/GEO-Liste pro Seite (siehe oben) mit allen Werten.
+- `projekt/tracking-anleitung.md`, die QR-Codes und UTM-Links in `projekt/qr/` und die Liste aller Tracking-Ereignisse mit Beispiel-Parametern.
 - Eine kurze Notiz: was du geändert hast, offene `[PRÜFEN]`-Punkte und was ich in der Search Console tun muss.
 
 Wenn etwas unklar ist, frag mich, bevor du baust.
