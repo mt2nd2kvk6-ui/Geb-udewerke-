@@ -176,6 +176,7 @@ def version(pfad):
 
 V_CONSENT = version('assets/js/consent.js')
 V_MAIN = version('assets/js/main.js')
+V_TRACKING = version('assets/js/tracking.js')
 
 
 def kopf_block(b):
@@ -189,13 +190,14 @@ def kopf_block(b):
             f'<style>{CSS.replace("{{BASIS}}", b)}</style>\n'
             f'<script src="{b}assets/js/consent.js?v={V_CONSENT}" defer></script>\n'
             f'<script src="{b}assets/js/main.js?v={V_MAIN}" defer></script>\n'
+            f'<script src="{b}assets/js/tracking.js?v={V_TRACKING}" defer></script>\n'
             '<!-- layout:kopf-ende -->')
 
 
 ALTE_KOPF_TEILE = [
     r'<link rel="icon"[^>]*>\n?', r'<link rel="apple-touch-icon"[^>]*>\n?', r'<link rel="manifest"[^>]*>\n?',
     r'<link rel="preload"[^>]*archivo[^>]*>\n?', r'<style>.*?</style>\n?',
-    r'<script src="[^"]*assets/js/(?:consent|main)\.js[^"]*"[^>]*></script>\n?',
+    r'<script src="[^"]*assets/js/(?:consent|main|tracking)\.js[^"]*"[^>]*></script>\n?',
 ]
 
 
