@@ -72,8 +72,17 @@ a&&a.addEventListener('click',function(){s(true)});z&&z.addEventListener('click'
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m&&!m.hidden)s(false)});
 document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href="#"]');if(l)e.preventDefault()});})();</script>'''
 
-ENTWURF = ('<div class="entwurf">Entwurf {N}: Startseite bis zum ersten Scroll. Inhalte mit „Beispiel“ sind Muster aus den Flyern. '
+ENTWURF = ('<div class="entwurf">Entwurf {N}: Startseite bis zum ersten Scroll. '
            '<a href="index.html" style="color:inherit">Zur Übersicht</a></div>')
+
+sys.path.insert(0, HIER)
+import modell
+_M = modell.bauen()
+_SEITE = lambda x: 'links' if x > 60 else 'rechts'
+MODELL = _M['svg'] + ''.join(
+    f'<a class="punkt punkt--{_SEITE(x)}" href="#" data-zone="{z}" style="left:{x}%;top:{y}%">'
+    f'<span class="punkt__kern" aria-hidden="true"></span><span class="punkt__label"><b>{t}</b><small>{u}</small></span></a>'
+    for z, t, u, (x, y) in _M['punkte'])
 
 GEMEINSAM = open(os.path.join(HIER, 'gemeinsam.css'), encoding='utf-8').read().replace('{{FONTS}}', FONTS)
 
@@ -87,6 +96,7 @@ for datei in sorted(os.listdir(os.path.join(HIER, 'src'))):
         '{{KOPF_HELL}}': kopf('hell'), '{{KOPF_DUNKEL}}': kopf('dunkel'),
         '{{MENUE}}': MENUE, '{{MOBILLEISTE}}': MOBILLEISTE, '{{MENUE_JS}}': MENUE_JS,
         '{{ENTWURF}}': ENTWURF.replace('{N}', n),
+        '{{MODELL}}': MODELL,
         '{{I_TEL}}': I_TEL, '{{I_WA}}': I_WA, '{{I_PFEIL}}': I_PFEIL, '{{STERNE}}': STERNE,
         '{{TEL}}': TEL, '{{NUMMER}}': NUMMER, '{{WA}}': WA, '{{GOOGLE}}': GOOGLE,
     }

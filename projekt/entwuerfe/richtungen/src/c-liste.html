@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Richtung C · Was steht an</title>
+{{GEMEINSAM}}
+<style>
+/* Richtung C: Was steht an? Die Startseite ist eine Aufgabenliste in Plakatgröße.
+   Antippen statt lesen: Die Zeile kippt in Werkblau, die Aufgabe fliegt in die Anfrage,
+   und die WhatsApp-Nachricht ist schon geschrieben. */
+:root{--kopf-bg:rgba(255,255,255,.92);--leiste-bg:rgba(255,255,255,.95);--akzent:#FFD21E;--blau:#0D2B4F;--linie-c:#DCE2EA}
+body{background:#fff}
+.hero{padding-block:clamp(20px,3.4vw,44px) clamp(28px,4vw,52px)}
+.hero__raster{display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:clamp(24px,4vw,64px);align-items:start}
+.links{min-width:0;position:sticky;top:96px}
+.h1-ort{color:var(--blau)}
+.h1-claim{font-size:clamp(52px,7.4vw,112px);color:var(--blau);letter-spacing:-.055em;line-height:.88}
+.h1-claim .zeile{display:block}
+.cursor{display:inline-block;width:.08em;height:.78em;margin-left:.06em;background:var(--akzent);vertical-align:-.02em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{font-size:clamp(17px,1.3vw,19px);line-height:1.5;color:var(--grau);max-width:30em;margin:1.3rem 0 1.6rem}
+
+.anfrage{border-radius:20px;background:var(--blau);color:#fff;padding:18px 18px 16px;display:grid;gap:12px;box-shadow:0 30px 60px -34px rgba(13,43,79,.8)}
+.anfrage__kopf{display:flex;justify-content:space-between;align-items:center;font:500 11.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.zaehler{display:inline-flex;align-items:center;gap:6px;color:#fff}
+.zaehler b{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--akzent);color:var(--blau);font:800 13px/1 var(--grotesk);transition:transform .3s var(--kurve)}
+.zaehler b.hupf{animation:hupf .45s var(--kurve)}
+@keyframes hupf{40%{transform:scale(1.35)}}
+.chips{position:relative;height:92px;overflow:hidden;display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px;margin:0;padding:0;list-style:none}
+.chips:empty::before{content:"Noch leer. Tippen Sie rechts an, was erledigt werden soll.";font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.65)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);font-weight:600;font-size:13.5px;white-space:nowrap;animation:chipan .3s var(--kurve) both}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--akzent)}
+@keyframes chipan{from{opacity:0;transform:scale(.8)}}
+.anfrage .btn{justify-content:center;width:100%}
+.anfrage .btn--wa{min-height:58px;font-size:17px}
+.anfrage__tel{display:flex;justify-content:center;gap:8px;align-items:center;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.8);text-decoration:none}
+.anfrage__tel b{color:#fff;font-variant-numeric:tabular-nums}
+.anfrage__tel svg{width:16px;height:16px}
+
+/* Zielgruppen-Filter */
+.fuer{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.fuer>span{font:500 11.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--grau);margin-right:4px}
+.fuer button{border:1.5px solid var(--linie-c);background:#fff;color:var(--blau);border-radius:999px;padding:9px 14px;font:700 14px/1 var(--grotesk);cursor:pointer;transition:transform .25s var(--kurve)}
+.fuer button:hover{transform:translateY(-1px)}
+.fuer button[aria-pressed="true"]{background:var(--blau);border-color:var(--blau);color:#fff}
+.fuer__satz{margin:0 0 6px;min-height:1.5em;font-size:15px;color:var(--grau)}
+
+/* Aufgabenliste */
+.aufgaben{list-style:none;margin:0;padding:0;border-top:2px solid var(--blau)}
+.aufgaben li{border-bottom:1px solid var(--linie-c)}
+.aufgaben li[hidden]{display:none}
+.aufgaben li.rein{animation:zeile .5s var(--kurve) both;animation-delay:calc(var(--k,0) * 45ms)}
+@keyframes zeile{from{opacity:0;transform:translateY(14px)}}
+.aufgabe{position:relative;display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);width:100%;padding:clamp(10px,1.1vw,14px) 6px;border:0;background:transparent;color:var(--blau);text-align:left;cursor:pointer;font:inherit;overflow:hidden}
+.kreis{position:relative;flex:none;width:clamp(26px,2.6vw,38px);height:clamp(26px,2.6vw,38px);border-radius:50%;border:2.5px solid currentColor}
+.kreis::after{content:"";position:absolute;inset:-2.5px;border-radius:50%;background:var(--akzent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D2B4F' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/62% no-repeat;transform:scale(0);transition:transform .35s var(--kurve)}
+.aufgabe[aria-pressed="true"] .kreis::after{transform:scale(1)}
+.aufgabe__text{flex:1;min-width:0;font-size:clamp(24px,2.75vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.05;transition:transform .35s var(--kurve)}
+.aufgabe__info{flex:0 0 12.5em;text-align:right;font:500 12px/1.35 var(--mono);color:var(--grau)}
+.aufgabe:hover .aufgabe__text{transform:translateX(6px)}
+/* Wisch-Ebene: wird per Skript aus der Zeile kopiert, damit der Text im HTML nur einmal steht */
+.wisch{position:absolute;inset:0;overflow:hidden;transform:translateX(-101%);transition:transform .5s var(--kurve);pointer-events:none;background:var(--blau)}
+.wisch__innen{position:absolute;inset:0;display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);padding:clamp(10px,1.1vw,14px) 6px;color:#fff;transform:translateX(101%);transition:transform .5s var(--kurve)}
+.wisch__innen .kreis{border-color:var(--akzent)}
+.wisch__innen .kreis::after{transform:scale(1)}
+.wisch__innen .aufgabe__info{color:rgba(255,255,255,.75)}
+.aufgabe[aria-pressed="true"] .wisch,.aufgabe[aria-pressed="true"] .wisch__innen{transform:none}
+.flieger{position:fixed;z-index:80;left:0;top:0;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:var(--akzent);color:var(--blau);font-weight:700;font-size:14px;white-space:nowrap;pointer-events:none;box-shadow:0 12px 28px -10px rgba(13,43,79,.6)}
+.hinweis{display:flex;align-items:center;gap:8px;margin:12px 0 0;font:500 12px/1.3 var(--mono);color:var(--grau)}
+.hinweis::before{content:"";width:8px;height:8px;border-radius:50%;background:#1FA463}
+.mobilleiste .zahl{display:none;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--akzent);color:var(--blau);font-size:12.5px;font-weight:800;align-items:center;justify-content:center}
+.mobilleiste.voll .zahl{display:inline-flex}
+
+@media (max-width:1023px){
+  .hero__raster{grid-template-columns:minmax(0,1fr);gap:18px}
+  .links{position:static}
+  .anfrage{display:none}
+  .lead{margin:.9rem 0 0}
+  .fuer{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 calc(-1 * var(--rand)) 8px;padding:2px var(--rand)}
+  .fuer::-webkit-scrollbar{display:none}
+  .fuer button{flex:none}
+  .aufgabe__info{display:none}
+}
+@media (max-width:560px){.h1-claim{font-size:clamp(50px,15vw,64px)}}
+</style>
+</head>
+<body>
+{{ENTWURF}}
+{{KOPF_HELL}}
+<main id="inhalt">
+<section class="hero" aria-labelledby="titel">
+<div class="wrap hero__raster">
+<div class="links">
+<h1 id="titel"><span class="h1-ort">Hausmeister und Reinigung in Bruchsal</span><span class="h1-claim"><span class="zeile">Was steht</span><span class="zeile">an?<span class="cursor" aria-hidden="true"></span></span></span></h1>
+<p class="lead">Hausmeister, Reinigung, Garten und Winterdienst in Bruchsal und im Landkreis Karlsruhe. Tippen Sie an, was ansteht, wir melden uns am selben oder nächsten Werktag.</p>
+<div class="anfrage" id="anfrage">
+<div class="anfrage__kopf"><span>Ihre Anfrage</span><span class="zaehler"><b id="zahl">0</b> Aufgaben</span></div>
+<ul class="chips" id="chips"></ul>
+<a class="btn btn--wa" id="wa-senden" href="{{WA}}" rel="noopener" target="_blank">{{I_WA}}<span>Per WhatsApp senden</span></a>
+<a class="anfrage__tel" href="{{TEL}}">{{I_TEL}}<span>Lieber anrufen: <b>{{NUMMER}}</b></span></a>
+</div>
+</div>
+
+<div class="rechts">
+<div class="fuer" role="group" aria-label="Sie sind"><span>Sie sind</span>
+<button type="button" data-fuer="alles" aria-pressed="true">Alle</button>
+<button type="button" data-fuer="hv" aria-pressed="false">Hausverwaltung</button>
+<button type="button" data-fuer="privat" aria-pressed="false">Eigentümer</button>
+<button type="button" data-fuer="buero" aria-pressed="false">Büro und Praxis</button>
+<button type="button" data-fuer="gewerbe" aria-pressed="false">Gewerbe</button>
+</div>
+<p class="fuer__satz" id="satz">Zehn Leistungen, ein Team, eigenes Personal.</p>
+<ul class="aufgaben" id="aufgaben">
+<li data-fuer="alles hv"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Treppenhaus reinigen</span><span class="aufgabe__info">fester Wochentag, Aushang mit Datum</span></button></li>
+<li data-fuer="alles hv"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Hausmeister für alles</span><span class="aufgabe__info">Kontrollgang, Zähler, Schlüssel</span></button></li>
+<li data-fuer="alles buero"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Büro reinigen</span><span class="aufgabe__info">vor Arbeitsbeginn oder nach Feierabend</span></button></li>
+<li data-fuer="alles privat"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Hecke schneiden</span><span class="aufgabe__info">einmalig oder im Jahresvertrag</span></button></li>
+<li data-fuer="alles hv privat buero gewerbe"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Schnee räumen</span><span class="aufgabe__info">Saisonpauschale, Protokoll je Einsatz</span></button></li>
+<li data-fuer="alles privat"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Keller entrümpeln</span><span class="aufgabe__info">Festpreis nach Besichtigung</span></button></li>
+<li data-fuer="alles hv privat"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Wohnung übergeben</span><span class="aufgabe__info">Fotoprotokoll und Zählerstände</span></button></li>
+<li data-fuer="alles privat"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Lampe montieren</span><span class="aufgabe__info">mehrere Punkte in einem Termin</span></button></li>
+<li data-fuer="alles hv privat"><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Schloss tauschen</span><span class="aufgabe__info">Zylinder und Schließanlagen</span></button></li>
+<li data-fuer="hv gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Außenanlagen pflegen</span><span class="aufgabe__info">Rasen, Hecken, Wege, Höfe</span></button></li>
+<li data-fuer="hv" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Mülltonnen rausstellen</span><span class="aufgabe__info">Rhythmus frei wählbar</span></button></li>
+<li data-fuer="hv buero gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Handwerker koordinieren</span><span class="aufgabe__info">wir begleiten den Termin</span></button></li>
+<li data-fuer="privat" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Silikonfuge erneuern</span><span class="aufgabe__info">auch Streichen und Klickvinyl</span></button></li>
+<li data-fuer="privat" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Haus kontrollieren</span><span class="aufgabe__info">wenn Sie nicht vor Ort sind</span></button></li>
+<li data-fuer="buero" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Praxis reinigen</span><span class="aufgabe__info">außerhalb der Sprechzeiten</span></button></li>
+<li data-fuer="buero hv" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Fenster und Glas</span><span class="aufgabe__info">in derselben Tour</span></button></li>
+<li data-fuer="buero" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Sanitär und Küche</span><span class="aufgabe__info">nach Reinigungsplan</span></button></li>
+<li data-fuer="buero gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Schlüssel und Zugang</span><span class="aufgabe__info">Übergabe schriftlich</span></button></li>
+<li data-fuer="gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Kontrollgänge</span><span class="aufgabe__info">nach Bedarf bis täglich</span></button></li>
+<li data-fuer="gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Halle grundreinigen</span><span class="aufgabe__info">Festpreis nach Ortstermin</span></button></li>
+<li data-fuer="gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Störungen annehmen</span><span class="aufgabe__info">Notdienst täglich 17 bis 24 Uhr</span></button></li>
+<li data-fuer="gewerbe" hidden><button type="button" class="aufgabe" aria-pressed="false"><span class="kreis" aria-hidden="true"></span><span class="aufgabe__text">Tor und Zaun reparieren</span><span class="aufgabe__info">Metall machen wir selbst</span></button></li>
+</ul>
+<p class="hinweis">Mo bis Fr 7 bis 17 Uhr, Notdienst täglich 17 bis 24 Uhr</p>
+</div>
+</div>
+</section>
+</main>
+{{MOBILLEISTE}}
+{{MENUE}}
+{{MENUE_JS}}
+<script>
+(function(){
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NUMMER = '491637221790';
+  var liste = document.getElementById('aufgaben');
+  var chips = document.getElementById('chips');
+  var zahl = document.getElementById('zahl');
+  var leiste = document.querySelector('.mobilleiste');
+  var leisteWa = leiste && leiste.querySelector('.btn--wa');
+  if (leisteWa) { var z = document.createElement('span'); z.className = 'zahl'; leisteWa.appendChild(z); }
+  var waLinks = [document.getElementById('wa-senden'), leisteWa, document.querySelector('.kopf__wa')].filter(Boolean);
+  var gewaehlt = [];
+  var SAETZE = {
+    alles: 'Zehn Leistungen, ein Team, eigenes Personal.',
+    hv: 'Ein Ansprechpartner für mehrere Objekte, umlagefähige Positionen getrennt.',
+    privat: 'Für alle, die nicht selbst vor Ort sein können oder keine Zeit dafür haben.',
+    buero: 'Gereinigt wird, wenn Ihr Betrieb ruht. Nach schriftlichem Plan.',
+    gewerbe: 'Ein Vertrag, ein Ansprechpartner, ein fester Meldeweg für Störungen.'
+  };
+  // Wisch-Ebene je Zeile aus dem vorhandenen Inhalt kopieren (Text steht im HTML nur einmal)
+  liste.querySelectorAll('.aufgabe').forEach(function(b){
+    var w = document.createElement('span'); w.className = 'wisch'; w.setAttribute('aria-hidden', 'true');
+    var innen = document.createElement('span'); innen.className = 'wisch__innen';
+    Array.prototype.forEach.call(b.children, function(k){ innen.appendChild(k.cloneNode(true)); });
+    w.appendChild(innen); b.appendChild(w);
+    b.addEventListener('click', function(){ umschalten(b); });
+  });
+  function nachricht(){
+    var t = 'Hallo Gebäudewerke, ';
+    t += gewaehlt.length ? 'bei uns steht an:\n' + gewaehlt.map(function(x){ return '- ' + x; }).join('\n') + '\nOrt des Objekts: ' : 'ich habe eine Anfrage zu einem Objekt.';
+    return 'https://wa.me/' + NUMMER + '?text=' + encodeURIComponent(t);
+  }
+  function aktualisieren(){
+    var n = gewaehlt.length;
+    zahl.textContent = n; zahl.classList.remove('hupf'); void zahl.offsetWidth; zahl.classList.add('hupf');
+    waLinks.forEach(function(a){ a.href = nachricht(); });
+    if (leiste){ leiste.classList.toggle('voll', n > 0); leiste.querySelector('.zahl').textContent = n;
+      leisteWa.querySelector('span').textContent = n ? 'Liste senden' : 'WhatsApp'; }
+  }
+  function ziel(){
+    var a = document.getElementById('anfrage');
+    if (a && a.offsetParent) { var r = chips.getBoundingClientRect(); var last = chips.lastElementChild;
+      if (last) { var l = last.getBoundingClientRect(); return {x: l.right + 6, y: l.top}; } return {x: r.left, y: r.top}; }
+    var r2 = leisteWa.getBoundingClientRect(); return {x: r2.left + r2.width / 2 - 40, y: r2.top + 10};
+  }
+  function fliegen(von, text, fertig){
+    if (ruhig) { fertig(); return; }
+    var f = document.createElement('span'); f.className = 'flieger'; f.textContent = text;
+    document.body.appendChild(f);
+    var z = ziel();
+    var start = 'translate(' + von.left + 'px,' + von.top + 'px) scale(1)';
+    var ende = 'translate(' + z.x + 'px,' + z.y + 'px) scale(.85)';
+    var anim = f.animate([{transform: start, opacity: 1}, {transform: ende, opacity: .9}], {duration: 650, easing: 'cubic-bezier(.5,0,.2,1)'});
+    anim.onfinish = function(){ f.remove(); fertig(); };
+  }
+  function umschalten(b){
+    var an = b.getAttribute('aria-pressed') !== 'true';
+    var text = b.querySelector('.aufgabe__text').textContent;
+    b.setAttribute('aria-pressed', an ? 'true' : 'false');
+    if (an) {
+      gewaehlt.push(text);
+      var r = b.querySelector('.aufgabe__text').getBoundingClientRect();
+      fliegen(r, text, function(){ var li = document.createElement('li'); li.className = 'chip'; li.textContent = text; li.setAttribute('data-t', text); chips.appendChild(li); aktualisieren(); });
+    } else {
+      gewaehlt = gewaehlt.filter(function(x){ return x !== text; });
+      var c = chips.querySelector('[data-t="' + text + '"]'); if (c) c.remove();
+      aktualisieren();
+    }
+  }
+  document.querySelectorAll('.fuer button').forEach(function(k){
+    k.addEventListener('click', function(){
+      var f = k.getAttribute('data-fuer');
+      document.querySelectorAll('.fuer button').forEach(function(x){ x.setAttribute('aria-pressed', x === k ? 'true' : 'false'); });
+      document.getElementById('satz').textContent = SAETZE[f];
+      var i = 0;
+      liste.querySelectorAll('li').forEach(function(li){
+        var sicht = (' ' + li.getAttribute('data-fuer') + ' ').indexOf(' ' + f + ' ') > -1;
+        li.hidden = !sicht; li.classList.remove('rein');
+        if (sicht && !ruhig) { void li.offsetWidth; li.style.setProperty('--k', i++); li.classList.add('rein'); }
+      });
+    });
+  });
+  // Erste Zeilen beim Laden sanft hereinlaufen lassen (Text bleibt im Ruhezustand sichtbar)
+  if (!ruhig) liste.querySelectorAll('li:not([hidden])').forEach(function(li, i){ li.style.setProperty('--k', i); li.classList.add('rein'); });
+})();
+</script>
+</body>
+</html>
