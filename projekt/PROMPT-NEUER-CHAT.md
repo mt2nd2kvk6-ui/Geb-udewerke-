@@ -44,6 +44,47 @@ Werkblau #0D2B4F und unser Logo bleiben die Basis der Marke. Die Akzentfarben de
 - **Keine Fakten, Preise, Zahlen, Siegel, Kundenzahlen oder Referenzen erfinden.** Nutze nur, was auf der Website oder den Flyern steht. Fehlt etwas, setz `[PRÜFEN: …]` und nenn es mir.
 - SEO darf nicht leiden: Jede Seite behält ihr Hauptkeyword (Liste in `projekt/seo/hauptkeywords.json`), ihre Title-, Description- und H1-Logik sowie die FAQ-Inhalte. Längere Erklärungen dürfen in aufklappbare Bereiche wandern, solange sie im HTML stehen. Prüfe mit `werkzeuge/seo_pruefen.py` und `werkzeuge/links_pruefen.py`, beide müssen 0 Befunde melden.
 
+## SEO und GEO müssen auf Höchstniveau bleiben (Ziel: 100 von 100)
+
+Das neue Design darf das Ranking nicht schwächen, es soll es stärken. Bei Google und in KI-Antworten (ChatGPT, Perplexity, Google AI Overviews) wollen wir in Bruchsal und im Landkreis Karlsruhe vorne sein. Jede Seite muss alle folgenden Punkte erfüllen. Prüfe sie am Ende Seite für Seite und liste das Ergebnis auf.
+
+**Seobility-Kriterien (Onpage-Score 100 %)**
+- Title höchstens 575 px (Arial 20 px), Description höchstens 990 px (Arial 14 px), beide gemessen, nicht nach Zeichen geschätzt. Jede Seite hat einen eigenen Title und eine eigene Description, kein Duplikat.
+- Title nie wortgleich zur H1. Jedes Wort aus Title und H1 kommt im Fließtext vor.
+- Genau eine H1 pro Seite, saubere Überschriften-Hierarchie (H2, H3 ohne Sprünge).
+- Genug Text für Google trotz kurzer, knackiger Darstellung: Leistungsseiten mindestens rund 800 Wörter inklusive aufklappbarer Bereiche, Startseite mindestens rund 1.000 Wörter. Alles steht im HTML, nichts wird erst per JavaScript geladen.
+- Keyword-Dichte natürlich, Hauptkeyword ungefähr 1 bis 2 %, keine Häufung. Hauptkeyword in Title, H1, erstem Absatz, Description und im Alt-Text des Hauptbildes.
+- Keine doppelten Textblöcke (auch nicht durch Laufband oder Wiederholungen), keine doppelten Fettungen, durchschnittliche Satzlänge kurz.
+- Jedes Bild hat einen beschreibenden Alt-Text mit Leistung und Ort, rein dekorative Bilder haben `alt=""`.
+- Interne Links: ausreichend viele, keine kaputten Links, kein Ankertext zeigt auf zwei verschiedene Seiten, wichtige Seiten (vor allem `hausmeisterservice.html`) bekommen viele Links aus dem Fließtext.
+- Canonical, `lang="de"`, Viewport, Favicon und Apple-Touch-Icon, Open-Graph- und Twitter-Tags auf jeder Seite. HTTPS, gzip, kleine HTML-Größe, schnelle Antwortzeit.
+
+**Ahrefs-Site-Audit (keine Fehler, keine Warnungen)**
+- Keine 4xx/5xx, keine Weiterleitungsketten, keine kaputten internen oder externen Links.
+- Keine verwaisten Seiten: jede indexierbare Seite ist intern verlinkt.
+- `sitemap.xml` enthält nur erreichbare, indexierbare, kanonische URLs mit 200, nichts mit noindex. `robots.txt` bleibt gültig.
+- Keine doppelten Inhalte, keine fehlenden oder doppelten H1, Titles und Descriptions.
+- Bilder in WebP mit `width`/`height`, nicht größer als nötig, Hero-Bild mit `fetchpriority="high"`, übrige `loading="lazy"`.
+- Keine internen nofollow-Links, kein Mixed Content, strukturierte Daten ohne Fehler.
+
+**PageSpeed und Core Web Vitals**
+- Lighthouse mobil Ziel 100, mindestens 95 bei Performance. 100 bei Barrierefreiheit, Best Practices und SEO.
+- LCP mobil unter 1,8 s, CLS 0, INP unter 200 ms. Kritisches CSS inline, Schrift per Preload, kein render-blockierendes JavaScript, Animationen nur über transform und opacity.
+
+**Lokales SEO und GEO (Bruchsal im Fokus)**
+- `geo.placename` Bruchsal, `geo.position` und `ICBM` 49.1291927;8.5914434 auf jeder Seite.
+- GPS-Koordinaten von Bruchsal (49.1291927, 8.5914434) in den EXIF-Daten aller Fotos. Neue oder ersetzte Bilder ebenfalls mit `werkzeuge/bilder_geotaggen.py` versehen.
+- Name, Adresse und Telefonnummer überall identisch: Gebäudewerke GbR, Allmend 2, 76707 Hambrücken, Telefon 0176 74025524, E-Mail info@gebaeudewerke.de.
+- JSON-LD vollständig und gültig: HomeAndConstructionBusiness mit allen Orten in `areaServed` (Bruchsal zuerst), Öffnungszeiten, Notdienst, `sameAs` mit Google-Profil, `aggregateRating`; je Leistungsseite ein `Service` mit Angebot; `FAQPage` exakt synchron zu den sichtbaren Fragen; `BreadcrumbList`; Ratgeber als `Article` mit Autor (Person) und Herausgeber; Team als `Person`.
+- Für KI-Suchen: am Anfang wichtiger Abschnitte eine zitierfähige Kurzantwort (40 bis 60 Wörter), FAQ in der Sprache echter Suchanfragen, `llms.txt` auf dem neuesten Stand.
+- Bruchsal und die Ortsteile (Büchenau, Heidelsheim, Helmsheim, Obergrombach, Untergrombach) sowie die Orte im Landkreis natürlich im Text, keine Ortsseiten nur für Keywords.
+
+**Prüfung**
+- `werkzeuge/seo_pruefen.py` und `werkzeuge/links_pruefen.py` müssen 0 Befunde melden. Erweitere die Skripte, wo Punkte von oben noch nicht geprüft werden (z. B. Wortzahl, Keyword-Dichte, Alt-Texte, doppelte Textblöcke, Open Graph, Sitemap-Abgleich).
+- Lighthouse für Startseite, eine Leistungsseite, Kontakt, Ratgeber-Übersicht und einen Artikel, jeweils mobil.
+- Liste am Ende pro Seite: Title px, Description px, Wortzahl, Keyword-Dichte, Lighthouse-Werte, offene Punkte.
+- Sei ehrlich: Onpage, Technik und Inhalt können 100 erreichen. Backlinks und Domain-Stärke kommen nicht aus dem Code. Dafür nenn mir am Ende konkrete Offpage-Schritte, statt Werte zu beschönigen.
+
 ## Feste Vorgaben, nicht verhandelbar
 
 - **Telefon für Anrufe: 0176 74025524** (`tel:+4917674025524`). **WhatsApp: 0163 7221790** (wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Die Flyer zeigen noch die alte Nummer als Anrufnummer, die darf NICHT übernommen werden.
@@ -65,6 +106,7 @@ Werkblau #0D2B4F und unser Logo bleiben die Basis der Marke. Die Akzentfarben de
 - Durchklickbare Vorschau zur Freigabe (`werkzeuge/vorschau_bauen.py` hilft dabei).
 - Danach `gw-installer.php` über `werkzeuge/installer_bauen.py`, im selben Format wie bisher (selbstentpackend, legt `.htaccess` aus `htaccess.txt` an, löscht sich selbst). In einer leeren Testumgebung ausführen und mit dem Quellstand vergleichen.
 - `keywords.md` aktualisiert (Seite, Hauptkeyword, Title, px, Description, px, H1), separat, nicht im Installer.
+- Die SEO/GEO-Liste pro Seite (siehe oben) mit allen Werten.
 - Eine kurze Notiz: was du geändert hast, offene `[PRÜFEN]`-Punkte und was ich in der Search Console tun muss.
 
 Wenn etwas unklar ist, frag mich, bevor du baust.
