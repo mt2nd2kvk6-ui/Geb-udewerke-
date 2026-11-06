@@ -1,0 +1,223 @@
+{
+ "/": {
+  "woerter": 1940,
+  "noindex": false
+ },
+ "/404.html": {
+  "woerter": 49,
+  "noindex": true
+ },
+ "/anfrage-fehler.html": {
+  "woerter": 52,
+  "noindex": true
+ },
+ "/bueroreinigung.html": {
+  "woerter": 862,
+  "noindex": false
+ },
+ "/danke.html": {
+  "woerter": 33,
+  "noindex": true
+ },
+ "/datenschutz.html": {
+  "woerter": 1095,
+  "noindex": true
+ },
+ "/einsatzgebiet.html": {
+  "woerter": 896,
+  "noindex": false
+ },
+ "/entruempelung.html": {
+  "woerter": 1623,
+  "noindex": false
+ },
+ "/gartenpflege.html": {
+  "woerter": 1247,
+  "noindex": false
+ },
+ "/gebaeudereinigung.html": {
+  "woerter": 1584,
+  "noindex": false
+ },
+ "/hausmeisterservice.html": {
+  "woerter": 1882,
+  "noindex": false
+ },
+ "/impressum.html": {
+  "woerter": 181,
+  "noindex": true
+ },
+ "/karriere.html": {
+  "woerter": 378,
+  "noindex": false
+ },
+ "/kleinreparaturen.html": {
+  "woerter": 1038,
+  "noindex": false
+ },
+ "/kontakt.html": {
+  "woerter": 603,
+  "noindex": false
+ },
+ "/metallarbeiten-schloesser.html": {
+  "woerter": 1013,
+  "noindex": false
+ },
+ "/preise.html": {
+  "woerter": 1053,
+  "noindex": false
+ },
+ "/treppenhausreinigung.html": {
+  "woerter": 981,
+  "noindex": false
+ },
+ "/ueber-uns.html": {
+  "woerter": 674,
+  "noindex": false
+ },
+ "/winterdienst.html": {
+  "woerter": 1421,
+  "noindex": false
+ },
+ "/wohnungsuebergabe.html": {
+  "woerter": 1231,
+  "noindex": false
+ },
+ "/ratgeber/": {
+  "woerter": 852,
+  "noindex": false
+ },
+ "/ratgeber/bauendreinigung-bruchsal.html": {
+  "woerter": 522,
+  "noindex": false
+ },
+ "/ratgeber/bueroreinigung-praxisreinigung-bruchsal.html": {
+  "woerter": 583,
+  "noindex": false
+ },
+ "/ratgeber/entruempelung-ablauf-bruchsal.html": {
+  "woerter": 557,
+  "noindex": false
+ },
+ "/ratgeber/gartenpflege-jahresvertrag-bruchsal.html": {
+  "woerter": 584,
+  "noindex": false
+ },
+ "/ratgeber/glasreinigung-bruchsal.html": {
+  "woerter": 567,
+  "noindex": false
+ },
+ "/ratgeber/hausmeisterkosten-umlagefaehig.html": {
+  "woerter": 612,
+  "noindex": false
+ },
+ "/ratgeber/hecke-schneiden-erlaubt.html": {
+  "woerter": 641,
+  "noindex": false
+ },
+ "/ratgeber/kleinreparaturen-bruchsal.html": {
+  "woerter": 528,
+  "noindex": false
+ },
+ "/ratgeber/laub-gehweg-pflicht-bruchsal.html": {
+  "woerter": 617,
+  "noindex": false
+ },
+ "/ratgeber/muelltonnendienst-bruchsal.html": {
+  "woerter": 626,
+  "noindex": false
+ },
+ "/ratgeber/ortstermin-angebot-hausmeisterservice.html": {
+  "woerter": 499,
+  "noindex": false
+ },
+ "/ratgeber/raeum-und-streupflicht-bruchsal.html": {
+  "woerter": 911,
+  "noindex": false
+ },
+ "/ratgeber/schluesselverwaltung-bruchsal.html": {
+  "woerter": 640,
+  "noindex": false
+ },
+ "/ratgeber/stoerungsmeldung-gewerbeobjekt-bruchsal.html": {
+  "woerter": 635,
+  "noindex": false
+ },
+ "/ratgeber/streugut-entfernen-fruehjahr.html": {
+  "woerter": 566,
+  "noindex": false
+ },
+ "/ratgeber/streuprotokoll-winterdienst-bruchsal.html": {
+  "woerter": 828,
+  "noindex": false
+ },
+ "/ratgeber/tiefgarage-keller-reinigung-bruchsal.html": {
+  "woerter": 664,
+  "noindex": false
+ },
+ "/ratgeber/treppenhausreinigung-bruchsal.html": {
+  "woerter": 561,
+  "noindex": false
+ },
+ "/ratgeber/unkraut-pflaster-entfernen-bruchsal.html": {
+  "woerter": 606,
+  "noindex": false
+ },
+ "/ratgeber/winterdienst-beauftragen-bruchsal.html": {
+  "woerter": 751,
+  "noindex": false
+ },
+ "/ratgeber/wohnungsuebergabe-protokoll-bruchsal.html": {
+  "woerter": 676,
+  "noindex": false
+ },
+ "/ratgeber/zaehlerstaende-ablesen-jahreswechsel.html": {
+  "woerter": 536,
+  "noindex": false
+ },
+ "/ratgeber/besichtigung-vorbereiten-vermietung.html": {
+  "woerter": 499,
+  "noindex": false,
+  "geplant": "2026-11-17"
+ },
+ "/ratgeber/dienstleister-wechseln-hausmeister.html": {
+  "woerter": 546,
+  "noindex": false,
+  "geplant": "2026-12-08"
+ },
+ "/ratgeber/grundreinigung-gewerbeboden-bruchsal.html": {
+  "woerter": 528,
+  "noindex": false,
+  "geplant": "2026-11-20"
+ },
+ "/ratgeber/handwerkerkoordination-bruchsal.html": {
+  "woerter": 496,
+  "noindex": false,
+  "geplant": "2026-11-24"
+ },
+ "/ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html": {
+  "woerter": 494,
+  "noindex": false,
+  "geplant": "2026-11-10"
+ },
+ "/ratgeber/hausmeisterservice-weg-bruchsal.html": {
+  "woerter": 502,
+  "noindex": false,
+  "geplant": "2026-12-01"
+ },
+ "/ratgeber/kosten-hausmeisterservice-bruchsal.html": {
+  "woerter": 703,
+  "noindex": false,
+  "geplant": "2026-11-27"
+ },
+ "/ratgeber/sturmschaden-kontrolle-gebaeude.html": {
+  "woerter": 525,
+  "noindex": false,
+  "geplant": "2026-11-13"
+ },
+ "/ratgeber/treppenhaus-rettungsweg.html": {
+  "woerter": 509,
+  "noindex": false,
+  "geplant": "2026-12-15"
+ }
+}

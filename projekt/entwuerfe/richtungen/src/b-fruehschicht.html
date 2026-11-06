@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Richtung B · Frühschicht</title>
+{{GEMEINSAM}}
+<style>
+/* Richtung B: Frühschicht. Nachtblau, riesige Konturziffern. Die Uhrzeiten stammen aus
+   den Arbeitsbelegen der Flyer, jede Uhrzeit bringt die Farbe ihrer Zielgruppe mit. */
+:root{
+  --grund:#071A33;--grund-2:#0B2342;--hell:#EAF0F7;--leise:rgba(234,240,247,.72);--strich:rgba(234,240,247,.14);
+  --akzent:#A8D2FF;--fokus:#FFD21E;
+  --kopf-bg:rgba(7,26,51,.72);--kopf-text:#fff;--kopf-rand:rgba(255,255,255,.32);--kopf-hover:rgba(255,255,255,.1);--kopf-linie:rgba(255,255,255,.1);
+  --leiste-bg:rgba(7,26,51,.92);
+  color-scheme:dark;
+}
+body{background:var(--grund);color:var(--hell)}
+body[data-szene="winter"]{--akzent:#A8D2FF}
+body[data-szene="buero"]{--akzent:#FF7A57}
+body[data-szene="hv"]{--akzent:#FFD21E}
+body[data-szene="gewerbe"]{--akzent:#FF8A2A}
+.hero{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(20px,3.5vw,44px) clamp(28px,4vw,48px)}
+.glow{position:absolute;z-index:-2;inset:-20% -10% auto auto;width:min(1100px,120vw);aspect-ratio:1;max-width:none;border-radius:50%;opacity:0;transition:opacity 1.1s}
+.glow.an{opacity:1}
+.glow--winter{background:radial-gradient(closest-side,rgba(168,210,255,.20),transparent)}
+.glow--buero{background:radial-gradient(closest-side,rgba(255,122,87,.20),transparent)}
+.glow--hv{background:radial-gradient(closest-side,rgba(255,210,30,.17),transparent)}
+.glow--gewerbe{background:radial-gradient(closest-side,rgba(255,138,42,.20),transparent)}
+.schnee{position:absolute;inset:-30% 0 0;z-index:-1;pointer-events:none;opacity:0;transition:opacity 1s;background-image:radial-gradient(1.6px 1.6px at 12% 20%,rgba(255,255,255,.75) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 64% 8%,rgba(255,255,255,.6) 50%,transparent 51%),radial-gradient(2px 2px at 38% 58%,rgba(255,255,255,.5) 50%,transparent 51%),radial-gradient(1.3px 1.3px at 82% 70%,rgba(255,255,255,.65) 50%,transparent 51%),radial-gradient(1px 1px at 6% 88%,rgba(255,255,255,.5) 50%,transparent 51%),radial-gradient(1.4px 1.4px at 92% 34%,rgba(255,255,255,.55) 50%,transparent 51%);background-size:240px 240px;animation:schnee 26s linear infinite}
+.schnee.an{opacity:1}
+@keyframes schnee{to{transform:translateY(240px)}}
+
+.oben{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:end}
+.uhr{margin:0;display:flex;font-weight:400;font-stretch:116%;font-size:clamp(116px,21vw,312px);line-height:.8;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:clamp(1px,.12vw,1.6px) var(--akzent);font-variant-numeric:tabular-nums;user-select:none}
+.slot{position:relative;display:inline-block;overflow:hidden;padding:.04em 0}
+.slot .platz{visibility:hidden}
+.slot span:not(.platz){position:absolute;left:0;top:.04em}
+.slot .raus{animation:raus .6s var(--kurve) forwards;animation-delay:var(--v,0s)}
+.slot .rein{transform:translateY(105%);animation:rein .7s var(--kurve) forwards;animation-delay:var(--v,0s)}
+@keyframes raus{to{transform:translateY(-105%);opacity:0}}
+@keyframes rein{to{transform:none}}
+.szene{padding-bottom:clamp(6px,1.4vw,22px);min-width:0;display:grid}
+.szene__teil{grid-area:1/1;opacity:0;transform:translateY(10px);transition:opacity .45s,transform .55s var(--kurve);visibility:hidden}
+.szene__teil.an{opacity:1;transform:none;visibility:visible;transition-delay:.15s}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--akzent);color:var(--akzent);border-radius:999px;padding:6px 12px;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.szene p{margin:14px 0 6px;font:500 clamp(14px,1.15vw,16.5px)/1.45 var(--mono);color:var(--hell);max-width:26em}
+.szene small{display:block;font:500 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--leise)}
+
+.titel{margin-top:clamp(10px,2vw,26px)}
+.h1-ort{color:var(--akzent)}
+.h1-ort::before{background:var(--akzent)}
+.h1-claim{font-size:clamp(50px,8.6vw,132px);color:#fff;letter-spacing:-.05em}
+.h1-claim .serif{color:var(--akzent);font-size:1.08em;padding-right:.04em}
+.unten{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 40px;align-items:end;margin-top:clamp(18px,2.4vw,32px)}
+.lead{margin:0;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--leise);max-width:34em}
+.lead strong{color:#fff;font-weight:700}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn--gross{min-height:64px;padding:.6rem 1.5rem .6rem 1.2rem;border-radius:16px}
+.btn--gross svg{width:24px;height:24px}
+.btn--weiss,.mobilleiste .btn--tel{background:#fff;color:var(--werkblau)}
+
+/* Tagesleiste: Szenen in zeitlicher Reihenfolge, nicht maßstäblich */
+.tag{display:flex;align-items:stretch;gap:0;margin-top:clamp(22px,3vw,40px);border-top:1px solid var(--strich);overflow-x:auto;scrollbar-width:none}
+.tag::-webkit-scrollbar{display:none}
+.tag button{position:relative;flex:1 0 auto;min-width:150px;text-align:left;background:transparent;border:0;color:var(--leise);padding:16px 18px 6px 0;cursor:pointer;font:inherit}
+.tag button::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--akzent);transform-origin:left;transform:scaleX(0)}
+.tag button[aria-pressed="true"]{color:#fff}
+.tag button[aria-pressed="true"]::before{animation:lauf 6.5s linear forwards}
+.tag:hover button::before,.tag:focus-within button::before,.ruhig .tag button::before{animation-play-state:paused}
+.ruhig .tag button[aria-pressed="true"]::before{transform:scaleX(1)}
+@keyframes lauf{to{transform:scaleX(1)}}
+.tag b{display:block;font:500 20px/1 var(--mono);letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-bottom:6px}
+.tag span{font-size:14px;font-weight:600}
+.tag .fest{cursor:default;flex:1.4 0 auto;padding-left:18px;border-left:1px dashed var(--strich)}
+.tag .fest b{color:var(--leise)}
+.jetzt{display:inline-flex;align-items:center;gap:8px;color:#fff}
+.jetzt::before{content:"";width:8px;height:8px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 4px rgba(61,220,132,.18)}
+.jetzt.zu::before{background:#9AA7B6;box-shadow:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font:500 12.5px/1.3 var(--mono);color:var(--leise)}
+.meta a{display:inline-flex;align-items:center;gap:8px;color:var(--hell);text-underline-offset:3px}
+.meta svg{width:66px;height:11px;color:#FFC24A}
+
+@media (max-width:1023px){
+  .oben{grid-template-columns:minmax(0,1fr);gap:8px}
+  .uhr{font-size:min(27vw,230px)}
+  .unten{grid-template-columns:minmax(0,1fr)}
+  .cta{display:none}
+  .szene p{margin-top:10px}
+  .tag{margin-left:calc(-1 * var(--rand));margin-right:calc(-1 * var(--rand));padding:0 var(--rand)}
+  .tag button{min-width:128px}
+}
+@media (max-width:560px){
+  .h1-claim{font-size:clamp(44px,13vw,58px)}
+  .glow{inset:-10% -60% auto auto}
+}
+</style>
+</head>
+<body data-szene="winter">
+{{ENTWURF}}
+{{KOPF_DUNKEL}}
+<main id="inhalt">
+<section class="hero" aria-labelledby="titel">
+<div class="glow glow--winter an" data-g="winter" aria-hidden="true"></div>
+<div class="glow glow--buero" data-g="buero" aria-hidden="true"></div>
+<div class="glow glow--hv" data-g="hv" aria-hidden="true"></div>
+<div class="glow glow--gewerbe" data-g="gewerbe" aria-hidden="true"></div>
+<div class="schnee an" aria-hidden="true"></div>
+<div class="wrap">
+<div class="oben">
+<p class="uhr" id="uhr" aria-live="off"><span class="visuell-versteckt" id="uhr-text">05:40</span></p>
+<div class="szene" id="szene">
+<div class="szene__teil an" data-s="winter"><span class="pill">Winterdienst</span><p>Gehweg geräumt, Splitt gestreut. Neuschnee, −3 °C.</p><small>Beispiel aus dem Einsatzprotokoll</small></div>
+<div class="szene__teil" data-s="buero"><span class="pill">Für Büros</span><p>Büro gereinigt, bevor um 8 Uhr Ihr Team kommt.</p><small>Beispiel aus dem Reinigungsplan</small></div>
+<div class="szene__teil" data-s="hv"><span class="pill">Für Hausverwaltungen</span><p>Kontrollgang innen und außen, ohne Befund. Bericht als PDF.</p><small>Beispiel aus dem Objektprotokoll</small></div>
+<div class="szene__teil" data-s="gewerbe"><span class="pill">Für Gewerbe</span><p>Ab jetzt Notdienst. Täglich bis 24 Uhr, ein fester Meldeweg.</p><small>Gilt an jedem Tag</small></div>
+</div>
+</div>
+
+<h1 class="titel" id="titel"><span class="h1-ort">Hausmeister und Reinigung in Bruchsal</span><span class="h1-claim">Wir waren <span class="serif">schon</span> da.</span></h1>
+
+<div class="unten">
+<div>
+<p class="lead">Hausmeister, Reinigung, Garten und Winterdienst für Bruchsal und den Landkreis Karlsruhe. <strong>Mit eigenem Personal und Protokoll zu jedem Einsatz.</strong></p>
+<p class="meta"><span class="jetzt" id="jetzt">Mo bis Fr 7 bis 17 Uhr, Notdienst täglich 17 bis 24 Uhr</span><a href="{{GOOGLE}}" rel="noopener" target="_blank">{{STERNE}}<span>5,0 Sterne auf Google</span></a></p>
+</div>
+<div class="cta">
+<a class="btn btn--weiss btn--gross" href="{{TEL}}">{{I_TEL}}<span class="btn__zwei"><span class="btn__klein">Anrufen</span><span class="btn__gross">{{NUMMER}}</span></span></a>
+<a class="btn btn--wa btn--gross" href="{{WA}}" rel="noopener" target="_blank">{{I_WA}}<span class="btn__zwei"><span class="btn__klein">Foto oder Frage</span><span class="btn__gross">WhatsApp</span></span></a>
+</div>
+</div>
+
+<div class="tag" id="tag" role="group" aria-label="Ein Tag bei Gebäudewerke">
+<button type="button" data-s="winter" data-zeit="05:40" aria-pressed="true"><b>05:40</b><span>Winterdienst</span></button>
+<button type="button" data-s="buero" data-zeit="06:30" aria-pressed="false"><b>06:30</b><span>Büros</span></button>
+<button type="button" data-s="hv" data-zeit="07:10" aria-pressed="false"><b>07:10</b><span>Hausverwaltungen</span></button>
+<button type="button" data-s="gewerbe" data-zeit="17:00" aria-pressed="false"><b>17:00</b><span>Gewerbe, Notdienst</span></button>
+<div class="fest"><b>7 bis 17</b><span>Büro besetzt, Rückruf am selben oder nächsten Werktag</span></div>
+</div>
+</div>
+</section>
+</main>
+{{MOBILLEISTE}}
+{{MENUE}}
+{{MENUE_JS}}
+<script>
+(function(){
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (ruhig) document.body.classList.add('ruhig');
+  var uhr = document.getElementById('uhr'), uhrText = document.getElementById('uhr-text');
+  var knoepfe = Array.prototype.slice.call(document.querySelectorAll('#tag button'));
+  var slots = [];
+  '05:40'.split('').forEach(function(z){
+    var s = document.createElement('span'); s.className = 'slot'; s.setAttribute('aria-hidden','true');
+    s.innerHTML = '<span class="platz">' + (z === ':' ? ':' : '0') + '</span><span>' + z + '</span>';
+    uhr.appendChild(s); slots.push(s);
+  });
+  function zeit(neu){
+    uhrText.textContent = neu;
+    neu.split('').forEach(function(z, i){
+      var slot = slots[i], alt = slot.querySelector('span:not(.platz):not(.raus)');
+      if (ruhig){ alt.textContent = z; return; }
+      var v = (i * 0.05) + 's';
+      alt.style.setProperty('--v', v); alt.classList.add('raus');
+      alt.addEventListener('animationend', function(){ alt.remove(); }, {once:true});
+      var n = document.createElement('span'); n.textContent = z; n.className = 'rein'; n.style.setProperty('--v', v);
+      slot.appendChild(n);
+    });
+  }
+  function szene(k){
+    var s = k.getAttribute('data-s');
+    knoepfe.forEach(function(b){ b.setAttribute('aria-pressed', b === k ? 'true' : 'false'); });
+    document.body.setAttribute('data-szene', s);
+    document.querySelectorAll('.glow').forEach(function(g){ g.classList.toggle('an', g.getAttribute('data-g') === s); });
+    document.querySelector('.schnee').classList.toggle('an', s === 'winter');
+    document.querySelectorAll('.szene__teil').forEach(function(t){ t.classList.toggle('an', t.getAttribute('data-s') === s); });
+    zeit(k.getAttribute('data-zeit'));
+    var tag = k.parentElement;
+    if (tag.scrollWidth > tag.clientWidth) tag.scrollTo({left: Math.max(0, k.offsetLeft - 24), behavior: ruhig ? 'auto' : 'smooth'});
+  }
+  knoepfe.forEach(function(k, i){
+    k.addEventListener('click', function(){ szene(k); });
+    k.addEventListener('animationend', function(e){
+      if (e.animationName === 'lauf' && !ruhig) szene(knoepfe[(i + 1) % knoepfe.length]);
+    });
+  });
+  // Live-Status aus den echten Zeiten: Büro Mo bis Fr 7 bis 17 Uhr, Notdienst täglich 17 bis 24 Uhr
+  var jetzt = document.getElementById('jetzt');
+  function status(){
+    var d = new Date(), h = d.getHours(), m = d.getMinutes(), wt = d.getDay() >= 1 && d.getDay() <= 5;
+    var uz = (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+    var t, zu = false;
+    if (h >= 17) t = 'Jetzt ' + uz + ': Notdienst erreichbar bis 24 Uhr';
+    else if (wt && h >= 7) t = 'Jetzt ' + uz + ': Büro besetzt bis 17 Uhr';
+    else if (wt) { t = 'Jetzt ' + uz + ': WhatsApp schreiben, Rückruf ab 7 Uhr'; zu = true; }
+    else { t = 'Jetzt ' + uz + ': Notdienst ab 17 Uhr, WhatsApp jederzeit'; zu = true; }
+    jetzt.textContent = t; jetzt.classList.toggle('zu', zu);
+  }
+  status(); setInterval(status, 30000);
+})();
+</script>
+</body>
+</html>

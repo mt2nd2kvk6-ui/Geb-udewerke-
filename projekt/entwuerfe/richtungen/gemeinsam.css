@@ -1,0 +1,83 @@
+/* Gemeinsame Basis aller drei Richtungen: Marke, Kopf, Knöpfe, Mobilleiste.
+   Werkblau und Logo bleiben überall gleich, nur die Akzentfarbe wechselt je Zielgruppe. */
+{{FONTS}}
+:root{
+  --werkblau:#0D2B4F;--werkblau-2:#163A64;--nacht:#071A33;--tinte:#0B1F38;
+  --papier:#F5F7FA;--weiss:#FFFFFF;--linie:#D5DCE5;--grau:#4A5A6C;
+  --wa:#1C7C47;--wa-2:#176A3C;
+  --gelb:#FFD21E;
+  --grotesk:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --max:1320px;--rand:clamp(16px,4vw,48px);
+  --kurve:cubic-bezier(.2,.75,.15,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--grotesk);font-size:17px;line-height:1.55;color:var(--tinte);background:var(--papier);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--fokus,#F0B323);outline-offset:3px;border-radius:4px}
+.visuell-versteckt{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(var(--rand),env(safe-area-inset-left,0px));padding-right:max(var(--rand),env(safe-area-inset-right,0px))}
+
+/* Entwurfshinweis */
+.entwurf{position:relative;z-index:70;background:#F0B323;color:var(--werkblau);font:600 12.5px/1.3 var(--grotesk);text-align:center;padding:6px 16px}
+
+/* H1 = Ortszeile (Keyword) + Schlagzeile, ein Element */
+h1{margin:0;font-weight:800;text-wrap:balance}
+.h1-ort{display:flex;align-items:center;gap:.6em;font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;line-height:1.3;margin-bottom:1.1rem}
+.h1-ort::before{content:"";width:.7em;height:.7em;background:var(--akzent,var(--gelb));flex:none}
+.h1-claim{display:block;font-weight:800;letter-spacing:-.045em;line-height:.92}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+
+/* Knöpfe */
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:.7rem 1.25rem;border-radius:999px;font:700 16px/1.15 var(--grotesk);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--kurve)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn--tel{background:var(--werkblau);color:#fff}
+.btn--wa{background:var(--wa);color:#fff}
+.btn--rand{border-color:currentColor;background:transparent}
+.btn__zwei{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.btn__klein{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.btn__gross{font-size:20px;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+
+/* Kopf */
+.kopf{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--kopf-bg,rgba(245,247,250,.92));-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--kopf-linie,rgba(13,43,79,.1))}
+.kopf .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.kopf__logo img{height:40px;width:auto}
+.nav{display:flex;gap:4px;margin-right:auto}
+.nav a{padding:8px 12px;border-radius:8px;font-weight:600;font-size:15.5px;text-decoration:none;color:var(--kopf-text,var(--tinte))}
+.nav a:hover{background:var(--kopf-hover,rgba(13,43,79,.07))}
+.nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--akzent,var(--gelb))}
+.kopf__aktion{display:flex;gap:10px;align-items:center}
+.kopf .btn{min-height:44px;padding:.5rem 1rem;font-size:15px}
+.kopf .btn svg{width:18px;height:18px}
+.kopf__tel{background:transparent;color:var(--kopf-text,var(--tinte));border-color:var(--kopf-rand,rgba(13,43,79,.25))}
+.menue-knopf{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--kopf-rand,rgba(13,43,79,.2));background:transparent;color:var(--kopf-text,var(--tinte));align-items:center;justify-content:center;cursor:pointer}
+.menue-knopf svg{width:22px;height:22px}
+
+/* Handy-Menü */
+.menue{position:fixed;inset:0;z-index:90;background:var(--werkblau);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 16px) max(20px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:6px;opacity:0;transform:translateY(-12px);transition:opacity .25s,transform .35s var(--kurve);pointer-events:none}
+.menue.offen{opacity:1;transform:none;pointer-events:auto}
+.menue__kopf{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.menue__kopf img{height:34px;width:auto}
+.menue__zu{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;display:flex;align-items:center;justify-content:center}
+.menue a.menue__link{font-size:30px;font-weight:800;letter-spacing:-.03em;text-decoration:none;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.menue__knoepfe{margin-top:auto;display:grid;gap:10px}
+.menue__knoepfe .btn{justify-content:center}
+
+/* Mobilleiste: auf dem Handy immer sichtbar */
+.mobilleiste{display:none}
+@media (max-width:1023px){
+  .nav,.kopf__aktion .kopf__tel,.kopf__aktion .kopf__wa{display:none}
+  .menue-knopf{display:inline-flex}
+  .kopf .wrap{height:64px;gap:12px;justify-content:space-between}
+  .kopf__logo img{height:32px}
+  .mobilleiste{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:var(--leiste-bg,rgba(245,247,250,.94));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--kopf-linie,rgba(13,43,79,.12))}
+  .mobilleiste .btn{justify-content:center;min-height:52px;font-size:16.5px}
+  body{padding-bottom:84px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

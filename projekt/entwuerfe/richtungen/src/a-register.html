@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Richtung A · Register</title>
+{{GEMEINSAM}}
+<style>
+/* Richtung A: Register. Ein heller Objektordner. Werkblau ist der Einband,
+   jede Zielgruppe ein Register mit eigener Farbe und eigenem Arbeitsbeleg. */
+:root{
+  --akzent:#FFD21E;
+  --w-hv:#FFD21E;--w-buero:#FF5A36;--w-praxis:#3CCB9F;--w-gewerbe:#FF6B1A;--w-privat:#FFD84D;--w-winter:#A8D2FF;
+}
+body[data-welt="hv"]{--akzent:var(--w-hv)}
+body[data-welt="buero"]{--akzent:var(--w-buero)}
+body[data-welt="praxis"]{--akzent:var(--w-praxis)}
+body[data-welt="gewerbe"]{--akzent:var(--w-gewerbe)}
+body[data-welt="privat"]{--akzent:var(--w-privat)}
+body[data-welt="winter"]{--akzent:var(--w-winter)}
+
+.hero{padding-block:clamp(28px,5vw,64px) clamp(28px,4vw,48px)}
+.hero__raster{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:clamp(28px,3.4vw,48px);align-items:center}
+.hero__text{min-width:0}
+.h1-ort{color:var(--werkblau)}
+.h1-claim{font-size:clamp(46px,5.5vw,80px);color:var(--tinte)}
+.h1-claim .zeile{display:block}
+.marker{position:relative;display:inline-block;padding:0 .06em;z-index:0}
+.marker::before{content:"";position:absolute;left:-.04em;right:-.06em;bottom:.04em;height:.42em;background:var(--akzent);z-index:-1;transform-origin:left center;animation:strich .7s var(--kurve) .15s both}
+.marker.neu::before{animation:strich2 .7s var(--kurve) both}
+@keyframes strich{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes strich2{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.marker .serif{font-size:1.12em;line-height:.8}
+.lead{font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--grau);max-width:32em;margin:1.4rem 0 1.8rem}
+.lead strong{color:var(--tinte);font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn--gross{min-height:64px;padding:.6rem 1.5rem .6rem 1.2rem;border-radius:16px}
+.btn--gross svg{width:24px;height:24px}
+.meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;padding:0;margin:1.4rem 0 0;font:500 13px/1.3 var(--mono);color:var(--grau)}
+.meta li{display:flex;align-items:center;gap:8px}
+.meta li::before{content:"";width:7px;height:7px;border-radius:50%;background:#1FA463}
+.meta li.notdienst::before{background:var(--w-gewerbe)}
+.meta li.google::before{display:none}
+.meta a{display:inline-flex;align-items:center;gap:8px;color:var(--werkblau);font-weight:500;text-underline-offset:3px}
+.meta svg{width:66px;height:11px;color:#E8A317}
+
+/* Ordner mit Registern */
+.ordner{position:relative;min-width:0}
+.stapel{position:absolute;inset:44px 0 0 0;pointer-events:none}
+.stapel span{position:absolute;inset:0;border-radius:18px;background:#E3E8EF;transform:translate(12px,12px) rotate(1.6deg)}
+.stapel span+span{background:#EDF0F5;transform:translate(22px,22px) rotate(3deg);z-index:-1}
+.register{position:relative;z-index:2;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;padding:0 2px}
+.register::-webkit-scrollbar{display:none}
+.register button{position:relative;flex:none;display:flex;align-items:center;gap:6px;border:0;cursor:pointer;font:600 12.5px/1 var(--grotesk);padding:12px 9px 14px;border-radius:12px 12px 0 0;background:#E6EBF1;color:var(--tinte);overflow:hidden}
+.register button::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--farbe)}
+.register button[aria-selected="true"]{background:var(--blatt-bg);color:var(--blatt-text)}
+.register button .lauf{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--farbe);transform-origin:left;transform:scaleX(0)}
+.register button[aria-selected="true"] .lauf{animation:lauf 7s linear forwards}
+.ordner:hover .lauf,.ordner:focus-within .lauf,.ruhig .lauf{animation-play-state:paused!important}
+@keyframes lauf{to{transform:scaleX(1)}}
+.register [data-w="hv"]{--farbe:var(--w-hv)}.register [data-w="buero"]{--farbe:var(--w-buero)}.register [data-w="praxis"]{--farbe:var(--w-praxis)}
+.register [data-w="gewerbe"]{--farbe:var(--w-gewerbe)}.register [data-w="privat"]{--farbe:#E8B800}.register [data-w="winter"]{--farbe:#5AA8F0}
+.blaetter{position:relative;z-index:1;display:grid;border-radius:0 18px 18px 18px;box-shadow:0 30px 60px -30px rgba(11,31,56,.45),0 2px 6px rgba(11,31,56,.08)}
+.blatt{grid-area:1/1;min-width:0;border-radius:0 18px 18px 18px;padding:24px 26px 22px;display:flex;flex-direction:column;gap:16px;background:var(--blatt-bg);color:var(--blatt-text);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .35s,transform .45s var(--kurve),visibility 0s .45s;overflow:hidden;position:relative}
+.blatt.aktiv{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .45s var(--kurve)}
+.blatt__kopf{display:flex;justify-content:space-between;gap:12px;font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.85;padding-bottom:12px;border-bottom:1px dashed currentColor}
+.blatt__kopf span:last-child{color:var(--blatt-akzent)}
+.blatt__titel{margin:0;font-size:clamp(26px,2.4vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.blatt__titel .serif{color:var(--blatt-akzent);font-size:1.1em}
+.blatt__fuss{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.blatt__fuss p{margin:0;font-size:14px;opacity:.85}
+.blatt__fuss a{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14.5px;text-decoration:none;color:var(--blatt-text)}
+.blatt__fuss a svg{width:16px;height:16px;transition:transform .25s var(--kurve)}
+.blatt__fuss a:hover svg{transform:translateX(4px)}
+.einblenden>*{opacity:0;transform:translateY(8px)}
+.aktiv .einblenden>*{animation:rein .5s var(--kurve) forwards;animation-delay:calc(.12s + var(--i,0) * .09s)}
+@keyframes rein{to{opacity:1;transform:none}}
+
+/* Welten */
+.blatt--hv{--blatt-bg:#0D2B4F;--blatt-text:#fff;--blatt-akzent:#FFD21E}
+.register [data-w="hv"]{--blatt-bg:#0D2B4F;--blatt-text:#fff}
+.protokoll{list-style:none;margin:0;padding:0;font:500 13.5px/1.35 var(--mono)}
+.protokoll li{display:grid;grid-template-columns:5.6em minmax(0,1fr) auto;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
+.protokoll time{color:rgba(255,255,255,.65);white-space:nowrap}
+.protokoll .ok{color:#7BE0A8}.protokoll .gemeldet{color:#FFD21E}
+
+.blatt--buero{--blatt-bg:#F1ECE2;--blatt-text:#161616;--blatt-akzent:#D63F1E}
+.register [data-w="buero"]{--blatt-bg:#F1ECE2;--blatt-text:#161616}
+.kontur{font-weight:400;font-stretch:116%;color:transparent;-webkit-text-stroke:1.3px currentColor;font-variant-numeric:tabular-nums;line-height:.82;letter-spacing:-.02em;margin:0}
+.blatt--buero .kontur{font-size:clamp(84px,9vw,128px);position:relative;align-self:flex-start;-webkit-text-stroke-color:#161616}
+.blatt--buero .kontur::after{content:"";position:absolute;right:-.42em;top:.05em;width:.38em;height:.38em;border-radius:50%;background:#FF5A36}
+.zeitachse{position:relative;display:flex;justify-content:space-between;padding-top:18px;font:500 12.5px/1.3 var(--mono)}
+.zeitachse::before{content:"";position:absolute;left:8px;right:8px;top:6px;height:2px;background:#161616;transform-origin:left}
+.aktiv .zeitachse::before{animation:strich .9s var(--kurve) .2s both}
+.zeitachse span{position:relative}
+.zeitachse span::before{content:"";position:absolute;top:-17px;left:0;width:14px;height:14px;border-radius:50%;background:#161616}
+.zeitachse span:last-child{text-align:right}.zeitachse span:last-child::before{left:auto;right:0;background:#FF5A36}
+.zeitachse em{position:absolute;left:50%;top:-4px;transform:translateX(-50%);font-family:var(--serif);font-size:16px}
+.zeitachse b{display:block;font-weight:500}
+
+.blatt--praxis{--blatt-bg:#FFFFFF;--blatt-text:#0E3B33;--blatt-akzent:#0E8A6A;box-shadow:inset 6px 0 0 #3CCB9F}
+.register [data-w="praxis"]{--blatt-bg:#FFFFFF;--blatt-text:#0E3B33}
+.haken{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;font-weight:600;font-size:15px}
+.haken li{display:flex;gap:10px;align-items:flex-start}
+.haken i{flex:none;width:22px;height:22px;border-radius:6px;background:#E4F7F0;position:relative}
+.haken i::after{content:"";position:absolute;inset:0;border-radius:6px;background:#12A37F url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/16px no-repeat;transform:scale(0)}
+.aktiv .haken i::after{animation:tick .35s var(--kurve) forwards;animation-delay:calc(.25s + var(--i,0) * .12s)}
+@keyframes tick{to{transform:scale(1)}}
+.mint-band{position:relative;display:inline;background:linear-gradient(transparent 58%,#B7F0DB 58% 92%,transparent 92%)}
+
+.blatt--gewerbe{--blatt-bg:#141414;--blatt-text:#fff;--blatt-akzent:#FF6B1A;padding-top:34px}
+.register [data-w="gewerbe"]{--blatt-bg:#141414;--blatt-text:#fff}
+.blatt--gewerbe::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:repeating-linear-gradient(-45deg,#FF6B1A 0 14px,#141414 14px 28px)}
+.laeuft{font-size:clamp(64px,7vw,104px);font-weight:800;letter-spacing:-.055em;line-height:.85;color:#FF6B1A;margin:0}
+.drei{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0}
+.drei div{border-top:2px solid #FF6B1A;padding-top:10px}
+.drei dt{font-weight:800;font-size:16px;letter-spacing:-.01em}
+.drei dd{margin:2px 0 0;font-size:13px;opacity:.75}
+
+.blatt--privat{--blatt-bg:#FFD84D;--blatt-text:#161616;--blatt-akzent:#B8321A}
+.register [data-w="privat"]{--blatt-bg:#FFD84D;--blatt-text:#161616}
+.zettel{position:relative;background:#FFFDF6;border-radius:4px;padding:18px 22px 16px;transform:rotate(-1.8deg);box-shadow:0 18px 30px -18px rgba(0,0,0,.5);max-width:340px}
+.zettel::before{content:"";position:absolute;left:42%;top:-10px;width:86px;height:20px;background:rgba(255,120,80,.75);transform:rotate(-2deg)}
+.zettel p{margin:0 0 8px;font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.zettel ul{list-style:none;margin:0;padding:0}
+.zettel li{display:flex;gap:10px;align-items:center;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35}
+.zettel li::before{content:"";width:12px;height:7px;border-left:2.5px solid #D63F1E;border-bottom:2.5px solid #D63F1E;transform:rotate(-45deg) translateY(-3px);flex:none}
+.zettel span{position:relative}
+.zettel span::after{content:"";position:absolute;left:-2px;right:-4px;top:55%;height:2px;background:#D63F1E;transform-origin:left;transform:scaleX(0) rotate(-1deg)}
+.aktiv .zettel span::after{animation:durch .4s var(--kurve) forwards;animation-delay:calc(.35s + var(--i,0) * .22s)}
+@keyframes durch{to{transform:scaleX(1) rotate(-1deg)}}
+.sticker{position:absolute;right:22px;top:70px;width:118px;height:118px;border-radius:50%;background:#161616;color:#FFD84D;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(9deg);font-weight:700;font-size:12px;line-height:1.15;padding:10px}
+.sticker b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;line-height:1}
+.aktiv .sticker{animation:stempel .5s var(--kurve) .9s both}
+@keyframes stempel{from{opacity:0;transform:rotate(9deg) scale(1.6)}to{opacity:1;transform:rotate(9deg) scale(1)}}
+
+.blatt--winter{--blatt-bg:#071A33;--blatt-text:#EAF4FF;--blatt-akzent:#A8D2FF}
+.register [data-w="winter"]{--blatt-bg:#071A33;--blatt-text:#EAF4FF}
+.blatt--winter::before{content:"";position:absolute;inset:-40% 0 0 0;background-image:radial-gradient(1.6px 1.6px at 20% 30%,rgba(255,255,255,.7) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 70% 12%,rgba(255,255,255,.55) 50%,transparent 51%),radial-gradient(2px 2px at 45% 60%,rgba(255,255,255,.45) 50%,transparent 51%),radial-gradient(1.4px 1.4px at 85% 75%,rgba(255,255,255,.6) 50%,transparent 51%),radial-gradient(1.2px 1.2px at 10% 85%,rgba(255,255,255,.5) 50%,transparent 51%);background-size:180px 180px;animation:schnee 18s linear infinite;pointer-events:none}
+@keyframes schnee{to{transform:translateY(180px)}}
+.blatt--winter .kontur{font-size:clamp(70px,7.4vw,108px);color:transparent;-webkit-text-stroke:1.2px #A8D2FF;position:relative}
+.einsatz{position:relative;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1fr) minmax(0,.9fr);gap:10px;background:#EAF4FF;color:#071A33;border-radius:10px;padding:12px 14px;margin:0;font:500 13px/1.3 var(--mono)}
+.einsatz dt{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.einsatz dd{margin:3px 0 0;white-space:nowrap}
+
+/* Belegleiste unter dem Hero */
+.belegleiste{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(28px,4vw,52px) 0 0;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.belegleiste div{padding:16px 18px 16px 0;display:flex;flex-direction:column;gap:4px}
+.belegleiste div+div{padding-left:18px;border-left:1px dashed var(--linie)}
+.belegleiste dt{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--grau)}
+.belegleiste dd{margin:0;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+
+@media (max-width:1023px){
+  .hero__raster{grid-template-columns:minmax(0,1fr);gap:26px}
+  .cta{display:none}
+  .lead{margin:1rem 0 0}
+  .meta{margin-top:1rem;font-size:12px;gap:6px 16px}
+  .register{margin:0 calc(-1 * var(--rand));padding:0 var(--rand)}
+  .belegleiste{grid-template-columns:1fr 1fr}
+  .belegleiste div:nth-child(3){padding-left:0;border-left:0}
+  .belegleiste div:nth-child(n+3){border-top:1px dashed var(--linie)}
+}
+@media (max-width:560px){
+  .h1-claim{font-size:clamp(40px,12vw,54px)}
+  .blatt{padding:18px 18px 16px}
+  .haken{grid-template-columns:1fr}
+  .sticker{width:96px;height:96px;font-size:10.5px;right:12px;top:auto;bottom:70px}
+  .sticker b{font-size:17px}
+  .einsatz{grid-template-columns:1fr 1fr}
+  .drei{grid-template-columns:1fr;gap:8px}
+  .stapel{display:none}
+}
+</style>
+</head>
+<body data-welt="hv">
+{{ENTWURF}}
+{{KOPF_HELL}}
+<main id="inhalt">
+<section class="hero" aria-labelledby="titel">
+<div class="wrap hero__raster">
+<div class="hero__text">
+<h1 id="titel"><span class="h1-ort">Hausmeister und Reinigung in Bruchsal</span><span class="h1-claim"><span class="zeile">Alles am Objekt.</span><span class="zeile"><span class="marker" id="marker"><span class="serif">Eine</span></span> Nummer.</span></span></h1>
+<p class="lead">Hausmeisterservice, Reinigung, Garten und Winterdienst für Bruchsal und den Landkreis Karlsruhe. <strong>Eigenes Personal, fester Betreuer, Festpreis nach dem Ortstermin.</strong></p>
+<div class="cta">
+<a class="btn btn--tel btn--gross" href="{{TEL}}">{{I_TEL}}<span class="btn__zwei"><span class="btn__klein">Anrufen</span><span class="btn__gross">{{NUMMER}}</span></span></a>
+<a class="btn btn--wa btn--gross" href="{{WA}}" rel="noopener" target="_blank">{{I_WA}}<span class="btn__zwei"><span class="btn__klein">Foto oder Frage</span><span class="btn__gross">WhatsApp</span></span></a>
+</div>
+<ul class="meta">
+<li>Mo bis Fr 7 bis 17 Uhr</li>
+<li class="notdienst">Notdienst täglich 17 bis 24 Uhr</li>
+<li class="google"><a href="{{GOOGLE}}" rel="noopener" target="_blank">{{STERNE}}<span>5,0 Sterne auf Google</span></a></li>
+</ul>
+</div>
+
+<div class="ordner" id="ordner">
+<div class="stapel" aria-hidden="true"><span></span><span></span></div>
+<div class="register" role="tablist" aria-label="Für wen wir arbeiten">
+<button type="button" role="tab" id="r-hv" data-w="hv" aria-controls="b-hv" aria-selected="true">Verwaltung<span class="lauf"></span></button>
+<button type="button" role="tab" id="r-buero" data-w="buero" aria-controls="b-buero" aria-selected="false" tabindex="-1">Büro<span class="lauf"></span></button>
+<button type="button" role="tab" id="r-praxis" data-w="praxis" aria-controls="b-praxis" aria-selected="false" tabindex="-1">Praxis<span class="lauf"></span></button>
+<button type="button" role="tab" id="r-gewerbe" data-w="gewerbe" aria-controls="b-gewerbe" aria-selected="false" tabindex="-1">Gewerbe<span class="lauf"></span></button>
+<button type="button" role="tab" id="r-privat" data-w="privat" aria-controls="b-privat" aria-selected="false" tabindex="-1">Privat<span class="lauf"></span></button>
+<button type="button" role="tab" id="r-winter" data-w="winter" aria-controls="b-winter" aria-selected="false" tabindex="-1">Winterdienst<span class="lauf"></span></button>
+</div>
+<div class="blaetter">
+
+<div class="blatt blatt--hv aktiv" role="tabpanel" id="b-hv" aria-labelledby="r-hv">
+<div class="blatt__kopf"><span>Objektprotokoll · Wohnanlage</span><span>Beispiel</span></div>
+<p class="blatt__titel">Fünf Gewerke. <span class="serif">Ein Betreuer.</span></p>
+<ul class="protokoll einblenden">
+<li style="--i:0"><time>Mo 07:10</time><span>Kontrollgang innen und außen, ohne Befund</span><span class="ok">erledigt</span></li>
+<li style="--i:1"><time>Mi 06:15</time><span>Gehweg geräumt, Splitt gestreut</span><span class="ok">erledigt</span></li>
+<li style="--i:2"><time>Fr 08:05</time><span>Treppenhaus gereinigt, Aushang abgezeichnet</span><span class="ok">erledigt</span></li>
+<li style="--i:3"><time>Fr 08:30</time><span>Handlauf 1. OG lose, Foto an Verwaltung</span><span class="gemeldet">gemeldet</span></li>
+</ul>
+<div class="blatt__fuss"><p>Jeden Monat der Bericht als PDF.</p><a href="#">Hausmeisterservice {{I_PFEIL}}</a></div>
+</div>
+
+<div class="blatt blatt--buero" role="tabpanel" id="b-buero" aria-labelledby="r-buero">
+<div class="blatt__kopf"><span>Büroreinigung · vor Arbeitsbeginn</span><span>Beispiel</span></div>
+<p class="kontur">06:30</p>
+<p class="blatt__titel">Wir waren <span class="serif">schon</span> da.</p>
+<div class="zeitachse"><span><b>früh</b>Wir reinigen</span><em>ungestört</em><span><b>08:00</b>Sie fangen an</span></div>
+<div class="blatt__fuss"><p>Nach Reinigungsplan, mit festem Team.</p><a href="#">Büroreinigung {{I_PFEIL}}</a></div>
+</div>
+
+<div class="blatt blatt--praxis" role="tabpanel" id="b-praxis" aria-labelledby="r-praxis">
+<div class="blatt__kopf"><span>Reinigungsplan · Praxis</span><span>Beispiel</span></div>
+<p class="blatt__titel">Ihr Hygieneplan. <span class="mint-band">Unser Ablauf.</span></p>
+<ul class="haken">
+<li style="--i:0"><i></i>Empfang und Wartebereich</li>
+<li style="--i:1"><i></i>Sanitärräume</li>
+<li style="--i:2"><i></i>Behandlungsräume nach Absprache</li>
+<li style="--i:3"><i></i>Böden</li>
+<li style="--i:4"><i></i>Küche und Sozialraum</li>
+<li style="--i:5"><i></i>Glasflächen</li>
+</ul>
+<div class="blatt__fuss"><p class="serif" style="font-size:18px;opacity:1">Bevor der erste Patient im Wartezimmer sitzt.</p><a href="#">Praxisreinigung {{I_PFEIL}}</a></div>
+</div>
+
+<div class="blatt blatt--gewerbe" role="tabpanel" id="b-gewerbe" aria-labelledby="r-gewerbe">
+<div class="blatt__kopf"><span>Hallen · Werkstätten · Gewerbe</span><span>Ein Meldeweg</span></div>
+<p class="laeuft">Läuft.</p>
+<p class="blatt__titel">Auch wenn Sie <span class="serif">nicht</span> hinsehen.</p>
+<dl class="drei einblenden">
+<div style="--i:0"><dt>Kontrolle</dt><dd>nach Bedarf bis täglich</dd></div>
+<div style="--i:1"><dt>Störung</dt><dd>Ihre Mieter melden direkt an uns</dd></div>
+<div style="--i:2"><dt>Notdienst</dt><dd>täglich 17 bis 24 Uhr</dd></div>
+</dl>
+<div class="blatt__fuss"><p>Ein Vertrag, ein Ansprechpartner.</p><a href="#">Gebäudereinigung {{I_PFEIL}}</a></div>
+</div>
+
+<div class="blatt blatt--privat" role="tabpanel" id="b-privat" aria-labelledby="r-privat">
+<div class="blatt__kopf"><span>Für Ihr Zuhause</span><span>Festpreis nach Besichtigung</span></div>
+<p class="blatt__titel">Ihre Liste. <span class="serif">Unser</span> Job.</p>
+<div class="zettel"><p>Noch zu erledigen</p><ul>
+<li style="--i:0"><span>Hecke schneiden</span><span class="visuell-versteckt">, erledigt</span></li>
+<li style="--i:1"><span>Keller ausräumen</span><span class="visuell-versteckt">, erledigt</span></li>
+<li style="--i:2"><span>Mülltonnen rausstellen</span><span class="visuell-versteckt">, erledigt</span></li>
+<li style="--i:3"><span>Lampe montieren</span><span class="visuell-versteckt">, erledigt</span></li>
+<li style="--i:4"><span>Silikonfuge erneuern</span><span class="visuell-versteckt">, erledigt</span></li>
+</ul></div>
+<p class="sticker" aria-hidden="true"><b>Ein Termin</b>statt fünf Handwerker</p>
+<div class="blatt__fuss"><p>Foto per WhatsApp genügt zum Start.</p><a href="#">Kleinreparaturen {{I_PFEIL}}</a></div>
+</div>
+
+<div class="blatt blatt--winter" role="tabpanel" id="b-winter" aria-labelledby="r-winter">
+<div class="blatt__kopf"><span>Winterdienst · 01.11. bis 31.03.</span><span>Beispiel</span></div>
+<p class="kontur">05:40</p>
+<p class="blatt__titel">Wir räumen. <span class="serif">Sie haben den Beleg.</span></p>
+<dl class="einsatz">
+<div><dt>Beginn</dt><dd>05:40</dd></div>
+<div><dt>Witterung</dt><dd>Neuschnee, −3 °C</dd></div>
+<div><dt>Streumittel</dt><dd>Splitt</dd></div>
+<div><dt>Status</dt><dd>erledigt</dd></div>
+</dl>
+<div class="blatt__fuss"><p>Ein Preis für die ganze Saison.</p><a href="#">Winterdienst {{I_PFEIL}}</a></div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="wrap">
+<dl class="belegleiste">
+<div><dt>Rückruf</dt><dd>am selben oder nächsten Werktag</dd></div>
+<div><dt>Ortstermin</dt><dd>kostenlos und unverbindlich</dd></div>
+<div><dt>Angebot</dt><dd>schriftlich in 2 bis 3 Werktagen</dd></div>
+<div><dt>Personal</dt><dd>eigenes, keine Subunternehmer</dd></div>
+</dl>
+</div>
+</section>
+</main>
+{{MOBILLEISTE}}
+{{MENUE}}
+{{MENUE_JS}}
+<script>
+(function(){
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ordner = document.getElementById('ordner');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  var marker = document.getElementById('marker');
+  if (ruhig) ordner.classList.add('ruhig');
+  function zeigen(tab, fokus){
+    tabs.forEach(function(t){
+      var an = t === tab;
+      t.setAttribute('aria-selected', an ? 'true' : 'false');
+      t.tabIndex = an ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).classList.toggle('aktiv', an);
+    });
+    document.body.setAttribute('data-welt', tab.getAttribute('data-w'));
+    marker.classList.remove('neu'); void marker.offsetWidth; marker.classList.add('neu');
+    if (fokus) tab.focus();
+    var reg = tab.parentElement;
+    if (reg.scrollWidth > reg.clientWidth) reg.scrollTo({left: Math.max(0, tab.offsetLeft - 24), behavior: ruhig ? 'auto' : 'smooth'});
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ zeigen(t); });
+    t.addEventListener('keydown', function(e){
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (n){ e.preventDefault(); zeigen(tabs[(i + n + tabs.length) % tabs.length], true); }
+    });
+    t.querySelector('.lauf').addEventListener('animationend', function(){
+      if (!ruhig) zeigen(tabs[(i + 1) % tabs.length]);
+    });
+  });
+})();
+</script>
+</body>
+</html>
