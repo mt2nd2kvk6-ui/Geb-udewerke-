@@ -114,6 +114,4 @@ bilder = os.path.join(HIER, 'bilder')
 if os.path.isdir(bilder):
     for f in os.listdir(bilder):
         shutil.copy(os.path.join(bilder, f), os.path.join(ZIEL, f))
-uebersicht = os.path.join(HIER, 'uebersicht.html')
-if os.path.exists(uebersicht):
-    shutil.copy(uebersicht, os.path.join(ZIEL, 'index.html'))
+# Übersicht (index.html) baut einzeln_bauen.py

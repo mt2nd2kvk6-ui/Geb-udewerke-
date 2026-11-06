@@ -4,7 +4,8 @@
   2. projekt/entwuerfe/richtungen/ansehen/ : vollständige Seiten + Übersicht mit Bildern,
      zum Öffnen über einen öffentlichen Datei-Link (z. B. raw.githack.com mit Commit-Kennung)
 Logos werden als data-URI eingesetzt, Schriften sind schon eingebettet.
-Aufruf: python3 projekt/entwuerfe/richtungen/einzeln_bauen.py GEBAUTER_ORDNER"""
+  3. ZIEL/index.html : schlanke Übersicht (Bilder eingebettet, Links auf Einzelseiten)
+Aufruf: python3 projekt/entwuerfe/richtungen/einzeln_bauen.py GEBAUTER_ORDNER [COMMIT]"""
 import base64, os, re, shutil, sys
 
 HIER = os.path.dirname(os.path.abspath(__file__))
@@ -57,3 +58,17 @@ section{{margin:0 0 40px}}h2{{font-size:22px;margin:0 0 10px}}.bild img{{width:1
 .knopf{{display:inline-block;margin-top:12px;background:#0D2B4F;color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:999px}}</style></head>
 <body><main><h1>Gebäudewerke · Entwürfe</h1>{karten}</main></body></html>''')
 print('ansehen/index.html')
+
+# Schlanke Übersicht fürs Artifact: Bilder als data-URI, Links auf raw.githack (feste Commit-Kennung)
+if len(sys.argv) > 2:
+    import io
+    from PIL import Image
+    web = f'https://raw.githack.com/mt2nd2kvk6-ui/Geb-udewerke-/{sys.argv[2]}/projekt/entwuerfe/richtungen/ansehen'
+    u = open(os.path.join(HIER, 'uebersicht.html'), encoding='utf-8').read().replace('{{WEB}}', web)
+    for k in 'abc':
+        im = Image.open(os.path.join(HIER, 'screenshots', f'version-{k}-v2-klein.jpg')).convert('RGB')
+        im = im.resize((1200, round(im.height * 1200 / im.width)), Image.LANCZOS)
+        b = io.BytesIO(); im.save(b, 'JPEG', quality=80)
+        u = u.replace('{{BILD_' + k.upper() + '}}', 'data:image/jpeg;base64,' + base64.b64encode(b.getvalue()).decode())
+    open(os.path.join(QUELLE, 'index.html'), 'w', encoding='utf-8').write(u)
+    print('index.html', len(u) // 1024, 'KB')

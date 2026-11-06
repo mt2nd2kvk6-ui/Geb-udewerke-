@@ -1,179 +1,31 @@
 <title>Gebäudewerke Neuauftritt</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Präsentationsseite: drei Richtungen untereinander, je Desktop- und Handy-Rahmen nebeneinander. */
-:root{
-  --bg:#F3F5F8;--fg:#0B1F38;--leise:#4A5A6C;--linie:#D3DAE3;--karte:#FFFFFF;--marke:#0D2B4F;--marke-text:#FFFFFF;--gelb:#FFD21E;--rahmen:#0B1F38;
-  --grotesk:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08162A;--fg:#E8EEF5;--leise:#A3B1C2;--linie:#22344D;--karte:#0E2240;--marke:#FFD21E;--marke-text:#0B1F38;--rahmen:#000;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#08162A;--fg:#E8EEF5;--leise:#A3B1C2;--linie:#22344D;--karte:#0E2240;--marke:#FFD21E;--marke-text:#0B1F38;--rahmen:#000;color-scheme:dark}
+/* Schlanke Übersicht: nur Bilder und Links, keine Rahmen, keine externen Schriften. */
+:root{--bg:#F3F5F8;--fg:#0B1F38;--leise:#4A5A6C;--knopf:#0D2B4F;--knopf-text:#FFFFFF;--linie:#D3DAE3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08162A;--fg:#E8EEF5;--leise:#A3B1C2;--knopf:#FFD21E;--knopf-text:#0B1F38;--linie:#22344D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08162A;--fg:#E8EEF5;--leise:#A3B1C2;--knopf:#FFD21E;--knopf-text:#0B1F38;--linie:#22344D;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--grotesk);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.seite{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
-a{color:inherit;text-underline-offset:3px}
-:focus-visible{outline:3px solid #F0B323;outline-offset:3px;border-radius:4px}
-.kopf{display:grid;gap:18px;max-width:860px;margin-bottom:40px}
-.kicker{font:500 12px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--leise);margin:0}
-h1{margin:0;font-size:clamp(38px,6vw,72px);font-weight:800;letter-spacing:-.045em;line-height:.95;text-wrap:balance}
-h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
-.kopf p{margin:0;font-size:18px;color:var(--leise);max-width:58ch}
-.richtung{border-top:2px solid var(--fg);padding-block:28px 48px;display:grid;gap:22px}
-.richtung__kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px 48px;align-items:start}
-.richtung__kopf h2{margin:0;font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
-.richtung__kopf h2 span{font:500 13px/1 var(--mono);letter-spacing:.1em;color:var(--leise)}
-.idee{margin:0;font-size:19px;line-height:1.45;font-weight:600;max-width:46ch}
-.punkte{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;font-size:14.5px}
-.punkte div{border-top:1px solid var(--linie);padding-top:10px;min-width:0}
-.punkte dt{font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--leise);margin-bottom:4px}
-.punkte dd{margin:0}
-.buehne{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
-.geraet{margin:0;display:grid;gap:8px;min-width:0}
-.geraet figcaption{display:flex;justify-content:space-between;gap:12px;font:500 12px/1.3 var(--mono);letter-spacing:.06em;color:var(--leise)}
-.rahmen{position:relative;width:100%;max-width:100%;overflow:hidden;border-radius:12px;background:var(--rahmen) center/cover no-repeat;box-shadow:0 24px 50px -30px rgba(0,0,0,.55),0 0 0 1px var(--linie)}
-.rahmen--d{aspect-ratio:1440/900}
-.rahmen--m{aspect-ratio:390/844;border-radius:28px;border:8px solid var(--rahmen)}
-.rahmen iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:transparent}
-.rahmen--d iframe{width:1440px;height:900px}
-.rahmen--m iframe{width:390px;height:844px}
-.voll{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--fg);border-radius:999px;padding:9px 16px;justify-self:start}
-.voll:hover{background:var(--fg);color:var(--bg)}
-.system{border-top:2px solid var(--fg);padding-block:28px 40px;display:grid;gap:22px}
-.system h2,.empfehlung h2{margin:0;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
-.welten{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-.welten li{border-radius:12px;overflow:hidden;min-width:0;box-shadow:0 0 0 1px var(--linie)}
-.welten .fl{display:flex;align-items:flex-end;height:92px;padding:10px 12px;font-family:var(--serif);font-style:italic;font-size:22px;line-height:1}
-.welten .tx{background:var(--karte);padding:9px 12px 11px;font-size:13px;line-height:1.35}
-.welten .tx b{display:block;font-size:14px}
-.welten .tx span{font-family:var(--mono);font-size:11px;color:var(--leise)}
-.regeln{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 28px;font-size:15px}
-.regeln li{border-top:1px solid var(--linie);padding-top:10px}
-.regeln b{display:block;margin-bottom:2px}
-.empfehlung{border-radius:18px;background:var(--marke);color:var(--marke-text);padding:28px clamp(20px,3vw,36px);display:grid;gap:12px}
-.empfehlung p{margin:0;font-size:18px;max-width:64ch;line-height:1.5}
-.empfehlung em{font-family:var(--serif);font-style:italic;font-size:1.15em}
-@media (max-width:900px){
-  .richtung__kopf{grid-template-columns:minmax(0,1fr)}
-  .punkte{grid-template-columns:1fr 1fr}
-  .buehne{grid-template-columns:minmax(0,1fr)}
-  .geraet--m{max-width:300px}
-  .welten{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .regeln{grid-template-columns:minmax(0,1fr)}
-}
-@media (max-width:520px){.punkte{grid-template-columns:minmax(0,1fr)}.welten{grid-template-columns:1fr 1fr}}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1;letter-spacing:-.03em;margin:8px 0 28px;text-wrap:balance}
+section{margin:0 0 44px;padding-top:18px;border-top:2px solid var(--fg)}
+h2{font-size:22px;margin:0 0 12px}
+img{width:100%;height:auto;display:block;border-radius:10px}
+.knoepfe{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:14px}
+.knopf{display:inline-block;background:var(--knopf);color:var(--knopf-text);text-decoration:none;font-weight:700;padding:12px 18px;border-radius:999px}
+.knoepfe a:not(.knopf){color:var(--leise);font-size:14.5px}
+a:focus-visible{outline:3px solid #F0B323;outline-offset:3px}
 </style>
-
-<div class="seite">
-<header class="kopf">
-<p class="kicker">Gebäudewerke GbR · Neuauftritt gebaeudewerke.de · Schritt 1 von 3</p>
-<h1>Drei Richtungen. <em>Sie</em> entscheiden.</h1>
-<p>Jede Richtung zeigt die Startseite bis zum ersten Scroll, auf dem Desktop und auf dem Handy. Die Rahmen sind bedienbar: Register antippen, Modell erkunden, Aufgaben antippen. Anruf und WhatsApp funktionieren erst auf der echten Seite.</p>
-</header>
-
-<section class="richtung" aria-labelledby="t-a">
-<div class="richtung__kopf">
-<h2 id="t-a">Register <span>Richtung A</span></h2>
-<p class="idee">Ein Objektordner: Werkblau ist der Einband, jede Zielgruppe hat ein farbiges Register mit ihrem eigenen Arbeitsbeleg.</p>
-</div>
-<dl class="punkte">
-<div><dt>Wirkung</dt><dd>Ruhig, präzise, seriös. Der Effekt kommt beim Wechsel: Farbe und Beleg tauschen, die Liste streicht sich durch, die Haken setzen sich.</dd></div>
-<div><dt>Unterseiten</dt><dd>Jede Leistung bekommt ihr Register und ihren Beleg oben. Lange Texte bleiben auf hellem Grund gut lesbar.</dd></div>
-<div><dt>Fotos</dt><dd>Später als angeheftete Belegfotos im Ordner, alle gleich eingefärbt.</dd></div>
-<div><dt>Risiko</dt><dd>Wirkt auf den ersten Blick am wenigsten laut.</dd></div>
-</dl>
-<div class="buehne">
-<figure class="geraet"><figcaption><span>Desktop 1440 × 900</span><span>wechselt alle 7 Sekunden</span></figcaption>
-<div class="rahmen rahmen--d" style="background-image:url(vorschau-a-d.webp)"><iframe src="a-register.html" title="Richtung A, Desktop" loading="lazy"></iframe></div></figure>
-<figure class="geraet geraet--m"><figcaption><span>Handy 390 × 844</span></figcaption>
-<div class="rahmen rahmen--m" style="background-image:url(vorschau-a-m.webp)"><iframe src="a-register.html" title="Richtung A, Handy" loading="lazy"></iframe></div></figure>
-</div>
-<a class="voll" href="a-register.html">Richtung A im Vollbild öffnen</a>
-</section>
-
-<section class="richtung" aria-labelledby="t-b">
-<div class="richtung__kopf">
-<h2 id="t-b">Das Modell <span>Richtung B</span></h2>
-<p class="idee">Ein Architekturmodell Ihres Objekts, gebaut aus der Geometrie des Logos. Jede Stelle ist eine Leistung, vom Keller bis zum Gartentor.</p>
-</div>
-<dl class="punkte">
-<div><dt>Wirkung</dt><dd>Das Modell baut sich beim Öffnen auf, dann wandert ein Lichtkegel durch die zehn Zonen. Man sieht in einer Sekunde, was alles dazugehört.</dd></div>
-<div><dt>Unterseiten</dt><dd>Jede Leistungsseite zeigt oben dasselbe Modell mit ihrer Zone im Licht.</dd></div>
-<div><dt>Fotos</dt><dd>Braucht keine. Echte Fotos kommen später in die Abschnitte darunter.</dd></div>
-<div><dt>Risiko</dt><dd>Das Modell muss auf dem Handy klar lesbar bleiben, deshalb steht dort die Beschriftung fest oben.</dd></div>
-</dl>
-<div class="buehne">
-<figure class="geraet"><figcaption><span>Desktop 1440 × 900</span><span>Modell oder Liste überfahren</span></figcaption>
-<div class="rahmen rahmen--d" style="background-image:url(vorschau-b-d.webp)"><iframe src="b-modell.html" title="Richtung B, Desktop" loading="lazy"></iframe></div></figure>
-<figure class="geraet geraet--m"><figcaption><span>Handy 390 × 844</span></figcaption>
-<div class="rahmen rahmen--m" style="background-image:url(vorschau-b-m.webp)"><iframe src="b-modell.html" title="Richtung B, Handy" loading="lazy"></iframe></div></figure>
-</div>
-<a class="voll" href="b-modell.html">Richtung B im Vollbild öffnen</a>
-</section>
-
-<section class="richtung" aria-labelledby="t-c">
-<div class="richtung__kopf">
-<h2 id="t-c">Was steht an? <span>Richtung C</span></h2>
-<p class="idee">Die Startseite ist eine Aufgabenliste in Plakatgröße. Antippen statt lesen, und am Ende steht die WhatsApp-Nachricht schon fertig da.</p>
-</div>
-<dl class="punkte">
-<div><dt>Wirkung</dt><dd>Die Zeile kippt in Werkblau, die Aufgabe fliegt in die Anfrage. Oben wählt man, wer man ist, und die Liste passt sich an.</dd></div>
-<div><dt>Unterseiten</dt><dd>Jede Leistungsseite beginnt mit ihren eigenen Aufgaben, zum Beispiel Räumen, Streuen, Protokoll beim Winterdienst.</dd></div>
-<div><dt>Fotos</dt><dd>Braucht keine. Die Liste selbst ist das Bild.</dd></div>
-<div><dt>Risiko</dt><dd>Lebt vom Antippen. Wer nur schaut, sieht eine sehr große Liste.</dd></div>
-</dl>
-<div class="buehne">
-<figure class="geraet"><figcaption><span>Desktop 1440 × 900</span><span>Aufgaben antippen</span></figcaption>
-<div class="rahmen rahmen--d" style="background-image:url(vorschau-c-d.webp)"><iframe src="c-liste.html" title="Richtung C, Desktop" loading="lazy"></iframe></div></figure>
-<figure class="geraet geraet--m"><figcaption><span>Handy 390 × 844</span></figcaption>
-<div class="rahmen rahmen--m" style="background-image:url(vorschau-c-m.webp)"><iframe src="c-liste.html" title="Richtung C, Handy" loading="lazy"></iframe></div></figure>
-</div>
-<a class="voll" href="c-liste.html">Richtung C im Vollbild öffnen</a>
-</section>
-
-<section class="system" aria-labelledby="t-s">
-<h2 id="t-s">Was in jeder Richtung gleich bleibt</h2>
-<ul class="welten" aria-label="Farbwelten je Zielgruppe">
-<li><div class="fl" style="background:#0D2B4F;color:#FFD21E">Verwaltung</div><div class="tx"><b>Hausverwaltung, WEG</b><span>Werkblau · Gelb</span></div></li>
-<li><div class="fl" style="background:#F1ECE2;color:#D63F1E">Büro</div><div class="tx"><b>Firmen und Büros</b><span>Creme · Koralle</span></div></li>
-<li><div class="fl" style="background:#DDF5EC;color:#0E7F63">Praxis</div><div class="tx"><b>Praxen</b><span>Mint · Dunkelgrün</span></div></li>
-<li><div class="fl" style="background:#141414;color:#FF6B1A;background-image:repeating-linear-gradient(-45deg,#FF6B1A 0 8px,#141414 8px 16px);background-size:100% 10px;background-repeat:no-repeat">Gewerbe</div><div class="tx"><b>Hallen, Gewerbe</b><span>Schwarz · Orange</span></div></li>
-<li><div class="fl" style="background:#FFD84D;color:#B8321A">Privat</div><div class="tx"><b>Eigentümer, Vermieter</b><span>Gelb · Rot</span></div></li>
-<li><div class="fl" style="background:#071A33;color:#A8D2FF">Winter</div><div class="tx"><b>Winterdienst</b><span>Nachtblau · Eisblau</span></div></li>
-</ul>
-<ul class="regeln">
-<li><b>Eine Marke</b>Werkblau, Logo und Schrift sind überall gleich. Die Zielgruppe bringt nur eine Akzentfarbe mit.</li>
-<li><b>Schriften lokal, freie Lizenz</b>Archivo für Schlagzeilen und Text, Instrument Serif kursiv für das eine Akzentwort, JetBrains Mono für Uhrzeiten und Belege.</li>
-<li><b>Zwei Hauptaktionen</b>Anrufen und WhatsApp oben rechts, auf dem Handy als feste Leiste unten. Sonst keine Knöpfe im ersten Bild.</li>
-<li><b>SEO bleibt drin</b>Die H1 ist Ortszeile plus Schlagzeile, das Hauptkeyword steht in beiden Fassungen. Alle Register, Uhrzeiten und Felder stehen im HTML.</li>
-<li><b>Nichts erfunden</b>Alle Leistungen, Zeiten und Abläufe stammen von der heutigen Website. Preise zeigen die Entwürfe bewusst nicht.</li>
-<li><b>Ruhige Bewegung</b>Nur über transform und opacity, kein Springen. Bei „Bewegung reduzieren“ steht alles still.</li>
-</ul>
-</section>
-
-<section class="empfehlung" aria-labelledby="t-e">
-<h2 id="t-e">Meine Empfehlung</h2>
-<p>Oben das Modell aus B, weil es in einer Sekunde zeigt, was alles dazugehört. Direkt darunter die Liste aus C, weil sie aus Lesen ein Antippen macht und in einer fertigen WhatsApp-Nachricht endet. Für Unterseiten, Preise und Ratgeber das ruhige System aus A.</p>
-<p>Sagen Sie mir A, B, C oder eine Mischung. Danach baue ich alle Seiten aus.</p>
-</section>
-</div>
-
-<script>
-(function(){
-  function skalieren(){
-    document.querySelectorAll('.rahmen').forEach(function(r){
-      var f = r.querySelector('iframe'); if (!f) return;
-      var basis = r.classList.contains('rahmen--m') ? 390 : 1440;
-      var innen = r.clientWidth;
-      f.style.transform = 'scale(' + (innen / basis) + ')';
-    });
-  }
-  skalieren();
-  if ('ResizeObserver' in window) new ResizeObserver(skalieren).observe(document.body);
-  else window.addEventListener('resize', skalieren);
-})();
-</script>
+<main>
+<h1>Gebäudewerke · Entwürfe</h1>
+<section aria-labelledby="t-a"><h2 id="t-a">Version A · Register</h2>
+<img src="{{BILD_A}}" width="1200" height="603" alt="Version A, Desktop und Handy">
+<div class="knoepfe"><a class="knopf" href="https://claude.ai/artifact/H2CG2oC4vTYVSgT7HyXqwA">Version A öffnen</a><a href="{{WEB}}/a-register.html">oder im Browser öffnen</a></div></section>
+<section aria-labelledby="t-b"><h2 id="t-b">Version B · Das Modell</h2>
+<img src="{{BILD_B}}" width="1200" height="603" alt="Version B, Desktop und Handy">
+<div class="knoepfe"><a class="knopf" href="https://claude.ai/artifact/VYKyj4nb8dW5BwwZ4yRgFV">Version B öffnen</a><a href="{{WEB}}/b-modell.html">oder im Browser öffnen</a></div></section>
+<section aria-labelledby="t-c"><h2 id="t-c">Version C · Was steht an?</h2>
+<img src="{{BILD_C}}" width="1200" height="603" alt="Version C, Desktop und Handy">
+<div class="knoepfe"><a class="knopf" href="https://claude.ai/artifact/XwEnEb1ZeMyNh2fDcmcW1R">Version C öffnen</a><a href="{{WEB}}/c-liste.html">oder im Browser öffnen</a></div></section>
+</main>
