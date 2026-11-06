@@ -52,7 +52,13 @@ Das neue Design darf das Ranking nicht schwächen, es soll es stärken. Bei Goog
 - Title höchstens 575 px (Arial 20 px), Description höchstens 990 px (Arial 14 px), beide gemessen, nicht nach Zeichen geschätzt. Jede Seite hat einen eigenen Title und eine eigene Description, kein Duplikat.
 - Title nie wortgleich zur H1. Jedes Wort aus Title und H1 kommt im Fließtext vor.
 - Genau eine H1 pro Seite, saubere Überschriften-Hierarchie (H2, H3 ohne Sprünge).
-- Genug Text für Google trotz kurzer, knackiger Darstellung: Leistungsseiten mindestens rund 800 Wörter inklusive aufklappbarer Bereiche, Startseite mindestens rund 1.000 Wörter. Alles steht im HTML, nichts wird erst per JavaScript geladen.
+- Genug Text für Google trotz kurzer, knackiger Darstellung. Mindestwerte inklusive aufklappbarer Bereiche, gezählt nur im Inhalt (ohne Navigation und Fußbereich):
+  - Startseite mindestens 1.000 Wörter, jede Leistungsseite mindestens 800 Wörter
+  - Preise, Einsatzgebiet und Über uns mindestens 600 Wörter, Ratgeber-Übersicht mindestens 300 Wörter, Kontakt und Karriere mindestens 400 Wörter
+  - Ratgeber-Artikel behalten ihre heutige Länge (nicht kürzen, höchstens straffen und gliedern)
+  - Keine indexierbare Seite darf unter 80 % ihrer heutigen Wortzahl fallen. Miss die Wortzahl jeder Seite vorher und nachher und liste beides auf.
+  - Der Seobility-Punkt „Textlänge“ muss auf jeder Seite grün sein.
+  - Alles steht im HTML, nichts wird erst per JavaScript geladen.
 - Keyword-Dichte natürlich, Hauptkeyword ungefähr 1 bis 2 %, keine Häufung. Hauptkeyword in Title, H1, erstem Absatz, Description und im Alt-Text des Hauptbildes.
 - Keine doppelten Textblöcke (auch nicht durch Laufband oder Wiederholungen), keine doppelten Fettungen, durchschnittliche Satzlänge kurz.
 - Jedes Bild hat einen beschreibenden Alt-Text mit Leistung und Ort, rein dekorative Bilder haben `alt=""`.
