@@ -160,7 +160,9 @@
       var p = punkte.filter(function (x) { return x.getAttribute('data-zone') === z; })[0];
       if (p && unter) { $('b', unter).textContent = $('b', p).textContent; $('small', unter).textContent = $('small', p).textContent; }
     };
-    [modell, $('.liste10')].forEach(function (el) {
+    var fokus = modell.getAttribute('data-fokus');
+    if (fokus) zeigen(fokus);   // Unterseiten: nur die eigene Zone im Licht, kein Rundgang
+    else [modell, $('.liste10')].forEach(function (el) {
       if (!el) return;
       el.addEventListener('mouseenter', function () { pause = true; });
       el.addEventListener('mouseleave', function () { pause = false; });
@@ -173,7 +175,7 @@
       el.addEventListener('focus', function () { zeigen(z); ti = tour.indexOf(z) + 1; });
     });
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { sichtbar = e[0].isIntersecting; }).observe(modell);
-    if (!ruhig) setTimeout(function () {
+    if (!ruhig && !fokus) setTimeout(function () {
       zeigen(tour[ti++]);
       setInterval(function () { if (!pause && sichtbar && !document.hidden) zeigen(tour[ti++ % tour.length]); }, 2600);
     }, 1500);
