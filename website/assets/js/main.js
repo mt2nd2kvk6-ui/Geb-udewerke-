@@ -58,8 +58,8 @@
     var b = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('sichtbar'); b.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    $$(auswahl).forEach(function (el) {
-      if (el.getBoundingClientRect().top < hoehe) return;
+    var unten = $$(auswahl).filter(function (el) { return el.getBoundingClientRect().top >= hoehe; });   // erst alles messen
+    unten.forEach(function (el) {                                                                        // dann schreiben
       var i = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.style.setProperty('--verz', (Math.min(i, 5) * 0.06) + 's');
       el.classList.add('einblenden');

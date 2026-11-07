@@ -37,8 +37,7 @@ $warnungen = gw_holen($basis . '/alerts' . $q);
 
 if (!$wetter || empty($wetter['weather'])) {
   if (is_file($speicher)) { readfile($speicher); exit; }   // lieber alte Werte als keine
-  http_response_code(503);
-  echo '{"fehler":"Wetterdaten derzeit nicht verfügbar"}';
+  echo '{"fehler":"Wetterdaten derzeit nicht verfügbar"}';   // Status 200, die Seite zeigt dann ihre festen Angaben
   exit;
 }
 
@@ -60,5 +59,5 @@ foreach (($warnungen['alerts'] ?? []) as $a) {
   $aus['warnungen'][] = ['ereignis' => $a['event_de'] ?? '', 'titel' => $a['headline_de'] ?? '', 'stufe' => $a['severity'] ?? ''];
 }
 $json = json_encode($aus, JSON_UNESCAPED_UNICODE);
-@file_put_contents($speicher, $json);
+if (!getenv('GW_WETTER_BASIS')) @file_put_contents($speicher, $json);   // Testläufe schreiben keinen Zwischenspeicher
 echo $json;

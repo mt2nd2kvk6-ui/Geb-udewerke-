@@ -63,7 +63,7 @@ mark{background:none;color:inherit;box-shadow:inset 0 -.2em 0 var(--gelb)}
 .btn--gross{min-height:64px;padding:.55rem 1.45rem .55rem 1.15rem;border-radius:18px}
 .btn--gross svg{width:24px;height:24px}
 .btn__zwei{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
-.btn__klein{font:500 10.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.78}
+.btn__klein{font:500 10.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.95}
 .btn__gross{font-size:20px;font-weight:800;font-stretch:112%;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
 .btn-reihe{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.4rem}
 
@@ -136,7 +136,7 @@ mark{background:none;color:inherit;box-shadow:inset 0 -.2em 0 var(--gelb)}
 .abschnitt__kopf,.kopfteil{max-width:860px;margin-bottom:clamp(30px,4vw,52px)}
 .abschnitt__kopf>p:not([class*="pseudo-h"]),.intro{font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--grau);max-width:36em;margin:.2em 0 0}
 .abschnitt--blau .abschnitt__kopf>p:not([class*="pseudo-h"]),.abschnitt--blau .intro,.abschnitt--nacht .intro{color:var(--hell-leise)}
-.abschnitt--blau .auge,.abschnitt--nacht .auge{color:var(--hell-leise)}
+.abschnitt--blau .auge,.abschnitt--nacht .auge,.kontakt .auge,.cta-band .auge{color:var(--hell-leise)}
 .kurzantwort{font-size:clamp(17px,1.3vw,19.5px);line-height:1.55}
 .inhalt-raster{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.75fr);gap:clamp(28px,4vw,64px);align-items:start}
 .fliesstext{min-width:0}
@@ -360,7 +360,8 @@ mark{background:none;color:inherit;box-shadow:inset 0 -.2em 0 var(--gelb)}
 .h1-ort{display:flex;align-items:center;gap:.6em;font:500 13px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--gelb);margin-bottom:1rem}
 .h1-ort::before{content:"";width:.7em;height:.7em;background:var(--gelb);flex:none}
 .h1-claim{display:block;font-size:clamp(42px,5.4vw,84px);color:#fff}
-.h1-claim .zeile{display:block}
+.h1-claim .zeile{display:inline}
+.h1-claim .zeile::after{content:"\A";white-space:pre}
 .h1-claim .gelb{color:var(--gelb)}
 .hero h1{margin:0}
 .hero .intro{color:var(--hell-leise);max-width:31em;margin-top:1.1rem}
@@ -654,7 +655,8 @@ mark{background:none;color:inherit;box-shadow:inset 0 -.2em 0 var(--gelb)}
   .antworten{grid-template-columns:minmax(0,1fr)}
   .mobilleiste{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:rgba(8,26,48,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--hell-linie)}
   .mobilleiste .btn{min-height:52px;font-size:16.5px}
-  .cookie-banner{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .cookie-banner{bottom:calc(84px + env(safe-area-inset-bottom,0px));padding:14px 16px}
+  .cookie-banner__text{font-size:13px;line-height:1.45}
   body{padding-bottom:84px}
 }
 @media (max-width:640px){

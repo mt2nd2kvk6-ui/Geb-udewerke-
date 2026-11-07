@@ -34,7 +34,7 @@ SEITE = {'hausmeister': 'hausmeisterservice.html', 'treppenhaus': 'treppenhausre
 
 M = modell.bauen()
 MODELL = M['svg'].replace('aria-label="Modell eines Objekts', 'aria-label="Hausmeister und Reinigung in Bruchsal: Modell eines Objekts') + ''.join(
-    f'<a class="punkt punkt--{"links" if x > 60 else "rechts"}" href="{SEITE[z]}" data-zone="{z}" style="left:{x}%;top:{y}%" tabindex="-1">'
+    f'<a class="punkt punkt--{"links" if x > 60 else "rechts"}" href="{SEITE[z]}" data-zone="{z}" style="left:{x}%;top:{y}%" tabindex="-1" aria-label="{t}">'
     f'<span class="punkt__kern" aria-hidden="true"></span><span class="punkt__label"><b>{t}</b><small>{u}</small></span></a>'
     for z, t, u, (x, y) in M['punkte'])
 

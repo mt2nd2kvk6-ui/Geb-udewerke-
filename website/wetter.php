@@ -37,8 +37,7 @@ $warnungen = gw_holen($basis . '/alerts' . $q);
 
 if (!$wetter || empty($wetter['weather'])) {
   if (is_file($speicher)) { readfile($speicher); exit; }   // lieber alte Werte als keine
-  http_response_code(503);
-  echo '{"fehler":"Wetterdaten derzeit nicht verfügbar"}';
+  echo '{"fehler":"Wetterdaten derzeit nicht verfügbar"}';   // Status 200, die Seite zeigt dann ihre festen Angaben
   exit;
 }
 
