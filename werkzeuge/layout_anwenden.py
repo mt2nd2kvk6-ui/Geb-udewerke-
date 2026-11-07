@@ -124,7 +124,7 @@ def svg(pfade, klasse=''):
 
 
 I_TEL = svg('<path d="M5 3.5h3.2l1.6 4.2-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4.2 1.6V17a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3 5.7 2 2 0 0 1 5 3.5z"/>')
-I_WA = svg('<path d="M12 3.3a8.6 8.6 0 0 0-7.4 13l-1.2 4.4 4.5-1.2A8.6 8.6 0 1 0 12 3.3z"/><path d="M9.1 8.2c.3-.3.6-.3.8 0l.7 1.5c.1.3 0 .5-.2.7l-.5.5c.5 1.1 1.4 2 2.5 2.5l.5-.5c.2-.2.4-.3.7-.2l1.5.7c.3.2.3.5 0 .8-.7.7-1.6 1-2.6.6a7.6 7.6 0 0 1-4-4c-.4-1-.1-1.9.6-2.6z"/>')
+I_WA = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>')   # simple-icons, CC0
 I_FORM = svg('<path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>')
 I_ZU = svg('<path d="M6 6l12 12M18 6L6 18"/>')
 I_MENUE = svg('<path d="M4 7h16M4 12h16M4 17h16"/>')
@@ -185,7 +185,7 @@ def kopf_block(b):
             f'<link rel="icon" type="image/png" sizes="32x32" href="{b}favicon-32.png">\n'
             f'<link rel="apple-touch-icon" href="{b}apple-touch-icon.png">\n'
             f'<link rel="manifest" href="{b}site.webmanifest">\n'
-            f'<link rel="preload" href="{b}assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>\n'
+            f'<link rel="preload" href="{b}assets/fonts/mona-sans-var.woff2" as="font" type="font/woff2" crossorigin>\n'
             f'<style>{CSS.replace("{{BASIS}}", b)}</style>\n'
             f'<script src="{b}assets/js/consent.js?v={V_CONSENT}" defer></script>\n'
             f'<script src="{b}assets/js/main.js?v={V_MAIN}" defer></script>\n'
@@ -194,7 +194,7 @@ def kopf_block(b):
 
 ALTE_KOPF_TEILE = [
     r'<link rel="icon"[^>]*>\n?', r'<link rel="apple-touch-icon"[^>]*>\n?', r'<link rel="manifest"[^>]*>\n?',
-    r'<link rel="preload"[^>]*archivo[^>]*>\n?', r'<style>.*?</style>\n?',
+    r'<link rel="preload"[^>]*\.woff2[^>]*>\n?', r'<style>.*?</style>\n?',
     r'<script src="[^"]*assets/js/(?:consent|main)\.js[^"]*"[^>]*></script>\n?',
 ]
 
@@ -245,28 +245,22 @@ def header(seite, b):
         punkte += f'<li><a class="nav__link" href="{b}{h}"{cur}>{t}</a></li>\n'
     return f'''
 <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
-<div class="leiste"><div class="wrap">
-<span class="leiste__notdienst"><span class="leiste__punkt" aria-hidden="true"></span>Notdienst täglich 17 bis 24 Uhr: <a href="{TEL}">0176 74025524</a></span>
-<span class="leiste__rechts">{hinweis_kurz('google-hinweis google-hinweis--leiste')}<span class="leiste__adresse">Für Bruchsal und den Landkreis Karlsruhe</span><span>Mo bis Fr 7 bis 17 Uhr</span></span>
-</div></div>
 <header class="kopf"><div class="wrap">
-<a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite"></a>
+<a class="kopf__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite"></a>
 <nav id="hauptnavigation" class="nav" aria-label="Hauptnavigation">
 <button class="menue-knopf nav__schliessen" type="button" aria-label="Menü schließen">{I_ZU}</button>
 <ul class="nav__liste">
 <li><button class="nav__link" type="button" data-untermenue aria-expanded="false" aria-controls="unter-leistungen"{knopf_cur}>Leistungen {I_RUNTER}</button>
 <ul class="nav__unter" id="unter-leistungen">{unter}</ul></li>
 {punkte}</ul>
-<div class="nav__mobil"><a class="btn btn--voll" href="{b}kontakt.html">{I_FORM}Angebot anfragen</a><a class="btn btn--rand" href="{TEL}">{I_TEL}0176 74025524</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank">{I_WA}WhatsApp</a></div>
+<div class="nav__mobil"><a class="btn btn--weiss" href="{TEL}" data-pos="kopf">{I_TEL}Anrufen: 0176 74025524</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank" data-pos="kopf">{I_WA}WhatsApp schreiben</a></div>
 </nav>
 <div class="kopf__aktionen">
-<a class="btn btn--rand kopf__tel" href="{TEL}">{I_TEL}<span class="kopf__btntext">Anrufen</span></a>
-<a class="btn btn--wa kopf__wa" href="{WA}" rel="noopener" target="_blank">{I_WA}<span class="kopf__btntext">WhatsApp</span></a>
-<a class="btn btn--voll" href="{b}kontakt.html">Angebot anfragen</a>
+<a class="btn btn--rand kopf__tel" href="{TEL}" data-pos="kopf">{I_TEL}<span class="kopf__btntext">Anrufen</span></a>
+<a class="btn btn--wa kopf__wa" href="{WA}" rel="noopener" target="_blank" data-pos="kopf">{I_WA}<span class="kopf__btntext">WhatsApp</span></a>
 <button class="menue-knopf" id="menue-oeffnen" type="button" aria-controls="hauptnavigation" aria-expanded="false" aria-label="Menü öffnen">{I_MENUE}</button>
 </div>
 </div></header>
-<div class="nav-schleier" aria-hidden="true"></div>
 '''
 
 
@@ -277,29 +271,25 @@ def q(t):
 
 def footer(seite, b, url, titel):
     leist = ''.join(f'<li><a href="{b}{h}">{t}</a></li>' for h, t in FUSS_LEISTUNGEN)
-    teilen = (f'<p class="teilen">Seite teilen: <a href="https://wa.me/?text={q(url)}" rel="noopener" target="_blank">Per WhatsApp teilen</a> · '
-              f'<a href="mailto:?subject={q(titel)}&amp;body={q(url)}">Per E-Mail teilen</a> · '
+    teilen = (f'<p class="teilen">Seite teilen: <a href="https://wa.me/?text={q(url)}" rel="noopener" target="_blank" data-teilen="whatsapp">Per WhatsApp teilen</a> · '
+              f'<a href="mailto:?subject={q(titel)}&amp;body={q(url)}" data-teilen="email">Per E-Mail teilen</a> · '
               '<a href="https://www.instagram.com/gebaeudewerke" rel="noopener" target="_blank">Gebäudewerke auf Instagram</a></p>')
     return f'''
 <footer class="fuss"><div class="wrap">
 <div class="fuss__raster">
 <div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
 <p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
-<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}">0176 74025524</a><br><a href="mailto:info@gebaeudewerke.de">E-Mail an info@gebaeudewerke.de</a></address></div>
+<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}" data-pos="fuss">0176 74025524</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
+<a class="fuss__google google-hinweis" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span>{SCHNITT_DE} Sterne auf Google</span></a></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
-<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank">Nachricht per WhatsApp</a></li></ul></div>
+<div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank" data-pos="fuss">Nachricht per WhatsApp</a></li></ul></div>
 </div>
 <div class="fuss__unten"><span>© 2026 Gebäudewerke GbR</span>{teilen}<ul><li><a href="{b}impressum.html">Impressum</a></li><li><a href="{b}datenschutz.html">Datenschutz</a></li><li><a href="{b}datenschutz.html#google-analytics" data-cookie-einstellungen>Cookie-Einstellungen</a></li></ul></div>
 </div></footer>
-<div class="schnellkontakt">
-<a class="schnellkontakt__tel" href="{TEL}">{I_TEL}<span>Sofort anrufen</span></a>
-<a class="schnellkontakt__wa" href="{WA}" rel="noopener" target="_blank">{I_WA}<span>WhatsApp-Chat</span></a>
-</div>
 <nav class="mobilleiste" aria-label="Schnellkontakt mobil">
-<a href="{TEL}">{I_TEL}Anrufen</a>
-<a class="mobilleiste__wa" href="{WA}" rel="noopener" target="_blank">{I_WA}WhatsApp</a>
-<a href="{b}kontakt.html">{I_FORM}Anfrage</a>
+<a class="btn btn--weiss" href="{TEL}" data-pos="mobilleiste">{I_TEL}<span>Anrufen</span></a>
+<a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank" data-pos="mobilleiste">{I_WA}<span>WhatsApp</span></a>
 </nav>
 '''
 
@@ -397,7 +387,7 @@ def teaser_anwenden(main, b):
 
 # ---------------------------------------------------------------- Vertrauensstreifen
 
-VERTRAUEN_SEITEN = {'index.html', 'einsatzgebiet.html'} | {l[0] for l in LEISTUNGEN}
+VERTRAUEN_SEITEN = {'einsatzgebiet.html'} | {l[0] for l in LEISTUNGEN}
 I_SCHILD = svg('<path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/>')
 I_TEAM = svg('<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 5.5M17.5 14.5a5.5 5.5 0 0 1 3 4.5"/>')
 I_PREIS = svg('<rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.8h6V4"/><path d="M8.5 11.5l2 2 4.5-4.5"/><path d="M8.5 17h7"/>')
@@ -423,13 +413,38 @@ def vertrauen_anwenden(main, seite):
     return main[:pos] + '\n' + vertrauen_html() + main[pos:]
 
 
+# ---------------------------------------------------------------- Kontaktband
+
+def kontaktband_anwenden(main):
+    """Jede <section class="cta-band"> bekommt denselben Aufbau: seitenspezifische Überschrift und Satz bleiben,
+    darunter die große Telefonnummer, WhatsApp und der Weg zum Formular. Pro Seite genau ein Kontaktblock."""
+    def neu(m):
+        teil = m.group(0)
+        h2 = re.search(r'<h2[^>]*>.*?</h2>', teil, re.S)
+        satz = re.search(r'<p(?: class="cta-band__satz")?>(.*?)</p>', teil, re.S)
+        if not h2:
+            return teil
+        p = f'<p class="cta-band__satz">{satz.group(1)}</p>' if satz else ''
+        hid = re.search(r'\sid="([^"]+)"', h2.group(0))
+        lab = f' aria-labelledby="{hid.group(1)}"' if hid else ''
+        return (f'<section class="cta-band"{lab}><div class="wrap">\n'
+                f'<div class="cta-band__text">{h2.group(0)}{p}</div>\n'
+                f'<a class="riesennummer" href="{TEL}" data-pos="kontaktblock">0176 74025524</a>\n'
+                f'<div class="cta-band__knoepfe"><a class="btn btn--wa btn--gross" href="{WA}" rel="noopener" target="_blank" data-pos="kontaktblock">{I_WA}'
+                f'<span class="btn__zwei"><span class="btn__klein">Auch mit Foto</span><span class="btn__gross">WhatsApp schreiben</span></span></a>'
+                f'<a class="btn btn--rand" href="/kontakt.html" data-pos="kontaktblock">Anfrage per Formular</a></div>\n'
+                f'<p class="cta-sterne">{hinweis_kurz()} · Mo bis Fr 7 bis 17 Uhr · Notdienst täglich 17 bis 24 Uhr</p>\n'
+                '</div></section>')
+    return re.sub(r'<section class="cta-band"[^>]*>.*?</section>', neu, main, flags=re.S)
+
+
 # ---------------------------------------------------------------- Autorenbox (Ratgeber)
 
 TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit, Qualifikation laut Teamseite)
     'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Meisterbrief'),
-    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', 'Kaufmann, Vertrieb und Vermarktung'),
-    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', 'Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau'),
-    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', 'Gelernter Industriemechaniker'),
+    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', ''),
+    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', ''),
+    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', ''),
 }
 
 
@@ -459,7 +474,7 @@ def autorenbox_anwenden(s, main):
            f'<aside class="autorenbox" aria-label="Über den Autor"><span class="autorenbox__initial" aria-hidden="true">{initial}</span>'
            f'<div><p class="autorenbox__titel">Geschrieben von <a href="/ueber-uns.html#{anker}">{name}</a></p>'
            f'<p class="autorenbox__rolle">Bei Gebäudewerke zuständig für {rolle}</p>'
-           f'<p class="autorenbox__rolle">{quali}</p>'
+           + (f'<p class="autorenbox__rolle">{quali}</p>' if quali else '') +
            f'<p class="autorenbox__daten">{daten}</p>{hm}</div></aside>\n'
            '<!-- autorenbox:ende -->\n')
     z = re.search(r'\n</div>\n<aside class="datenblatt"', main)
@@ -554,6 +569,7 @@ def anwenden(seite):
     main = bewertungen_anwenden(main, seite)
     main = teaser_anwenden(main, b)
     main = vertrauen_anwenden(main, seite)
+    main = kontaktband_anwenden(main)
     if seite.startswith('ratgeber/') and seite != 'ratgeber/index.php':
         main = autorenbox_anwenden(s, main)
     s = (s[:m_body.end()] + header(seite, b) + s[m_main.start():m_main.end()] + main + '</main>'
