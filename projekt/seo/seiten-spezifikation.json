@@ -1,0 +1,2413 @@
+{
+ "stand": "2026-10-31",
+ "erlaeuterung": "Eine Zeile je indexierbarer Seite (Impressum, Datenschutz, 404, danke, anfrage-fehler sind noindex und nicht enthalten). Dateinamen und URLs bleiben. 'gliederung' ist die Soll-Reihenfolge der H2/H3. 'faq_fragen' sind die <summary>-Texte im FAQ-Block (nicht als Überschrift auszeichnen); die Antworttexte stehen in textaenderungen.md bzw. bleiben wie bisher. og:title/og:description wie angegeben, og:url = url. Trennzeichen im Title ist '|'. Keine Gedankenstriche verwenden. Ratgeber: 'autor' = sichtbare Autorenbox und author im Article-Schema. 'veroeffentlicht' = am 31.10.2026 bereits live.",
+ "seiten": [
+  {
+   "datei": "index.html",
+   "url": "https://gebaeudewerke.de/",
+   "neu": false,
+   "title": "Gebäudewerke Bruchsal | Hausmeister, Reinigung, Garten",
+   "meta_description": "Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, WEG und Gewerbe in Bruchsal. Festpreis nach kostenlosem Ortstermin.",
+   "h1": "Hausmeister, Reinigung und Außenanlagen in Bruchsal aus einer Hand",
+   "gliederung": [
+    {
+     "h2": "Woran Sie uns messen können"
+    },
+    {
+     "h2": "Unsere Leistungen für Wohn- und Gewerbeimmobilien",
+     "h3": [
+      "Hausmeisterservice für Wohnanlagen und Gewerbe",
+      "Wohnungsübergabe und Abnahme mit Protokoll",
+      "Gebäudereinigung für Treppenhaus, Büro und Glas",
+      "Gartenpflege und Außenanlagen",
+      "Winterdienst mit Einsatzprotokoll",
+      "Entrümpelung und Haushaltsauflösung",
+      "Kleinreparaturen, Montage und Renovierung",
+      "Metallarbeiten, Tore und Schließanlagen"
+     ]
+    },
+    {
+     "h2": "Für Hausverwaltungen, Eigentümer und Gewerbe"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Gebäudewerke auf einen Blick"
+    },
+    {
+     "h2": "In vier Schritten zum ersten Einsatz"
+    },
+    {
+     "h2": "Das Team hinter Ihrem Objekt"
+    },
+    {
+     "h2": "Im Einsatz in Bruchsal und im Landkreis Karlsruhe"
+    },
+    {
+     "h2": "Häufige Fragen"
+    },
+    {
+     "h2": "Kontakt aufnehmen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet ein Hausmeisterservice in Bruchsal?",
+    "In welchen Orten rund um Bruchsal sind Sie im Einsatz?",
+    "Wer übernimmt Hausmeister, Reinigung, Garten und Winterdienst in einem Vertrag?",
+    "Hausmeisterservice oder eigener Hausmeister, was passt besser?",
+    "Betreuen Sie Objekte, wenn der Eigentümer weiter weg wohnt?",
+    "Übernehmen Sie auch Haushaltsauflösungen und Wohnungsübergaben?",
+    "Gibt es einen Notdienst?",
+    "Arbeiten Sie mit Subunternehmern?",
+    "Sind Ihre Leistungen auf die Mieter umlagefähig?",
+    "Gibt es eine Mindestlaufzeit?",
+    "Wie schnell bekomme ich ein Angebot?"
+   ],
+   "og_title": "Gebäudewerke | Hausmeister, Reinigung und Garten in Bruchsal",
+   "og_description": "Ein Ansprechpartner für Hausmeisterservice, Reinigung, Gartenpflege und Winterdienst in Bruchsal. Eigenes Personal, Protokoll zu jedem Einsatz.",
+   "hauptkeyword": "Hausmeister und Gebäudeservice Bruchsal",
+   "nebenkeywords": [
+    "Gebäudewerke",
+    "Gebäudemanagement Bruchsal",
+    "Objektbetreuung Bruchsal",
+    "Hausmeister und Gartenservice",
+    "Hausmeisterservice und Gebäudereinigung"
+   ],
+   "hinweise": "Startseite ist Ziel-URL des Google-Profils. Bewertungsblock (vorhanden) unter die Leistungen. Ortsabschnitt mit Link auf einsatzgebiet.html."
+  },
+  {
+   "datei": "hausmeisterservice.html",
+   "url": "https://gebaeudewerke.de/hausmeisterservice.html",
+   "neu": false,
+   "title": "Hausmeisterservice Bruchsal für Wohnanlagen, WEG, Gewerbe",
+   "meta_description": "Hausmeisterservice in Bruchsal mit festem Betreuer, Kontrollgängen und Monatsbericht. Richtpreis ab 130 € netto im Monat. Jetzt Ortstermin anfragen.",
+   "h1": "Hausmeisterservice in Bruchsal für Wohnanlagen, WEG und Gewerbe",
+   "gliederung": [
+    {
+     "h2": "Ihr Hausmeister in Bruchsal und Umgebung"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Welcher Hausmeisterservice passt zu einem Mehrfamilienhaus?",
+      "Was kostet ein Hausmeisterservice für 8 bis 20 Wohnungen?",
+      "Hausmeisterservice oder eigener Hausmeister bei mehreren Objekten?",
+      "Gibt es einen festen Ansprechpartner für Gewerbeimmobilien?",
+      "Worauf sollten WEG und Hausverwaltung beim Vertrag achten?",
+      "Was gehört zum Gebäudemanagement und was nicht?",
+      "In welchen Orten betreuen Sie Objekte?",
+      "Einzelner Hausmeister und Hausmeisterservice im Vergleich"
+     ]
+    },
+    {
+     "h2": "Leistungen im Hausmeisterservice"
+    },
+    {
+     "h2": "So läuft ein Kontrollgang ab"
+    },
+    {
+     "h2": "Kosten für den Hausmeisterservice in Bruchsal"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zum Hausmeisterservice"
+    },
+    {
+     "h2": "Hausmeisterservice anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet ein Hausmeisterservice im Monat?",
+    "Wie oft kommt der Hausmeister?",
+    "Wie erfahre ich, was gemacht wurde?",
+    "Übernehmen Sie die Schlüsselverwaltung?",
+    "Was passiert bei einem Schaden am Abend?",
+    "Ab welcher Objektgröße lohnt sich eine feste Betreuung?",
+    "Sind die Hausmeisterkosten auf die Mieter umlegbar?"
+   ],
+   "og_title": "Hausmeisterservice in Bruchsal mit festem Betreuer",
+   "og_description": "Kontrollgänge, Kleinreparaturen, Schlüssel und Mülltonnen für Wohnanlagen und Gewerbe in Bruchsal. Monatsbericht als PDF, ab 130 € netto im Monat.",
+   "hauptkeyword": "Hausmeisterservice Bruchsal",
+   "nebenkeywords": [
+    "Hausmeister Bruchsal",
+    "Hausmeisterdienst Bruchsal",
+    "Hausmeisterservice Mehrfamilienhaus",
+    "Hausmeisterservice WEG",
+    "Hausmeisterservice Gewerbe",
+    "Objektbetreuung",
+    "Hausmeisterservice in der Nähe"
+   ]
+  },
+  {
+   "datei": "gebaeudereinigung.html",
+   "url": "https://gebaeudewerke.de/gebaeudereinigung.html",
+   "neu": false,
+   "title": "Gebäudereinigung Bruchsal | Reinigungsfirma für Wohnanlagen",
+   "meta_description": "Gebäudereinigung in Bruchsal nach festem Reinigungsplan: Gemeinschaftsflächen, Keller, Tiefgarage, Fenster und Sonderreinigung. Festpreis nach dem Ortstermin.",
+   "h1": "Gebäudereinigung in Bruchsal für Wohnanlagen und Gewerbe",
+   "gliederung": [
+    {
+     "h2": "Reinigung nach Plan statt nach Zuruf"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Welche Reinigungsfirma eignet sich für Treppenhäuser und Gemeinschaftsflächen?",
+      "Wer reinigt das Treppenhaus und meldet Mängel gleich mit?",
+      "Was kostet eine Treppenhausreinigung im Monat?",
+      "Reinigen Sie auch Keller, Tiefgarage und Fenster?",
+      "Reinigungsfirma oder Hausmeister mit Reinigung?",
+      "Was kostet eine Fensterreinigung?",
+      "Was kostet eine regelmäßige Büroreinigung?",
+      "In welchen Orten reinigen Sie?",
+      "Reinigungsfirma und kombinierter Dienst im Vergleich"
+     ]
+    },
+    {
+     "h2": "Büroreinigung und Praxisreinigung in Bruchsal"
+    },
+    {
+     "h2": "Leistungen der Gebäudereinigung"
+    },
+    {
+     "h2": "So läuft die Reinigung ab"
+    },
+    {
+     "h2": "Preise für die Gebäudereinigung"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Gebäudereinigung"
+    },
+    {
+     "h2": "Gebäudereinigung anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet eine Treppenhausreinigung?",
+    "Gibt es einen festen Reinigungsplan?",
+    "Wer stellt Reinigungsmittel und Maschinen?",
+    "Reinigen Sie außerhalb der Geschäftszeiten?",
+    "Wie schnell ist eine Leerstandsreinigung möglich?",
+    "Sind die Reinigungskosten umlagefähig?"
+   ],
+   "og_title": "Gebäudereinigung in Bruchsal nach festem Reinigungsplan",
+   "og_description": "Gemeinschaftsflächen, Keller, Tiefgarage, Glas und Sonderreinigung in Bruchsal und im Landkreis Karlsruhe. Mittel und Geräte inklusive.",
+   "hauptkeyword": "Gebäudereinigung Bruchsal",
+   "nebenkeywords": [
+    "Reinigungsfirma Bruchsal",
+    "Putzfirma Bruchsal",
+    "Unterhaltsreinigung Bruchsal",
+    "Fensterreinigung Bruchsal",
+    "Glasreinigung",
+    "Kellerreinigung",
+    "Tiefgaragenreinigung",
+    "Grundreinigung",
+    "Bauendreinigung"
+   ],
+   "hinweise": "Umgesetzt mit geschärftem Fokus: Treppenhaus und Büro haben eigene Seiten."
+  },
+  {
+   "datei": "gartenpflege.html",
+   "url": "https://gebaeudewerke.de/gartenpflege.html",
+   "neu": false,
+   "title": "Gartenpflege Bruchsal | Rasen, Hecken und Außenanlagen",
+   "meta_description": "Gartenpflege in Bruchsal für Wohnanlagen und Gewerbe: Rasen, Hecken, Beete, Laub und Hofflächen im Jahresvertrag. Schnittgut nehmen wir mit. Jetzt anfragen.",
+   "h1": "Gartenpflege in Bruchsal für Wohnanlagen und Gewerbe",
+   "gliederung": [
+    {
+     "h2": "Die Außenanlage sieht jeder zuerst"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wer pflegt Rasen, Hecken und Laub einer Wohnanlage im Jahresvertrag?",
+      "Worauf kommt es bei der Gartenpflege für Mietobjekte an?",
+      "Was kostet Gartenpflege für eine Wohnanlage?",
+      "Gibt es Hausmeisterservice, Gartenpflege und Winterdienst zusammen?",
+      "Übernehmen Sie auch Kehrdienst und Laub?",
+      "In welchen Orten pflegen Sie Außenanlagen?"
+     ]
+    },
+    {
+     "h2": "Leistungen der Gartenpflege"
+    },
+    {
+     "h2": "So läuft das Gartenjahr ab"
+    },
+    {
+     "h2": "Preise für die Gartenpflege"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Gartenpflege"
+    },
+    {
+     "h2": "Gartenpflege anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet die Gartenpflege im Jahr?",
+    "Wie oft wird der Rasen gemäht?",
+    "Wann darf man Hecken schneiden?",
+    "Wird das Schnittgut mitgenommen?",
+    "Übernehmen Sie auch die Bewässerung?"
+   ],
+   "og_title": "Gartenpflege in Bruchsal im Jahresvertrag",
+   "og_description": "Rasen, Hecken, Beete, Laub sowie Wege und Höfe für Wohnanlagen und Gewerbe in Bruchsal. Feste Termine von März bis November, Entsorgung inklusive.",
+   "hauptkeyword": "Gartenpflege Bruchsal",
+   "nebenkeywords": [
+    "Gärtner Bruchsal",
+    "Gartenservice Bruchsal",
+    "Heckenschnitt Bruchsal",
+    "Außenanlagenpflege",
+    "Hausmeisterservice Gartenpflege",
+    "Gartenpflege Jahresvertrag Wohnanlage"
+   ],
+   "hinweise": "Seite rankt auf Platz 7 für 'gartenpflege bruchsal'. Title und H1 nur minimal ändern, Inhalte ergänzen statt umbauen."
+  },
+  {
+   "datei": "winterdienst.html",
+   "url": "https://gebaeudewerke.de/winterdienst.html",
+   "neu": false,
+   "title": "Winterdienst Bruchsal mit Einsatzprotokoll | Gebäudewerke",
+   "meta_description": "Winterdienst in Bruchsal: Räumen und Streuen von Gehwegen, Zufahrten und Parkplätzen, Saison November bis März, jeder Einsatz protokolliert. Jetzt anfragen.",
+   "h1": "Winterdienst in Bruchsal mit Einsatzprotokoll",
+   "gliederung": [
+    {
+     "h2": "Wer im Januar stürzt, klagt im Juni"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wer räumt in Bruchsal Gehwege und Hauseingänge zuverlässig?",
+      "Was kostet Winterdienst für ein Mehrfamilienhaus?",
+      "Bin ich nach der Beauftragung aus der Haftung?",
+      "Gibt es Gartenpflege und Winterdienst bei einem Anbieter?",
+      "Wer kehrt Laub und entfernt im Frühjahr den Splitt?",
+      "Kann ich den Winterdienst auf die Mieter umlegen?"
+     ]
+    },
+    {
+     "h2": "Leistungen im Winterdienst"
+    },
+    {
+     "h2": "So läuft ein Einsatz ab"
+    },
+    {
+     "h2": "Preise für den Winterdienst in Bruchsal"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zum Winterdienst"
+    },
+    {
+     "h2": "Winterdienst anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet der Winterdienst?",
+    "Bis wann muss in Bruchsal morgens geräumt sein?",
+    "Warum streuen Sie kein Salz?",
+    "Bis wann sollte ich den Winterdienst beauftragen?",
+    "Was passiert bei Eisregen in der Nacht?",
+    "Kann ich den Winterdienst von der Steuer absetzen?"
+   ],
+   "og_title": "Winterdienst in Bruchsal mit Protokoll zu jedem Einsatz",
+   "og_description": "Räumen und Streuen für Wohnanlagen, Gewerbe und Parkplätze in Bruchsal. Saisonpauschale ab 1.435 € netto bis 120 m², Splitt-Entfernung inklusive.",
+   "hauptkeyword": "Winterdienst Bruchsal",
+   "nebenkeywords": [
+    "Schneeräumdienst Bruchsal",
+    "Räum- und Streudienst",
+    "Winterdienst Mehrfamilienhaus",
+    "Winterdienst Kosten",
+    "Winterdienst Landkreis Karlsruhe",
+    "Winterdienst in der Nähe"
+   ],
+   "hinweise": "Die H3 'Bin ich nach der Beauftragung aus der Haftung?' wird aus der FAQ nach oben geholt, die alte H3 'Wer räumt, streut und kümmert sich zusätzlich um die Verkehrssicherung?' fällt weg (Inhalt wandert in die Antwort). FAQ 'Steuer' nur mit dem allgemeinen Hinweis auf § 35a EStG und Steuerberater, siehe textaenderungen.md."
+  },
+  {
+   "datei": "entruempelung.html",
+   "url": "https://gebaeudewerke.de/entruempelung.html",
+   "neu": false,
+   "title": "Entrümpelung Bruchsal | Haushaltsauflösung zum Festpreis",
+   "meta_description": "Entrümpelung und Haushaltsauflösung in Bruchsal: kostenlose Besichtigung, schriftlicher Festpreis, getrennte Entsorgung, besenreine Übergabe. Jetzt anfragen.",
+   "h1": "Entrümpelung und Haushaltsauflösung in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Räumen ist meistens der erste Schritt"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Woran erkennt man eine seriöse Entrümpelungsfirma?",
+      "Wie schnell ist eine Entrümpelung möglich?",
+      "Wer macht eine Haushaltsauflösung mit besenreiner Übergabe?",
+      "Was kostet eine Entrümpelung von Wohnung oder Keller?",
+      "Räumen Sie auch in Heidelsheim, Helmsheim und den anderen Ortsteilen?",
+      "Geht eine Haushaltsauflösung ohne dass ich vor Ort bin?",
+      "Gibt es Entrümpelung mit Reinigung und Renovierung vor der Neuvermietung?",
+      "Wer entsorgt Sperrmüll, Möbel und Kellerinhalte?"
+     ]
+    },
+    {
+     "h2": "Leistungen bei Entrümpelung und Haushaltsauflösung"
+    },
+    {
+     "h2": "So läuft die Räumung ab"
+    },
+    {
+     "h2": "Preise für Entrümpelung und Haushaltsauflösung"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Entrümpelung"
+    },
+    {
+     "h2": "Entrümpelung anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet eine Entrümpelung?",
+    "Kann ich Fotos statt einer Besichtigung schicken?",
+    "Wie schnell können Sie räumen?",
+    "Was passiert mit brauchbaren Sachen?",
+    "Bekomme ich einen Entsorgungsnachweis?",
+    "Übernehmen Sie auch Umzüge?"
+   ],
+   "og_title": "Entrümpelung und Haushaltsauflösung in Bruchsal zum Festpreis",
+   "og_description": "Keller, Dachboden, Wohnung oder Gewerbefläche in Bruchsal räumen lassen. Festpreis nach kostenloser Besichtigung, für kleine Räume reichen oft Fotos.",
+   "hauptkeyword": "Entrümpelung Bruchsal",
+   "nebenkeywords": [
+    "Haushaltsauflösung Bruchsal",
+    "Wohnungsauflösung Bruchsal",
+    "Kellerentrümpelung",
+    "Entrümpelung Kosten",
+    "Entrümpelung Heidelsheim",
+    "Entrümpelung in der Nähe"
+   ]
+  },
+  {
+   "datei": "wohnungsuebergabe.html",
+   "url": "https://gebaeudewerke.de/wohnungsuebergabe.html",
+   "neu": false,
+   "title": "Wohnungsübergabe Bruchsal mit Fotoprotokoll | Gebäudewerke",
+   "meta_description": "Wohnungsübergabe in Bruchsal für Vermieter und Hausverwaltungen: Abnahme mit Fotos, Zählerständen und Schlüsseln, Protokoll am selben Tag. Termin anfragen.",
+   "h1": "Wohnungsübergabe und Leerstandskontrolle in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Ein Mieterwechsel besteht aus vielen kleinen Terminen"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wer übernimmt Wohnungsübergaben mit Fotoprotokoll?",
+      "Was wird bei der Abnahme dokumentiert?",
+      "Was kostet eine Wohnungsübergabe durch einen Dienstleister?",
+      "Ich wohne nicht in der Nähe. Wie klappt der Mieterwechsel trotzdem?",
+      "Gibt es Abnahme, Reinigung und Reparatur aus einer Hand?",
+      "Wer kümmert sich um die leere Wohnung zwischen zwei Mietern?"
+     ]
+    },
+    {
+     "h2": "Leistungen bei Übergabe und Leerstand"
+    },
+    {
+     "h2": "So läuft eine Übergabe ab"
+    },
+    {
+     "h2": "Preise für Wohnungsübergabe und Leerstandskontrolle"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Wohnungsübergabe"
+    },
+    {
+     "h2": "Wohnungsübergabe anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Muss ich bei der Übergabe selbst dabei sein?",
+    "Kann ich das Protokoll für die Kautionsabrechnung nutzen?",
+    "Übernehmen Sie nach dem Auszug auch Reinigung und kleine Reparaturen?",
+    "Wie oft kontrollieren Sie eine leere Wohnung?",
+    "Wie kurzfristig bekomme ich einen Termin?"
+   ],
+   "og_title": "Wohnungsübergabe in Bruchsal mit Fotoprotokoll",
+   "og_description": "Abnahme, Zählerstände, Schlüsselrücknahme und Mängelliste am selben Tag als PDF. Für Vermieter und Verwaltungen in Bruchsal und im Landkreis Karlsruhe.",
+   "hauptkeyword": "Wohnungsübergabe Bruchsal",
+   "nebenkeywords": [
+    "Wohnungsübergabe Service",
+    "Wohnungsabnahme",
+    "Leerstandskontrolle",
+    "Mieterwechsel Vermieter",
+    "Immobilienservice Bruchsal"
+   ]
+  },
+  {
+   "datei": "kleinreparaturen.html",
+   "url": "https://gebaeudewerke.de/kleinreparaturen.html",
+   "neu": false,
+   "title": "Kleinreparaturen Bruchsal | Handwerkerservice und Montage",
+   "meta_description": "Kleinreparaturen und Montage in Bruchsal: Lampen, Silikon, Türen, Streichen und Klickvinyl in einem Termin. Abrechnung nach Aufwand oder pauschal.",
+   "h1": "Kleinreparaturen, Montage und Renovierung in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Eine Liste, ein Termin"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wer erledigt mehrere Kleinreparaturen in einem Termin?",
+      "Was machen Sie selbst und wann kommt ein Fachbetrieb?",
+      "Wie wird abgerechnet?"
+     ]
+    },
+    {
+     "h2": "Leistungen im Handwerkerservice"
+    },
+    {
+     "h2": "So läuft ein Reparaturtermin ab"
+    },
+    {
+     "h2": "Was kosten Kleinreparaturen?"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zu Kleinreparaturen"
+    },
+    {
+     "h2": "Kleinreparaturen anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Gibt es eine Mindestauftragsgröße?",
+    "Wie wird abgerechnet?",
+    "Besorgen Sie das Material?",
+    "Arbeiten Sie in bewohnten Wohnungen?",
+    "Machen Sie auch Elektro- oder Sanitärinstallationen?"
+   ],
+   "og_title": "Kleinreparaturen in Bruchsal: eine Liste, ein Termin",
+   "og_description": "Montage, Silikonfugen, Streichen, Klickvinyl und kleine Reparaturen in Wohnungen, Büros und Treppenhäusern in Bruchsal, gesammelt in einem Termin.",
+   "hauptkeyword": "Kleinreparaturen Bruchsal",
+   "nebenkeywords": [
+    "Handwerkerservice Bruchsal",
+    "Handwerker Bruchsal",
+    "Montageservice",
+    "Renovierung zwischen zwei Mietern",
+    "Hausmeister Kleinreparaturen"
+   ],
+   "hinweise": "Neuer Block 'Kurz beantwortet' mit drei H3, Texte in textaenderungen.md."
+  },
+  {
+   "datei": "metallarbeiten-schloesser.html",
+   "url": "https://gebaeudewerke.de/metallarbeiten-schloesser.html",
+   "neu": false,
+   "title": "Schlosser und Metallarbeiten Bruchsal | Tore, Zylinder",
+   "meta_description": "Metallarbeiten in Bruchsal vom Industriemeister Metall: Zaun, Tor und Geländer reparieren, Schweißarbeiten, Zylindertausch, Schließanlagen. Fotos schicken.",
+   "h1": "Metallarbeiten, Türen, Tore und Schlösser in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Metall ist bei uns kein Nebenthema"
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wer repariert Zaun, Tor oder Geländer in Bruchsal?",
+      "Wie schnell wird ein Schließzylinder getauscht?",
+      "Können Sie eine bestehende Schließanlage erweitern?"
+     ]
+    },
+    {
+     "h2": "Leistungen für Türen, Tore und Metall"
+    },
+    {
+     "h2": "So läuft ein Auftrag ab"
+    },
+    {
+     "h2": "Was kosten Metallarbeiten und Schlösser?"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zu Metallarbeiten und Schlössern"
+    },
+    {
+     "h2": "Metallarbeiten und Schlösser anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Machen Sie Schweiß- und Metallarbeiten selbst?",
+    "Wie schnell kann ein Zylinder getauscht werden?",
+    "Können Sie eine bestehende Schließanlage erweitern?",
+    "Fertigen Sie Teile nach Maß an?",
+    "Öffnen Sie auch zugefallene Türen?",
+    "Wie wird abgerechnet?"
+   ],
+   "og_title": "Metallarbeiten, Tore und Schlösser in Bruchsal",
+   "og_description": "Zäune, Tore und Geländer reparieren, Halterungen nach Maß, Zylindertausch und Schließanlagen. Im Team: ein geprüfter Industriemeister Metall.",
+   "hauptkeyword": "Metallarbeiten und Schlosser Bruchsal",
+   "nebenkeywords": [
+    "Schlosserei Bruchsal",
+    "Metallbau Bruchsal",
+    "Zylinder tauschen",
+    "Schließanlage erweitern",
+    "Tor reparieren",
+    "Geländer reparieren"
+   ],
+   "hinweise": "Neue FAQ 'Öffnen Sie auch zugefallene Türen?' grenzt sauber vom Schlüsseldienst ab (Antwort in textaenderungen.md). Die Google-Bewertung von Leon Göler (Thema Schlösser) hier zeigen."
+  },
+  {
+   "datei": "preise.html",
+   "url": "https://gebaeudewerke.de/preise.html",
+   "neu": false,
+   "title": "Hausmeisterservice Preise Bruchsal | Preisliste netto, brutto",
+   "meta_description": "Richtpreise für Hausmeisterservice, Reinigung, Fenster, Gartenpflege, Mülltonnen und Winterdienst in Bruchsal, netto und brutto. Festpreis nach Ortstermin.",
+   "h1": "Preise für Hausmeisterservice, Reinigung und Gartenpflege in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Richtpreise nach Leistung"
+    },
+    {
+     "h2": "Die häufigsten Preisfragen",
+     "h3": [
+      "Was kostet ein Hausmeisterservice für 7 bis 20 Wohnungen?",
+      "Was kostet Winterdienst für ein Mehrfamilienhaus?",
+      "Was kostet eine Treppenhausreinigung?",
+      "Was kostet eine Entrümpelung?",
+      "Was kostet eine Wohnungsübergabe?",
+      "Was kostet eine Fensterreinigung?"
+     ]
+    },
+    {
+     "h2": "Preise Hausmeisterservice und Objektbetreuung"
+    },
+    {
+     "h2": "Preise Unterhaltsreinigung und Büroreinigung"
+    },
+    {
+     "h2": "Preise Fensterreinigung"
+    },
+    {
+     "h2": "Wintergartenreinigung"
+    },
+    {
+     "h2": "Glasüberdachungen reinigen"
+    },
+    {
+     "h2": "Preise Gartenpflege und Grünpflege",
+     "h3": [
+      "Grünpflege mit wöchentlichem Einsatz"
+     ]
+    },
+    {
+     "h2": "Heckenschnitt"
+    },
+    {
+     "h2": "Mülltonnenservice"
+    },
+    {
+     "h2": "Preise Winterdienst"
+    },
+    {
+     "h2": "Leistungen ohne Richtpreis"
+    },
+    {
+     "h2": "Preis für Ihr Objekt anfragen"
+    }
+   ],
+   "og_title": "Preisliste für Hausmeisterservice und Reinigung in Bruchsal",
+   "og_description": "Alle Richtpreise auf einer Seite, netto und brutto: Hausmeisterservice ab 130 €, Büroreinigung ab 449 €, Winterdienst ab 1.435 € pro Saison.",
+   "hauptkeyword": "Hausmeisterservice Preise",
+   "nebenkeywords": [
+    "Preisliste Hausmeisterservice",
+    "Hausmeisterservice Preisliste",
+    "Gebäudereinigung Preise",
+    "Winterdienst Preise",
+    "Hausmeisterservice Gartenpflege Preise",
+    "Fensterreinigung Preise",
+    "Mülltonnenservice Preis"
+   ],
+   "hinweise": "Jahreszahl aus Title und H1 entfernen. Im Text sichtbar 'Stand: Oktober 2026' führen und bei Preisänderung anpassen. Die Fragen sind heute <p>, sie werden zu H3."
+  },
+  {
+   "datei": "einsatzgebiet.html",
+   "url": "https://gebaeudewerke.de/einsatzgebiet.html",
+   "neu": true,
+   "prioritaet": 1,
+   "title": "Einsatzgebiet Bruchsal und Landkreis Karlsruhe | Gebäudewerke",
+   "meta_description": "In diesen Orten betreuen wir Wohnanlagen und Gewerbe: Bruchsal mit allen Stadtteilen, Forst, Ubstadt-Weiher, Bad Schönborn, Waghäusel und mehr. Ort anfragen.",
+   "h1": "Unser Einsatzgebiet in Bruchsal und im Landkreis Karlsruhe",
+   "gliederung": [
+    {
+     "h2": "Bruchsal mit allen Stadtteilen",
+     "h3": [
+      "Kernstadt",
+      "Büchenau, Heidelsheim, Helmsheim",
+      "Obergrombach und Untergrombach"
+     ]
+    },
+    {
+     "h2": "Gemeinden rund um Bruchsal",
+     "h3": [
+      "Forst, Karlsdorf-Neuthard und Ubstadt-Weiher",
+      "Bad Schönborn, Östringen und Kronau",
+      "Hambrücken, Waghäusel, Philippsburg und Graben-Neudorf",
+      "Stutensee und Bretten"
+     ]
+    },
+    {
+     "h2": "Welche Leistungen es überall gibt"
+    },
+    {
+     "h2": "Warum wir in festen Touren fahren"
+    },
+    {
+     "h2": "Ihr Ort ist nicht dabei?"
+    },
+    {
+     "h2": "Fragen zum Einsatzgebiet"
+    }
+   ],
+   "faq_fragen": [
+    "Kommen Sie auch nach Karlsruhe?",
+    "Kostet die Anfahrt in die Ortsteile extra?",
+    "Gilt der Winterdienst im ganzen Gebiet?",
+    "Wo haben Sie schon gearbeitet?"
+   ],
+   "og_title": "Einsatzgebiet von Gebäudewerke rund um Bruchsal",
+   "og_description": "Bruchsal mit Büchenau, Heidelsheim, Helmsheim, Obergrombach und Untergrombach sowie die Gemeinden im Landkreis Karlsruhe. Alle Orte auf einen Blick.",
+   "hauptkeyword": "Hausmeisterservice Landkreis Karlsruhe",
+   "nebenkeywords": [
+    "Gebäudereinigung Landkreis Karlsruhe",
+    "Hausmeisterservice Bretten",
+    "Gebäudereinigung Bretten",
+    "Hausmeisterservice Waghäusel",
+    "Hausmeisterservice Bad Schönborn",
+    "Hausmeisterservice Ubstadt-Weiher",
+    "Bruchsal Ortsteile"
+   ],
+   "hinweise": "Keine Ortsseiten je Gemeinde. Keine erfundenen Fahrzeiten, Kundenzahlen oder Objekte. FAQ-Antwort zur Anfahrt nur mit Angaben, die der Inhaber bestätigt (Vorschlag in textaenderungen.md mit Platzhalter)."
+  },
+  {
+   "datei": "treppenhausreinigung.html",
+   "url": "https://gebaeudewerke.de/treppenhausreinigung.html",
+   "neu": true,
+   "prioritaet": 1,
+   "title": "Treppenhausreinigung Bruchsal | Fester Plan, fester Wochentag",
+   "meta_description": "Treppenhausreinigung in Bruchsal für Mehrfamilienhäuser und WEG: wöchentlich nach Plan, Aushang mit Datum, Mängelmeldung per Foto. Festpreis nach Ortstermin.",
+   "h1": "Treppenhausreinigung in Bruchsal für Mehrfamilienhäuser und WEG",
+   "gliederung": [
+    {
+     "h2": "Was zur Treppenhausreinigung gehört",
+     "h3": [
+      "Jede Woche",
+      "Jeden Monat",
+      "Mehrmals im Jahr"
+     ]
+    },
+    {
+     "h2": "Kurz beantwortet",
+     "h3": [
+      "Wie oft sollte ein Treppenhaus gereinigt werden?",
+      "Was kostet eine Treppenhausreinigung im Mehrfamilienhaus?",
+      "Können Mieter zur Treppenhausreinigung verpflichtet werden?",
+      "Sind die Kosten auf die Mieter umlegbar?"
+     ]
+    },
+    {
+     "h2": "Nachweis am Aushang"
+    },
+    {
+     "h2": "Sichtkontrolle bei jeder Reinigung"
+    },
+    {
+     "h2": "Treppenhausreinigung und Hausmeisterservice in einem Vertrag"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Treppenhausreinigung"
+    },
+    {
+     "h2": "Treppenhausreinigung anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Werden Reinigungsmittel und Geräte gestellt?",
+    "Was passiert, wenn Fahrräder oder Kinderwagen im Weg stehen?",
+    "Reinigen Sie auch Keller und Tiefgarage mit?",
+    "Gibt es eine Mindestlaufzeit?"
+   ],
+   "og_title": "Treppenhausreinigung in Bruchsal nach festem Plan",
+   "og_description": "Stufen, Podeste, Handläufe und Eingang jede Woche, Geländer und Briefkästen jeden Monat. Für Mehrfamilienhäuser und WEG in Bruchsal und Umgebung.",
+   "hauptkeyword": "Treppenhausreinigung Bruchsal",
+   "nebenkeywords": [
+    "Treppenhausreinigung Kosten",
+    "Treppenhausreinigung Mehrfamilienhaus",
+    "Treppenhausreinigung WEG",
+    "Treppenhausreinigung Landkreis Karlsruhe",
+    "Treppenhausreinigung"
+   ],
+   "hinweise": "Kein pauschaler Richtpreis (so steht es auf preise.html). Bild: treppenhausreinigung-bruchsal.webp wiederverwenden oder eigenes Foto. Service-Schema mit serviceType 'Treppenhausreinigung'."
+  },
+  {
+   "datei": "bueroreinigung.html",
+   "url": "https://gebaeudewerke.de/bueroreinigung.html",
+   "neu": true,
+   "prioritaet": 2,
+   "title": "Büroreinigung Bruchsal | Praxis und Büro ab 449 € netto",
+   "meta_description": "Büroreinigung und Praxisreinigung in Bruchsal außerhalb der Öffnungszeiten. Reinigungsplan, feste Intervalle, ab 449 € netto im Monat für 50 m².",
+   "h1": "Büroreinigung und Praxisreinigung in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Gereinigt wird, wenn niemand arbeitet"
+    },
+    {
+     "h2": "Was im Reinigungsplan steht"
+    },
+    {
+     "h2": "Richtpreise für die Büroreinigung"
+    },
+    {
+     "h2": "Praxen und Behandlungsräume"
+    },
+    {
+     "h2": "Schlüssel, Alarm und Zugang"
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Fragen zur Büroreinigung"
+    },
+    {
+     "h2": "Büroreinigung anfragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wie oft sollte ein Büro gereinigt werden?",
+    "Was kostet die Büroreinigung pro Monat?",
+    "Wer bekommt die Schlüssel?",
+    "Wird Verbrauchsmaterial gestellt?",
+    "Reinigen Sie auch die Fenster mit?"
+   ],
+   "og_title": "Büroreinigung und Praxisreinigung in Bruchsal",
+   "og_description": "Reinigung vor Betriebsbeginn oder nach Feierabend, nach schriftlichem Reinigungsplan. Richtpreise ab 449 € netto im Monat bei dreimal pro Woche.",
+   "hauptkeyword": "Büroreinigung Bruchsal",
+   "nebenkeywords": [
+    "Praxisreinigung Bruchsal",
+    "Unterhaltsreinigung Büro",
+    "Büroreinigung Kosten",
+    "Reinigungsfirma Büro Bruchsal"
+   ],
+   "hinweise": "Nur bauen, wenn der Inhaber Büroreinigung aktiv verkaufen will (siehe keyword-map.md 2.3)."
+  },
+  {
+   "datei": "ueber-uns.html",
+   "url": "https://gebaeudewerke.de/ueber-uns.html",
+   "neu": false,
+   "title": "Über uns | Gebäudewerke, Objektbetreuung in Bruchsal",
+   "meta_description": "Wer hinter Gebäudewerke steht: vier Gesellschafter aus Metallbau, Industriemechanik und Vertrieb und ein fester Betreuer für jedes Objekt in Bruchsal.",
+   "h1": "Gebäudewerke, Ihr Objekt- und Gebäudeservice in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Wer wir sind"
+    },
+    {
+     "h2": "Was unsere Berufe an einem Objekt bringen"
+    },
+    {
+     "h2": "Warum wir nicht jedes Objekt annehmen"
+    },
+    {
+     "h2": "Worauf Sie sich verlassen können"
+    },
+    {
+     "h2": "Unser Team",
+     "h3": [
+      "Fatih Altun",
+      "Enes Yesildag",
+      "Burak Kartal",
+      "Julian Bender"
+     ]
+    },
+    {
+     "h2": "Kundenstimmen auf Google"
+    },
+    {
+     "h2": "Lernen Sie uns beim Ortstermin kennen"
+    }
+   ],
+   "og_title": "Das Team hinter Gebäudewerke in Bruchsal",
+   "og_description": "Industriemeister Metall, Metallbauer, Industriemechaniker und Kaufmann: vier Gesellschafter, ein fester Ansprechpartner für jedes Objekt in Bruchsal.",
+   "hauptkeyword": "Gebäudewerke Team",
+   "nebenkeywords": [
+    "Gebäudewerke Bruchsal",
+    "Gebäudewerke GbR",
+    "Industriemeister Metall Bruchsal",
+    "Objektbetreuung Bruchsal"
+   ]
+  },
+  {
+   "datei": "kontakt.html",
+   "url": "https://gebaeudewerke.de/kontakt.html",
+   "neu": false,
+   "title": "Kontakt | Gebäudewerke Bruchsal, Angebot und Ortstermin",
+   "meta_description": "Kontakt zu Gebäudewerke: Telefon 0163 7221790, WhatsApp oder Formular. Mo bis Fr 7 bis 17 Uhr, Rückruf am selben oder nächsten Werktag. Ortstermin kostenlos.",
+   "h1": "Kontakt zu Gebäudewerke",
+   "gliederung": [
+    {
+     "h2": "So erreichen Sie uns"
+    },
+    {
+     "h2": "Anfrage senden"
+    },
+    {
+     "h2": "Was nach Ihrer Anfrage passiert",
+     "h3": [
+      "Rückmeldung",
+      "Terminvorschlag",
+      "Angebot"
+     ]
+    },
+    {
+     "h2": "Anfahrt und Einsatzgebiet"
+    }
+   ],
+   "og_title": "Kontakt zu Gebäudewerke in Bruchsal",
+   "og_description": "Telefon, WhatsApp oder Formular. Rückruf am selben oder nächsten Werktag, kostenloser Ortstermin in Bruchsal und Umgebung, Angebot wenige Tage danach.",
+   "hauptkeyword": "Gebäudewerke Kontakt",
+   "nebenkeywords": [
+    "Hausmeisterservice anfragen",
+    "Angebot Gebäudereinigung Bruchsal",
+    "Ortstermin vereinbaren"
+   ]
+  },
+  {
+   "datei": "karriere.html",
+   "url": "https://gebaeudewerke.de/karriere.html",
+   "neu": false,
+   "title": "Hausmeister Jobs Bruchsal | Karriere bei Gebäudewerke",
+   "meta_description": "Jobs in Bruchsal als Hausmeister, Reinigungskraft oder Aushilfe im Winterdienst. Feste Touren, planbare Arbeitszeiten, Quereinsteiger willkommen.",
+   "h1": "Jobs im Hausmeisterservice und in der Reinigung in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Wen wir suchen"
+    },
+    {
+     "h2": "Was wir bieten"
+    },
+    {
+     "h2": "Offene Stellen",
+     "h3": [
+      "Hausmeister (m/w/d)",
+      "Reinigungskraft (m/w/d)",
+      "Aushilfe Winterdienst (m/w/d)"
+     ]
+    },
+    {
+     "h2": "Passt das zu Ihnen?"
+    }
+   ],
+   "og_title": "Jobs bei Gebäudewerke in Bruchsal",
+   "og_description": "Hausmeister, Reinigungskraft und Aushilfe im Winterdienst gesucht. Feste Touren in Bruchsal und Umgebung, planbare Arbeitszeiten, Quereinsteiger willkommen.",
+   "hauptkeyword": "Hausmeister Jobs Bruchsal",
+   "nebenkeywords": [
+    "Reinigungskraft Jobs Bruchsal",
+    "Winterdienst Aushilfe Bruchsal",
+    "Reinigungskraft Bruchsal"
+   ],
+   "hinweise": "JobPosting-Schema nur, wenn Stellen echt offen sind und Angaben (Arbeitszeit, Beschäftigungsart) feststehen. Siehe technik-und-schema.md."
+  },
+  {
+   "datei": "ratgeber/index.php",
+   "url": "https://gebaeudewerke.de/ratgeber/",
+   "neu": false,
+   "title": "Ratgeber für Vermieter, WEG und Hausverwaltung | Gebäudewerke",
+   "meta_description": "Praxiswissen aus Bruchsal zu Räum- und Streupflicht, Betriebskosten, Treppenhaus, Gartenpflege und Mieterwechsel. Für Eigentümer, Vermieter und Verwaltungen.",
+   "h1": "Ratgeber für Eigentümer, Vermieter und Hausverwaltungen",
+   "gliederung": [
+    {
+     "h2": "Themen",
+     "h3": [
+      "Winterdienst und Verkehrssicherung",
+      "Betriebskosten und Umlage",
+      "Reinigung",
+      "Gartenpflege und Außenanlagen",
+      "Mieterwechsel und Vermietung",
+      "Hausmeisterservice und Verwaltung"
+     ]
+    },
+    {
+     "h2": "Alle Beiträge"
+    },
+    {
+     "h2": "Frage zu Ihrem Objekt?"
+    }
+   ],
+   "og_title": "Ratgeber von Gebäudewerke für Eigentümer und Verwaltungen",
+   "og_description": "Pflichten, Fristen, Kosten und Abläufe rund um Mehrfamilienhaus und Gewerbeobjekt, geschrieben von den Gesellschaftern von Gebäudewerke in Bruchsal.",
+   "hauptkeyword": "Ratgeber Vermieter Hausverwaltung",
+   "nebenkeywords": [
+    "Ratgeber Hausmeisterservice",
+    "Ratgeber Betriebskosten",
+    "Ratgeber Winterdienst Bruchsal"
+   ],
+   "hinweise": "Nicht mehr 'Ratgeber Hausmeisterservice Bruchsal' im Title, damit die Übersicht nicht gegen hausmeisterservice.html und winterdienst.html antritt. Themen-H3 als Filter/Gruppen nur, wenn die Übersicht nach artikel-thema gruppiert. Der doppelte Einleitungsabsatz entfällt, siehe textaenderungen.md."
+  },
+  {
+   "datei": "ratgeber/bauendreinigung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/bauendreinigung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-21",
+   "veroeffentlicht": true,
+   "title": "Bauendreinigung in Bruchsal | Ablauf, Umfang, Zeitpunkt",
+   "meta_description": "Was eine Bauendreinigung nach Umbau oder Renovierung umfasst, wann der richtige Zeitpunkt ist und welche Fehler Eigentümer in Bruchsal vermeiden sollten.",
+   "h1": "Bauendreinigung nach dem Umbau, bevor übergeben wird",
+   "gliederung": [
+    {
+     "h2": "Was unterscheidet die Bauendreinigung von einer normalen Reinigung?"
+    },
+    {
+     "h2": "Was gehört dazu?"
+    },
+    {
+     "h2": "Wann ist der richtige Zeitpunkt?"
+    },
+    {
+     "h2": "Welche Fehler sollten Sie vermeiden?"
+    },
+    {
+     "h2": "Wie wird der Preis ermittelt?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wer bezahlt die Bauendreinigung?",
+    "Wie lange dauert eine Bauendreinigung?",
+    "Entfernen Sie auch Farbspritzer und Zementschleier?",
+    "Wann sollte ich die Bauendreinigung buchen?"
+   ],
+   "og_title": "Bauendreinigung in Bruchsal",
+   "og_description": "Was eine Bauendreinigung nach Umbau oder Renovierung umfasst, wann der richtige Zeitpunkt ist und welche Fehler Eigentümer in Bruchsal vermeiden sollten.",
+   "hauptkeyword": "Bauendreinigung Bruchsal",
+   "nebenkeywords": [
+    "Bauendreinigung",
+    "Reinigung nach Renovierung",
+    "Baureinigung Wohnung"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)"
+  },
+  {
+   "datei": "ratgeber/besichtigung-vorbereiten-vermietung.html",
+   "url": "https://gebaeudewerke.de/ratgeber/besichtigung-vorbereiten-vermietung.html",
+   "neu": false,
+   "artikel_datum": "2026-11-17",
+   "veroeffentlicht": false,
+   "title": "Besichtigung vorbereiten lassen | Wohnung und Gewerbe",
+   "meta_description": "So wird eine Wohnung oder Gewerbefläche in Bruchsal für die Besichtigung vorbereitet: Reinigung, kleine Reparaturen, Licht, Zugang und der Energieausweis.",
+   "h1": "Besichtigung vorbereiten, wenn Wohnung oder Gewerbefläche vermietet werden soll",
+   "gliederung": [
+    {
+     "h2": "Warum sich die Vorbereitung lohnt"
+    },
+    {
+     "h2": "Was gehört zur Vorbereitung?"
+    },
+    {
+     "h2": "Der Energieausweis"
+    },
+    {
+     "h2": "Besichtigung begleiten lassen"
+    },
+    {
+     "h2": "Und zwischen zwei Mietern?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Muss der Energieausweis bei der Besichtigung vorliegen?",
+    "Können Sie die Besichtigung begleiten?",
+    "Was kostet die Vorbereitung?",
+    "Machen Sie auch Gewerbeflächen?"
+   ],
+   "og_title": "Besichtigung vorbereiten lassen",
+   "og_description": "So wird eine Wohnung oder Gewerbefläche in Bruchsal für die Besichtigung vorbereitet: Reinigung, kleine Reparaturen, Licht, Zugang und der Energieausweis.",
+   "hauptkeyword": "Wohnung für Besichtigung vorbereiten",
+   "nebenkeywords": [
+    "Besichtigung Mietwohnung",
+    "Energieausweis Besichtigung",
+    "Besichtigung begleiten lassen"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/geg/__80.html"
+  },
+  {
+   "datei": "ratgeber/bueroreinigung-praxisreinigung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/bueroreinigung-praxisreinigung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-20",
+   "veroeffentlicht": true,
+   "title": "Büroreinigung außerhalb der Öffnungszeiten planen",
+   "meta_description": "Wann Büros und Praxen am besten gereinigt werden, was in den Reinigungsplan gehört und wie Schlüssel, Alarm und Qualitätskontrolle geregelt werden.",
+   "h1": "Büro- und Praxisreinigung außerhalb der Öffnungszeiten",
+   "gliederung": [
+    {
+     "h2": "Warum außerhalb der Öffnungszeiten?"
+    },
+    {
+     "h2": "Was steht im Reinigungsplan?"
+    },
+    {
+     "h2": "Was ist bei Praxen anders?"
+    },
+    {
+     "h2": "Schlüssel, Alarm und Vertrauen"
+    },
+    {
+     "h2": "Wie wird die Qualität kontrolliert?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann wird gereinigt?",
+    "Wie oft sollte ein Büro gereinigt werden?",
+    "Reinigen Sie auch Behandlungsräume?",
+    "Wer bekommt die Schlüssel?",
+    "Was kostet die Büroreinigung?"
+   ],
+   "og_title": "Büroreinigung außerhalb der Öffnungszeiten planen",
+   "og_description": "Wann Büros und Praxen am besten gereinigt werden, was in den Reinigungsplan gehört und wie Schlüssel, Alarm und Qualitätskontrolle geregelt werden.",
+   "hauptkeyword": "Büroreinigung wie oft",
+   "nebenkeywords": [
+    "Praxisreinigung außerhalb der Sprechzeiten",
+    "Reinigungsplan Büro",
+    "Büroreinigung Intervall"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "hinweise": "Nicht mehr 'Büroreinigung Bruchsal' im Title: dieser Begriff gehört bueroreinigung.html bzw. gebaeudereinigung.html."
+  },
+  {
+   "datei": "ratgeber/dienstleister-wechseln-hausmeister.html",
+   "url": "https://gebaeudewerke.de/ratgeber/dienstleister-wechseln-hausmeister.html",
+   "neu": false,
+   "artikel_datum": "2026-12-08",
+   "veroeffentlicht": false,
+   "title": "Hausmeister oder Reinigungsfirma wechseln, ohne Lücke",
+   "meta_description": "So wechseln Sie Hausmeister oder Reinigungsfirma ohne Lücke: Kündigungsfrist prüfen, Schlüssel und Unterlagen übergeben, Start planen, Mieter informieren.",
+   "h1": "Hausmeister oder Reinigungsfirma wechseln, Schritt für Schritt",
+   "gliederung": [
+    {
+     "h2": "Woran man merkt, dass es Zeit ist"
+    },
+    {
+     "h2": "Schritt 1: Vertrag und Kündigungsfrist prüfen"
+    },
+    {
+     "h2": "Schritt 2: Neuen Dienstleister auswählen"
+    },
+    {
+     "h2": "Schritt 3: Übergabe organisieren"
+    },
+    {
+     "h2": "Schritt 4: Start ohne Lücke"
+    },
+    {
+     "h2": "Schritt 5: Nach drei Monaten Bilanz ziehen"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann kann ich meinen Hausmeister kündigen?",
+    "Wann ist der beste Zeitpunkt für einen Wechsel?",
+    "Wer übergibt die Schlüssel?",
+    "Wie erfahren die Mieter vom Wechsel?"
+   ],
+   "og_title": "Hausmeister oder Reinigungsfirma wechseln, ohne Lücke",
+   "og_description": "So wechseln Sie Hausmeister oder Reinigungsfirma ohne Lücke: Kündigungsfrist prüfen, Schlüssel und Unterlagen übergeben, Start planen, Mieter informieren.",
+   "hauptkeyword": "Hausmeister wechseln",
+   "nebenkeywords": [
+    "Hausmeister kündigen",
+    "Reinigungsfirma wechseln",
+    "Hausmeistervertrag kündigen"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)"
+  },
+  {
+   "datei": "ratgeber/entruempelung-ablauf-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/entruempelung-ablauf-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-28",
+   "veroeffentlicht": true,
+   "title": "Ablauf einer Entrümpelung | Besichtigung bis Übergabe",
+   "meta_description": "Wie eine Entrümpelung abläuft: Besichtigung, Festpreis, Sortieren, getrennte Entsorgung und besenreine Übergabe. Mit Hinweisen zu Wertsachen und Kosten.",
+   "h1": "So läuft eine Entrümpelung ab, von der Besichtigung bis zur Übergabe",
+   "gliederung": [
+    {
+     "h2": "Wie läuft eine Entrümpelung ab?"
+    },
+    {
+     "h2": "Was bestimmt den Preis?"
+    },
+    {
+     "h2": "Wie wird entsorgt?"
+    },
+    {
+     "h2": "Was passiert mit Dokumenten und Wertsachen?"
+    },
+    {
+     "h2": "Entrümpelung vor dem Mieterwechsel"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet eine Entrümpelung?",
+    "Kann ich Fotos statt einer Besichtigung schicken?",
+    "Was passiert mit Wertsachen?",
+    "Wird der Raum gereinigt?",
+    "Wer muss die Wohnung eines Verstorbenen ausräumen?"
+   ],
+   "og_title": "Ablauf einer Entrümpelung",
+   "og_description": "Wie eine Entrümpelung abläuft: Besichtigung, Festpreis, Sortieren, getrennte Entsorgung und besenreine Übergabe. Mit Hinweisen zu Wertsachen und Kosten.",
+   "hauptkeyword": "Ablauf Entrümpelung",
+   "nebenkeywords": [
+    "Haushaltsauflösung Ablauf",
+    "Entrümpelung Kosten",
+    "wie laufen Haushaltsauflösungen ab",
+    "Wohnung Verstorbener ausräumen"
+   ],
+   "autor": "Fatih Altun (Metallarbeiten, Schlösser und Reparaturen)",
+   "hinweise": "H1 darf nicht mehr 'Entrümpelung in Bruchsal' lauten (gehört entruempelung.html). Neue FAQ zum Erbfall nur allgemein beantworten, siehe textaenderungen.md."
+  },
+  {
+   "datei": "ratgeber/gartenpflege-jahresvertrag-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/gartenpflege-jahresvertrag-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-25",
+   "veroeffentlicht": true,
+   "title": "Gartenpflege im Jahresvertrag | Arbeiten von März bis November",
+   "meta_description": "Was in einen Jahresvertrag für Gartenpflege gehört, welche Arbeiten von März bis November in welchem Monat anfallen und wie die Abrechnung in Raten läuft.",
+   "h1": "Gartenpflege im Jahresvertrag, was von März bis November dazugehört",
+   "gliederung": [
+    {
+     "h2": "Warum ein Jahresvertrag statt Einzelaufträgen?"
+    },
+    {
+     "h2": "Was passiert in welchem Monat?"
+    },
+    {
+     "h2": "Was gehört in den Vertrag?"
+    },
+    {
+     "h2": "Wie wird abgerechnet?"
+    },
+    {
+     "h2": "Gartenpflege und Winterdienst bei einem Anbieter"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet Gartenpflege im Jahresvertrag?",
+    "Warum zahle ich auch im Winter?",
+    "Ist der Abtransport des Schnittguts enthalten?",
+    "Sind die Kosten umlagefähig?"
+   ],
+   "og_title": "Gartenpflege im Jahresvertrag",
+   "og_description": "Was in einen Jahresvertrag für Gartenpflege gehört, welche Arbeiten von März bis November in welchem Monat anfallen und wie die Abrechnung in Raten läuft.",
+   "hauptkeyword": "Gartenpflege Jahresvertrag",
+   "nebenkeywords": [
+    "Gartenpflege Kosten Wohnanlage",
+    "Gartenpflege Vertrag",
+    "Gartenpflege Mehrfamilienhaus"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html"
+  },
+  {
+   "datei": "ratgeber/glasreinigung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/glasreinigung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-22",
+   "veroeffentlicht": true,
+   "title": "Wie oft Fenster im Treppenhaus putzen? | Glasreinigung",
+   "meta_description": "Wie oft Glasflächen im Treppenhaus, am Eingang und an Schaufenstern gereinigt werden sollten, was zur Glasreinigung gehört und worauf Sie achten sollten.",
+   "h1": "Glasreinigung im Treppenhaus, am Eingang und am Schaufenster",
+   "gliederung": [
+    {
+     "h2": "Warum Glasflächen so wichtig sind"
+    },
+    {
+     "h2": "Wie oft sollte gereinigt werden?"
+    },
+    {
+     "h2": "Was gehört zu einer ordentlichen Glasreinigung?"
+    },
+    {
+     "h2": "Worauf kommt es beim Termin an?"
+    },
+    {
+     "h2": "Was ist mit hohen Glasflächen?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wie oft sollten Treppenhausfenster geputzt werden?",
+    "Werden Rahmen mitgereinigt?",
+    "Putzen Sie auch Schaufenster?",
+    "Ist die Glasreinigung im Treppenhaus umlagefähig?"
+   ],
+   "og_title": "Wie oft Fenster im Treppenhaus putzen?",
+   "og_description": "Wie oft Glasflächen im Treppenhaus, am Eingang und an Schaufenstern gereinigt werden sollten, was zur Glasreinigung gehört und worauf Sie achten sollten.",
+   "hauptkeyword": "Treppenhausfenster putzen wie oft",
+   "nebenkeywords": [
+    "Glasreinigung Intervall",
+    "Fensterreinigung Treppenhaus",
+    "Glasreinigung Mehrfamilienhaus"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html"
+  },
+  {
+   "datei": "ratgeber/grundreinigung-gewerbeboden-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/grundreinigung-gewerbeboden-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-11-20",
+   "veroeffentlicht": false,
+   "title": "Grundreinigung von Gewerbeböden | Wann und wie",
+   "meta_description": "Wann eine Grundreinigung von Gewerbeböden sinnvoll ist, wie sie je nach Belag abläuft und warum Betriebsferien oft der beste Zeitpunkt dafür sind.",
+   "h1": "Grundreinigung von Gewerbeböden, wann sie sich lohnt und wie sie abläuft",
+   "gliederung": [
+    {
+     "h2": "Unterhaltsreinigung und Grundreinigung"
+    },
+    {
+     "h2": "Wie läuft eine Grundreinigung ab?"
+    },
+    {
+     "h2": "Welcher Belag braucht was?"
+    },
+    {
+     "h2": "Wann ist der beste Zeitpunkt?"
+    },
+    {
+     "h2": "Grundreinigung und laufende Reinigung kombinieren"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wie oft sollte ein Gewerbeboden grundgereinigt werden?",
+    "Wie lange ist der Boden danach nicht nutzbar?",
+    "Machen Sie auch Hallen?",
+    "Wie wird der Preis ermittelt?"
+   ],
+   "og_title": "Grundreinigung von Gewerbeböden",
+   "og_description": "Wann eine Grundreinigung von Gewerbeböden sinnvoll ist, wie sie je nach Belag abläuft und warum Betriebsferien oft der beste Zeitpunkt dafür sind.",
+   "hauptkeyword": "Grundreinigung Gewerbeboden",
+   "nebenkeywords": [
+    "Grundreinigung Halle",
+    "Grundreinigung Bruchsal",
+    "Bodenreinigung Gewerbe"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)"
+  },
+  {
+   "datei": "ratgeber/handwerkerkoordination-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/handwerkerkoordination-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-11-24",
+   "veroeffentlicht": false,
+   "title": "Handwerkertermine koordinieren lassen | Für Vermieter",
+   "meta_description": "Handwerkertermine koordinieren, ohne selbst vor Ort zu sein: Zugang, Begleitung, Abnahme mit Fotos und ein Bericht für Eigentümer und Verwaltungen.",
+   "h1": "Handwerkertermine koordinieren, ohne selbst vor Ort zu sein",
+   "gliederung": [
+    {
+     "h2": "Warum Handwerkertermine so viel Zeit kosten"
+    },
+    {
+     "h2": "Was übernimmt die Koordination?"
+    },
+    {
+     "h2": "Welche Termine fallen typischerweise an?"
+    },
+    {
+     "h2": "Was wir selbst erledigen"
+    },
+    {
+     "h2": "Was gilt für die Nebenkosten?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Müssen Sie bei jedem Termin dabei sein?",
+    "Beauftragen Sie die Fachbetriebe?",
+    "Ist die Koordination umlagefähig?",
+    "Bekomme ich einen Bericht?"
+   ],
+   "og_title": "Handwerkertermine koordinieren lassen",
+   "og_description": "Handwerkertermine koordinieren, ohne selbst vor Ort zu sein: Zugang, Begleitung, Abnahme mit Fotos und ein Bericht für Eigentümer und Verwaltungen.",
+   "hauptkeyword": "Handwerkertermine koordinieren",
+   "nebenkeywords": [
+    "Handwerkerkoordination",
+    "Handwerker koordinieren Vermieter"
+   ],
+   "autor": "Fatih Altun (Metallarbeiten, Schlösser und Reparaturen)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__1.html"
+  },
+  {
+   "datei": "ratgeber/hausmeisterkosten-umlagefaehig.html",
+   "url": "https://gebaeudewerke.de/ratgeber/hausmeisterkosten-umlagefaehig.html",
+   "neu": false,
+   "artikel_datum": "2026-10-17",
+   "veroeffentlicht": true,
+   "title": "Hausmeisterkosten umlagefähig? Was Mieter zahlen müssen",
+   "meta_description": "Welche Hausmeisterkosten nach § 2 Nr. 14 BetrKV auf Mieter umlagefähig sind und welche nicht: Reparaturen, Verwaltung und Notdienst im Überblick.",
+   "h1": "Hausmeisterkosten, was auf Mieter umgelegt werden darf und was nicht",
+   "gliederung": [
+    {
+     "h2": "Wann dürfen Hausmeisterkosten umgelegt werden?"
+    },
+    {
+     "h2": "Welche Tätigkeiten sind umlagefähig?"
+    },
+    {
+     "h2": "Was ist nicht umlagefähig?"
+    },
+    {
+     "h2": "Warum getrennte Rechnungen so wichtig sind"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Sind Hausmeisterkosten immer umlagefähig?",
+    "Darf eine Notdienstpauschale umgelegt werden?",
+    "Wie wird ein Hausmeister abgerechnet, der auch repariert?",
+    "Gilt das auch für Gewerbemieter?",
+    "Was kann ein Mieter tun, wenn er die Abrechnung bezweifelt?"
+   ],
+   "og_title": "Hausmeisterkosten umlagefähig? Was Mieter zahlen müssen",
+   "og_description": "Welche Hausmeisterkosten nach § 2 Nr. 14 BetrKV auf Mieter umlagefähig sind und welche nicht: Reparaturen, Verwaltung und Notdienst im Überblick.",
+   "hauptkeyword": "Hausmeisterkosten umlagefähig",
+   "nebenkeywords": [
+    "Hauswart Betriebskosten",
+    "§ 2 Nr. 14 BetrKV",
+    "Notdienstpauschale umlagefähig"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html"
+  },
+  {
+   "datei": "ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-11-10",
+   "veroeffentlicht": false,
+   "title": "Hausmeisterservice für Hausverwaltungen | Ein Ansprechpartner",
+   "meta_description": "Was Hausverwaltungen von einem Hausmeisterservice erwarten sollten: ein Ansprechpartner für mehrere Objekte, einheitliche Berichte und eine saubere Rechnung.",
+   "h1": "Hausmeisterservice für Hausverwaltungen mit einem Ansprechpartner",
+   "gliederung": [
+    {
+     "h2": "Das Problem mit vielen Dienstleistern"
+    },
+    {
+     "h2": "Was Hausverwaltungen erwarten sollten"
+    },
+    {
+     "h2": "Warum die getrennte Rechnung so wichtig ist"
+    },
+    {
+     "h2": "Welche Aufgaben lassen sich bündeln?"
+    },
+    {
+     "h2": "Wie fängt man an?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Betreuen Sie auch einzelne Objekte?",
+    "Wie sehen die Berichte aus?",
+    "Können Mieter direkt melden?",
+    "Wie wird abgerechnet?"
+   ],
+   "og_title": "Hausmeisterservice für Hausverwaltungen",
+   "og_description": "Was Hausverwaltungen von einem Hausmeisterservice erwarten sollten: ein Ansprechpartner für mehrere Objekte, einheitliche Berichte und eine saubere Rechnung.",
+   "hauptkeyword": "Hausmeisterservice Hausverwaltung",
+   "nebenkeywords": [
+    "Dienstleister für Hausverwaltungen",
+    "Objektbetreuung mehrere Objekte"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)"
+  },
+  {
+   "datei": "ratgeber/hausmeisterservice-weg-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/hausmeisterservice-weg-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-12-01",
+   "veroeffentlicht": false,
+   "title": "Hausmeister für die Eigentümergemeinschaft (WEG) beauftragen",
+   "meta_description": "Was Eigentümergemeinschaften in Bruchsal bei der Beauftragung eines Hausmeisterservice beachten sollten: Beschluss, Leistungsverzeichnis, Hausgeld und Umlage.",
+   "h1": "Hausmeisterservice für Eigentümergemeinschaften in Bruchsal",
+   "gliederung": [
+    {
+     "h2": "Wofür ist der Hausmeister in einer WEG zuständig?"
+    },
+    {
+     "h2": "Wie wird beauftragt?"
+    },
+    {
+     "h2": "Was gehört ins Leistungsverzeichnis?"
+    },
+    {
+     "h2": "Abrechnung über das Hausgeld"
+    },
+    {
+     "h2": "Ein Ansprechpartner für Verwaltung und Eigentümer"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wer beauftragt den Hausmeister in einer WEG?",
+    "Kümmert sich der Hausmeister auch um meine Wohnung?",
+    "Wie werden die Kosten verteilt?",
+    "Kann ich die Kosten auf meinen Mieter umlegen?"
+   ],
+   "og_title": "Hausmeister für die Eigentümergemeinschaft (WEG) beauftragen",
+   "og_description": "Was Eigentümergemeinschaften in Bruchsal bei der Beauftragung eines Hausmeisterservice beachten sollten: Beschluss, Leistungsverzeichnis, Hausgeld und Umlage.",
+   "hauptkeyword": "Hausmeister WEG",
+   "nebenkeywords": [
+    "Hausmeister Eigentümergemeinschaft",
+    "Hausmeister WEG Beschluss",
+    "Hausmeisterservice WEG Bruchsal"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/woeigg/__19.html"
+  },
+  {
+   "datei": "ratgeber/hecke-schneiden-erlaubt.html",
+   "url": "https://gebaeudewerke.de/ratgeber/hecke-schneiden-erlaubt.html",
+   "neu": false,
+   "artikel_datum": "2026-10-24",
+   "veroeffentlicht": true,
+   "title": "Wann darf man Hecken schneiden? Regeln ab 1. März",
+   "meta_description": "Wann darf man Hecken schneiden? Was § 39 Bundesnaturschutzgesetz vom 1. März bis 30. September verbietet, welche Schnitte erlaubt bleiben und wann es passt.",
+   "h1": "Hecke schneiden, was zwischen 1. März und 30. September erlaubt ist",
+   "gliederung": [
+    {
+     "h2": "Was regelt das Bundesnaturschutzgesetz?"
+    },
+    {
+     "h2": "Was ist im Sommer trotzdem erlaubt?"
+    },
+    {
+     "h2": "Wann ist der beste Zeitpunkt?"
+    },
+    {
+     "h2": "Was gilt für Bäume?"
+    },
+    {
+     "h2": "Wohin mit dem Schnittgut?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Darf ich meine Hecke im Sommer schneiden?",
+    "Was passiert, wenn ich trotzdem stark zurückschneide?",
+    "Wann ist der beste Zeitpunkt für einen Rückschnitt?",
+    "Muss ich vor dem Schneiden nach Nestern schauen?"
+   ],
+   "og_title": "Wann darf man Hecken schneiden? Regeln ab 1. März",
+   "og_description": "Wann darf man Hecken schneiden? Was § 39 Bundesnaturschutzgesetz vom 1. März bis 30. September verbietet, welche Schnitte erlaubt bleiben und wann es passt.",
+   "hauptkeyword": "wann darf man Hecke schneiden",
+   "nebenkeywords": [
+    "Hecke schneiden erlaubt",
+    "Heckenschnitt Verbot",
+    "§ 39 BNatSchG"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/bnatschg_2009/__39.html"
+  },
+  {
+   "datei": "ratgeber/kleinreparaturen-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/kleinreparaturen-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-27",
+   "veroeffentlicht": true,
+   "title": "Kleinreparaturen bündeln | Ein Termin statt fünf Handwerker",
+   "meta_description": "Mehrere Kleinreparaturen in einem Termin statt fünf Handwerker: wie Eigentümer und Verwaltungen Zeit und Anfahrten sparen und wer in der Mietwohnung zahlt.",
+   "h1": "Mehrere Kleinreparaturen in einem Termin statt fünf Handwerker",
+   "gliederung": [
+    {
+     "h2": "Warum Kleinigkeiten so teuer werden"
+    },
+    {
+     "h2": "Wie funktioniert das gesammelte Erledigen?"
+    },
+    {
+     "h2": "Was gehört zu Kleinreparaturen?"
+    },
+    {
+     "h2": "Was macht ein Fachbetrieb?"
+    },
+    {
+     "h2": "Wer bezahlt Kleinreparaturen in Mietwohnungen?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Lohnt sich ein Handwerkerservice für Kleinigkeiten?",
+    "Machen Sie auch Elektro- und Sanitärarbeiten?",
+    "Wie wird abgerechnet?",
+    "Wer zahlt Kleinreparaturen in der Mietwohnung?"
+   ],
+   "og_title": "Kleinreparaturen bündeln",
+   "og_description": "Mehrere Kleinreparaturen in einem Termin statt fünf Handwerker: wie Eigentümer und Verwaltungen Zeit und Anfahrten sparen und wer in der Mietwohnung zahlt.",
+   "hauptkeyword": "Kleinreparaturen bündeln",
+   "nebenkeywords": [
+    "Kleinreparaturen Mietwohnung wer zahlt",
+    "Handwerkerservice Kleinigkeiten"
+   ],
+   "autor": "Fatih Altun (Metallarbeiten, Schlösser und Reparaturen)"
+  },
+  {
+   "datei": "ratgeber/kosten-hausmeisterservice-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/kosten-hausmeisterservice-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-11-27",
+   "veroeffentlicht": false,
+   "title": "Was kostet ein Hausmeisterservice? Preise pro Monat",
+   "meta_description": "Was ein Hausmeisterservice pro Monat kostet: Richtpreise ab 130 € netto bis 6 Wohnungen, ab 190 € bis 20 Wohnungen. Woraus sich der Preis zusammensetzt.",
+   "h1": "Was kostet ein Hausmeisterservice? Woraus sich der Preis zusammensetzt",
+   "gliederung": [
+    {
+     "h2": "Richtpreise pro Monat"
+    },
+    {
+     "h2": "Warum es keinen Einheitspreis gibt"
+    },
+    {
+     "h2": "Woraus setzt sich der Preis zusammen?"
+    },
+    {
+     "h2": "Wie wird abgerechnet?"
+    },
+    {
+     "h2": "Worauf sollten Sie beim Vergleich achten?"
+    },
+    {
+     "h2": "Wie Sie zu einem Preis kommen"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was kostet ein Hausmeister pro Monat?",
+    "Was kostet ein Hausmeister für ein 6-Familienhaus?",
+    "Was kostet ein Hausmeister pro Jahr?",
+    "Warum sind die Preise nur Richtpreise?",
+    "Sind Material und Geräte enthalten?",
+    "Kann ich einzelne Leistungen buchen?"
+   ],
+   "og_title": "Was kostet ein Hausmeisterservice? Preise pro Monat",
+   "og_description": "Was ein Hausmeisterservice pro Monat kostet: Richtpreise ab 130 € netto bis 6 Wohnungen, ab 190 € bis 20 Wohnungen. Woraus sich der Preis zusammensetzt.",
+   "hauptkeyword": "was kostet ein Hausmeisterservice",
+   "nebenkeywords": [
+    "Hausmeister Kosten pro Monat",
+    "Hausmeisterservice Kosten",
+    "Hausmeisterservice Kosten 6 Familienhaus",
+    "Kosten für Hausmeisterservice"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "hinweise": "Autor wechseln: Angebote macht laut Teamseite Enes Yesildag. Neuer H2 'Richtpreise pro Monat' mit den Zahlen von preise.html, Texte in textaenderungen.md. Artikel erscheint am 27.11.2026."
+  },
+  {
+   "datei": "ratgeber/laub-gehweg-pflicht-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/laub-gehweg-pflicht-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-31",
+   "veroeffentlicht": true,
+   "title": "Laub auf dem Gehweg | Wer muss in Bruchsal räumen?",
+   "meta_description": "Nasses Laub ist im Herbst fast so glatt wie Eis. Wer in Bruchsal Laub vom Gehweg entfernen muss, wie oft und was mit verstopften Abläufen passiert.",
+   "h1": "Nasses Laub auf Gehwegen, Rutschgefahr und Pflichten im Herbst",
+   "gliederung": [
+    {
+     "h2": "Warum ist Laub so gefährlich?"
+    },
+    {
+     "h2": "Wer muss das Laub entfernen?"
+    },
+    {
+     "h2": "Muss ich auch Laub vom Nachbarbaum entfernen?"
+    },
+    {
+     "h2": "Was gehört zur Herbstpflege?"
+    },
+    {
+     "h2": "Herbstpflege und Winterdienst kombinieren"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Muss ich in Bruchsal Laub vom Gehweg entfernen?",
+    "Wie oft muss Laub entfernt werden?",
+    "Darf ich Laub auf die Straße kehren?",
+    "Ist die Herbstpflege umlagefähig?"
+   ],
+   "og_title": "Laub auf dem Gehweg",
+   "og_description": "Nasses Laub ist im Herbst fast so glatt wie Eis. Wer in Bruchsal Laub vom Gehweg entfernen muss, wie oft und was mit verstopften Abläufen passiert.",
+   "hauptkeyword": "Laub Gehweg Pflicht",
+   "nebenkeywords": [
+    "Laub räumen Bruchsal",
+    "Laub entfernen Vermieter",
+    "Herbstpflege Wohnanlage"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)"
+  },
+  {
+   "datei": "ratgeber/muelltonnendienst-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/muelltonnendienst-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-19",
+   "veroeffentlicht": true,
+   "title": "Mülltonnendienst in Bruchsal | Raus, rein, sauberer Standplatz",
+   "meta_description": "Was ein Mülltonnendienst übernimmt: Tonnen am Abfuhrtag bereitstellen und zurückstellen, Standplatz sauber halten, Feiertage im Blick. Ab 90 € netto.",
+   "h1": "Mülltonnendienst, Tonnen raus, Tonnen rein und ein sauberer Standplatz",
+   "gliederung": [
+    {
+     "h2": "Warum ein Mülltonnendienst sich lohnt"
+    },
+    {
+     "h2": "Was übernimmt der Mülltonnendienst?"
+    },
+    {
+     "h2": "Abfuhrtermine und Feiertage"
+    },
+    {
+     "h2": "Was tun bei falsch befüllten Tonnen?"
+    },
+    {
+     "h2": "Was kostet der Mülltonnendienst?"
+    },
+    {
+     "h2": "Können die Kosten umgelegt werden?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann werden die Tonnen rausgestellt?",
+    "Was passiert an Feiertagen?",
+    "Reinigen Sie auch die Tonnen?",
+    "Was kostet ein Mülltonnenservice?",
+    "Ist der Mülltonnendienst umlagefähig?"
+   ],
+   "og_title": "Mülltonnendienst in Bruchsal",
+   "og_description": "Was ein Mülltonnendienst übernimmt: Tonnen am Abfuhrtag bereitstellen und zurückstellen, Standplatz sauber halten, Feiertage im Blick. Ab 90 € netto.",
+   "hauptkeyword": "Mülltonnenservice Bruchsal",
+   "nebenkeywords": [
+    "Mülltonnenservice",
+    "Mülltonnen rausstellen Service",
+    "Mülltonnendienst"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html"
+  },
+  {
+   "datei": "ratgeber/ortstermin-angebot-hausmeisterservice.html",
+   "url": "https://gebaeudewerke.de/ratgeber/ortstermin-angebot-hausmeisterservice.html",
+   "neu": false,
+   "artikel_datum": "2026-11-03",
+   "veroeffentlicht": false,
+   "title": "Kostenloser Ortstermin | So entsteht Ihr Angebot",
+   "meta_description": "So läuft der kostenlose Ortstermin ab: was wir aufnehmen, welche Unterlagen helfen und wann der schriftliche Festpreis kommt, meist nach 2 bis 3 Werktagen.",
+   "h1": "So läuft ein kostenloser Ortstermin für Ihr Angebot ab",
+   "gliederung": [
+    {
+     "h2": "Warum erst ein Ortstermin?"
+    },
+    {
+     "h2": "Was nehmen wir beim Termin auf?"
+    },
+    {
+     "h2": "Was hilft uns beim Termin?"
+    },
+    {
+     "h2": "Was steht im Angebot?"
+    },
+    {
+     "h2": "Wie vereinbaren Sie einen Termin?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Kostet der Ortstermin etwas?",
+    "Wie lange dauert der Termin?",
+    "Wann bekomme ich das Angebot?",
+    "Geht es auch ohne Termin?"
+   ],
+   "og_title": "Kostenloser Ortstermin",
+   "og_description": "So läuft der kostenlose Ortstermin ab: was wir aufnehmen, welche Unterlagen helfen und wann der schriftliche Festpreis kommt, meist nach 2 bis 3 Werktagen.",
+   "hauptkeyword": "Angebot Hausmeisterservice Ortstermin",
+   "nebenkeywords": [
+    "Ortstermin Angebot",
+    "Hausmeisterservice Angebot einholen"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "hinweise": "Titelbild zeigt ein Autohaus, ersetzen (siehe alt-texte.json)."
+  },
+  {
+   "datei": "ratgeber/raeum-und-streupflicht-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/raeum-und-streupflicht-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-16",
+   "veroeffentlicht": true,
+   "title": "Räum- und Streupflicht Bruchsal | Zeiten, Flächen, Haftung",
+   "meta_description": "Räum- und Streupflicht in Bruchsal: werktags bis 7 Uhr, samstags bis 8 Uhr, sonn- und feiertags bis 9 Uhr. Wer zuständig ist und womit gestreut wird.",
+   "h1": "Räum- und Streupflicht in Bruchsal, was Eigentümer wissen müssen",
+   "gliederung": [
+    {
+     "h2": "Wer ist in Bruchsal räum- und streupflichtig?"
+    },
+    {
+     "h2": "Bis wann muss in Bruchsal geräumt sein?"
+    },
+    {
+     "h2": "Welche Fläche muss geräumt werden?"
+    },
+    {
+     "h2": "Womit darf gestreut werden?"
+    },
+    {
+     "h2": "Was passiert, wenn nicht geräumt wurde?"
+    },
+    {
+     "h2": "Kann ich den Winterdienst abgeben?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Bis wann muss in Bruchsal am Wochenende geräumt sein?",
+    "Muss ich auch nachts räumen?",
+    "Darf ich in Bruchsal Streusalz verwenden?",
+    "Ist Streusalz auf dem eigenen Grundstück erlaubt?",
+    "Wer räumt, wenn das Haus vermietet ist?",
+    "Wo bekomme ich den genauen Wortlaut der Satzung?"
+   ],
+   "og_title": "Räum- und Streupflicht Bruchsal",
+   "og_description": "Räum- und Streupflicht in Bruchsal: werktags bis 7 Uhr, samstags bis 8 Uhr, sonn- und feiertags bis 9 Uhr. Wer zuständig ist und womit gestreut wird.",
+   "hauptkeyword": "Räum- und Streupflicht Bruchsal",
+   "nebenkeywords": [
+    "Räum und Streupflicht",
+    "Streupflicht Bruchsal",
+    "bis wann muss geräumt sein",
+    "Streusalz Bruchsal"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "quelle_offiziell": "Streupflichtsatzung der Stadt Bruchsal: nur mit geprüfter URL von bruchsal.de verlinken, sonst als Quelle ohne Link nennen. § 823 BGB: https://www.gesetze-im-internet.de/bgb/__823.html"
+  },
+  {
+   "datei": "ratgeber/schluesselverwaltung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/schluesselverwaltung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-16",
+   "veroeffentlicht": true,
+   "title": "Schlüsselverwaltung im Mehrfamilienhaus | Liste und Protokoll",
+   "meta_description": "Wer hat welchen Schlüssel? Wie eine Schlüsselverwaltung mit Bestandsliste und Ausgabeprotokoll im Mehrfamilienhaus teure Wechsel der Schließanlage verhindert.",
+   "h1": "Schlüsselverwaltung im Mehrfamilienhaus, wer hat welchen Schlüssel?",
+   "gliederung": [
+    {
+     "h2": "Warum gerät der Überblick verloren?"
+    },
+    {
+     "h2": "Was gehört in eine Schlüsselliste?"
+    },
+    {
+     "h2": "Wie läuft eine Ausgabe richtig?"
+    },
+    {
+     "h2": "Was passiert, wenn ein Schlüssel verloren geht?"
+    },
+    {
+     "h2": "Wie werden die Schlüssel sicher aufbewahrt?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wer haftet, wenn ein Schlüssel verloren geht?",
+    "Wie oft sollte der Schlüsselbestand geprüft werden?",
+    "Brauche ich für Nachschlüssel eine Sicherungskarte?",
+    "Können Sie Schließzylinder tauschen?"
+   ],
+   "og_title": "Schlüsselverwaltung im Mehrfamilienhaus",
+   "og_description": "Wer hat welchen Schlüssel? Wie eine Schlüsselverwaltung mit Bestandsliste und Ausgabeprotokoll im Mehrfamilienhaus teure Wechsel der Schließanlage verhindert.",
+   "hauptkeyword": "Schlüsselverwaltung Mehrfamilienhaus",
+   "nebenkeywords": [
+    "Schlüsselverwaltung",
+    "Schlüsselliste Vorlage",
+    "Schlüsselprotokoll"
+   ],
+   "autor": "Fatih Altun (Metallarbeiten, Schlösser und Reparaturen)"
+  },
+  {
+   "datei": "ratgeber/stoerungsmeldung-gewerbeobjekt-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/stoerungsmeldung-gewerbeobjekt-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-18",
+   "veroeffentlicht": true,
+   "title": "Störungen im Gewerbeobjekt melden | Fester Meldeweg",
+   "meta_description": "Wie ein fester Meldeweg für Störungen im Gewerbeobjekt funktioniert: Annahme, Einstufung, Reaktionszeit, Freigabe und Dokumentation, verständlich erklärt.",
+   "h1": "Störungen im Gewerbeobjekt, ein fester Meldeweg statt Zettelwirtschaft",
+   "gliederung": [
+    {
+     "h2": "Wie Störungen ohne Meldeweg verloren gehen"
+    },
+    {
+     "h2": "Woraus besteht ein fester Meldeweg?"
+    },
+    {
+     "h2": "Was erledigt der Hausmeister selbst?"
+    },
+    {
+     "h2": "Was passiert außerhalb der Bürozeiten?"
+    },
+    {
+     "h2": "Warum die Dokumentation so viel bringt"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Was gehört in einen Aushang für Störungen?",
+    "Wie schnell wird auf eine Meldung reagiert?",
+    "Wer entscheidet, ob ein Fachbetrieb kommt?",
+    "Bekomme ich eine Übersicht aller Störungen?"
+   ],
+   "og_title": "Störungen im Gewerbeobjekt melden",
+   "og_description": "Wie ein fester Meldeweg für Störungen im Gewerbeobjekt funktioniert: Annahme, Einstufung, Reaktionszeit, Freigabe und Dokumentation, verständlich erklärt.",
+   "hauptkeyword": "Störungsmeldung Gewerbeimmobilie",
+   "nebenkeywords": [
+    "Meldeweg Störungen",
+    "Hausmeister Gewerbeobjekt"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)"
+  },
+  {
+   "datei": "ratgeber/streugut-entfernen-fruehjahr.html",
+   "url": "https://gebaeudewerke.de/ratgeber/streugut-entfernen-fruehjahr.html",
+   "neu": false,
+   "artikel_datum": "2026-10-26",
+   "veroeffentlicht": true,
+   "title": "Streugut entfernen nach dem Winter | Wann und warum",
+   "meta_description": "Wann Splitt und Streugut nach dem Winter weg sollten, warum liegengebliebener Splitt selbst zur Rutschgefahr wird und was mit Salzresten passiert.",
+   "h1": "Nach dem Winter Streugut entfernen und Eingänge sauber machen",
+   "gliederung": [
+    {
+     "h2": "Warum muss Streugut wieder weg?"
+    },
+    {
+     "h2": "Wann ist der richtige Zeitpunkt?"
+    },
+    {
+     "h2": "Was gehört zum Frühjahrsputz nach dem Winter?"
+    },
+    {
+     "h2": "Was passiert mit dem eingesammelten Splitt?"
+    },
+    {
+     "h2": "Im Winterdienst enthalten"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann sollte Streugut entfernt werden?",
+    "Muss ich Streugut selbst entfernen?",
+    "Kann Splitt wiederverwendet werden?",
+    "Ist das Entfernen im Winterdienst enthalten?"
+   ],
+   "og_title": "Streugut entfernen nach dem Winter",
+   "og_description": "Wann Splitt und Streugut nach dem Winter weg sollten, warum liegengebliebener Splitt selbst zur Rutschgefahr wird und was mit Salzresten passiert.",
+   "hauptkeyword": "Streugut entfernen",
+   "nebenkeywords": [
+    "Splitt entfernen Frühjahr",
+    "Rollsplitt Gehweg entfernen"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)"
+  },
+  {
+   "datei": "ratgeber/streuprotokoll-winterdienst-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/streuprotokoll-winterdienst-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-16",
+   "veroeffentlicht": true,
+   "title": "Räum- und Streuprotokoll | Was rein muss, wie lange aufheben",
+   "meta_description": "Was ein Räum- und Streuprotokoll enthalten muss, wie lange Sie es aufbewahren und warum es nach einem Sturz auf dem Gehweg oft der wichtigste Beleg ist.",
+   "h1": "Räum- und Streuprotokoll, so vermeiden Sie den Haftungsstreit",
+   "gliederung": [
+    {
+     "h2": "Warum reicht es nicht, einfach zu räumen?"
+    },
+    {
+     "h2": "Was gehört in ein Räum- und Streuprotokoll?"
+    },
+    {
+     "h2": "Wie lange muss ich das Protokoll aufbewahren?"
+    },
+    {
+     "h2": "Wer protokolliert, wenn ein Dienstleister räumt?"
+    },
+    {
+     "h2": "Wo entstehen in der Praxis die Lücken?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Muss ich ein Streuprotokoll führen?",
+    "Reicht ein Foto ohne schriftliches Protokoll?",
+    "Wie lange bewahre ich das Protokoll auf?",
+    "Wer führt das Protokoll, wenn ich einen Winterdienst beauftrage?",
+    "Ist ein digitales Protokoll ausreichend?"
+   ],
+   "og_title": "Räum- und Streuprotokoll",
+   "og_description": "Was ein Räum- und Streuprotokoll enthalten muss, wie lange Sie es aufbewahren und warum es nach einem Sturz auf dem Gehweg oft der wichtigste Beleg ist.",
+   "hauptkeyword": "Streuprotokoll",
+   "nebenkeywords": [
+    "Räum- und Streuprotokoll",
+    "Streuprotokoll Winterdienst",
+    "Streuprotokoll aufbewahren"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/bgb/__195.html und https://www.gesetze-im-internet.de/bgb/__199.html"
+  },
+  {
+   "datei": "ratgeber/sturmschaden-kontrolle-gebaeude.html",
+   "url": "https://gebaeudewerke.de/ratgeber/sturmschaden-kontrolle-gebaeude.html",
+   "neu": false,
+   "artikel_datum": "2026-11-13",
+   "veroeffentlicht": false,
+   "title": "Nach dem Sturm Gebäude kontrollieren | Schäden dokumentieren",
+   "meta_description": "Was nach einem Sturm am Gebäude kontrolliert werden sollte, wie Gefahrenstellen gesichert und Schäden für die Versicherung festgehalten werden.",
+   "h1": "Nach Sturm und Unwetter, wer kontrolliert Ihr Gebäude?",
+   "gliederung": [
+    {
+     "h2": "Warum ein Kontrollgang direkt danach?"
+    },
+    {
+     "h2": "Was wird kontrolliert?"
+    },
+    {
+     "h2": "Gefahrenstellen sichern"
+    },
+    {
+     "h2": "Dokumentation für die Versicherung"
+    },
+    {
+     "h2": "Wer kümmert sich?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann sollte nach einem Sturm kontrolliert werden?",
+    "Steigen Sie auch aufs Dach?",
+    "Was braucht die Versicherung?",
+    "Ab wann gilt ein Sturm für die Versicherung?"
+   ],
+   "og_title": "Nach dem Sturm Gebäude kontrollieren",
+   "og_description": "Was nach einem Sturm am Gebäude kontrolliert werden sollte, wie Gefahrenstellen gesichert und Schäden für die Versicherung festgehalten werden.",
+   "hauptkeyword": "Gebäude nach Sturm kontrollieren",
+   "nebenkeywords": [
+    "Sturmschaden dokumentieren",
+    "Sturmschaden Versicherung Fotos"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "hinweise": "Meta nennt 'Checkliste': nur verwenden, wenn der Abschnitt 'Was wird kontrolliert?' als Liste vorliegt (ist der Fall)."
+  },
+  {
+   "datei": "ratgeber/tiefgarage-keller-reinigung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/tiefgarage-keller-reinigung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-16",
+   "veroeffentlicht": true,
+   "title": "Tiefgarage und Keller reinigen | Umfang, Turnus, Ölflecken",
+   "meta_description": "Tiefgarage und Keller reinigen: was dazugehört, wie oft gereinigt werden sollte, was gegen Ölflecken hilft und ob die Kosten auf Mieter umlegbar sind.",
+   "h1": "Tiefgarage und Keller reinigen, die vergessenen Flächen im Objekt",
+   "gliederung": [
+    {
+     "h2": "Warum verschmutzen Tiefgarage und Keller so stark?"
+    },
+    {
+     "h2": "Was gehört zur Reinigung?"
+    },
+    {
+     "h2": "Wie oft sollte gereinigt werden?"
+    },
+    {
+     "h2": "Was tun mit Ölflecken?"
+    },
+    {
+     "h2": "Können die Kosten umgelegt werden?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wie oft sollte eine Tiefgarage gereinigt werden?",
+    "Wer reinigt die Tiefgarage, Vermieter oder Mieter?",
+    "Wie werden Ölflecken entfernt?",
+    "Räumen Sie auch abgestellte Gegenstände im Keller weg?"
+   ],
+   "og_title": "Tiefgarage und Keller reinigen",
+   "og_description": "Tiefgarage und Keller reinigen: was dazugehört, wie oft gereinigt werden sollte, was gegen Ölflecken hilft und ob die Kosten auf Mieter umlegbar sind.",
+   "hauptkeyword": "Tiefgaragenreinigung",
+   "nebenkeywords": [
+    "Tiefgarage reinigen",
+    "Kellerreinigung",
+    "Tiefgaragenreinigung Bruchsal"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html"
+  },
+  {
+   "datei": "ratgeber/treppenhaus-rettungsweg.html",
+   "url": "https://gebaeudewerke.de/ratgeber/treppenhaus-rettungsweg.html",
+   "neu": false,
+   "artikel_datum": "2026-12-15",
+   "veroeffentlicht": false,
+   "title": "Schuhregal im Treppenhaus erlaubt? Regeln für den Rettungsweg",
+   "meta_description": "Schuhregal, Kinderwagen, Fahrrad: was im Treppenhaus stehen darf, warum der Rettungsweg frei bleiben muss und wie Eigentümer und Verwaltung damit umgehen.",
+   "h1": "Treppenhaus als Rettungsweg, was dort stehen darf und was nicht",
+   "gliederung": [
+    {
+     "h2": "Warum das Treppenhaus frei bleiben muss"
+    },
+    {
+     "h2": "Was gehört nicht ins Treppenhaus?"
+    },
+    {
+     "h2": "Und Kinderwagen oder Rollatoren?"
+    },
+    {
+     "h2": "Wie gehen Eigentümer damit um?"
+    },
+    {
+     "h2": "Was macht der Hausmeister?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Darf ich mein Schuhregal ins Treppenhaus stellen?",
+    "Darf ein Kinderwagen im Hausflur stehen?",
+    "Was ist mit Fahrrädern und E-Rollern?",
+    "Räumen Sie das Treppenhaus selbst frei?"
+   ],
+   "og_title": "Schuhregal im Treppenhaus erlaubt? Regeln für den Rettungsweg",
+   "og_description": "Schuhregal, Kinderwagen, Fahrrad: was im Treppenhaus stehen darf, warum der Rettungsweg frei bleiben muss und wie Eigentümer und Verwaltung damit umgehen.",
+   "hauptkeyword": "Schuhregal Treppenhaus",
+   "nebenkeywords": [
+    "Treppenhaus Rettungsweg",
+    "Kinderwagen Hausflur",
+    "Fahrrad Treppenhaus"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "quelle_offiziell": "Landesbauordnung Baden-Württemberg (LBO), § 15 Brandschutz: nur mit geprüfter URL des Landesrechts BW (landesrecht-bw.de) verlinken, sonst ohne Link nennen."
+  },
+  {
+   "datei": "ratgeber/treppenhausreinigung-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/treppenhausreinigung-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-29",
+   "veroeffentlicht": true,
+   "title": "Reinigungsplan fürs Treppenhaus | Hausordnung oder Firma",
+   "meta_description": "Was in einen Reinigungsplan fürs Treppenhaus gehört, wöchentlich, monatlich und jährlich, ob Mieter putzen müssen und wie die Kosten umgelegt werden.",
+   "h1": "Treppenhausreinigung nach festem Plan, was regelmäßig dazugehört",
+   "gliederung": [
+    {
+     "h2": "Hausordnung oder Dienstleister?"
+    },
+    {
+     "h2": "Was gehört in den Reinigungsplan?"
+    },
+    {
+     "h2": "Wie wird die Reinigung nachgewiesen?"
+    },
+    {
+     "h2": "Können die Kosten umgelegt werden?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wie oft sollte ein Treppenhaus gereinigt werden?",
+    "Was gehört zur Treppenhausreinigung durch Mieter?",
+    "Können Mieter zur Treppenhausreinigung verpflichtet werden?",
+    "Sind die Kosten umlagefähig?",
+    "Werden Mittel und Geräte gestellt?"
+   ],
+   "og_title": "Reinigungsplan fürs Treppenhaus",
+   "og_description": "Was in einen Reinigungsplan fürs Treppenhaus gehört, wöchentlich, monatlich und jährlich, ob Mieter putzen müssen und wie die Kosten umgelegt werden.",
+   "hauptkeyword": "Reinigungsplan Treppenhaus",
+   "nebenkeywords": [
+    "Treppenhausreinigung Hausordnung",
+    "Treppenhausreinigung durch Mieter",
+    "Treppenhausreinigung wie oft"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/betrkv/__2.html",
+   "hinweise": "Nicht mehr 'Treppenhausreinigung Bruchsal' im Title, das übernimmt treppenhausreinigung.html."
+  },
+  {
+   "datei": "ratgeber/unkraut-pflaster-entfernen-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/unkraut-pflaster-entfernen-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-23",
+   "veroeffentlicht": true,
+   "title": "Unkraut auf Pflaster entfernen | Was erlaubt ist und hilft",
+   "meta_description": "Warum Unkrautvernichter auf Pflaster und Wegen verboten sind, auch Essig und Salz, welche Methoden helfen und wie Eigentümer Fugen dauerhaft sauber halten.",
+   "h1": "Unkraut auf Pflaster und Wegen, was erlaubt ist und was hilft",
+   "gliederung": [
+    {
+     "h2": "Warum darf auf Pflaster nicht gespritzt werden?"
+    },
+    {
+     "h2": "Welche Methoden sind erlaubt?"
+    },
+    {
+     "h2": "Wie oft muss Unkraut entfernt werden?"
+    },
+    {
+     "h2": "Wie bekommt man das Problem dauerhaft in den Griff?"
+    },
+    {
+     "h2": "Wer ist zuständig?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Darf ich Essig gegen Unkraut auf dem Pflaster verwenden?",
+    "Was hilft am besten gegen Unkraut in Fugen?",
+    "Wie oft muss das gemacht werden?",
+    "Hilft ein Hochdruckreiniger?"
+   ],
+   "og_title": "Unkraut auf Pflaster entfernen",
+   "og_description": "Warum Unkrautvernichter auf Pflaster und Wegen verboten sind, auch Essig und Salz, welche Methoden helfen und wie Eigentümer Fugen dauerhaft sauber halten.",
+   "hauptkeyword": "Unkraut Pflaster entfernen",
+   "nebenkeywords": [
+    "Unkrautvernichter Pflaster verboten",
+    "Unkraut Fugen entfernen",
+    "Essig gegen Unkraut erlaubt"
+   ],
+   "autor": "Burak Kartal (Qualität, Reinigung und Gartenpflege)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/pflschg_2012/__12.html"
+  },
+  {
+   "datei": "ratgeber/winterdienst-beauftragen-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/winterdienst-beauftragen-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-16",
+   "veroeffentlicht": true,
+   "title": "Winterdienst beauftragen | Saisonvertrag und Fristen",
+   "meta_description": "Bis wann Sie den Winterdienst beauftragen sollten, was in den Saisonvertrag gehört und ob Saisonpauschale oder Abrechnung je Einsatz besser passt.",
+   "h1": "Winterdienst rechtzeitig beauftragen, Ablauf und Saisonvertrag",
+   "gliederung": [
+    {
+     "h2": "Warum sollte ich den Winterdienst so früh beauftragen?"
+    },
+    {
+     "h2": "Was gehört in einen Winterdienstvertrag?"
+    },
+    {
+     "h2": "Saisonpauschale oder Abrechnung je Einsatz?"
+    },
+    {
+     "h2": "Wie läuft die Beauftragung bei Gebäudewerke ab?"
+    },
+    {
+     "h2": "Was bleibt beim Eigentümer?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Bis wann sollte ich den Winterdienst beauftragen?",
+    "Was kostet ein Winterdienst in Bruchsal?",
+    "Wird auch am Wochenende geräumt?",
+    "Kann ich den Winterdienst auf die Mieter umlegen?",
+    "Was passiert, wenn der Winterdienst nicht kommt?"
+   ],
+   "og_title": "Winterdienst beauftragen",
+   "og_description": "Bis wann Sie den Winterdienst beauftragen sollten, was in den Saisonvertrag gehört und ob Saisonpauschale oder Abrechnung je Einsatz besser passt.",
+   "hauptkeyword": "Winterdienst beauftragen",
+   "nebenkeywords": [
+    "Winterdienst Vertrag",
+    "Winterdienst Saisonpauschale",
+    "Winterdienst Kosten"
+   ],
+   "autor": "Julian Bender (Hausmeisterservice und Winterdienst)",
+   "hinweise": "H1 ohne 'in Bruchsal', damit winterdienst.html den Ortsbegriff hält."
+  },
+  {
+   "datei": "ratgeber/wohnungsuebergabe-protokoll-bruchsal.html",
+   "url": "https://gebaeudewerke.de/ratgeber/wohnungsuebergabe-protokoll-bruchsal.html",
+   "neu": false,
+   "artikel_datum": "2026-10-30",
+   "veroeffentlicht": true,
+   "title": "Übergabeprotokoll Wohnung | Was rein muss, mit Fotos",
+   "meta_description": "Was ins Übergabeprotokoll beim Mieterwechsel gehört: Zustand Raum für Raum, Fotos, Zählerstände, Schlüssel, Mängel. So gibt es keinen Streit um die Kaution.",
+   "h1": "Übergabeprotokoll beim Mieterwechsel, mit Fotos statt Streit",
+   "gliederung": [
+    {
+     "h2": "Warum ein Protokoll so wichtig ist"
+    },
+    {
+     "h2": "Was gehört ins Übergabeprotokoll?"
+    },
+    {
+     "h2": "Checkliste für die Wohnungsübergabe"
+    },
+    {
+     "h2": "Fotos richtig machen"
+    },
+    {
+     "h2": "Was passiert, wenn bei der Übergabe Mängel auffallen?"
+    },
+    {
+     "h2": "Wie läuft das bei Gebäudewerke?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Ist ein Übergabeprotokoll Pflicht?",
+    "Müssen beide Seiten unterschreiben?",
+    "Was ist mit den Zählerständen?",
+    "Was passiert, wenn der Mieter nicht unterschreibt?",
+    "Wann bekomme ich das Protokoll?"
+   ],
+   "og_title": "Übergabeprotokoll Wohnung",
+   "og_description": "Was ins Übergabeprotokoll beim Mieterwechsel gehört: Zustand Raum für Raum, Fotos, Zählerstände, Schlüssel, Mängel. So gibt es keinen Streit um die Kaution.",
+   "hauptkeyword": "Übergabeprotokoll Wohnung",
+   "nebenkeywords": [
+    "Wohnungsübergabeprotokoll",
+    "Wohnungsübergabe Protokoll",
+    "Wohnungsübergabe Auszug",
+    "Wohnungsübergabe nach Mietende"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "hinweise": "Größtes Ratgeber-Potenzial (über 20.000 Suchen/Monat, KD 0 bis 1). Neuer H2 'Checkliste für die Wohnungsübergabe' als Liste. Keine Vorlage zum Download versprechen, solange keine existiert."
+  },
+  {
+   "datei": "ratgeber/zaehlerstaende-ablesen-jahreswechsel.html",
+   "url": "https://gebaeudewerke.de/ratgeber/zaehlerstaende-ablesen-jahreswechsel.html",
+   "neu": false,
+   "artikel_datum": "2026-11-06",
+   "veroeffentlicht": false,
+   "title": "Zählerstände ablesen zum Jahreswechsel | Stichtag, Fotos",
+   "meta_description": "Warum Zählerstände zum Jahreswechsel pünktlich abgelesen werden sollten, welche Zähler dazugehören und wie Fotos mit Datum Streit in der Abrechnung vermeiden.",
+   "h1": "Zählerstände zum Jahreswechsel rechtzeitig ablesen lassen",
+   "gliederung": [
+    {
+     "h2": "Warum der Stichtag so wichtig ist"
+    },
+    {
+     "h2": "Welche Zähler gehören dazu?"
+    },
+    {
+     "h2": "So wird richtig abgelesen"
+    },
+    {
+     "h2": "Was gilt beim Mieterwechsel?"
+    },
+    {
+     "h2": "Bis wann muss abgerechnet werden?"
+    },
+    {
+     "h2": "Häufige Fragen"
+    }
+   ],
+   "faq_fragen": [
+    "Wann sollten die Zählerstände abgelesen werden?",
+    "Reicht ein Foto als Nachweis?",
+    "Was ist bei Funkzählern?",
+    "Was passiert bei einem Mieterwechsel?"
+   ],
+   "og_title": "Zählerstände ablesen zum Jahreswechsel",
+   "og_description": "Warum Zählerstände zum Jahreswechsel pünktlich abgelesen werden sollten, welche Zähler dazugehören und wie Fotos mit Datum Streit in der Abrechnung vermeiden.",
+   "hauptkeyword": "Zählerstände ablesen",
+   "nebenkeywords": [
+    "Zählerstand Jahreswechsel",
+    "Zählerstände ablesen Vermieter",
+    "Zählerstand Mieterwechsel"
+   ],
+   "autor": "Enes Yesildag (Vertrieb, Hausverwaltung und Wohnungsübergaben)",
+   "quelle_offiziell": "https://www.gesetze-im-internet.de/bgb/__556.html und https://www.gesetze-im-internet.de/heizkostenv/__6a.html"
+  }
+ ]
+}
