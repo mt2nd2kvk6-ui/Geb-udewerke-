@@ -112,7 +112,7 @@ BEWERTUNG_SEITEN = {
 for _s, _ in LEISTUNGEN:
     BEWERTUNG_SEITEN.setdefault(_s, ('kompakt', None, r'<section class="cta-band"'))
 
-TEL = 'tel:+4917674025524'   # Anrufnummer; WhatsApp bleibt 0176 74025524
+TEL = 'tel:+491637221790'   # Anruf- und WhatsApp-Nummer seit 16.11.2026
 WA = ('https://api.whatsapp.com/send?phone=491637221790&text=Hallo%20Geb%C3%A4udewerke%2C%20'
       'ich%20habe%20eine%20Anfrage%20zu%20einem%20Objekt.')
 
@@ -253,7 +253,7 @@ def header(seite, b):
 <li><button class="nav__link" type="button" data-untermenue aria-expanded="false" aria-controls="unter-leistungen"{knopf_cur}>Leistungen {I_RUNTER}</button>
 <ul class="nav__unter" id="unter-leistungen">{unter}</ul></li>
 {punkte}</ul>
-<div class="nav__mobil"><a class="btn btn--weiss" href="{TEL}" data-pos="kopf">{I_TEL}Anrufen: 0176 74025524</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank" data-pos="kopf">{I_WA}WhatsApp schreiben</a></div>
+<div class="nav__mobil"><a class="btn btn--weiss" href="{TEL}" data-pos="kopf">{I_TEL}Anrufen: 0163 7221790</a><a class="btn btn--wa" href="{WA}" rel="noopener" target="_blank" data-pos="kopf">{I_WA}WhatsApp schreiben</a></div>
 </nav>
 <div class="kopf__aktionen">
 <a class="btn btn--rand kopf__tel" href="{TEL}" data-pos="kopf">{I_TEL}<span class="kopf__btntext">Anrufen</span></a>
@@ -279,7 +279,7 @@ def footer(seite, b, url, titel):
 <div class="fuss__raster">
 <div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
 <p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
-<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}" data-pos="fuss">0176 74025524</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
+<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}" data-pos="fuss">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
 <a class="fuss__google google-hinweis" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span>{SCHNITT_DE} Sterne auf Google</span></a></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
@@ -429,7 +429,7 @@ def kontaktband_anwenden(main):
         lab = f' aria-labelledby="{hid.group(1)}"' if hid else ''
         return (f'<section class="cta-band"{lab}><div class="wrap">\n'
                 f'<div class="cta-band__text">{h2.group(0)}{p}</div>\n'
-                f'<a class="riesennummer" href="{TEL}" data-pos="kontaktblock">0176 74025524</a>\n'
+                f'<a class="riesennummer" href="{TEL}" data-pos="kontaktblock">0163 7221790</a>\n'
                 f'<div class="cta-band__knoepfe"><a class="btn btn--wa btn--gross" href="{WA}" rel="noopener" target="_blank" data-pos="kontaktblock">{I_WA}'
                 f'<span class="btn__zwei"><span class="btn__klein">Auch mit Foto</span><span class="btn__gross">WhatsApp schreiben</span></span></a>'
                 f'<a class="btn btn--rand" href="/kontakt.html" data-pos="kontaktblock">Anfrage per Formular</a></div>\n'
