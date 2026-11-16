@@ -135,3 +135,9 @@ document.querySelectorAll('[data-karte-laden]').forEach(function (knopf) {
     box.appendChild(f);
   });
 });
+
+  // Klicks auf Bewertungsportale und Presse zählen (nur wenn Google Analytics zugestimmt wurde)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[data-verzeichnis]') : null;
+    if (a && typeof window.gtag === 'function') window.gtag('event', 'verzeichnis_klick', { verzeichnis: a.getAttribute('data-verzeichnis') });
+  });

@@ -755,3 +755,54 @@ table{font-variant-numeric:tabular-nums}
 @media (max-width:1199px) and (min-width:921px){.kopf__aktionen .btn--voll{display:none}}
 .kopf>.wrap,.leiste>.wrap{max-width:calc(1440px + var(--pad) * 2)}
 @media (max-width:1000px) and (min-width:921px){.kopf__aktionen .kopf__tel{display:none}}
+/* gw-ergaenzung-2026-11 */
+.kopf{z-index:80}
+@media (min-width:921px){.nav__unter{max-height:calc(100vh - var(--kopf-h) - 2.5rem);max-height:calc(100dvh - var(--kopf-h) - 2.5rem);overflow-y:auto;overscroll-behavior:contain}}
+.vertrauen{padding:clamp(3rem,6vw,4.5rem) 0}
+.vertrauen__kopf{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem 2rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.vertrauen__kopf h2{margin:0 0 .4rem}
+.vertrauen__kopf p{margin:0;color:var(--schiefer);max-width:620px}
+.vertrauen__raster{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.vertrauen__raster li{margin:0}
+.siegel{--i:0;position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.35rem .9rem;height:100%;padding:1.05rem 1.15rem;background:#fff;border:1px solid var(--linie);border-radius:var(--r);color:var(--anthrazit);text-decoration:none;box-shadow:var(--schatten-s);transition:transform .35s var(--kurve),box-shadow .35s,border-color .25s;animation:siegel-rein .7s var(--kurve) both;animation-delay:calc(var(--i)*90ms)}
+.siegel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 30%,rgba(240,179,35,.22) 50%,transparent 70%);transform:translateX(-120%);animation:siegel-glanz 6s ease-in-out infinite;animation-delay:calc(1.2s + var(--i)*.6s)}
+.siegel:hover,.siegel:focus-visible{transform:translateY(-4px);border-color:var(--signal);box-shadow:var(--schatten)}
+.siegel__schild{grid-row:span 2;width:2.9rem;height:3.25rem;display:grid;place-items:center;background:var(--werkblau);color:var(--signal);clip-path:var(--hex);transition:transform .45s var(--kurve)}
+.siegel__schild svg{width:1.35rem;height:1.35rem}
+.siegel:hover .siegel__schild{transform:rotate(-8deg) scale(1.06)}
+.siegel__name{font-weight:760;color:var(--werkblau);line-height:1.2}
+.siegel__domain{display:block;font-size:.8rem;font-weight:500;color:var(--schiefer)}
+.siegel__sterne{grid-column:2;display:inline-flex;gap:2px;line-height:0}
+.siegel__sterne svg{width:15px;height:15px;fill:rgba(240,179,35,.38);transition:fill .2s,transform .3s var(--kurve);animation:stern-welle 5s ease-in-out infinite;animation-delay:calc(var(--i)*.45s + var(--s,0)*.12s)}
+.siegel__sterne svg:nth-child(2){--s:1}.siegel__sterne svg:nth-child(3){--s:2}.siegel__sterne svg:nth-child(4){--s:3}.siegel__sterne svg:nth-child(5){--s:4}
+@keyframes stern-welle{0%,62%,100%{fill:rgba(240,179,35,.38);transform:none}70%,80%{fill:var(--signal);transform:scale(1.2)}}
+.vertrauen__raster>li:first-child{grid-column:1/-1}
+.siegel:hover .siegel__sterne svg,.siegel:focus-visible .siegel__sterne svg{fill:var(--signal);transform:scale(1.15);animation:none}
+.siegel:hover .siegel__sterne svg:nth-child(2){transition-delay:.06s}.siegel:hover .siegel__sterne svg:nth-child(3){transition-delay:.12s}.siegel:hover .siegel__sterne svg:nth-child(4){transition-delay:.18s}.siegel:hover .siegel__sterne svg:nth-child(5){transition-delay:.24s}
+.siegel__aktion{grid-row:1/span 2;grid-column:3;display:inline-flex;align-items:center;gap:.3rem;padding:.45rem .7rem;border-radius:999px;background:var(--kalk);color:var(--werkblau);font-size:.82rem;font-weight:700;white-space:nowrap;transition:background-color .2s,color .2s}
+.siegel__aktion svg{width:14px;height:14px;transition:transform .3s var(--kurve)}
+.siegel:hover .siegel__aktion{background:var(--signal);color:var(--werkblau)}
+.siegel:hover .siegel__aktion svg{transform:translate(2px,-2px)}
+.siegel--google{border-color:var(--signal);background:linear-gradient(#fff,#fff) padding-box,linear-gradient(120deg,var(--signal),#fff3cf,var(--signal)) border-box;border:2px solid transparent}
+.siegel--google .siegel__sterne svg{fill:var(--signal);animation:none}
+.siegel--google .siegel__aktion{background:var(--signal);animation:siegel-puls 2.4s ease-in-out infinite}
+.siegel--presse .siegel__schild{background:var(--signal);color:var(--werkblau)}
+.siegel--presse .siegel__titel{grid-column:2;font-size:.86rem;color:var(--schiefer);line-height:1.35}
+.vertrauen__presse{margin-top:1rem}
+.presse-hinweis{margin:0 0 2.5rem}
+@keyframes siegel-rein{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes siegel-glanz{0%,70%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+@keyframes siegel-puls{0%,100%{box-shadow:0 0 0 0 rgba(240,179,35,.55)}50%{box-shadow:0 0 0 7px rgba(240,179,35,0)}}
+.fuss__siegel{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .55rem;padding:1.35rem 0;border-top:1px solid rgba(255,255,255,.14);margin-top:2.5rem}
+.fuss__siegel-titel{margin:0 .4rem 0 0;font-weight:700;color:#fff}
+.fuss__siegel ul{display:contents;list-style:none}
+.fuss__siegel li{margin:0}
+.fuss .fuss__siegel a{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;text-decoration:none;font-size:.84rem;font-weight:600;transition:background-color .2s,border-color .2s,color .2s,transform .3s var(--kurve)}
+.fuss .fuss__siegel a svg{width:13px;height:13px;fill:var(--signal);transition:transform .4s var(--kurve)}
+.fuss .fuss__siegel a:hover,.fuss .fuss__siegel a:focus-visible{background:var(--signal);border-color:var(--signal);color:var(--werkblau);transform:translateY(-2px)}
+.fuss .fuss__siegel a:hover svg{fill:var(--werkblau);transform:rotate(72deg) scale(1.2)}
+.fuss .fuss__siegel a.fuss__siegel--google{border-color:var(--signal)}
+@media (max-width:900px){.vertrauen__raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.vertrauen__raster{grid-template-columns:1fr}.vertrauen__raster>li:first-child{grid-column:auto}.siegel{padding:.95rem 1rem}}
+@media (prefers-reduced-motion:reduce){.siegel,.siegel::after,.siegel--google .siegel__aktion,.siegel__sterne svg{animation:none}.siegel,.siegel__schild,.siegel__sterne svg,.fuss .fuss__siegel a{transition:none}}
+@media print{.vertrauen,.fuss__siegel{display:none}}
