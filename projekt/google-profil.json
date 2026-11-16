@@ -1,5 +1,5 @@
 {
-  "abgerufen": "2026-10-31",
+  "abgerufen": "2026-11-16",
   "quelle": "Google-Unternehmensprofil via OpenSEO (DataForSEO)",
   "name": "Gebäudewerke - Hausmeisterservice & Gebäudereinigung",
   "profil_link": "https://share.google/v7XolrfYaCO55YrZz",
@@ -16,12 +16,77 @@
     "Schneeräumdienst"
   ],
   "typ": "Gebiets-Unternehmen (Adresse im Profil ausgeblendet)",
-  "telefon": "+491637221790",
+  "telefon": "+4917674025524",
   "oeffnungszeiten": "Mo-Fr 07:00-17:00",
   "fotos": 5,
   "bewertung_schnitt": 5.0,
-  "bewertung_anzahl": 7,
+  "bewertung_anzahl": 17,
   "bewertungen": [
+    {
+      "name": "Nicolas Bender",
+      "sterne": 5,
+      "datum": "2026-11-11",
+      "text": "Sympathisches und kompetentes Team, sehr zuverlässig"
+    },
+    {
+      "name": "Dönerie",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "thema": "Gebäudereinigung",
+      "text": "Gute Absprache und saubere Ausführung! Ich kann Gebäudewerk echt weiterempfehlen. Sowohl bei den kleinen Reparaturen die angefallen sind als auch bei der Reinigung, war ich mit den Jungs echt sehr zufrieden. Überzeugt euch selbst."
+    },
+    {
+      "name": "Estelle Klinger",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "text": "Ich war wirklich sehr zufrieden, man fühlt sich wirklich gut aufgehoben. Alles wurde zuverlässig und unkompliziert erledigt und es wurde sogar über die vereinbarten Leistungen hinaus gearbeitet. Ich würde mich jederzeit wieder für euch entscheiden, vielen Dank nochmal!"
+    },
+    {
+      "name": "Alper Demirci",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "text": "Rundum zufrieden!"
+    },
+    {
+      "name": "Adil Akdeniz",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "thema": "Hausmeisterservice",
+      "text": "Habe den Hausmeisterservice bei mir in Anspruch genommen und bin sehr zufrieden. Die Arbeiten wurden sauber und ordentlich erledigt. Dazu ein netter Kontakt und unkomplizierte Absprachen. Würde ich jederzeit wieder beauftragen!"
+    },
+    {
+      "name": "MonKey",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "text": "Ich bis sehr zufrieden mit dem Service, schnelle und klare Kommunikation, saubere Arbeit und durchweg ein nettes Team"
+    },
+    {
+      "name": "Asad Nazari",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "thema": "Gebäudereinigung",
+      "text": "Sehr gute Arbeit ich bin sehr zufrieden, und Herr Fatih ist ein sehr sympathischer und netter Mann. Dank dir sieht mein Friseur Laden viel schöner aus"
+    },
+    {
+      "name": "Ali Demir",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "text": "Super Service und saubere Arbeit. Der Geschäftsführer ist sehr höflich und kompetent."
+    },
+    {
+      "name": "Safi",
+      "sterne": 5,
+      "datum": "2026-11-09",
+      "thema": "Schlösser",
+      "text": "Junge, ambitionierte Jungs, die mich positiv überrascht haben. Alles professionell ausgemessen und die Kalkulation anschließend per Mail zugeschickt. Auch ein Dankeschön an Herrn Altun für den unkomplizierten Austausch des Torzylinders."
+    },
+    {
+      "name": "Andrew Brusl",
+      "sterne": 5,
+      "datum": "2026-11-08",
+      "thema": "Winterdienst",
+      "text": "Bin super zufrieden mit der Arbeit, kann ich nur weiterempfehlen.\nWeiter so!\nDer Winterdienst ist auch direkt gebucht."
+    },
     {
       "name": "Luca Fritscher",
       "sterne": 5,
@@ -67,5 +132,12 @@
       "thema": "Gebäudereinigung",
       "text": "Ich bin super zufrieden mit Gebäudewerke! Die Gebäudereinigung wurde professionell, gründlich und zuverlässig durchgeführt. Das Team war freundlich, pünktlich und hat wirklich auf jedes Detail geachtet. Man merkt, dass hier Sauberkeit und Kundenzufriedenheit großgeschrieben werden. Auch das Preis-Leistungs-Verhältnis ist absolut fair. Wer eine zuverlässige Gebäudereinigung in Bruchsal und Umgebung sucht, ist bei Gebäudewerke genau richtig. Ich werde die Firma definitiv wieder beauftragen und kann sie nur weiterempfehlen!"
     }
-  ]
+  ],
+  "bewertung_verteilung": {
+    "5": 17,
+    "4": 0,
+    "3": 0,
+    "2": 0,
+    "1": 0
+  }
 }
