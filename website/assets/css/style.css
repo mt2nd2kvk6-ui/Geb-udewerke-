@@ -805,4 +805,4 @@ table{font-variant-numeric:tabular-nums}
 @media (max-width:900px){.vertrauen__raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.vertrauen__raster{grid-template-columns:1fr}.vertrauen__raster>li:first-child{grid-column:auto}.siegel{padding:.95rem 1rem}}
 @media (prefers-reduced-motion:reduce){.siegel,.siegel::after,.siegel--google .siegel__aktion,.siegel__sterne svg{animation:none}.siegel,.siegel__schild,.siegel__sterne svg,.fuss .fuss__siegel a{transition:none}}
-@media print{.vertrauen,.fuss__siegel{display:none}}.fuss address a:not(.btn){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+@media print{.vertrauen,.fuss__siegel{display:none}}.fuss address a:not(.btn){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}@media (max-width:920px){.kopf--kompakt .wrap{transform:none}.kopf--kompakt .kopf__logo,.kopf--kompakt .kopf__aktionen{transform:translateY(-3px);transition:transform .35s var(--kurve)}}
