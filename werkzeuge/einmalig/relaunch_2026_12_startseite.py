@@ -156,20 +156,18 @@ heute = heute.replace('<span data-heute="wetter">Wetter vom Deutschen Wetterdien
 heute = heute.replace('<dd data-heute="warnung">keine Angabe</dd>', '<dd data-heute="warnung">Amtliche Warnungen für Bruchsal auf dwd.de</dd>')
 heute = heute.replace('<dd data-heute="warnung2">keine Angabe</dd>', '<dd data-heute="warnung2">Amtliche Warnungen für Bruchsal auf dwd.de</dd>')
 heute = heute.replace('<dd data-heute="wetter2">Wetter vom Deutschen Wetterdienst</dd>', '<dd data-heute="wetter2">Aktuelle Werte auf dwd.de</dd>')
-# Belege: Uhrzeiten und Laubpflicht stammen bisher nur aus unserem Ratgeber (Satzungstext liegt nicht vor)
-PRUEFEN_SATZUNG = ('[PRÜFEN: Uhrzeiten 7, 8 und 9 Uhr, Ende 20 Uhr und Laubpflicht der Anlieger mit dem Satzungstext der Stadt Bruchsal '
-                   'abgleichen. Belegt sind sie bisher nur durch unseren Ratgeber vom 16.10. und 31.10.]')
+# Räumzeiten und Laubpflicht wie auf der Website (Ratgeber vom 16.10. und 31.10.), Entscheidung Inhaber 25.11.2026
 heute = heute.replace('Streupflichtsatzung der Stadt Bruchsal, § 39 Bundesnaturschutzgesetz.',
-                      f'Streupflichtsatzung der Stadt Bruchsal {PRUEFEN_SATZUNG}, § 39 Abs. 5 Nr. 2 Bundesnaturschutzgesetz.')
+                      'Streupflichtsatzung der Stadt Bruchsal, § 39 Abs. 5 Nr. 2 Bundesnaturschutzgesetz.')
 heute = heute.replace('<p class="quelle" style="margin-top:8px">Einsatzprotokoll als Beispiel</p>',
-                      '<p class="quelle quelle--abstand">Einsatzprotokoll als Beispiel. Räumzeiten nach der Streupflichtsatzung der Stadt Bruchsal [PRÜFEN: siehe Karte „Bruchsal heute“].</p>')
+                      '<p class="quelle quelle--abstand">Einsatzprotokoll als Beispiel</p>')
 heute = heute.replace(' style="margin-top:14px"', '')
 # Reiter-Rollen setzt main.js (ohne JavaScript stehen die Karten untereinander)
 heute = heute.replace('<div class="register" role="tablist" aria-label="Karteikarten">', '<div class="register" aria-label="Karteikarten">')
 heute = re.sub(r'<button type="button" role="tab" (class="r-\w+" id="r-\w+" aria-controls="b-\w+") aria-selected="(?:true|false)"(?: tabindex="-1")?>', r'<button type="button" \1>', heute)
 heute = re.sub(r'(<div class="blatt b-\w+(?: aktiv)?") role="tabpanel" id="(b-\w+)" aria-labelledby="r-\w+">', r'\1 id="\2">', heute)
 assert 'role="tab' not in heute
-assert '[PRÜFEN' in heute and 'Wetter wird geladen' not in heute
+assert '[PRÜFEN' not in heute and 'Wetter wird geladen' not in heute
 
 # ------------------------------------------------------------------ 4. Leistungen: Aufbau 07.11., Texte 16.11. (K4)
 lh2, lp = kopf_text(v_leistungen)

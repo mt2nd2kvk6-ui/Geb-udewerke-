@@ -708,6 +708,7 @@ button.punkt{display:none}
 .kopfteil .kurzantwort{color:var(--tinte);max-width:44em;margin:.4em 0 .8em}
 .kopfteil .cta-sterne{color:var(--grau)}
 .kopfteil .cta-sterne a{color:var(--werkblau)}
+.beitrag-geprueft{margin:-.4em 0 1em;font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--hell-leise)}
 .kontakt__satz{color:var(--hell-leise);max-width:40em;font-size:clamp(17px,1.3vw,19px);margin:0}
 .lage__fuss{margin:0;font-size:13.5px;opacity:.8}
 .quelle--abstand{margin-top:8px}

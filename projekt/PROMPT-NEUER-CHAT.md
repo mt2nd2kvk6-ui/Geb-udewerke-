@@ -135,12 +135,12 @@ Schreib mir dazu eine kurze Klick-Anleitung (Datei `projekt/tracking-anleitung.m
 
 ## Feste Vorgaben, nicht verhandelbar
 
-- **Telefon und WhatsApp: 0163 7221790** (`tel:+491637221790`, wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Seit 16.11.2026 gibt es nur noch diese eine Nummer. Die frühere Anrufnummer darf nirgends mehr stehen, auch nicht aus Flyern übernommen werden.
+- **Telefon und WhatsApp: 0163 7221790** (`tel:+491637221790`, wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Seit 16.11.2026 gibt es nur noch diese eine Nummer. Einzige Ausnahme (Entscheidung Inhaber 25.11.2026): Im Impressum steht zusätzlich die Anrufnummer des Inhabers 0176 74025524. Sonst darf sie nirgends stehen, auch nicht aus Flyern übernommen werden.
 - Ein klar erkennbarer **WhatsApp-Button** (mit WhatsApp-Symbol) muss im Kopfbereich neben „Anrufen“ und auf dem Handy immer sichtbar sein. Er darf nie fehlen.
 - **Preise:** die aktuellen Preise aus `website/preise.html` unverändert übernehmen, netto und brutto. Nichts neu berechnen.
 - **Bewertungen:** sichtbar als „5,0 Sterne auf Google“ mit Link auf https://share.google/v7XolrfYaCO55YrZz. Das Laufband mit den echten Kundenstimmen bleibt, die Texte nicht ändern. Das `aggregateRating` im JSON-LD bleibt auf allen Seiten.
 - **Team:** „vier Mann“, nicht „Gesellschafter“ (das Wort steht nur im Impressum). Bei Qualifikationen nur „Meisterbrief“, ohne „Metallmeister“ oder eine andere Richtung.
-- **Einsatzgebiet:** Bruchsal mit allen Stadtteilen und die Orte im Landkreis Karlsruhe, Stutensee und Bretten bleiben.
+- **Einsatzgebiet:** Bruchsal mit allen Stadtteilen und die Orte im Landkreis Karlsruhe, Stutensee und Bretten bleiben. Seit 25.11.2026 dazu Kraichtal, Weingarten (Baden), Linkenheim-Hochstetten, Eggenstein-Leopoldshafen und die Stadt Karlsruhe.
 - **Pro Seite nur ein Kontaktblock** unten, mit Anrufen, WhatsApp und Anfrage. Keine Button-Flut.
 - **Nicht verändern:** `auslieferung.php`, `ratgeber/plan.json`, `ratgeber/sitemap.php`, `einrichtung.php`, `htaccess.txt`, `anfrage.php`, die Logik von `assets/js/consent.js`, die Datumszeile „veröffentlicht am“ in den Ratgebern. Kein „aktualisiert am“ einfügen.
 - **Funktionen müssen bleiben:** Kontaktformular (`action="anfrage.php"`, alle Feldnamen exakt wie jetzt, Honeypot `webseite`), Cookie-Banner (Google Analytics erst nach Zustimmung, Conversions für Anruf, WhatsApp, E-Mail und Anfrage), zeitgesteuerte Ratgeber über `auslieferung.php`, Zwei-Klick-Karte, alle URLs und Dateinamen.

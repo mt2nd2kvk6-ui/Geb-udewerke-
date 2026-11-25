@@ -116,6 +116,7 @@ Ratgeber bedienen informationelle Suchen. Sie dürfen den kommerziellen Haupt-Su
 * **Schlüsseldienst Bruchsal** (390): Notöffnung wird nicht angeboten. Wer so sucht und auf Gebäudewerke landet, ist enttäuscht.
 * **Sperrmüll Bruchsal** (590): Nutzer suchen die städtische Abholung.
 * **Gartenbau Bruchsal / GaLaBau**: Neuanlagen sind nicht im Leistungsumfang.
+* Stand 25.11.2026: Die Stadt Karlsruhe gehört jetzt fest zum Einsatzgebiet (Entscheidung Inhaber), ebenso Kraichtal, Weingarten (Baden), Linkenheim-Hochstetten und Eggenstein-Leopoldshafen. Eine eigene Optimierung auf Karlsruhe bleibt trotzdem aus, siehe nächster Punkt.
 * **Hausmeisterservice Karlsruhe / Gebäudereinigung Karlsruhe** als Hauptziel: Die Stadt Karlsruhe liegt laut eigener Seite nur „auf Anfrage“ im Gebiet. Erwähnung ja, eigene Optimierung nein.
 * **Hausmeisterservice gründen / selbstständig machen / Logo**: falsche Zielgruppe.
 * **Hausmeisterservice Stundenlohn**: nur bedienen, wenn der Inhaber einen Stundensatz veröffentlichen will.

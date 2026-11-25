@@ -484,6 +484,22 @@ def datum_de(d):
     return f'{d[8:10]}.{d[5:7]}.{d[:4]}'
 
 
+def geprueft_anwenden(s, main):
+    """Zeile „Zuletzt geprüft am …“ unter der Datumszeile eines Ratgebers (Wunsch Inhaber 25.11.2026).
+    Quelle: <meta name="artikel-geprueft" content="JJJJ-MM-TT">. Die Zeile „veröffentlicht am“ bleibt unverändert.
+    Nur für erschienene Beiträge: Liegt artikel-datum nach dem Prüfdatum, entfällt die Zeile."""
+    main = re.sub(r'\n?<p class="beitrag-geprueft">.*?</p>', '', main)
+    g = re.search(r'<meta name="artikel-geprueft" content="(\d{4}-\d{2}-\d{2})">', s)
+    d = re.search(r'<meta name="artikel-datum" content="(\d{4}-\d{2}-\d{2})">', s)
+    if not g or (d and d.group(1) > g.group(1)):
+        return main
+    m = re.search(r'<p class="beitrag-meta">.*?</p>', main, re.S)
+    if not m:
+        return main
+    zeile = f'\n<p class="beitrag-geprueft">Zuletzt geprüft am {datum_de(g.group(1))}</p>'
+    return main[:m.end()] + zeile + main[m.end():]
+
+
 def autorenbox_anwenden(s, main):
     """Autorenbox am Ende des Artikeltextes. Autor aus <p class="beitrag-meta">… von NAME, …</p>,
     Daten aus meta artikel-datum / artikel-aktualisiert. Zuständigkeit siehe TEAM."""
@@ -605,6 +621,7 @@ def anwenden(seite):
     main = kontaktband_anwenden(main)
     if seite.startswith('ratgeber/') and seite != 'ratgeber/index.php':
         main = autorenbox_anwenden(s, main)
+        main = geprueft_anwenden(s, main)
     s = (s[:m_body.end()] + header(seite, b) + s[m_main.start():m_main.end()] + main + '</main>'
          + footer(seite, b, url, titel) + s[m_bodyende:])
     if s != alt:

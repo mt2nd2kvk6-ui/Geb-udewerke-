@@ -23,8 +23,8 @@ BESCHREIBUNG = {
     'winterdienst.html': ('Winterdienst in Bruchsal: Räumen und Streuen von Gehwegen, Zufahrten und Parkplätzen, Saison November bis März, jeder Einsatz protokolliert.',
                           'Winterdienst in Bruchsal: Saisonpauschale ab 1.220 € netto bis 120 m², 1. November bis 31. März. Zu jedem Einsatz ein Protokoll. Ortstermin kostenlos.'),
 }
-VERSCHIEBEN = ['kosten-hausmeisterservice-bruchsal', 'hausmeisterservice-weg-bruchsal',
-               'dienstleister-wechseln-hausmeister', 'treppenhaus-rettungsweg']
+# Entscheidung Inhaber 25.11.2026: Die Daten bleiben wie ursprünglich geplant, nichts wird verschoben.
+VERSCHIEBEN = []   # vorher: kosten-hausmeisterservice-bruchsal, hausmeisterservice-weg-bruchsal, dienstleister-wechseln-hausmeister, treppenhaus-rettungsweg
 NEU_DATUM = '2027-01-15'
 
 
