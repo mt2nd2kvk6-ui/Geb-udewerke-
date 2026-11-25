@@ -14,6 +14,17 @@ KOPF = os.path.join(BASIS, 'werkzeuge', 'installer_kopf.php')
 AUSGABE = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASIS, 'ausgabe', 'gw-installer.php')
 AUSLASSEN = {'.DS_Store', 'Thumbs.db'}
 
+# Relaunch 12/2026: Kein Bau, solange in der Website noch ein offener Prüfpunkt steht.
+offen = []
+for wurzel, _, dateien in os.walk(QUELLE):
+    for d in dateien:
+        if d.endswith(('.html', '.php', '.txt', '.js', '.json')):
+            p = os.path.join(wurzel, d)
+            if '[PRÜFEN' in open(p, encoding='utf-8', errors='ignore').read():
+                offen.append(os.path.relpath(p, QUELLE))
+if offen:
+    sys.exit('Abbruch: offene [PRÜFEN]-Punkte in ' + ', '.join(sorted(offen)))
+
 puffer = io.BytesIO()
 anzahl = 0
 with zipfile.ZipFile(puffer, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:

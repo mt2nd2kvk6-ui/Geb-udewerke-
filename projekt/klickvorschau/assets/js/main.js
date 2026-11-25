@@ -145,39 +145,75 @@
     return { auf: ms(jt - w / 360), unter: ms(jt + w / 360) };
   }
 
-  /* ---------- Modell: Lichtkegel und Wetter ---------- */
+  /* ---------- Modell: Lichtkegel, Zonen-Buttons und Wetter ----------
+     Jeder Punkt ist ein Button (Tastatur, Touch). Die gewählte Zone steht in der Infozeile darunter,
+     dort mit Link auf die Leistungsseite. Der Rundgang läuft nur ohne „Bewegung reduzieren“,
+     hält bei Maus oder Fokus an, lässt sich per Knopf anhalten und endet bei der ersten Auswahl. */
   var modell = document.getElementById('modell');
   if (modell) {
     var zonen = $$('.welt .zone', modell), punkte = $$('.punkt', modell), links10 = $$('.liste10 a'), unter = document.getElementById('unterzeile');
+    var knoepfe = punkte.filter(function (p) { return p.tagName === 'BUTTON'; });
+    var pauseKnopf = $('.modell__pause', modell);
     var tour = ['keller', 'treppenhaus', 'wohnung', 'reparatur', 'buero', 'hausmeister', 'gewerbe', 'winter', 'metall', 'garten'];
-    var ti = 0, pause = false, sichtbar = true;
-    var zeigen = function (z) {
+    var ti = 0, pause = false, sichtbar = true, angehalten = false, timer = null;
+    var zeigen = function (z, ansagen) {
       modell.classList.toggle('fokus', !!z);
       var spot = $('.spot', modell); spot.innerHTML = '';
       zonen.forEach(function (g) { if (g.getAttribute('data-zone') === z) spot.appendChild(g.cloneNode(true)); });
-      punkte.forEach(function (p) { p.classList.toggle('an', p.getAttribute('data-zone') === z); });
+      punkte.forEach(function (p) {
+        var an = p.getAttribute('data-zone') === z;
+        p.classList.toggle('an', an);
+        if (p.tagName === 'BUTTON') p.setAttribute('aria-pressed', an ? 'true' : 'false');
+      });
       links10.forEach(function (a) { a.classList.toggle('an', a.getAttribute('data-zone') === z); });
-      var p = punkte.filter(function (x) { return x.getAttribute('data-zone') === z; })[0];
-      if (p && unter) { $('b', unter).textContent = $('b', p).textContent; $('small', unter).textContent = $('small', p).textContent; }
+      var p = knoepfe.filter(function (x) { return x.getAttribute('data-zone') === z; })[0];
+      if (p && unter) {
+        $('b', unter).textContent = $('b', p).textContent;
+        $('small', unter).textContent = $('small', p).textContent;
+        var link = $('a', unter);
+        if (link) { link.href = p.getAttribute('data-ziel'); link.firstChild.nodeValue = p.getAttribute('data-anker') + ' '; }
+        unter.setAttribute('aria-live', ansagen ? 'polite' : 'off');
+      }
+    };
+    var anhalten = function () {
+      angehalten = true;
+      if (timer) { clearInterval(timer); timer = null; }
+      if (pauseKnopf) { pauseKnopf.setAttribute('aria-pressed', 'true'); pauseKnopf.textContent = 'Rundgang fortsetzen'; }
+    };
+    var starten = function () {
+      angehalten = false;
+      if (pauseKnopf) { pauseKnopf.setAttribute('aria-pressed', 'false'); pauseKnopf.textContent = 'Rundgang anhalten'; }
+      if (!timer) timer = setInterval(function () { if (!pause && sichtbar && !document.hidden) zeigen(tour[ti++ % tour.length]); }, 2600);
     };
     var fokus = modell.getAttribute('data-fokus');
     if (fokus) zeigen(fokus);   // Unterseiten: nur die eigene Zone im Licht, kein Rundgang
-    else [modell, $('.liste10')].forEach(function (el) {
-      if (!el) return;
-      el.addEventListener('mouseenter', function () { pause = true; });
-      el.addEventListener('mouseleave', function () { pause = false; });
-      el.addEventListener('focusin', function () { pause = true; });
-      el.addEventListener('focusout', function () { pause = false; });
-    });
+    else {
+      [modell, $('.liste10')].forEach(function (el) {
+        if (!el) return;
+        el.addEventListener('mouseenter', function () { pause = true; });
+        el.addEventListener('mouseleave', function () { pause = false; });
+        el.addEventListener('focusin', function () { pause = true; });
+        el.addEventListener('focusout', function () { pause = false; });
+      });
+      knoepfe.forEach(function (k) {
+        k.addEventListener('click', function () { anhalten(); zeigen(k.getAttribute('data-zone'), true); ti = tour.indexOf(k.getAttribute('data-zone')) + 1; });
+      });
+      if (pauseKnopf && !ruhig) {
+        pauseKnopf.hidden = false;
+        pauseKnopf.addEventListener('click', function () { if (angehalten) starten(); else anhalten(); });
+      }
+    }
     punkte.concat(links10).forEach(function (el) {
       var z = el.getAttribute('data-zone');
+      if (!z || fokus) return;
       el.addEventListener('mouseenter', function () { zeigen(z); ti = tour.indexOf(z) + 1; });
       el.addEventListener('focus', function () { zeigen(z); ti = tour.indexOf(z) + 1; });
     });
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { sichtbar = e[0].isIntersecting; }).observe(modell);
     if (!ruhig && !fokus) setTimeout(function () {
+      if (angehalten) return;
       zeigen(tour[ti++]);
-      setInterval(function () { if (!pause && sichtbar && !document.hidden) zeigen(tour[ti++ % tour.length]); }, 2600);
+      starten();
     }, 1500);
   }
   function wetterZustand(w, jetzt) {
@@ -239,10 +275,20 @@
     var chip = document.getElementById('live-chip');
     if (chip) {
       chip.classList.remove('beispiel');
-      chip.textContent = 'Bruchsal jetzt ' + grad + ', ' + text + ' · ';
-      if (warn.length) { var bb = document.createElement('b'); bb.textContent = warn[0]; chip.appendChild(bb); chip.appendChild(document.createTextNode(' · ')); }
-      chip.appendChild(document.createTextNode('DWD'));
+      var zeile = document.createElement('span');   // eine Zeile, damit der Text im Chip fließt
+      zeile.textContent = 'Bruchsal jetzt ' + grad + ', ' + text + ' · ';
+      if (warn.length) { var bb = document.createElement('b'); bb.textContent = warn[0]; zeile.appendChild(bb); zeile.appendChild(document.createTextNode(' · ')); }
+      zeile.appendChild(document.createTextNode('DWD'));
+      chip.textContent = ''; chip.appendChild(zeile);
     }
+  }
+  /* wetter.php nicht erreichbar oder ohne Daten: feste Texte, kein Platzhalter bleibt stehen */
+  function ohneWetter() {
+    setze('status', 'Wetter gerade nicht abrufbar');
+    setze('grad', '–'); setze('grad2', '–');
+    setze('wetter', 'Aktuelle Werte und Warnungen veröffentlicht der Deutsche Wetterdienst auf dwd.de');
+    setze('wetter2', 'Aktuelle Werte auf dwd.de');
+    setze('warnung', 'Amtliche Warnungen für Bruchsal auf dwd.de'); setze('warnung2', 'Amtliche Warnungen für Bruchsal auf dwd.de');
   }
   if (heuteDa || modell) {
     var daten = null;
@@ -251,12 +297,21 @@
     setInterval(tick, 30000);
     if ('fetch' in window) {
       fetch('/wetter.php', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (w) { if (w && !w.fehler) { daten = w; wetter(w); tick(); } })
-        .catch(function () { setze('status', 'Wetterdaten gerade nicht erreichbar'); });
+        .then(function (w) { if (w && !w.fehler) { daten = w; wetter(w); tick(); } else ohneWetter(); })
+        .catch(ohneWetter);
     }
   }
 
   /* ---------- Karteikarten ---------- */
+  var register = $('.register');
+  if (register) {   // ohne JavaScript stehen alle Karten untereinander, die Reiter-Rollen setzt erst das Skript
+    register.setAttribute('role', 'tablist');
+    $$('button', register).forEach(function (t, i) {
+      var p = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('role', 'tab'); t.setAttribute('aria-selected', i === 0 ? 'true' : 'false'); t.tabIndex = i === 0 ? 0 : -1;
+      if (p) { p.setAttribute('role', 'tabpanel'); p.setAttribute('aria-labelledby', t.id); p.tabIndex = 0; }
+    });
+  }
   var tabs = $$('.register [role="tab"]');
   function karte(tab, fokus) {
     tabs.forEach(function (t) {
@@ -335,17 +390,22 @@
         aktualisieren();
       }
     };
+    var filtern = function (f, bewegt) {
+      var i = 0;
+      $$('li', liste).forEach(function (li) {
+        var s = (' ' + li.getAttribute('data-fuer') + ' ').indexOf(' ' + f + ' ') > -1;
+        li.hidden = !s; li.classList.remove('rein');
+        if (s && bewegt && !ruhig) { void li.offsetWidth; li.style.setProperty('--k', i++); li.classList.add('rein'); }
+      });
+    };
+    filtern('alles', false);
+    liste.classList.add('bereit');
     $$('.fuer button').forEach(function (k) {
       k.addEventListener('click', function () {
         var f = k.getAttribute('data-fuer');
         $$('.fuer button').forEach(function (x) { x.setAttribute('aria-pressed', x === k ? 'true' : 'false'); });
         var satz = document.getElementById('satz'); if (satz) satz.textContent = SAETZE[f] || '';
-        var i = 0;
-        $$('li', liste).forEach(function (li) {
-          var s = (' ' + li.getAttribute('data-fuer') + ' ').indexOf(' ' + f + ' ') > -1;
-          li.hidden = !s; li.classList.remove('rein');
-          if (s && !ruhig) { void li.offsetWidth; li.style.setProperty('--k', i++); li.classList.add('rein'); }
-        });
+        filtern(f, true);
       });
     });
   }
