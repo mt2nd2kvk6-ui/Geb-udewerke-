@@ -60,6 +60,7 @@ STAND = monat(PROFIL['abgerufen'])
 SCHNITT_DE = f'{SCHNITT:.1f}'.replace('.', ',')
 STAND_TAG = '.'.join(reversed(PROFIL['abgerufen'].split('-')))
 HINWEIS = f'{ANZAHL} Bewertungen, Durchschnitt {SCHNITT_DE} bei Google (Stand {STAND_TAG})'
+HINWEIS_MUSTER = re.compile(r'\d+ Bewertungen, Durchschnitt \d,\d bei Google \(Stand \d\d\.\d\d\.\d{4}\)')
 
 
 def hinweis_kurz(klasse='google-hinweis'):
@@ -176,6 +177,10 @@ def version(pfad):
 
 V_CONSENT = version('assets/js/consent.js')
 V_MAIN = version('assets/js/main.js')
+V_TRACKING = version('assets/js/tracking.js')
+# Kennzeichnung „JavaScript aktiv“ vor dem ersten Zeichnen: Ohne JavaScript bleiben alle Inhalte
+# sichtbar (Karteikarten untereinander, alle Aufgaben, Leistungsliste statt Modell-Punkte).
+JS_KLASSE = "<script>document.documentElement.classList.add('js')</script>"
 
 
 def kopf_block(b):
@@ -186,16 +191,19 @@ def kopf_block(b):
             f'<link rel="apple-touch-icon" href="{b}apple-touch-icon.png">\n'
             f'<link rel="manifest" href="{b}site.webmanifest">\n'
             f'<link rel="preload" href="{b}assets/fonts/mona-sans-var.woff2" as="font" type="font/woff2" crossorigin>\n'
+            f'{JS_KLASSE}\n'
             f'<style>{CSS.replace("{{BASIS}}", b)}</style>\n'
             f'<script src="{b}assets/js/consent.js?v={V_CONSENT}" defer></script>\n'
             f'<script src="{b}assets/js/main.js?v={V_MAIN}" defer></script>\n'
+            f'<script src="{b}assets/js/tracking.js?v={V_TRACKING}" defer></script>\n'
             '<!-- layout:kopf-ende -->')
 
 
 ALTE_KOPF_TEILE = [
     r'<link rel="icon"[^>]*>\n?', r'<link rel="apple-touch-icon"[^>]*>\n?', r'<link rel="manifest"[^>]*>\n?',
     r'<link rel="preload"[^>]*\.woff2[^>]*>\n?', r'<style>.*?</style>\n?',
-    r'<script src="[^"]*assets/js/(?:consent|main)\.js[^"]*"[^>]*></script>\n?',
+    r'<script src="[^"]*assets/js/(?:consent|main|tracking)\.js[^"]*"[^>]*></script>\n?',
+    r"<script>document\.documentElement\.classList\.add\('js'\)</script>\n?",
 ]
 
 
@@ -269,6 +277,28 @@ def q(t):
     return quote(t, safe='')
 
 
+# Branchenverzeichnisse und Presse (Stand 16.11.2026). Klicks zählt tracking.js als verzeichnis_klick.
+VERZEICHNISSE = [
+    ('google', 'Google', 'https://search.google.com/local/writereview?placeid=ChIJ8fCoWaS74ocR_hR77gqjGFA'),
+    ('geolokal.de', 'geolokal', 'https://geolokal.de/firmen/gebaeudewerke-hausmeisterservice-gebaeudereinigung-hambruecken'),
+    ('bundes-telefonbuch.de', 'Bundes-Telefonbuch', 'https://www.bundes-telefonbuch.de/hambruecken/hausmeisterdienste/gebaeudewerke-hausmeisterservice-gebaeudereinigung-y2096304706'),
+    ('ortsdienst.de', 'Ortsdienst', 'https://www.ortsdienst.de/baden-wuerttemberg/landkreis-karlsruhe/hambruecken/branchenbuch-bueroservice/gebaeudewerke-hausmeisterservice-und-gebaeudereinigung-bid534129/'),
+    ('gebaeudereiniger-liste.de', 'Gebäudereiniger-Liste', 'https://gebaeudereiniger-liste.de/firma/gebaeudewerke/'),
+    ('firmen-in-deutschland.de', 'Firmen in Deutschland', 'https://www.firmen-in-deutschland.de/firma/gebaeudewerke-hausmeisterservice-gebaeudereinigung-2523'),
+    ('branchenmeile.com', 'Branchenmeile', 'https://branchenmeile.com/betrieb/gebaeudewerke-hausmeisterservice-gebaeudereinigung'),
+    ('openpr.de', 'Presse: openPR', 'https://www.openpr.de/news/1329410/Wer-im-Januar-stuerzt-klagt-im-Juni-Winterdienst-mit-Einsatzprotokoll-fuer-Bruchsal-und-Umgebung.html'),
+]
+I_STERN = f'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{STERN}"/></svg>'
+
+
+def fuss_siegel():
+    punkte = ''
+    for k, t, u in VERZEICHNISSE:
+        klasse = ' class="fuss__siegel--google"' if k == 'google' else ''
+        punkte += f'<li><a{klasse} href="{u}" rel="noopener" target="_blank" data-verzeichnis="{k}">{I_STERN}{t}</a></li>'
+    return f'<div class="fuss__siegel"><p class="fuss__siegel-titel">Bewerten Sie uns:</p><ul>{punkte}</ul></div>'
+
+
 def footer(seite, b, url, titel):
     leist = ''.join(f'<li><a href="{b}{h}">{t}</a></li>' for h, t in FUSS_LEISTUNGEN)
     teilen = (f'<p class="teilen">Seite teilen: <a href="https://wa.me/?text={q(url)}" rel="noopener" target="_blank" data-teilen="whatsapp">Per WhatsApp teilen</a> · '
@@ -279,12 +309,13 @@ def footer(seite, b, url, titel):
 <div class="fuss__raster">
 <div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
 <p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
-<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon: <a href="{TEL}" data-pos="fuss">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
+<address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon und WhatsApp: <a href="{TEL}" data-pos="fuss">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
 <a class="fuss__google google-hinweis" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span>{SCHNITT_DE} Sterne auf Google</span></a></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
 <div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank" data-pos="fuss">Nachricht per WhatsApp</a></li></ul></div>
 </div>
+{fuss_siegel()}
 <div class="fuss__unten"><span>© 2026 Gebäudewerke GbR</span>{teilen}<ul><li><a href="{b}impressum.html">Impressum</a></li><li><a href="{b}datenschutz.html">Datenschutz</a></li><li><a href="{b}datenschutz.html#google-analytics" data-cookie-einstellungen>Cookie-Einstellungen</a></li></ul></div>
 </div></footer>
 <nav class="mobilleiste" aria-label="Schnellkontakt mobil">
@@ -442,9 +473,10 @@ def kontaktband_anwenden(main):
 
 TEAM = {  # Name: (Anker auf ueber-uns.html, Zuständigkeit, Qualifikation laut Teamseite)
     'Fatih Altun': ('person-1', 'Metallarbeiten, Schlösser und Reparaturen', 'Meisterbrief'),
-    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', ''),
-    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', ''),
-    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', ''),
+    # Relaunch 12/2026: Qualifikationen wie im Live-Stand 16.11. und auf ueber-uns.html (Konflikt K13)
+    'Enes Yesildag': ('person-2', 'Vertrieb, Hausverwaltung und Wohnungsübergaben', 'Kaufmann, Vertrieb und Vermarktung'),
+    'Burak Kartal': ('person-3', 'Qualität, Reinigung und Gartenpflege', 'Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau'),
+    'Julian Bender': ('person-4', 'Hausmeisterservice und Winterdienst', 'Gelernter Industriemechaniker'),
 }
 
 
@@ -553,6 +585,7 @@ def anwenden(seite):
     pfad = os.path.join(WEB, seite)
     alt = open(pfad, encoding='utf-8').read()
     s = alt.replace(ALT_GOOGLE, GOOGLE)
+    s = HINWEIS_MUSTER.sub(HINWEIS, s)   # Bewertungsangaben überall auf dem Stand von google-profil.json
     b = '/' if (seite.startswith('ratgeber/') or seite == '404.html') else ''
     s = kopf_anwenden(s, b)
     s = jsonld_anwenden(s, seite)
@@ -584,7 +617,7 @@ def anwenden(seite):
 def llms():
     p = os.path.join(WEB, 'llms.txt')
     s = open(p, encoding='utf-8').read()
-    n = s.replace(ALT_GOOGLE, GOOGLE)
+    n = HINWEIS_MUSTER.sub(HINWEIS, s.replace(ALT_GOOGLE, GOOGLE))
     if n != s and not PRUEFEN:
         open(p, 'w', encoding='utf-8', newline='\n').write(n)
     return n != s

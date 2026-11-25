@@ -1,7 +1,18 @@
 /* Gebäudewerke: Einwilligung für Google Analytics 4
    Google Analytics wird erst nach ausdrücklicher Zustimmung geladen.
    Entscheidung im localStorage unter gw_consent: "granted" oder "denied".
-   Banner erneut öffnen: jedes Element mit data-cookie-einstellungen. */
+   Banner erneut öffnen: jedes Element mit data-cookie-einstellungen.
+
+   Ergänzung 06.11.2026: Google Consent Mode v2.
+   Beim Seitenaufruf wird nur ein lokaler Standard "alles denied" in den dataLayer
+   geschrieben (ohne Netzwerk). Erst nach "Alle akzeptieren" wird analytics_storage
+   auf "granted" gesetzt und gtag.js geladen. Werbe-Signale (ad_storage,
+   ad_user_data, ad_personalization) bleiben immer "denied". Ohne Zustimmung
+   geht keine Anfrage an Google.
+
+   Alle Ereignisse laufen über window.gwEreignis(name, daten), siehe tracking.js.
+   Jedes Ereignis bekommt automatisch: seite (Pfad), zielgruppe (meta name="zielgruppe",
+   falls vorhanden) und, falls vom Aufrufer übergeben, position. */
 (function () {
   'use strict';
   var MESS_ID = 'G-PKEXEYK6CG';
@@ -16,12 +27,22 @@
     try { window.localStorage.setItem(SCHLUESSEL, wert); } catch (e) { /* Speicher gesperrt */ }
   }
 
+  /* Consent Mode v2: Standard ohne Netzwerkzugriff, nur lokaler dataLayer */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+
   function gaLaden() {
     window['ga-disable-' + MESS_ID] = false;
+    window.gtag('consent', 'update', { analytics_storage: 'granted' });
     if (gaGeladen) return;
     gaGeladen = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
     window.gtag('config', MESS_ID, {
       allow_google_signals: false,
@@ -32,10 +53,12 @@
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + MESS_ID;
     document.head.appendChild(s);
     dankeSeite();
+    document.dispatchEvent(new CustomEvent('gw:consent', { detail: 'granted' }));
   }
 
   function gaStoppen() {
     window['ga-disable-' + MESS_ID] = true;
+    window.gtag('consent', 'update', { analytics_storage: 'denied' });
     var host = window.location.hostname;
     var domains = ['', host, '.' + host];
     var teile = host.split('.');
@@ -97,41 +120,31 @@
     ausloeser = null;
   }
 
-  /* Ergänzung 29.10.2026: Conversions. Wird nur gesendet, wenn GA4 nach Zustimmung geladen ist.
-     generate_lead  = Anfrageformular erfolgreich gesendet (Aufruf von danke.html)
-     anruf_klick    = Klick auf tel:-Link
-     whatsapp_klick = Klick auf WhatsApp-Kontakt (nicht auf "Seite teilen")
-     email_klick    = Klick auf mailto:info@gebaeudewerke.de */
+  /* Zentrale Ereignisfunktion. Wird nur gesendet, wenn GA4 nach Zustimmung geladen ist.
+     Standardparameter: seite (Pfad), zielgruppe (aus <meta name="zielgruppe">), position (falls übergeben).
+     Die Klick- und Scroll-Ereignisse selbst stehen in assets/js/tracking.js. */
+  var zielgruppeMeta = document.querySelector('meta[name="zielgruppe"]');
+  var ZIELGRUPPE = zielgruppeMeta ? zielgruppeMeta.getAttribute('content') : '';
   function ereignis(name, daten) {
-    if (!gaGeladen || lesen() !== 'granted' || typeof window.gtag !== 'function') return;
+    if (!gaGeladen || lesen() !== 'granted' || typeof window.gtag !== 'function') return false;
     daten = daten || {};
     daten.seite = window.location.pathname;
+    if (ZIELGRUPPE && !daten.zielgruppe) daten.zielgruppe = ZIELGRUPPE;
     daten.transport_type = 'beacon';
     window.gtag('event', name, daten);
+    return true;
   }
+  window.gwEreignis = ereignis;
+  window.gwZustimmung = function () { return gaGeladen && lesen() === 'granted'; };
 
-  function klickVerfolgen(e) {
-    var link = e.target.closest ? e.target.closest('a[href]') : null;
-    if (!link) return;
-    var href = link.getAttribute('href') || '';
-    var text = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
-    if (href.indexOf('tel:') === 0) {
-      ereignis('anruf_klick', { link_text: text });
-    } else if (/api\.whatsapp\.com\/send\?phone=|wa\.me\/\d/.test(href)) {
-      ereignis('whatsapp_klick', { link_text: text });
-    } else if (/^mailto:info@/i.test(href)) {
-      ereignis('email_klick', { link_text: text });
-    }
-  }
-
+  /* generate_lead = Anfrageformular erfolgreich gesendet (Aufruf von danke.html) */
   function dankeSeite() {
     if (/\/danke(\.html)?$/.test(window.location.pathname)) {
-      ereignis('generate_lead', { formular: 'anfrage' });
+      ereignis('generate_lead', { formular: 'anfrage', position: 'inhalt' });
     }
   }
 
   function start() {
-    document.addEventListener('click', klickVerfolgen, true);
     document.addEventListener('click', function (e) {
       var link = e.target.closest ? e.target.closest('[data-cookie-einstellungen]') : null;
       if (!link) return;
