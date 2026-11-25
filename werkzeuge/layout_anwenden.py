@@ -310,7 +310,7 @@ def footer(seite, b, url, titel):
 <div><a class="fuss__logo" href="/"><img src="{b}assets/img/logo-quer-weiss.svg" width="1716" height="442" alt="Gebäudewerke Logo, zur Startseite" loading="lazy"></a>
 <p class="fuss__text">Hausmeisterservice, Gebäudereinigung, Gartenpflege und Winterdienst für Wohnanlagen, Eigentümergemeinschaften und Gewerbe in Bruchsal und im Landkreis Karlsruhe.</p>
 <address>Gebäudewerke GbR<br>Allmend 2<br>76707 Hambrücken<br>Telefon und WhatsApp: <a href="{TEL}" data-pos="fuss">0163 7221790</a><br><a href="mailto:info@gebaeudewerke.de" data-pos="fuss">E-Mail an info@gebaeudewerke.de</a></address>
-<a class="fuss__google google-hinweis" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span>{SCHNITT_DE} Sterne auf Google</span></a></div>
+<a class="fuss__google google-hinweis" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}<span>{SCHNITT_DE} Sterne · {ANZAHL} Bewertungen auf Google</span></a></div>
 <div><p class="fuss__titel">Leistungen</p><ul>{leist}</ul></div>
 <div><p class="fuss__titel">Unternehmen</p><ul><li><a href="{b}preise.html">Preise und Richtpreise</a></li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet</a></li><li><a href="{b}ueber-uns.html">Team und Unternehmen</a></li><li><a href="{b}ratgeber/">Ratgeber</a></li><li><a href="{b}karriere.html">Jobs bei Gebäudewerke</a></li><li><a href="{b}kontakt.html">Kontakt und Anfahrt</a></li></ul></div>
 <div><p class="fuss__titel">Erreichbarkeit</p><ul><li>Büro: Mo bis Fr 7 bis 17 Uhr</li><li>Notdienst: täglich 17 bis 24 Uhr</li><li><a href="{b}einsatzgebiet.html">Einsatzgebiet: Bruchsal und Landkreis Karlsruhe</a></li><li><a href="{WA}" rel="noopener" target="_blank" data-pos="fuss">Nachricht per WhatsApp</a></li></ul></div>
@@ -327,8 +327,8 @@ def footer(seite, b, url, titel):
 
 # ---------------------------------------------------------------- Bewertungen
 
-def bewertungen_html(variante, thema, hintergrund):
-    liste = [r for r in PROFIL['bewertungen'] if r.get('text')]
+def bewertungen_html(variante, thema, hintergrund, ohne=None):
+    liste = [r for r in PROFIL['bewertungen'] if r.get('text') and r['name'] != ohne]
     liste.sort(key=lambda r: r['datum'], reverse=True)
     if thema:
         liste.sort(key=lambda r: 0 if r.get('thema') == thema else 1)
@@ -380,7 +380,7 @@ def bewertungen_anwenden(main, seite):
     hg = 'weiss' if (sektionen and 'abschnitt--kalk' in sektionen[-1]) else 'kalk'
     if seite == 'index.html':
         hg = 'kalk'
-    return davor + bewertungen_html(variante, thema, hg) + danach
+    return davor + bewertungen_html(variante, thema, hg, STIMME.get(seite)) + danach
 
 
 # ---------------------------------------------------------------- Ratgeber-Teaser
@@ -491,12 +491,18 @@ def geprueft_anwenden(s, main):
     main = re.sub(r'\n?<p class="beitrag-geprueft">.*?</p>', '', main)
     g = re.search(r'<meta name="artikel-geprueft" content="(\d{4}-\d{2}-\d{2})">', s)
     d = re.search(r'<meta name="artikel-datum" content="(\d{4}-\d{2}-\d{2})">', s)
-    if not g or (d and d.group(1) > g.group(1)):
-        return main
     m = re.search(r'<p class="beitrag-meta">.*?</p>', main, re.S)
     if not m:
         return main
-    zeile = f'\n<p class="beitrag-geprueft">Zuletzt geprüft am {datum_de(g.group(1))}</p>'
+    teile = []
+    if g and not (d and d.group(1) > g.group(1)):
+        teile.append(f'Zuletzt geprüft am {datum_de(g.group(1))}')
+    art = re.search(r'<article\b.*?</article>', main, re.S)
+    text = re.sub(r'<!-- (autorenbox|bewertungen):start.*?:ende -->', ' ', art.group(0) if art else main, flags=re.S)
+    text = re.sub(r'<(script|style|svg)\b.*?</\1>', ' ', text, flags=re.S)
+    woerter = len(re.findall(r'[0-9A-Za-zÄÖÜäöüß]+', html.unescape(re.sub(r'<[^>]+>', ' ', text))))
+    teile.append(f'{max(1, round(woerter / 200))} Min. Lesezeit')
+    zeile = f'\n<p class="beitrag-geprueft">{" · ".join(teile)}</p>'
     return main[:m.end()] + zeile + main[m.end():]
 
 
@@ -562,6 +568,91 @@ def org_vorlage():
     return o
 
 
+# ---------------------------------------------------------------- Relaunch 12/2026: Bewertung und Preis im Seitenkopf, Kundenstimme
+
+# Preisangabe je Leistungsseite, Werte aus der Preistabelle auf preise.html
+KOPF_PREIS = {
+    'hausmeisterservice.html': 'Richtpreis ab 111 € netto im Monat',
+    'bueroreinigung.html': 'ab 382 € netto im Monat (50 m², dreimal pro Woche)',
+    'gebaeudereinigung.html': 'Fensterreinigung ab 200 € netto',
+    'gartenpflege.html': 'Grünpflege bis 250 m² ab 128 € netto',
+    'winterdienst.html': 'ganze Saison ab 1.220 € netto (bis 120 m²)',
+}
+# Kundenstimme je Leistungsseite: echte Google-Bewertung aus projekt/google-profil.json, passend zum Thema
+STIMME = {
+    'hausmeisterservice.html': 'Adil Akdeniz', 'treppenhausreinigung.html': 'Nicolas Bender',
+    'gebaeudereinigung.html': 'Daniela Azevedo', 'bueroreinigung.html': 'Asad Nazari',
+    'gartenpflege.html': 'Luca Fritscher', 'winterdienst.html': 'Andrew Brusl',
+    'entruempelung.html': 'Ali Demir', 'wohnungsuebergabe.html': 'MonKey',
+    'kleinreparaturen.html': 'Dönerie', 'metallarbeiten-schloesser.html': 'Safi',
+}
+
+
+def kopfbeleg_html(seite):
+    preis = KOPF_PREIS.get(seite, 'Festpreis nach kostenlosem Ortstermin')
+    return ('<!-- kopfbeleg:start (automatisch: werkzeuge/layout_anwenden.py) -->'
+            f'<p class="kopfbeleg" data-pos="hero"><a class="kopfbeleg__sterne" href="{GOOGLE}" rel="noopener" target="_blank">{sterne()}'
+            f'<span><b>{SCHNITT_DE}</b> · {ANZAHL} Bewertungen auf Google</span></a><span class="kopfbeleg__preis">{preis}</span></p>'
+            '<!-- kopfbeleg:ende -->')
+
+
+def kopfbeleg_anwenden(main, seite):
+    main = re.sub(r'<!-- kopfbeleg:start.*?<!-- kopfbeleg:ende -->', '', main, flags=re.S)
+    if seite not in STIMME:
+        return main
+    m = re.search(r'<section class="seitenkopf">.*?<div class="cta">.*?</div>', main, re.S)
+    return main[:m.end()] + kopfbeleg_html(seite) + main[m.end():] if m else main
+
+
+def stimme_anwenden(main, seite):
+    main = re.sub(r'\n?<!-- stimme:start.*?<!-- stimme:ende -->', '', main, flags=re.S)
+    r = next((x for x in PROFIL['bewertungen'] if x['name'] == STIMME.get(seite) and x.get('text')), None)
+    m = re.search(r'<!-- vertrauen:ende -->.*?</section>', main, re.S)
+    if not r or not m:
+        return main
+    text = html.escape(r['text'].strip()).replace('\n', ' ')
+    block = ('\n<!-- stimme:start (automatisch: werkzeuge/layout_anwenden.py, Text aus projekt/google-profil.json) -->\n'
+             f'<section class="stimme" aria-label="Kundenstimme" data-pos="kundenstimme"><div class="wrap"><figure class="stimme__karte">{sterne(int(r["sterne"]), True)}'
+             f'<blockquote><p>{text}</p></blockquote>'
+             f'<figcaption><span class="stimme__initial" aria-hidden="true">{html.escape(r["name"][:1].upper())}</span>'
+             f'<span><strong>{html.escape(r["name"])}</strong><span>{monat(r["datum"])} · Google-Bewertung</span></span></figcaption></figure>'
+             f'<a class="stimme__mehr" href="{GOOGLE}" rel="noopener" target="_blank">Alle {ANZAHL} Bewertungen auf Google, Schnitt {SCHNITT_DE}</a></div></section>\n'
+             '<!-- stimme:ende -->')
+    return main[:m.end()] + block + main[m.end():]
+
+
+# Produktbewertung je indexierbarer URL (Wunsch Inhaber 25.11.2026: Sterne unter jeder URL).
+# Werte aus projekt/google-profil.json, sichtbar im Fuß jeder Seite.
+KW = json.load(open(os.path.join(BASIS, 'projekt', 'seo', 'hauptkeywords.json'), encoding='utf-8'))
+ANGEBOT_ALLGEMEIN = {'@type': 'AggregateOffer', 'priceCurrency': 'EUR', 'lowPrice': '77', 'highPrice': '1785',
+                     'description': 'Richtpreise netto laut Preisliste, verbindlicher Festpreis nach kostenlosem Ortstermin.',
+                     'url': 'https://gebaeudewerke.de/preise.html'}
+
+
+def produkt(graph, seite, s):
+    kan = re.search(r'<link rel="canonical" href="([^"]+)"', s)
+    if not kan or re.search(r'<meta name="robots" content="[^"]*noindex', s):
+        return None
+    url = kan.group(1)
+    d = re.search(r'<meta name="description" content="([^"]*)"', s)
+    # Leistungsseiten und Startseite: Hauptkeyword der Seite, sonst allgemeiner Name
+    if seite in LEISTUNGEN_SEITEN or seite == 'index.html':
+        name = KW.get(seite, 'Objekt- und Gebäudeservice Bruchsal')
+    else:
+        name = 'Objekt- und Gebäudeservice Bruchsal'
+    dienst = next((o for o in graph if o.get('@type') == 'Service' and o.get('offers')), None)
+    p = {'@type': 'Product', '@id': url + '#bewertung', 'name': name,
+         'description': re.sub(r'\s*★.*$', '', html.unescape(d.group(1))) if d else name,
+         'image': 'https://gebaeudewerke.de/assets/img/social-vorschau.jpg',
+         'brand': {'@type': 'Brand', 'name': 'Gebäudewerke'},
+         'aggregateRating': rating(),
+         'offers': dict(dienst['offers']) if dienst else dict(ANGEBOT_ALLGEMEIN)}
+    return p
+
+
+LEISTUNGEN_SEITEN = {x[0] for x in LEISTUNGEN}
+
+
 def jsonld_anwenden(s, seite):
     def ersetzen(m):
         roh = m.group(1)
@@ -584,6 +675,10 @@ def jsonld_anwenden(s, seite):
             org['review'] = reviews()
         else:
             org.pop('review', None)
+        graph[:] = [o for o in graph if not (o.get('@type') == 'Product' and str(o.get('@id', '')).endswith('#bewertung'))]
+        p = produkt(graph, seite, s)
+        if p:
+            graph.append(p)
         neu = json.dumps(j, ensure_ascii=False, separators=(',', ':'))
         return '<script type="application/ld+json">' + neu + '</script>'
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', ersetzen, s, count=1, flags=re.S)
@@ -619,6 +714,8 @@ def anwenden(seite):
     main = teaser_anwenden(main, b)
     main = vertrauen_anwenden(main, seite)
     main = kontaktband_anwenden(main)
+    main = kopfbeleg_anwenden(main, seite)
+    main = stimme_anwenden(main, seite)
     if seite.startswith('ratgeber/') and seite != 'ratgeber/index.php':
         main = autorenbox_anwenden(s, main)
         main = geprueft_anwenden(s, main)

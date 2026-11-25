@@ -409,4 +409,41 @@
       });
     });
   }
+
+  /* Ratgeber: Lesefortschritt (nur transform, ein Frame je Scroll) */
+  var artikel = document.querySelector('meta[name="artikel-datum"]') && document.querySelector('main article:not(.ratgeber-karte)');
+  if (artikel && !ruhig) {
+    var balken = document.createElement('div');
+    balken.className = 'lesefortschritt'; balken.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(balken);
+    var wartet = false;
+    var messen = function () {
+      wartet = false;
+      var r = artikel.getBoundingClientRect(), h = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (h * 0.35 - r.top) / Math.max(1, r.height - h * 0.4)));
+      balken.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    };
+    window.addEventListener('scroll', function () { if (!wartet) { wartet = true; requestAnimationFrame(messen); } }, { passive: true });
+    messen();
+  }
+
+  /* Ratgeber-Übersicht: Themenfilter (ohne JS sind alle Beiträge sichtbar und die Knöpfe ausgeblendet) */
+  var rListe = document.querySelector('.ratgeber-liste');
+  var themen = $$('.themen .thema');
+  if (rListe && themen.length) {
+    var stand = document.getElementById('ratgeber-stand');
+    themen.forEach(function (k) {
+      k.addEventListener('click', function () {
+        var t = k.getAttribute('data-thema'), n = 0;
+        themen.forEach(function (x) { x.setAttribute('aria-pressed', x === k ? 'true' : 'false'); });
+        $$('.ratgeber-karte', rListe).forEach(function (karte) {
+          var an = t === 'alle' || karte.getAttribute('data-thema') === t;
+          karte.hidden = !an; if (an) n++;
+        });
+        rListe.classList.toggle('gefiltert', t !== 'alle');
+        if (stand) stand.textContent = (t === 'alle' ? 'Alle Themen: ' : t + ': ') + n + (n === 1 ? ' Beitrag' : ' Beiträge');
+        if (window.gwEreignis) window.gwEreignis('ratgeber_thema', { thema: t });
+      });
+    });
+  }
 })();

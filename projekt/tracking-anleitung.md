@@ -1,6 +1,6 @@
 # Tracking-Anleitung: GA4 und Search Console einrichten
 
-Stand 06.11.2026, ergänzt im Relaunch 12/2026 (`verzeichnis_klick`, Telefon 0163 7221790). Mess-ID G-PKEXEYK6CG (Property 561433000), Search Console sc-domain:gebaeudewerke.de.
+Stand 06.11.2026, ergänzt im Relaunch 12/2026 (`verzeichnis_klick`, `ratgeber_thema`, Position `kundenstimme`, Telefon 0163 7221790). Mess-ID G-PKEXEYK6CG (Property 561433000), Search Console sc-domain:gebaeudewerke.de.
 
 Was die Website von sich aus tut: Google Analytics lädt erst nach „Alle akzeptieren“ im Cookie-Banner. Vorher wird kein Byte an Google geschickt. Nach der Zustimmung setzt Consent Mode v2 `analytics_storage` auf „granted“, Werbe-Signale bleiben aus. Alle Ereignisse laufen über eine Funktion (`gwEreignis` in `assets/js/consent.js`, die Auslöser stehen in `assets/js/tracking.js`). Jedes Ereignis trägt `seite`, `position` und, wo die Seite einer Zielgruppe zugeordnet ist, `zielgruppe`.
 
@@ -31,11 +31,11 @@ Ohne diesen Schritt sehen Sie die Parameter in keinem Bericht. Verwaltung → Sp
 
 | Dimensionsname (Vorschlag) | Ereignisparameter | Werte |
 |---|---|---|
-| Position | `position` | kopf, hero, inhalt, kontaktblock, mobilleiste, schnellkontakt, fuss |
+| Position | `position` | kopf, hero, inhalt, kundenstimme, kontaktblock, mobilleiste, schnellkontakt, fuss |
 | Zielgruppe | `zielgruppe` | hausverwaltung, buero, praxis, gewerbe, privat, winterdienst |
 | Seite | `seite` | Pfad, z. B. /hausmeisterservice.html |
 | CTA-Text | `cta_text` | Beschriftung des Buttons |
-| Thema | `thema` | Ratgeber-Thema, z. B. Winterdienst |
+| Thema | `thema` | Ratgeber-Thema, z. B. Winterdienst (auch aus dem Themenfilter der Ratgeber-Übersicht, Ereignis `ratgeber_thema`) |
 | Abschnitt | `abschnitt` | preise, ablauf, kontakt, … |
 | Frage | `frage` | geöffnete FAQ-Frage |
 | Titel | `titel` | aufgeklappter Bereich oder Artikel |

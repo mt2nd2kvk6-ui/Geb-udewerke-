@@ -119,3 +119,22 @@ SPEC = {
   d='Warum Sie Zählerstände zum Jahreswechsel pünktlich ablesen lassen sollten, welche Zähler dazugehören und wie Fotos mit Datum Streit vermeiden.',
   txt=[('Abgelesen werden Wasser, Wärme und Allgemeinstrom,', 'Ablesen lassen sollten Sie Wasser, Wärme und Allgemeinstrom,')]),
 }
+
+# Relaunch 12/2026, Stand 25.11.2026: Descriptions der Leistungsseiten mit der Google-Bewertung (Wunsch Inhaber).
+# Länge mit werkzeuge/seo_pruefen.py geprüft (unter 990 px). Wert „5,0“ aus projekt/google-profil.json.
+BEWERTUNG_D = {
+    'index.html': 'Hausmeister, Reinigung, Gartenpflege und Winterdienst für Wohnanlagen, WEG und Gewerbe in Bruchsal. Ein Ansprechpartner. ★ 5,0 bei Google.',
+    'hausmeisterservice.html': 'Hausmeisterservice in Bruchsal mit festem Betreuer, Kontrollgängen und Monatsbericht. Ab 111 € netto im Monat, Ortstermin kostenlos. ★ 5,0 bei Google.',
+    'treppenhausreinigung.html': 'Treppenhausreinigung in Bruchsal für Mehrfamilienhäuser und WEG: wöchentlich nach Plan, Aushang mit Datum, Mängel per Foto. ★ 5,0 bei Google.',
+    'gebaeudereinigung.html': 'Gebäudereinigung in Bruchsal: Ihre Reinigungsfirma für Treppenhaus, Keller, Tiefgarage und Fenster, nach festem Plan zum Festpreis. ★ 5,0 bei Google.',
+    'bueroreinigung.html': 'Büroreinigung und Praxisreinigung in Bruchsal außerhalb der Öffnungszeiten, feste Intervalle, ab 382 € netto im Monat für 50 m². ★ 5,0 bei Google.',
+    'gartenpflege.html': 'Gartenpflege in Bruchsal für Wohnanlagen und Gewerbe: Rasen, Hecken, Beete und Laub im Jahresvertrag, Schnittgut inklusive. ★ 5,0 bei Google.',
+    'winterdienst.html': 'Winterdienst in Bruchsal ab 1.220 € netto pro Saison bis 120 m², 1. November bis 31. März, mit Einsatzprotokoll. Ortstermin kostenlos. ★ 5,0 bei Google.',
+    'entruempelung.html': 'Entrümpelung und Haushaltsauflösung in Bruchsal: kostenlose Besichtigung, schriftlicher Festpreis, besenreine Übergabe. ★ 5,0 bei Google.',
+    'wohnungsuebergabe.html': 'Wohnungsübergabe in Bruchsal: Abnahme mit Fotos, Zählerständen und Schlüsseln, Protokoll am selben Tag. Für Vermieter. ★ 5,0 bei Google.',
+    'kleinreparaturen.html': 'Kleinreparaturen und Montage in Bruchsal: Lampen, Silikon, Türen, Streichen und Klickvinyl in einem Termin, pauschal oder nach Aufwand. ★ 5,0 bei Google.',
+    'metallarbeiten-schloesser.html': 'Metallarbeiten in Bruchsal mit Meisterbrief im Team: Zaun, Tor und Geländer, Schweißarbeiten und Schließanlagen. ★ 5,0 bei Google.',
+    'ueber-uns.html': 'Wer hinter Gebäudewerke steht: vier Mann aus Metallbau, Industriemechanik und Vertrieb. Objektbetreuung in Bruchsal mit festem Betreuer. ★ 5,0 bei Google.',
+}
+for _s, _d in BEWERTUNG_D.items():
+    SPEC.setdefault(_s, {})['d'] = _d

@@ -1,7 +1,7 @@
 /* Gebäudewerke: Ereignisse für Google Analytics 4 (Stand 06.11.2026, ergänzt 12/2026 um verzeichnis_klick)
    Alles läuft über window.gwEreignis(name, daten) aus consent.js. Ohne Zustimmung
    wird nichts gesendet. Jedes Ereignis bekommt seite, zielgruppe (falls die Seite
-   eine hat) und position: kopf, hero, inhalt, kontaktblock, mobilleiste, schnellkontakt, fuss.
+   eine hat) und position: kopf, hero, inhalt, kundenstimme, kontaktblock, mobilleiste, schnellkontakt, fuss.
    Die Position kommt aus dem nächsten Vorfahren mit data-pos="…", sonst aus der Klasse.
 
    Ereignisse (Parameter in Klammern):
@@ -9,6 +9,7 @@
      cta_klick (position, cta_text, ziel)
      google_bewertung_klick, bewertung_schreiben_klick (position)
      verzeichnis_klick (position, verzeichnis) für Links mit data-verzeichnis
+     ratgeber_thema (thema) beim Themenfilter der Ratgeber-Übersicht, ausgelöst in main.js
      formular_start (formular), formular_fehler (formular)
      scroll_tiefe (prozent: 25, 50, 75, 90)
      abschnitt_gesehen (abschnitt), preis_ansicht (tabelle)
