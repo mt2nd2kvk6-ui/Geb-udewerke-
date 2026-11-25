@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-25",
+ "stand": "2026-11-25 (Runde 2)",
  "seiten": [
   {
    "seite": "index.html",
@@ -15,7 +15,7 @@
    "dpx": 965,
    "h1": "Hausmeister, Reinigung und Außenanlagen in Bruchsal mit einem Ansprechpartner",
    "woerter_vorher": 2330,
-   "woerter": 3278,
+   "woerter": 3247,
    "lighthouse": {
     "vorher": {
      "performance": 99,
@@ -27,12 +27,12 @@
      "cls": "0"
     },
     "nachher": {
-     "performance": 96,
+     "performance": 97,
      "accessibility": 100,
      "best_practices": 100,
      "seo": 100,
-     "lcp": "2.3 s",
-     "tbt": "160 ms",
+     "lcp": "2.2 s",
+     "tbt": "130 ms",
      "cls": "0"
     }
    }
@@ -136,7 +136,7 @@
    "dpx": 897,
    "h1": "Unser Einsatzgebiet in Bruchsal und im Landkreis Karlsruhe",
    "woerter_vorher": 1168,
-   "woerter": 1185,
+   "woerter": 1252,
    "lighthouse": null
   },
   {
@@ -170,7 +170,7 @@
    "dpx": 917,
    "h1": "Gartenpflege in Bruchsal für Wohnanlagen und Gewerbe",
    "woerter_vorher": 1519,
-   "woerter": 1560,
+   "woerter": 1570,
    "lighthouse": null
   },
   {
@@ -187,7 +187,7 @@
    "dpx": 916,
    "h1": "Gebäudereinigung in Bruchsal für Wohnanlagen und Gewerbe",
    "woerter_vorher": 1856,
-   "woerter": 1901,
+   "woerter": 1911,
    "lighthouse": null
   },
   {
@@ -204,7 +204,7 @@
    "dpx": 934,
    "h1": "Hausmeisterservice in Bruchsal für Wohnanlagen, WEG und Gewerbe",
    "woerter_vorher": 2159,
-   "woerter": 2208,
+   "woerter": 2218,
    "lighthouse": {
     "vorher": {
      "performance": 98,
@@ -236,11 +236,11 @@
    "tpx": 251,
    "desc_vorher": "Impressum der Gebäudewerke GbR, Allmend 2, 76707 Hambrücken: Kontakt, Telefon 0163 7221790, Gesellschafter und Angaben nach § 5 DDG.",
    "dpx_vorher": 905,
-   "desc": "Impressum der Gebäudewerke GbR, Allmend 2, 76707 Hambrücken: Kontakt, Telefon 0163 7221790, Gesellschafter und Angaben nach § 5 DDG.",
-   "dpx": 905,
+   "desc": "Impressum der Gebäudewerke GbR, Allmend 2, 76707 Hambrücken: Kontakt, Telefon 0176 74025524, Gesellschafter und Angaben nach § 5 DDG.",
+   "dpx": 913,
    "h1": "Impressum",
    "woerter_vorher": 181,
-   "woerter": 181,
+   "woerter": 188,
    "lighthouse": null
   },
   {
@@ -307,8 +307,8 @@
      "accessibility": 100,
      "best_practices": 100,
      "seo": 100,
-     "lcp": "2.1 s",
-     "tbt": "70 ms",
+     "lcp": "2.0 s",
+     "tbt": "0 ms",
      "cls": "0"
     }
    }
@@ -407,12 +407,12 @@
      "cls": "0"
     },
     "nachher": {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "best_practices": 100,
      "seo": 100,
      "lcp": "2.3 s",
-     "tbt": "30 ms",
+     "tbt": "0 ms",
      "cls": "0"
     }
    }
@@ -431,7 +431,7 @@
    "dpx": 915,
    "h1": "Wohnungsübergabe und Leerstandskontrolle in Bruchsal",
    "woerter_vorher": 1503,
-   "woerter": 1547,
+   "woerter": 1541,
    "lighthouse": null
   },
   {
@@ -448,7 +448,7 @@
    "dpx": 924,
    "h1": "Bauendreinigung nach dem Umbau, bevor übergeben wird",
    "woerter_vorher": 522,
-   "woerter": 527,
+   "woerter": 533,
    "lighthouse": null
   },
   {
@@ -465,7 +465,7 @@
    "dpx": 888,
    "h1": "Besichtigung vorbereiten für die Vermietung von Wohnung und Gewerbefläche",
    "woerter_vorher": 495,
-   "woerter": 499,
+   "woerter": 505,
    "lighthouse": null
   },
   {
@@ -482,7 +482,7 @@
    "dpx": 945,
    "h1": "Büro- und Praxisreinigung außerhalb der Öffnungszeiten",
    "woerter_vorher": 583,
-   "woerter": 588,
+   "woerter": 594,
    "lighthouse": null
   },
   {
@@ -491,7 +491,7 @@
    "noindex": false,
    "title_vorher": "Hausmeister wechseln 2026 | Gebäudewerke",
    "tpx_vorher": 403,
-   "title": "Hausmeister wechseln 2027 | Gebäudewerke",
+   "title": "Hausmeister wechseln 2026 | Gebäudewerke",
    "tpx": 403,
    "desc_vorher": "So wechseln Sie Hausmeister oder Reinigungsfirma ohne Lücke: Kündigungsfrist prüfen, Schlüssel und Unterlagen übergeben, Starttermin planen.",
    "dpx_vorher": 911,
@@ -516,7 +516,7 @@
    "dpx": 962,
    "h1": "Der Ablauf einer Entrümpelung, von der Besichtigung zur Übergabe",
    "woerter_vorher": 557,
-   "woerter": 557,
+   "woerter": 563,
    "lighthouse": null
   },
   {
@@ -533,7 +533,7 @@
    "dpx": 990,
    "h1": "Gartenpflege im Jahresvertrag, was von März bis November dazugehört",
    "woerter_vorher": 584,
-   "woerter": 584,
+   "woerter": 590,
    "lighthouse": null
   },
   {
@@ -550,7 +550,7 @@
    "dpx": 982,
    "h1": "Glasreinigung im Treppenhaus, am Eingang und am Schaufenster",
    "woerter_vorher": 567,
-   "woerter": 567,
+   "woerter": 573,
    "lighthouse": null
   },
   {
@@ -567,7 +567,7 @@
    "dpx": 922,
    "h1": "Grundreinigung von Gewerbeböden, wann sie sich lohnt",
    "woerter_vorher": 521,
-   "woerter": 528,
+   "woerter": 534,
    "lighthouse": null
   },
   {
@@ -584,7 +584,7 @@
    "dpx": 948,
    "h1": "Handwerkertermine koordinieren, ohne selbst vor Ort zu sein",
    "woerter_vorher": 496,
-   "woerter": 496,
+   "woerter": 502,
    "lighthouse": null
   },
   {
@@ -601,7 +601,7 @@
    "dpx": 939,
    "h1": "Hausmeisterkosten umlagefähig? Was auf Mieter umgelegt werden darf",
    "woerter_vorher": 612,
-   "woerter": 612,
+   "woerter": 618,
    "lighthouse": null
   },
   {
@@ -618,7 +618,7 @@
    "dpx": 985,
    "h1": "Hausmeisterservice für Hausverwaltungen mit einem Ansprechpartner",
    "woerter_vorher": 488,
-   "woerter": 488,
+   "woerter": 494,
    "lighthouse": null
   },
   {
@@ -627,7 +627,7 @@
    "noindex": false,
    "title_vorher": "Hausmeisterservice für die Eigentümergemeinschaft 2026",
    "tpx_vorher": 514,
-   "title": "Hausmeisterservice für die Eigentümergemeinschaft 2027",
+   "title": "Hausmeisterservice für die Eigentümergemeinschaft 2026",
    "tpx": 514,
    "desc_vorher": "Was Eigentümergemeinschaften bei der Beauftragung eines Hausmeisterservice beachten sollten: Beschluss, Leistungsverzeichnis, Hausgeld und Umlage.",
    "dpx_vorher": 966,
@@ -652,7 +652,7 @@
    "dpx": 934,
    "h1": "Hecke schneiden, was zwischen 1. März und 30. September erlaubt ist",
    "woerter_vorher": 641,
-   "woerter": 614,
+   "woerter": 620,
    "lighthouse": null
   },
   {
@@ -705,7 +705,7 @@
    "dpx": 910,
    "h1": "Mehrere Kleinreparaturen in einem Termin statt fünf Handwerker",
    "woerter_vorher": 528,
-   "woerter": 538,
+   "woerter": 544,
    "lighthouse": null
   },
   {
@@ -714,7 +714,7 @@
    "noindex": false,
    "title_vorher": "Was kostet ein Hausmeisterservice? Preise 2026",
    "tpx_vorher": 435,
-   "title": "Was kostet ein Hausmeisterservice? Preise 2027",
+   "title": "Was kostet ein Hausmeisterservice? Preise 2026",
    "tpx": 435,
    "desc_vorher": "Was ein Hausmeisterservice pro Monat kostet: Richtpreise ab 111 € netto bis 6 Wohnungen, ab 162 € bis 20 Wohnungen, und wovon der Preis abhängt.",
    "dpx_vorher": 943,
@@ -739,7 +739,7 @@
    "dpx": 940,
    "h1": "Nasses Laub auf Gehwegen, Rutschgefahr und Pflichten im Herbst",
    "woerter_vorher": 617,
-   "woerter": 617,
+   "woerter": 623,
    "lighthouse": null
   },
   {
@@ -756,7 +756,7 @@
    "dpx": 938,
    "h1": "Mülltonnendienst am Abfuhrtag und am Standplatz",
    "woerter_vorher": 626,
-   "woerter": 626,
+   "woerter": 632,
    "lighthouse": null
   },
   {
@@ -773,7 +773,7 @@
    "dpx": 891,
    "h1": "So läuft ein kostenloser Ortstermin für Ihr Angebot ab",
    "woerter_vorher": 499,
-   "woerter": 499,
+   "woerter": 505,
    "lighthouse": null
   },
   {
@@ -790,7 +790,7 @@
    "dpx": 923,
    "h1": "Räum- und Streupflicht in Bruchsal, was Eigentümer wissen müssen",
    "woerter_vorher": 911,
-   "woerter": 911,
+   "woerter": 917,
    "lighthouse": {
     "vorher": {
      "performance": 99,
@@ -806,8 +806,8 @@
      "accessibility": 100,
      "best_practices": 100,
      "seo": 100,
-     "lcp": "2.5 s",
-     "tbt": "10 ms",
+     "lcp": "2.4 s",
+     "tbt": "0 ms",
      "cls": "0"
     }
    }
@@ -826,7 +826,7 @@
    "dpx": 925,
    "h1": "Schlüsselverwaltung im Mehrfamilienhaus, wer hat welche Schlüssel?",
    "woerter_vorher": 640,
-   "woerter": 640,
+   "woerter": 646,
    "lighthouse": null
   },
   {
@@ -843,7 +843,7 @@
    "dpx": 981,
    "h1": "Störungen im Gewerbeobjekt, ein fester Meldeweg statt Zettelwirtschaft",
    "woerter_vorher": 635,
-   "woerter": 647,
+   "woerter": 653,
    "lighthouse": null
   },
   {
@@ -860,7 +860,7 @@
    "dpx": 981,
    "h1": "Nach dem Winter Streugut entfernen, auch an Eingängen",
    "woerter_vorher": 566,
-   "woerter": 566,
+   "woerter": 572,
    "lighthouse": null
   },
   {
@@ -877,7 +877,7 @@
    "dpx": 973,
    "h1": "Räum- und Streuprotokoll, so vermeiden Sie den Haftungsstreit",
    "woerter_vorher": 828,
-   "woerter": 828,
+   "woerter": 834,
    "lighthouse": null
   },
   {
@@ -894,7 +894,7 @@
    "dpx": 925,
    "h1": "Nach Sturm und Unwetter, wer kontrolliert Ihr Gebäude?",
    "woerter_vorher": 523,
-   "woerter": 525,
+   "woerter": 531,
    "lighthouse": null
   },
   {
@@ -911,7 +911,7 @@
    "dpx": 928,
    "h1": "Tiefgarage und Keller reinigen, die vergessenen Flächen im Objekt",
    "woerter_vorher": 664,
-   "woerter": 669,
+   "woerter": 675,
    "lighthouse": null
   },
   {
@@ -920,7 +920,7 @@
    "noindex": false,
    "title_vorher": "Treppenhaus als Rettungsweg 2026 | Gebäudewerke",
    "tpx_vorher": 473,
-   "title": "Treppenhaus als Rettungsweg 2027 | Gebäudewerke",
+   "title": "Treppenhaus als Rettungsweg 2026 | Gebäudewerke",
    "tpx": 473,
    "desc_vorher": "Schuhregal, Kinderwagen, Fahrrad: was im Treppenhaus stehen darf, warum der Rettungsweg frei bleiben muss und wie die Verwaltung damit umgeht.",
    "dpx_vorher": 937,
@@ -945,7 +945,7 @@
    "dpx": 963,
    "h1": "Ein Reinigungsplan für das Treppenhaus in der Wohnanlage",
    "woerter_vorher": 561,
-   "woerter": 561,
+   "woerter": 567,
    "lighthouse": null
   },
   {
@@ -962,7 +962,7 @@
    "dpx": 949,
    "h1": "Unkraut auf Pflaster und Wegen, was erlaubt ist und was hilft",
    "woerter_vorher": 606,
-   "woerter": 606,
+   "woerter": 612,
    "lighthouse": null
   },
   {
@@ -979,7 +979,7 @@
    "dpx": 941,
    "h1": "Winterdienst beauftragen, was in den Saisonvertrag gehört",
    "woerter_vorher": 751,
-   "woerter": 751,
+   "woerter": 757,
    "lighthouse": null
   },
   {
@@ -996,7 +996,7 @@
    "dpx": 966,
    "h1": "Übergabeprotokoll für die Wohnung beim Mieterwechsel, mit Fotos statt Streit",
    "woerter_vorher": 676,
-   "woerter": 681,
+   "woerter": 687,
    "lighthouse": null
   },
   {
@@ -1013,7 +1013,7 @@
    "dpx": 931,
    "h1": "Zählerstände zum Jahreswechsel rechtzeitig ablesen lassen",
    "woerter_vorher": 536,
-   "woerter": 541,
+   "woerter": 547,
    "lighthouse": null
   }
  ],

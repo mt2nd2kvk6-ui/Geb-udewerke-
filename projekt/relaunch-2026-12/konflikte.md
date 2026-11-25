@@ -1,6 +1,6 @@
 # Relaunch 12/2026: Konflikte 07.11. gegen 16.11. und offene [PRÜFEN]-Punkte
 
-Stand 25.11.2026, Branch `claude/relaunch-2026-12`.
+Stand 25.11.2026 (mit den Entscheidungen des Inhabers vom selben Tag), Branch `claude/relaunch-2026-12`.
 
 ## Was die drei Stände sind
 
@@ -20,7 +20,7 @@ Regel des Auftrags: Gestaltung, CSS, JavaScript und Interaktion aus G, Texte, Ko
 | Nr. | Wo | 07.11. (G) | 16.11. (V) | Entscheidung |
 |---|---|---|---|---|
 | K1 | Startseite, H1 | „Hausmeister und Reinigung in Bruchsal. Vom Keller bis zum Gartentor.“ | „Hausmeister, Reinigung und Außenanlagen in Bruchsal mit einem Ansprechpartner“ | H1 aus V. „Vom Keller bis zum Gartentor.“ bleibt als große Gestaltungszeile unter der H1, ist aber nicht Teil der H1. |
-| K2 | Startseite, Einstieg | Kurzer Einstieg, 22 Wörter | Einleitung mit 54 Wörtern | Oben der kurze Einstieg (Vorgabe höchstens 25 Wörter ganz oben). Der Text aus V steht unverändert als Kurzantwort am Anfang von „Unsere Leistungen“. Wie bei den Leistungsseiten am 07.11. **Bitte bestätigen.** |
+| K2 | Startseite, Einstieg | Kurzer Einstieg, 22 Wörter | Einleitung mit 54 Wörtern | Oben der kurze Einstieg (Vorgabe höchstens 25 Wörter ganz oben). Der Text aus V steht unverändert als Kurzantwort am Anfang von „Unsere Leistungen“. Wie bei den Leistungsseiten am 07.11. Bestätigt vom Inhaber am 25.11. |
 | K3 | Startseite, Hero | Gebäudemodell | Foto mit Wochenprotokoll (6 Einträge, Bildunterschrift) | Modell aus G. Das Protokoll aus V (alle 6 Einträge, „Wohnanlage mit 12 Einheiten, Bruchsal“, Bildunterschrift) steht jetzt auf der Karteikarte „Hausverwaltung“ statt der gekürzten 4 Einträge aus G. |
 | K4 | Startseite, Leistungen | „Zehn Leistungen. Ein Vertrag.“, eigene Kurztexte, Karten mit „Im Modell: …“ | „Unsere Leistungen für Wohn- und Gewerbeimmobilien“, Kurztexte, Fotos | Überschrift, Einleitung, H3 und Kurztexte aus V (Preis 449 € auf 382 € korrigiert), Kartenaufbau und Reihenfolge aus G, ohne Fotos. Linktexte aus G („Hausmeisterservice in Bruchsal“ usw.). |
 | K5 | Startseite, Zusagen | Gekürzte Zusagen im Abschnitt Ablauf | Eigener Abschnitt „Woran Sie uns messen können“ | Eigener Abschnitt mit Überschrift und Texten aus V. |
@@ -31,9 +31,9 @@ Regel des Auftrags: Gestaltung, CSS, JavaScript und Interaktion aus G, Texte, Ko
 | K10 | Startseite, Ratgeber | H2 „Pflichten, Fristen, Kosten.“ | „Aus dem Ratgeber“ (dort nur als Absatz formatiert), Teaser mit Fotos | Text aus V, jetzt als H2. Kartenaufbau ohne Fotos aus G. |
 | K11 | Startseite, Fragen | H2 „Kurz gefragt. Klar beantwortet.“ | H2 „Häufige Fragen“, alte Preise | H2 aus V, Fragen in beiden gleich, Preise 111/162/238 € (wie G und JSON-LD). |
 | K12 | Startseite, Kontakt | „Rufen Sie an.“, große Nummer, Formular „Oder kurz schreiben“ | „Kontakt aufnehmen“ mit Satz, Buttons „Direkt anrufen“, Formular „Kurze Anfrage“ | Überschrift, Satz, Datenliste und Formulartitel aus V. Große Nummer statt Button „Direkt anrufen“ (Gestaltung G). Formularfelder unverändert. |
-| K13 | Autorenbox der Ratgeber | Nur „Meisterbrief“ bei Fatih Altun, sonst keine Qualifikation | Qualifikation bei allen vier (z. B. „Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau“) | V, wie auf der Teamseite. **[PRÜFEN: Vorgabe „bei Qualifikationen nur Meisterbrief“ meint nur Fatih Altun? Sonst zurück auf G.]** |
+| K13 | Autorenbox der Ratgeber | Nur „Meisterbrief“ bei Fatih Altun, sonst keine Qualifikation | Qualifikation bei allen vier (z. B. „Gelernter Metallbauer, Erfahrung im Stahl- und Gerüstbau“) | V, wie auf der Teamseite. Bestätigt vom Inhaber am 25.11. |
 | K14 | Leistungsseiten, Seitenkopf | Kurzer Einstieg, Anrufen und WhatsApp, Modell mit Zone im Licht | Kurzantwort, Foto, drei Buttons | Seitenkopf aus G (Auftrag). Kurzantwort und Foto aus V stehen unverändert am Anfang des ersten Abschnitts. |
-| K15 | Vier geplante Ratgeber | Datum 27.11. bis 15.12. | wie G | Verschoben auf 15.01.2027 (Auftrag Punkt 7). Damit die Seiten nichts Falsches behaupten, sind bei diesen vier auch Zeile „veröffentlicht am“, `artikel-aktualisiert`, `datePublished`/`dateModified` und die Jahreszahl im Title (2027) angepasst. Das weicht von der Vorgabe „Datumszeile nicht verändern“ ab, die ich auf erschienene Beiträge beziehe. Erschienene Beiträge sind unverändert. **Bitte bestätigen oder ich setze nur `artikel-datum`.** |
+| K15 | Vier geplante Ratgeber | Datum 27.11. bis 15.12. | wie G | Auftrag Punkt 7 sah eine Verschiebung auf den 15.01.2027 vor. Entscheidung Inhaber 25.11.: Die Daten bleiben wie ursprünglich (27.11., 01.12., 08.12., 15.12.), Datumszeile, Title und `plan.json` unverändert. Alle erschienenen Ratgeber zeigen „Zuletzt geprüft am 25.11.2026“ (Meta `artikel-geprueft`), die vier geplanten nicht. |
 | K16 | Kontaktband aller Seiten | Große Nummer, „WhatsApp schreiben“, „Anfrage per Formular“, Zeile mit Sternen und Zeiten | Buttons „Anfrage senden“, „Telefonisch anfragen“, „WhatsApp-Nachricht schreiben“ | G (Gestaltung, kommt aus `layout_anwenden.py`). |
 | K17 | Ratgeber-Teaser auf 13 Seiten | Links auf damals geplante Beiträge vorhanden | fehlen (beim Live-Import entfernt) | G. `auslieferung.php` blendet geplante Beiträge weiterhin bis zu ihrem Datum aus. Damit erscheinen z. B. die Links auf die am 13.11., 17.11., 20.11. und 24.11. erschienenen Beiträge wieder. |
 | K18 | Ratgeber Mülltonnendienst | 77 € netto, 92 € brutto | 90 €, 107 € | G (Wert aus preise.html). |
@@ -45,17 +45,17 @@ Regel des Auftrags: Gestaltung, CSS, JavaScript und Interaktion aus G, Texte, Ko
 
 Außerdem korrigiert (kein Konflikt, Fehler in beiden Ständen): Im Ratgeber „Hecke schneiden“ stand der erste Satz der Kurzantwort seit dem 06.11. viermal hintereinander (Ursache: `meta_anwenden.py` war nicht idempotent, jetzt behoben).
 
-## Offene [PRÜFEN]-Punkte
+## Entscheidungen zu den [PRÜFEN]-Punkten (Inhaber, 25.11.2026)
 
-| Nr. | Punkt | Wo sichtbar | Was ich brauche |
+| Nr. | Punkt | Entscheidung | Umsetzung |
 |---|---|---|---|
-| P1 | Verschiebung der vier Ratgeber auf 15.01.2027 | `ratgeber/*` (4 Dateien), `plan.json` | Inhaber bestätigt das Datum. Dazu: Gilt „Preise 2027“ im Title des Kosten-Ratgebers, also gelten die Richtpreise auch 2027? |
-| P2 | Aktuelle Zahl der Google-Bewertungen | überall (17, Schnitt 5,0, Stand 16.11.) | Vor dem Bau neu abrufen. Ich kann das per OpenSEO machen, wenn Sie zustimmen. |
-| P3 | Einsatzgebiet | einsatzgebiet.html, Startseite, JSON-LD `areaServed` | Sollen Kraichtal, Weingarten (Baden), Linkenheim-Hochstetten und Eggenstein-Leopoldshafen auf die Website? Bisher nicht ergänzt. |
-| P4 | Räumzeiten und Laubpflicht in Bruchsal | Startseite, Karteikarten „Bruchsal heute“ und „Winterdienst“ (sichtbarer Hinweis [PRÜFEN]) | Werktags bis 7 Uhr, samstags bis 8 Uhr, sonn- und feiertags bis 9 Uhr, Ende 20 Uhr, Laub entfernen: belegt bisher nur durch unsere Ratgeber vom 16.10. und 31.10. Den Satzungstext der Stadt Bruchsal habe ich online nicht gefunden. Bitte Satzung oder Link schicken. Heckenschnitt (§ 39 Abs. 5 Nr. 2 BNatSchG), Feiertage Baden-Württemberg, Sonnenzeiten (berechnet) und Wetter (DWD über `wetter.php`) sind belegt. |
-| P5 | Telefonnummer im Google-Unternehmensprofil | Google-Profil | Laut `projekt/google-profil.json` (Abruf 16.11.) steht im Profil noch +49 176 74025524. Für einheitliche Kontaktdaten im Profil auf 0163 7221790 ändern. Die Datei selbst habe ich als Abrufprotokoll nicht verändert. |
-| P6 | Qualifikationen in der Autorenbox | Ratgeber | siehe K13 |
-| P7 | Datumszeile der verschobenen Beiträge | 4 Ratgeber | siehe K15 |
-| P8 | Einstieg der Startseite | Startseite | siehe K2 |
+| P1 | Verschiebung der vier Ratgeber | Daten bleiben wie ursprünglich. „Zuletzt geprüft“ für alle erschienenen auf heute. | Verschiebung zurückgenommen, 27 Ratgeber mit „Zuletzt geprüft am 25.11.2026“. |
+| P2 | Google-Bewertungen | Aktuelle Bewertungen genau übernehmen. | Abruf 25.11.2026 per OpenSEO: 17 Bewertungen, Schnitt 5,0, alle Texte wörtlich; bei Estelle Klinger steht jetzt auch „⭐⭐⭐⭐⭐“ vor dem Text wie bei Google. |
+| P3 | Einsatzgebiet | Ja, und Karlsruhe ebenfalls. | Kraichtal, Weingarten (Baden), Linkenheim-Hochstetten, Eggenstein-Leopoldshafen und Stadt Karlsruhe in Text, Listen, FAQ, JSON-LD, llms.txt und Kartenschema. |
+| P4 | Räumzeiten und Laubpflicht | Werte wie auf der Website übernehmen, keine Satzung nötig. | Hinweise [PRÜFEN] entfernt, Werte unverändert. |
+| P5 | Telefonnummer | 0163 7221790 ist die einzige Nummer; im Impressum als Anrufnummer 0176 74025524. | Impressum: Telefon 0176 74025524, daneben „Telefon und WhatsApp für Anfragen“ 0163 7221790. Google-Profil zeigt laut Abruf vom 25.11. bereits 0163 7221790. |
+| P6 | Qualifikationen in der Autorenbox | In Ordnung. | wie K13 |
+| P7 | Datumszeile | siehe P1 | – |
+| P8 | Einstieg der Startseite | In Ordnung. | wie K2 |
 
-Der Installer lässt sich erst bauen, wenn in `website/` kein „[PRÜFEN“ mehr steht (Prüfung in `werkzeuge/installer_bauen.py`).
+Offene [PRÜFEN]-Punkte in `website/`: keine.
