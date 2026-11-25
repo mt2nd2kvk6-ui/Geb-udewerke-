@@ -131,7 +131,10 @@ I_ZU = svg('<path d="M6 6l12 12M18 6L6 18"/>')
 I_MENUE = svg('<path d="M4 7h16M4 12h16M4 17h16"/>')
 I_RUNTER = svg('<path d="M5 9l7 7 7-7"/>')
 I_PFEIL = svg('<path d="M5 12h14M13 6l6 6-6 6"/>')
-I_PAUSE = svg('<path d="M9 5v14M15 5v14"/>')
+I_PAUSE = svg('<path d="M9 5v14M15 5v14"/>', 'ik-pause')
+I_PLAY = svg('<path d="M8 5v14l11-7z"/>', 'ik-play')
+I_LINKS = svg('<path d="M15 5l-7 7 7 7"/>')
+I_RECHTS = svg('<path d="M9 5l7 7-7 7"/>')
 STERN = 'M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z'
 
 
@@ -360,7 +363,7 @@ ausführen. Bewertungen ohne Text erscheinen nur in der Anzahl, nicht im Laufban
 <ul class="laufband__gruppe">{karten}</ul>
 </div>
 </div>
-<div class="bewertungen__fuss"><button class="laufband__knopf" type="button" hidden>{I_PAUSE}<span>Laufband anhalten</span></button></div>
+<div class="bewertungen__fuss laufband__steuerung" hidden><button class="laufband__pfeil" type="button" data-richtung="-1" aria-label="Vorherige Bewertungen">{I_LINKS}</button><button class="laufband__pfeil" type="button" data-richtung="1" aria-label="Weitere Bewertungen">{I_RECHTS}</button><button class="laufband__knopf" type="button">{I_PAUSE}{I_PLAY}<span>Laufband anhalten</span></button></div>
 </div></section>
 <!-- bewertungen:ende -->'''
 

@@ -67,30 +67,66 @@
     });
   });
 
-  /* ---------- Bewertungen: Laufband (Kopie nur für die Schleife, nicht im HTML) ---------- */
+  /* ---------- Bewertungen: Laufband ----------
+     Läuft über scrollLeft statt CSS-Animation: so gehen Wischen, Pfeile und Anhalten in jedem Browser.
+     Die Kopie der Karten dient nur der Schleife und steht nicht im HTML. Bei „Bewegung reduzieren“ steht
+     das Band, Pfeile und Wischen funktionieren trotzdem. */
   spaeter(function () {
     $$('[data-laufband]').forEach(function (band) {
       var gruppe = $('.laufband__gruppe', band);
-      var knopf = band.parentElement && band.parentElement.querySelector('.laufband__knopf');
-      if (ruhig || !gruppe) return;
+      var steuer = band.parentElement && $('.laufband__steuerung', band.parentElement);
+      if (!gruppe) return;
       if (!$('.laufband__gruppe[aria-hidden="true"]', band)) {
         var kopie = gruppe.cloneNode(true);
         kopie.setAttribute('aria-hidden', 'true');
         $$('[role="img"]', kopie).forEach(function (e) { e.removeAttribute('role'); e.removeAttribute('aria-label'); e.setAttribute('aria-hidden', 'true'); });
         gruppe.parentNode.appendChild(kopie);
       }
-      band.classList.add('laufband--laeuft');
-      band.style.setProperty('--dauer', Math.max(40, gruppe.scrollWidth / 30) + 's');
-      if (knopf) {
-        var text = $('span', knopf);
-        knopf.hidden = false;
-        knopf.addEventListener('click', function () {
-          var pause = band.classList.toggle('laufband--pause');
-          if (text) text.textContent = pause ? 'Laufband fortsetzen' : 'Laufband anhalten';
-          if (pause) document.dispatchEvent(new CustomEvent('gw:laufband'));
+      var TEMPO = 0.045;                       // Pixel pro Millisekunde
+      var laeuft = !ruhig, sichtbar = true, ruheBis = 0, letzte = 0, pos = band.scrollLeft, breite = 0;
+      var knopf = steuer && $('.laufband__knopf', steuer), text = knopf && $('span', knopf);
+      var messen = function () { breite = gruppe.getBoundingClientRect().width + (parseFloat(getComputedStyle(gruppe.parentNode).columnGap) || 16); };
+      var karte = function () { var k = $('.bewertung', gruppe); return k ? k.getBoundingClientRect().width + 16 : 320; };
+      var anzeigen = function () {
+        if (text) text.textContent = laeuft ? 'Laufband anhalten' : 'Laufband fortsetzen';
+        if (knopf) knopf.classList.toggle('ist-pause', !laeuft);
+      };
+      var ruhe = function (ms) { ruheBis = performance.now() + ms; };
+      messen();
+      window.addEventListener('resize', messen, { passive: true });
+      ['pointerdown', 'wheel', 'touchstart'].forEach(function (ev) { band.addEventListener(ev, function () { ruhe(4000); }, { passive: true }); });
+      var tick = function (t) {
+        if (laeuft && sichtbar && t > ruheBis && !band.matches(':focus-visible')) {
+          if (Math.abs(band.scrollLeft - pos) > 2) pos = band.scrollLeft;     // nach Wischen oder Pfeil dort weiter
+          pos += (letzte ? Math.min(50, t - letzte) : 16) * TEMPO;
+          if (breite && pos >= breite) pos -= breite;
+          band.scrollLeft = pos;
+        } else pos = band.scrollLeft;
+        letzte = t;
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      if (steuer) {
+        steuer.hidden = false;
+        $$('.laufband__pfeil', steuer).forEach(function (pf) {
+          pf.addEventListener('click', function () {
+            var r = +pf.getAttribute('data-richtung'), d = karte();
+            if (breite) {
+              if (r > 0 && band.scrollLeft + d >= breite) band.scrollLeft -= breite;
+              if (r < 0 && band.scrollLeft - d < 0) band.scrollLeft += breite;
+            }
+            ruhe(5000);
+            band.scrollBy({ left: r * d, behavior: ruhig ? 'auto' : 'smooth' });
+          });
         });
+        if (knopf) knopf.addEventListener('click', function () {
+          laeuft = !laeuft;
+          if (laeuft) ruheBis = 0; else document.dispatchEvent(new CustomEvent('gw:laufband'));
+          anzeigen();
+        });
+        anzeigen();
       }
-      if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { band.classList.toggle('laufband--aus', !e[0].isIntersecting); }).observe(band);
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { sichtbar = e[0].isIntersecting; }).observe(band);
     });
   });
 
