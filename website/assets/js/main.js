@@ -198,7 +198,10 @@
       knoepfe.forEach(function (k) {
         k.addEventListener('click', function () { anhalten(); zeigen(k.getAttribute('data-zone'), true); ti = tour.indexOf(k.getAttribute('data-zone')) + 1; });
       });
-      if (pauseKnopf) pauseKnopf.addEventListener('click', function () { if (angehalten) starten(); else anhalten(); });
+      if (pauseKnopf && !ruhig) {
+        pauseKnopf.hidden = false;
+        pauseKnopf.addEventListener('click', function () { if (angehalten) starten(); else anhalten(); });
+      }
     }
     punkte.concat(links10).forEach(function (el) {
       var z = el.getAttribute('data-zone');
@@ -210,7 +213,6 @@
     if (!ruhig && !fokus) setTimeout(function () {
       if (angehalten) return;
       zeigen(tour[ti++]);
-      if (pauseKnopf) pauseKnopf.hidden = false;
       starten();
     }, 1500);
   }

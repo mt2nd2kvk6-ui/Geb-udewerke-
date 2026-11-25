@@ -419,6 +419,7 @@ button.punkt{display:none}
 .punkt.an .punkt__label,.punkt:hover .punkt__label,.punkt:focus-visible .punkt__label{opacity:1;transform:translate(0,-50%)}
 .punkt.an{z-index:3}
 .unterzeile{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;margin:10px 0 0;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid var(--hell-linie);color:var(--hell)}
+.modell__flaeche{position:relative}
 .unterzeile__text{display:flex;flex-direction:column;gap:2px}
 .unterzeile b{font-size:16px;font-weight:850;font-stretch:110%;color:#fff}
 .unterzeile small{font:500 11.5px/1.3 var(--mono);color:var(--hell-leise)}
@@ -698,6 +699,9 @@ button.punkt{display:none}
 .hero .h1-ort::before{margin-top:.35em;align-self:flex-start}
 .hero .h1-ort{hyphens:manual;-webkit-hyphens:manual}
 .hero__vertrauen li:not(:first-child){display:block}
+/* Live-Chip bleibt einzeilig: Wetterdaten verschieben nichts (CLS 0) */
+.live{max-width:100%}
+.live>span{display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .h1-claim{margin:0;font-weight:900;font-stretch:125%;letter-spacing:-.04em;line-height:.98}
 .vertrauen--start .vertrauen__liste li{display:block}
 .zusagen--oben{margin-top:0}
@@ -765,7 +769,7 @@ button.punkt{display:none}
 .fuss .fuss__siegel a:hover svg{fill:var(--werkblau);transform:rotate(72deg) scale(1.2)}
 .fuss .fuss__siegel a.fuss__siegel--google{border-color:var(--gelb)}
 @media (min-width:1024px){.nav__unter{max-height:calc(100vh - var(--kopf-h) - 2.5rem);max-height:calc(100dvh - var(--kopf-h) - 2.5rem);overflow-y:auto;overscroll-behavior:contain}}
-@media (max-width:1023px){.zielgruppen{grid-template-columns:minmax(0,1fr)}.verzeichnisse__raster{grid-template-columns:repeat(2,minmax(0,1fr))}.modell__pause{top:auto;bottom:64px}}
+@media (max-width:1023px){.zielgruppen{grid-template-columns:minmax(0,1fr)}.verzeichnisse__raster{grid-template-columns:repeat(2,minmax(0,1fr))}.modell__pause{top:auto;bottom:4px}}
 @media (max-width:640px){.verzeichnisse__raster{grid-template-columns:minmax(0,1fr)}.verzeichnisse__raster>li:first-child{grid-column:auto}.siegel{padding:14px}.siegel__aktion{grid-row:auto;grid-column:2;justify-self:start}}
 @media (prefers-reduced-motion:reduce){.siegel::after,.siegel__sterne svg,.siegel--google .siegel__aktion::after{animation:none}}
 @media print{.verzeichnisse,.fuss__siegel,.mobilleiste,.modell__pause{display:none}}

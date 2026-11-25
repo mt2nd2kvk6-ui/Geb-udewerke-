@@ -121,8 +121,10 @@ hero = f'''<section class="hero" id="start" aria-labelledby="titel">
 </ul>
 </div>
 <div class="modell" id="modell">
+<div class="modell__flaeche">
 {himmel}{svg_modell}{knoepfe}
 <button class="modell__pause" type="button" aria-pressed="false" hidden>Rundgang anhalten</button>
+</div>
 <p class="unterzeile" id="unterzeile"><span class="unterzeile__text"><b>{start[4]}</b><small>{start[5]}</small></span><a href="{start[1]}">{ANKER[start[1]]} {I['pfeil']}</a></p>
 </div>
 {liste10}
