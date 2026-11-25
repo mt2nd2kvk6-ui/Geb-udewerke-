@@ -44,7 +44,8 @@ def daten(p):
     h1m = re.search(r'<h1[^>]*>.*?</h1>', main, re.S)
     ps = [re.sub(r'\s+', ' ', text(x)).strip() for x in re.findall(r'<p\b[^>]*>(.*?)</p>', main[h1m.end():] if h1m else main, re.S)]
     lead = next((x for x in ps if 'veröffentlicht am' not in x and len(x) > 60), '')
-    return dict(seite=os.path.relpath(p, WEB), title=t, desc=d, h1=h1, lead=lead, tpx=px20(t), dpx=px14(d), noindex=noindex, fliess=ft)
+    jahr = re.search(r'<meta name="artikel-datum" content="(\d{4})', s)
+    return dict(seite=os.path.relpath(p, WEB), jahr=jahr.group(1) if jahr else '2026', title=t, desc=d, h1=h1, lead=lead, tpx=px20(t), dpx=px14(d), noindex=noindex, fliess=ft)
 
 if __name__ == '__main__':
     alle = [daten(p) for p in seiten()]
@@ -69,8 +70,8 @@ if __name__ == '__main__':
     FUELL = {'und', 'der', 'die', 'das', 'dem', 'auf', 'in', 'ein', 'für', 'im', 'einem', 'was', 'zum', 'nach'}
     for a in alle:
         k = kw.get(a['seite'])
-        if a['seite'].startswith('ratgeber/') and a['seite'] != 'ratgeber/index.php' and '2026' not in a['title']:
-            fehler.append(f"{a['seite']}: 2026 fehlt im Title")
+        if a['seite'].startswith('ratgeber/') and a['seite'] != 'ratgeber/index.php' and a['jahr'] not in a['title']:
+            fehler.append(f"{a['seite']}: {a['jahr']} (Erscheinungsjahr) fehlt im Title")
         if a['seite'] in ('ratgeber/treppenhausreinigung-bruchsal.html', 'ratgeber/bueroreinigung-praxisreinigung-bruchsal.html') and 'bruchsal' in a['title'].lower():
             fehler.append(f"{a['seite']}: Bruchsal im Title")
         if not k: continue

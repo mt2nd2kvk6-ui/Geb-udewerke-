@@ -80,7 +80,7 @@ Das neue Design darf das Ranking nicht schwächen, es soll es stärken. Bei Goog
 **Lokales SEO und GEO (Bruchsal im Fokus)**
 - `geo.placename` Bruchsal, `geo.position` und `ICBM` 49.1291927;8.5914434 auf jeder Seite.
 - GPS-Koordinaten von Bruchsal (49.1291927, 8.5914434) in den EXIF-Daten aller Fotos. Neue oder ersetzte Bilder ebenfalls mit `werkzeuge/bilder_geotaggen.py` versehen.
-- Name, Adresse und Telefonnummer überall identisch: Gebäudewerke GbR, Allmend 2, 76707 Hambrücken, Telefon 0176 74025524, E-Mail info@gebaeudewerke.de.
+- Name, Adresse und Telefonnummer überall identisch: Gebäudewerke GbR, Allmend 2, 76707 Hambrücken, Telefon 0163 7221790, E-Mail info@gebaeudewerke.de.
 - JSON-LD vollständig und gültig: HomeAndConstructionBusiness mit allen Orten in `areaServed` (Bruchsal zuerst), Öffnungszeiten, Notdienst, `sameAs` mit Google-Profil, `aggregateRating`; je Leistungsseite ein `Service` mit Angebot; `FAQPage` exakt synchron zu den sichtbaren Fragen; `BreadcrumbList`; Ratgeber als `Article` mit Autor (Person) und Herausgeber; Team als `Person`.
 - Für KI-Suchen: am Anfang wichtiger Abschnitte eine zitierfähige Kurzantwort (40 bis 60 Wörter), FAQ in der Sprache echter Suchanfragen, `llms.txt` auf dem neuesten Stand.
 - Bruchsal und die Ortsteile (Büchenau, Heidelsheim, Helmsheim, Obergrombach, Untergrombach) sowie die Orte im Landkreis natürlich im Text, keine Ortsseiten nur für Keywords.
@@ -135,7 +135,7 @@ Schreib mir dazu eine kurze Klick-Anleitung (Datei `projekt/tracking-anleitung.m
 
 ## Feste Vorgaben, nicht verhandelbar
 
-- **Telefon für Anrufe: 0176 74025524** (`tel:+4917674025524`). **WhatsApp: 0163 7221790** (wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Die Flyer zeigen noch die alte Nummer als Anrufnummer, die darf NICHT übernommen werden.
+- **Telefon und WhatsApp: 0163 7221790** (`tel:+491637221790`, wa.me/491637221790 bzw. api.whatsapp.com/send?phone=491637221790). Seit 16.11.2026 gibt es nur noch diese eine Nummer. Die frühere Anrufnummer darf nirgends mehr stehen, auch nicht aus Flyern übernommen werden.
 - Ein klar erkennbarer **WhatsApp-Button** (mit WhatsApp-Symbol) muss im Kopfbereich neben „Anrufen“ und auf dem Handy immer sichtbar sein. Er darf nie fehlen.
 - **Preise:** die aktuellen Preise aus `website/preise.html` unverändert übernehmen, netto und brutto. Nichts neu berechnen.
 - **Bewertungen:** sichtbar als „5,0 Sterne auf Google“ mit Link auf https://share.google/v7XolrfYaCO55YrZz. Das Laufband mit den echten Kundenstimmen bleibt, die Texte nicht ändern. Das `aggregateRating` im JSON-LD bleibt auf allen Seiten.

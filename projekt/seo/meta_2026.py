@@ -1,4 +1,5 @@
 # Titles, Descriptions, H1 und Textanpassungen (Auftrag Relaunch, 31.10.2026)
+# Relaunch 12/2026: t und d auf den ausgelieferten Stand gebracht, damit meta_anwenden.py nichts zurückdreht.
 # Format: seite: dict(t=Title, d=Description, h1=neue H1 oder None, txt=[(alt, neu), ...])
 SPEC = {
 'index.html': dict(t='Hausmeister und Reinigung in Bruchsal | Gebäudewerke',
@@ -17,7 +18,7 @@ SPEC = {
   txt=[('Wir reinigen Büros, Praxen und Verkaufsflächen in Bruchsal vor Betriebsbeginn oder nach Geschäftsschluss, nach einem schriftlichen Reinigungsplan mit festen Intervallen.',
         'Zur Büroreinigung in Bruchsal kommen wir vor Betriebsbeginn oder nach Geschäftsschluss und reinigen Büros, Praxen und Verkaufsflächen nach einem schriftlichen Reinigungsplan mit festen Intervallen.')]),
 'gartenpflege.html': dict(d='Gartenpflege in Bruchsal für Wohnanlagen und Gewerbe: Rasen, Hecken, Beete, Laub und Hofflächen im Jahresvertrag. Schnittgut nehmen wir mit.'),
-'winterdienst.html': dict(d='Winterdienst in Bruchsal: Räumen und Streuen von Gehwegen, Zufahrten und Parkplätzen, Saison November bis März, jeder Einsatz protokolliert.'),
+'winterdienst.html': dict(d='Winterdienst in Bruchsal: Saisonpauschale ab 1.220 € netto bis 120 m², 1. November bis 31. März. Zu jedem Einsatz ein Protokoll. Ortstermin kostenlos.'),
 'entruempelung.html': dict(d='Entrümpelung und Haushaltsauflösung in Bruchsal: kostenlose Besichtigung, schriftlicher Festpreis, getrennte Entsorgung, besenreine Übergabe.'),
 'wohnungsuebergabe.html': dict(d='Wohnungsübergabe in Bruchsal für Vermieter und Hausverwaltungen: Abnahme mit Fotos, Zählerständen und Schlüsseln, Protokoll am selben Tag.'),
 'metallarbeiten-schloesser.html': dict(t='Metallarbeiten Bruchsal | Tore, Geländer und Schlösser'),
@@ -27,7 +28,7 @@ SPEC = {
   txt=[('Gebäudewerke betreut Wohnanlagen, Eigentümergemeinschaften und Gewerbeobjekte in Bruchsal mit allen Stadtteilen und in den Gemeinden rund um Bruchsal im Landkreis Karlsruhe.',
         'Unser Einsatzgebiet ist Bruchsal mit allen Stadtteilen und die Gemeinden rund um Bruchsal im Landkreis Karlsruhe. Dort betreut Gebäudewerke Wohnanlagen, Eigentümergemeinschaften und Gewerbeobjekte.')]),
 'ueber-uns.html': dict(
-  d='Wer hinter Gebäudewerke steht: vier Gesellschafter aus Metallbau, Industriemechanik und Vertrieb. Objektbetreuung in Bruchsal mit festem Betreuer.',
+  d='Wer hinter Gebäudewerke steht: vier Mann aus Metallbau, Industriemechanik und Vertrieb. Objektbetreuung in Bruchsal mit festem Betreuer.',
   h1='Gebäudewerke, Ihre Objektbetreuung in Bruchsal',
   txt=[('Die Gebäudewerke GbR betreut Wohn- und Gewerbeimmobilien in Bruchsal und im Landkreis Karlsruhe,',
         'Die Gebäudewerke GbR übernimmt die Objektbetreuung für Wohn- und Gewerbeimmobilien in Bruchsal und im Landkreis Karlsruhe,')]),
@@ -51,7 +52,7 @@ SPEC = {
         'Wer selbst nicht vor Ort sein kann, lässt die Besichtigung vorbereiten und auf Wunsch auch begleiten.')]),
 'ratgeber/bueroreinigung-praxisreinigung-bruchsal.html': dict(t='Reinigung außerhalb der Öffnungszeiten 2026',
   d='Reinigung außerhalb der Öffnungszeiten: wann Büros und Praxen gereinigt werden, was in den Reinigungsplan gehört und wer den Schlüssel bekommt.'),
-'ratgeber/dienstleister-wechseln-hausmeister.html': dict(t='Hausmeister wechseln 2026 | Gebäudewerke',
+'ratgeber/dienstleister-wechseln-hausmeister.html': dict(t='Hausmeister wechseln 2027 | Gebäudewerke',
   d='So wechseln Sie Hausmeister oder Reinigungsfirma ohne Lücke: Kündigungsfrist prüfen, Schlüssel und Unterlagen übergeben, Starttermin planen.',
   txt=[('Er ist einfacher als gedacht, wenn drei Dinge stimmen:', 'Den Hausmeister zu wechseln ist einfacher als gedacht, wenn drei Dinge stimmen:')]),
 'ratgeber/entruempelung-ablauf-bruchsal.html': dict(t='Ablauf einer Entrümpelung 2026 | Gebäudewerke',
@@ -70,7 +71,7 @@ SPEC = {
   h1='Hausmeisterkosten umlagefähig? Was auf Mieter umgelegt werden darf'),
 'ratgeber/hausmeisterservice-hausverwaltung-bruchsal.html': dict(t='Hausmeisterservice für Hausverwaltungen 2026',
   d='Was Hausverwaltungen vom Hausmeisterservice erwarten sollten: ein Ansprechpartner für mehrere Objekte, einheitliche Berichte und eine saubere Rechnung.'),
-'ratgeber/hausmeisterservice-weg-bruchsal.html': dict(t='Hausmeisterservice für die Eigentümergemeinschaft 2026',
+'ratgeber/hausmeisterservice-weg-bruchsal.html': dict(t='Hausmeisterservice für die Eigentümergemeinschaft 2027',
   d='Was Eigentümergemeinschaften bei der Beauftragung eines Hausmeisterservice beachten sollten: Beschluss, Leistungsverzeichnis, Hausgeld und Umlage.'),
 'ratgeber/hecke-schneiden-erlaubt.html': dict(t='Hecke schneiden 2026 | Was ist erlaubt?',
   d='Wann darf man Hecken schneiden? Was § 39 Bundesnaturschutzgesetz vom 1. März bis 30. September verbietet und welche Schnitte erlaubt bleiben.',
@@ -78,8 +79,8 @@ SPEC = {
         'Wer eine Hecke schneiden will, muss die Schonzeit beachten. Vom 1. März bis 30. September dürfen Hecken nicht radikal')]),
 'ratgeber/kleinreparaturen-bruchsal.html': dict(t='Kleinreparaturen in einem Termin 2026 | Gebäudewerke',
   d='Mehrere Kleinreparaturen in einem Termin statt fünf Handwerker: wie Eigentümer und Verwaltungen Zeit sparen und wer in der Mietwohnung zahlt.'),
-'ratgeber/kosten-hausmeisterservice-bruchsal.html': dict(t='Was kostet ein Hausmeisterservice? Preise 2026',
-  d='Was ein Hausmeisterservice pro Monat kostet: Richtpreise ab 130 € netto bis 6 Wohnungen, ab 190 € bis 20 Wohnungen, und wovon der Preis abhängt.',
+'ratgeber/kosten-hausmeisterservice-bruchsal.html': dict(t='Was kostet ein Hausmeisterservice? Preise 2027',
+  d='Was ein Hausmeisterservice pro Monat kostet: Richtpreise ab 111 € netto bis 6 Wohnungen, ab 162 € bis 20 Wohnungen, und wovon der Preis abhängt.',
   h1='Was kostet ein Hausmeisterservice pro Monat?'),
 'ratgeber/laub-gehweg-pflicht-bruchsal.html': dict(t='Laub auf dem Gehweg 2026 | Wer muss räumen?',
   d='Nasses Laub ist fast so glatt wie Eis. Wer in Bruchsal die Pflicht hat, Laub vom Gehweg zu entfernen, wie oft und was mit verstopften Abläufen passiert.'),
@@ -103,7 +104,7 @@ SPEC = {
 'ratgeber/sturmschaden-kontrolle-gebaeude.html': dict(t='Gebäude nach Sturm und Unwetter 2026',
   txt=[('Nach einem Sturm fällt ein Schaden selten sofort auf.', 'Nach einem Sturm fällt ein Schaden am Gebäude selten sofort auf.')]),
 'ratgeber/tiefgarage-keller-reinigung-bruchsal.html': dict(t='Tiefgarage und Keller reinigen 2026 | Gebäudewerke'),
-'ratgeber/treppenhaus-rettungsweg.html': dict(t='Treppenhaus als Rettungsweg 2026 | Gebäudewerke',
+'ratgeber/treppenhaus-rettungsweg.html': dict(t='Treppenhaus als Rettungsweg 2027 | Gebäudewerke',
   d='Schuhregal, Kinderwagen, Fahrrad: was im Treppenhaus stehen darf, warum der Rettungsweg frei bleiben muss und wie die Verwaltung damit umgeht.'),
 'ratgeber/treppenhausreinigung-bruchsal.html': dict(t='Reinigungsplan für das Treppenhaus 2026',
   h1='Ein Reinigungsplan für das Treppenhaus in der Wohnanlage'),

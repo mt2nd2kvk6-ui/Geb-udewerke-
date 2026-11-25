@@ -108,7 +108,7 @@ Diese Begriffe werden bei Google mit Local Pack bzw. „in der Nähe“-Logik au
 | hausmeisterservice winterdienst preise | 140 | k. A. | kommerziell | preise.html#winterdienst |
 | was kostet ein hausmeisterservice | 140 | 0 | kommerziell | Ratgeber kosten-hausmeisterservice |
 | hausmeister kosten pro monat | 90 | 0 | kommerziell | Ratgeber kosten-hausmeisterservice |
-| hausmeisterservice kosten 6 familienhaus | 70 | k. A. | kommerziell | Ratgeber + preise (bis 6 Einheiten ab 130 € netto) |
+| hausmeisterservice kosten 6 familienhaus | 70 | k. A. | kommerziell | Ratgeber + preise (bis 6 Einheiten ab 111 € netto, Stand Preisliste 02.11.2026) |
 | tiefgaragenreinigung | 170 | 0 | kommerziell (CPC 13,46) | Ratgeber Tiefgarage + gebaeudereinigung.html |
 | tiefgarage reinigen | 90 | 0 | kommerziell | Ratgeber Tiefgarage |
 | kellerreinigung | 70 | 0 | kommerziell | gebaeudereinigung.html |

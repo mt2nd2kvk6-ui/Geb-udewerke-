@@ -458,7 +458,7 @@ def kontaktband_anwenden(main):
         p = f'<p class="cta-band__satz">{satz.group(1)}</p>' if satz else ''
         hid = re.search(r'\sid="([^"]+)"', h2.group(0))
         lab = f' aria-labelledby="{hid.group(1)}"' if hid else ''
-        return (f'<section class="cta-band"{lab}><div class="wrap">\n'
+        return (f'<section class="cta-band"{lab} data-abschnitt="kontaktblock"><div class="wrap">\n'
                 f'<div class="cta-band__text">{h2.group(0)}{p}</div>\n'
                 f'<a class="riesennummer" href="{TEL}" data-pos="kontaktblock">0163 7221790</a>\n'
                 f'<div class="cta-band__knoepfe"><a class="btn btn--wa btn--gross" href="{WA}" rel="noopener" target="_blank" data-pos="kontaktblock">{I_WA}'

@@ -176,7 +176,7 @@ g_karten = re.findall(r'<li class="leistung"><span class="leistung__zone">(.*?)<
 karten = ''.join(f'<li class="leistung"><span class="leistung__zone">{zone}</span><h3>{v_karten[href][0]}</h3><p>{preise(v_karten[href][1])}</p>'
                  f'<a href="{href}">{anker} {I["pfeil"]}</a></li>\n' for zone, href, anker in g_karten)
 info = such(r'<li class="leistung leistung--info">.*?</li>', gm)
-leistungen = f'''<section class="abschnitt" id="leistungen" aria-labelledby="t-leistungen">
+leistungen = f'''<section class="abschnitt" id="leistungen" aria-labelledby="t-leistungen" data-abschnitt="leistungen">
 <div class="wrap">
 <div class="kopfteil">
 <p class="auge">Alles am Objekt</p>
@@ -223,7 +223,7 @@ ablauf = f'''<section class="abschnitt" id="zusagen" aria-labelledby="zusagen-ti
 </div>
 </section>
 
-<section class="abschnitt abschnitt--kalk" id="ablauf" aria-labelledby="t-ablauf">
+<section class="abschnitt abschnitt--kalk" id="ablauf" aria-labelledby="t-ablauf" data-abschnitt="ablauf">
 <div class="wrap">
 <div class="kopfteil">
 <p class="auge">Vom Anruf zum Start</p>
@@ -319,7 +319,7 @@ fragen = f'''<section class="abschnitt" id="fragen" aria-labelledby="t-fragen">
 kh2, kp = kopf_text(v_kontakt)
 form = such(r'<form class="formular".*?</form>', v_kontakt).replace('<p class="pseudo-h3">Kurze Anfrage</p>', '<p class="formular__titel">Kurze Anfrage</p>')
 form = form.replace('<button class="btn btn--voll" type="submit">', '<button class="btn btn--blau" type="submit">')
-kontakt = f'''<section class="kontakt" id="kontakt" aria-labelledby="t-kontakt">
+kontakt = f'''<section class="kontakt" id="kontakt" aria-labelledby="t-kontakt" data-abschnitt="kontaktblock">
 <div class="wrap">
 <p class="auge">Kontakt</p>
 <h2 id="t-kontakt">{kh2}</h2>

@@ -52,6 +52,21 @@ for von, s in inhalte.items():
             if z and not datei(z[0]): fehler.append(f'{von}: Bild/Datei fehlt: {u}')
     for u in re.findall(r'url\("(/?assets/[^"]+)"\)', s):
         if not datei(ziel(u, von)[0]): fehler.append(f'{von}: CSS-Datei fehlt: {u}')
+# Relaunch 12/2026: Ankertexte mit Hauptkeyword zeigen nur auf ihre Seite (projekt/seo/keyword-map.md),
+# auch in der Form „… in Bruchsal“ / „… für Bruchsal“ / „… aus Bruchsal“.
+import json
+KW = json.load(open(os.path.join(os.path.dirname(WEB), 'projekt', 'seo', 'hauptkeywords.json'), encoding='utf-8'))
+KW_ZIEL = {k: '/' + (s_ if s_ != 'index.html' else '') for s_, k in KW.items() if not s_.startswith('ratgeber/') and k.endswith('Bruchsal') and s_ != 'index.html'}
+KW_ZIEL['Hausmeister Bruchsal'] = '/hausmeisterservice.html'
+KW_ZIEL['Hausmeisterservice Preise'] = '/preise.html'
+for kw, soll in sorted(KW_ZIEL.items()):
+    teile = kw.split()
+    muster = re.compile(r'(?<![\wäöüß-])' + r'\s+'.join(re.escape(t.lower()) for t in teile[:-1]) + r'(?:\s+(?:in|für|aus))?\s+' + re.escape(teile[-1].lower()) + r'(?![\wäöüß])')
+    for t, z in anker_ziele.items():
+        if muster.search(t):
+            for ziel_, von_ in z.items():
+                if ziel_ != soll:
+                    fehler.append(f'Keyword-Anker „{t}“ ({kw}) zeigt auf {ziel_} statt {soll} (von {", ".join(sorted(von_))[:120]})')
 mehrfach = {t: z for t, z in anker_ziele.items() if len(z) > 1}
 for t, z in sorted(mehrfach.items()):
     fehler.append(f'Ankertext „{t}“ zeigt auf {len(z)} Seiten: ' + '; '.join(f'{k} (von {", ".join(sorted(v))[:120]})' for k, v in z.items()))

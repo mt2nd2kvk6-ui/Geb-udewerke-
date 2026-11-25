@@ -24,6 +24,7 @@ for seite, sp in SPEC.items():
         s = s[:m.start()] + m.group(1) + html.escape(sp['h1'], quote=False) + m.group(3) + s[m.end():]
         s = s.replace('"headline":"' + js(html.unescape(oh)) + '"', '"headline":"' + js(sp['h1']) + '"')
     for a, b in sp.get('txt', []):
+        if b in s: continue                     # schon ersetzt (sonst wächst der Text bei jedem Lauf, siehe Hecken-Ratgeber)
         if a in s: s = s.replace(a, b)          # sichtbarer Text und gleichlautende JSON-LD-Kopie
         elif b not in s: fehler.append(f'{seite}: Textstelle nicht gefunden: {a[:50]}')
     t_neu = html.unescape(re.search(r'<title>(.*?)</title>', s, re.S).group(1).strip())

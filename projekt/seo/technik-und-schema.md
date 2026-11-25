@@ -73,7 +73,7 @@ Heute steht das volle Firmenobjekt (inkl. OfferCatalog mit 8 Services) auf jeder
 Hinweise:
 * `geo` der Firma bleibt bei der **echten Anschrift** in Hambrücken (49.192062, 8.5403253). Würde man hier Bruchsaler Koordinaten eintragen, widersprächen sich `address` und `geo`. Google gleicht beides mit dem Profil ab. Der Bruchsal-Fokus wird über `areaServed`, Texte, geo-Meta-Tags (3.9) und Bild-`contentLocation` (3.8) hergestellt.
 * `hasMap` und `sameAs`: bisher `https://share.google/v7XolrfYaCO55YrZz`. Dieser Link weicht vom Profil-Link in google-profil.json ab. Ersetzen (auch in sichtbaren „In Google Maps öffnen“-Links, insgesamt 39 Vorkommen im Ausgangsstand, und in `llms.txt`).
-* Keine `priceRange` mit Fantasiewerten. Wenn gewünscht: `"priceRange": "ab 130 € netto im Monat"` (steht so auf der Seite).
+* Keine `priceRange` mit Fantasiewerten. Wenn gewünscht: `"priceRange": "ab 111 € netto im Monat"` (steht so auf der Seite).
 * Telefon im Schema im internationalen Format, sichtbar national.
 
 ### 3.2 areaServed (Bruchsal zuerst)
