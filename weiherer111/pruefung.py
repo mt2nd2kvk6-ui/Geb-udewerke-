@@ -1,6 +1,7 @@
 # Flaechen nach WoFlV und Pruefungen fuer das Umbaumodell. Aufruf: python3 pruefung.py
 # Erzeugt flaechen.json (fuer Tabellen) und schreibt Raumnamen mit Flaeche in umbau.json.
-import json, math, collections
+import json, math, collections, sys
+SRC=sys.argv[1] if len(sys.argv)>1 else 'umbau.json'; OUTF=sys.argv[2] if len(sys.argv)>2 else 'flaechen.json'; INNEN='innen' in SRC
 T=math.tan(math.radians(30)); DK=0.55
 zN=lambda y:8.90+(y-0.24)*T; zS=lambda y:8.90+(7.86-y)*T; zW=lambda x:8.90+(x-0.24)*T
 SS=(10.538-10.25)/(5.915-3.0775); zSch=lambda x:10.538-(x-3.0775)*SS
@@ -34,7 +35,7 @@ def flaeche(name,rects):
     info='Planmaß'+(', Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb)' if dg else '')
     if dg and ue15>0: info+=f', LBO-Anteil h≥2,20 m: {ok22/ue15*100:.0f} %'
     return tot, roh, info
-U=json.load(open('umbau.json'))
+U=json.load(open(SRC))
 import re
 for r in U['r']: r[0]=re.sub(r' [0-9]+,[0-9]+ m²$','',r[0])
 rooms=collections.OrderedDict()
@@ -47,10 +48,10 @@ for n,rs in rooms.items():
 lab={(e['whg']+' '+e['raum']):e['flaeche'] for e in F}
 for r in U['r']:
     if r[0] in lab: r[0]=r[0]+' '+f"{lab[r[0]]:.2f}".replace('.',',')+' m²'
-json.dump(U,open('umbau.json','w'),separators=(',',':'))
+json.dump(U,open(SRC,'w'),separators=(',',':'))
 sumw=collections.OrderedDict()
 for e in F: sumw[e['whg']]=sumw.get(e['whg'],0)+e['flaeche']
-json.dump({'raeume':F,'summen':sumw},open('flaechen.json','w'),ensure_ascii=False,indent=1)
+json.dump({'raeume':F,'summen':sumw},open(OUTF,'w'),ensure_ascii=False,indent=1)
 print('Wohnflaechen:',{k:round(v,2) for k,v in sumw.items()},'gesamt',round(sum(sumw.values()),2))
 for e in F:
     if 'LBO' in e['quelle']: print('  ',e['whg'],e['raum'],e['flaeche'],e['quelle'].split('LBO-')[1])
@@ -112,8 +113,8 @@ while dq:
             if abs(q-z)<=0.205 and (i+di,j+dj,q) not in seen and frei(i+di,j+dj,q):
                 seen.add((i+di,j+dj,q)); dq.append((i+di,j+dj,q))
                 if abs(q-z)>0.03: maxstep=max(maxstep,abs(q-z))
-ZIELE=[('Hof',-1.0,20.0,0.41),('Straße vor W1',5.2,-4.0,0.41),('Hausflur',7.5,9.0,2.25),('Laubengang',12.0,8.9,4.98),
- ('Podest P1',7.0,15.5,5.40),('Podest P2',7.0,8.8,7.95)]
+ZIELE=[('Hof',-1.0,20.0,0.41),('Straße vor W1',5.2,-4.0,0.41),('Hausflur',7.5,9.0,2.25),]+([('Treppenhaus Podest 1',7.0,13.0,3.918),('Treppenhaus OG',7.0,9.0,5.40),('Treppenhaus Podest 2',7.0,13.0,6.675),('Treppenhaus DG',7.0,9.0,7.95)] if INNEN else
+ [('Laubengang',12.0,8.9,4.98),('Podest P1',7.0,15.5,5.40),('Podest P2',7.0,8.8,7.95)])
 for n,rs in rooms.items():
     if n.startswith('W') and n[1].isdigit() and 'Balkon' not in n and 'Abstell' not in n:
         x0,x1,y0,y1,f=max(rs,key=lambda r:(r[1]-r[0])*(r[3]-r[2])); ZIELE.append((n,(x0+x1)/2,(y0+y1)/2,f))
@@ -135,7 +136,7 @@ def dachok(x,y):
     if -0.56<=x<6.155 and 5.02<=y<=14.43:
         w=wg(x); m=zS(y) if y<=8.66 else -9
         return w+(DK if x<=3.0775 else 0.30) if w>=m else m+DK
-    if 6.155<=x<=6.555 and 8.26<=y<=14.43: return zSch(x)+0.30
+    if 6.155<=x<=(8.89 if INNEN else 6.555) and (8.12 if INNEN else 8.26)<=y<=14.43: return zSch(x)+0.30
     if -0.56<=x<=15.085 and -0.56<=y<=8.66:
         o=decke_dg(min(max(x,0.24),14.845),min(max(y,0.24),7.86))+DK
         if 6.155<=x<=8.88 and y>=4.245: o=zZ(y)+0.30

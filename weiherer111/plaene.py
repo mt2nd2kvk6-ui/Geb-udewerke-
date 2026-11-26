@@ -99,18 +99,18 @@ def schnitt(D,fn,titel,achse,c,ext,koten,unter=''):
         zt=max(z,lz+0.32); lz=zt
         h=ext[1]-0.3; g.line(h-0.25,-z,h+0.6,-z,'#d9531e',0.8); g.poly([(h,-z),(h-0.12,-z-0.18),(h+0.12,-z-0.18)],'#d9531e'); g.text(h+0.65,-zt+0.1,fz(z)+' '+t,10,'start','#d9531e')
     g.save(fn,unter)
-B=json.load(open('bestand.json')); U=json.load(open('umbau.json'))
+B=json.load(open('bestand.json')); U=json.load(open('umbau.json')); I=json.load(open('umbau_innen.json'))
 KX_B=[0,5.915,6.155,8.475,11.365,15.085]; KY_B=[0,8.10,12.21,13.865,21.20,28.25]
 KX_U=[-0.16,5.915,6.255,8.315,11.365,15.085]; KY_U=[-0.16,8.10,12.21,14.025,21.36,28.25]
 T='Weiherer Straße 111, Ubstadt-Weiher'
-for D,tag,KX,KY in ((B,'bestand',KX_B,KY_B),(U,'umbau',KX_U,KY_U)):
-    st='Bestand (Aufmaß Nagel 24.09.2026)' if tag=='bestand' else 'Umbau 7 Wohnungen (Planungsstudie)'
+for D,tag,KX,KY in ((B,'bestand',KX_B,KY_B),(U,'umbau',KX_U,KY_U),(I,'innen',KX_U,KY_U)):
+    st={'bestand':'Bestand (Aufmaß 24.09.2026)','umbau':'Umbau A Außentreppe','innen':'Umbau B Innentreppe'}[tag]
     grundriss(D,f'{tag}_EG.svg',f'{T}: Erdgeschoss, {st}',4.1,{'EG','A','G'},0.3,3.3,(-4.2,16.2,-4.4,29.0),
               [([KX[0],KX[-1]],'h',-3.9),(KX,'h',-3.3),([KY[0],KY[-1]],'v',-3.9),(KY,'v',-3.3)],unter='Schnittebene +4,10. Höhen ab OKFF Keller ±0,00, Gelände +0,41. Flächen nach WoFlV, Balkon zu 1/4 in der Wohnungssumme.')
     grundriss(D,f'{tag}_OG.svg',f'{T}: Obergeschoss, {st}',6.4,{'OG','A','EG'},4.8,5.6,(-1.6,16.2,-1.6,17.0),
               [([KX[0],KX[-1]],'h',-1.2),(KX[:3]+[15.085],'h',-0.7),([KY[0],KY[3]],'v',-1.2),(KY[:4],'v',-0.7)],unter='Schnittebene +6,40. Gestrichelt: Podeste und Treppen oberhalb der Schnittebene.')
     def hl(g,tag=tag):
-        if tag!='umbau': return
+        if tag=='bestand': return
         for y in (0.24+0.80/math.tan(math.radians(30)),7.86-0.80/math.tan(math.radians(30))): g.line(9.72 if y<4 else 8.64,y,14.845,y,'#d9531e',0.9,'6,4')
         y=0.24+1.05/math.tan(math.radians(30)); g.line(0.24,y,5.915,y,'#d9531e',0.9,'6,4'); x=y; g.line(x,8.10-x+0.04 if x<3 else 8.1,x,13.625,'#d9531e',0.9,'6,4')
         g.text(12.0,1.45,'h = 2,00 m',9,col='#d9531e'); g.text(3.0,1.85,'h = 2,00 m',9,col='#d9531e')
@@ -121,5 +121,7 @@ KOT_U=[(0.41,'Gelände'),(2.25,'EG'),(3.15,'EG W3'),(5.00,'OG Altbau'),(5.40,'OG
 KOT_B=[(0.41,'Gelände'),(2.25,'EG'),(5.00,'OG Altbau'),(5.40,'OG West'),(7.60,'Dachboden'),(10.72,'First')]
 schnitt(U,'umbau_Schnitt_A-A.svg',f'{T}: Schnitt A-A (y = 6,10 m, Blick nach Norden), Umbau','y',6.1,(-1.2,16.6,-0.6,12.6),KOT_U,'Schnitt durch Anbau West und Altbau. OG West mit lichter Höhe 2,27 m bleibt, DG West auf vorhandener Decke.')
 schnitt(B,'bestand_Schnitt_A-A.svg',f'{T}: Schnitt A-A (y = 6,10 m, Blick nach Norden), Bestand','y',6.1,(-1.2,16.6,-0.6,12.6),KOT_B,'Bestand zum Vergleich.')
-schnitt(U,'umbau_Schnitt_B-B.svg',f'{T}: Schnitt B-B (x = 7,80 m, Blick nach Westen), Umbau','x',7.8,(-1.8,17.4,-0.6,12.6),KOT_U+[(4.98,'Laubengang')],'Schnitt durch Hauseingang, Laubengang, Podeste P1 und P2, Treppe zum DG und Zwerchhaus.')
+schnitt(U,'umbau_Schnitt_B-B.svg',f'{T}: Schnitt B-B (x = 7,80 m, Blick nach Osten), Umbau Variante A','x',7.8,(-1.8,17.4,-0.6,12.6),KOT_U+[(4.98,'Laubengang')],'Schnitt durch Hauseingang, Laubengang, Podeste P1 und P2, Treppe zum DG und Zwerchhaus.')
 print(sorted(os.listdir('plaene')))
+schnitt(I,'innen_Schnitt_C-C.svg',f'{T}: Schnitt C-C (x = 6,70 m, Blick nach Osten), Umbau Variante B','x',6.7,(-1.8,17.4,-0.6,12.6),KOT_U+[(3.918,'Podest 1'),(6.675,'Podest 2')],'Schnitt durch das Treppenhaus (Läufe 1, 3 und 5) zwischen Anbau West und Altbau. Keller massiv dargestellt.')
+print('innen ok')

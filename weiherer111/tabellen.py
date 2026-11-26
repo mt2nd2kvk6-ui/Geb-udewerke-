@@ -180,4 +180,39 @@ for i,t in enumerate(['Preise brutto inkl. 19 % MwSt (Vermietung: kein Vorsteuer
  'Nicht enthalten: Kaufnebenkosten, Finanzierungskosten, Mietausfall, Umzugshilfen für Mieter, Küchenmöbel, Außenanlagen über das Genannte hinaus.'],1):
     w3.cell(i,1,t)
 breit(w3,[150])
+# ---- Variante B: innenliegendes Treppenhaus statt Hoftreppe, Laubengang und DG-Treppe
+w4=wb.create_sheet('Variante B Innentreppe')
+w4['A1']='Variante B: innenliegender Treppenraum in der Eingangszone, Mehr- und Minderkosten gegenüber Variante A'; w4['A1'].font=T
+kopf(w4,3,['Entfällt gegenüber Variante A','Kosten €','Lohnwert Eigenleistung €'])
+r=4; e0=r
+for start in ('Hoftreppe','Treppe zum DG','Laubengang und Eingangszone','Laubengang: Gefälle','Wohnungseingangstüren W6, W7','Wohnungseingangstüren W4, W5'):
+    i=[k for k,x in enumerate(K) if x[1].startswith(start)]; assert len(i)==1,start
+    w4.cell(r,1,K[i[0]][1]); w4.cell(r,2,f'=-Maßnahmen!I{4+i[0]}').number_format=EUR; w4.cell(r,3,f'=-Maßnahmen!K{4+i[0]}').number_format=EUR; r+=1
+w4.cell(r,1,'Summe entfällt').font=H; w4.cell(r,2,f'=SUM(B{e0}:B{r-1})').number_format=EUR; w4.cell(r,3,f'=SUM(C{e0}:C{r-1})').number_format=EUR; se=r; r+=2
+kopf(w4,r,['Neu in Variante B','Kosten €','Lohnwert Eigenleistung €','Menge','Einheit','Material €/Einheit','Fremdleistung €','Gewerk, Nachweis']); r+=1; n0=r
+NB=[('Treppenanlage: Stahlwangen mit Betonwerksteinstufen (nichtbrennbar), 5 Läufe, 41 Steigungen, Handlauf, Geländer im Treppenauge',1,'psch',24000,3000,0,'Schlosser/Stahlbau, Statik'),
+ ('Podeste Stahlbeton (Podest 1, OG, Podest 2, DG) mit Auflagern',4,'Stk',1100,2800,0,'Rohbau, Statik'),
+ ('Treppenraumwände F60 mit mechanischer Beanspruchung aufmauern (Ost, Süd, Ergänzung West), Ringbalken',58,'m²',55,3500,2000,'Maurer, Brandschutz'),
+ ('Abfangung unter neuer Ostwand im Hausflur, Deckenausschnitt für Lauf 1',1,'psch',1200,2200,0,'Rohbau, Statik'),
+ ('Rückbau Flachdach Eingangszone und alte Eingangstreppe',1,'psch',1500,2500,1500,'Abbruch'),
+ ('Dach über Treppenraum (Verlängerung Schleppdach, Dämmung, Blech)',16,'m²',140,1800,0,'Zimmerer, Klempner'),
+ ('Rauchabzug: Dachfenster 1,0 m² mit Antrieb, RWA-Zentrale, Taster EG und DG',1,'psch',2600,1200,0,'Fachfirma RWA, Abnahme'),
+ ('Fenster Treppenraum (4 Stück)',5.3,'m²',520,600,0,'Fensterbauer'),
+ ('WDVS an den neuen Treppenraumwänden',45,'m²',52,0,2700,'Bestätigung EEE'),
+ ('Wohnungseingangstüren W4 bis W7 zum Treppenraum, dicht- und selbstschließend, Schallschutz',4,'Stk',1250,600,0,'Tischler'),
+ ('Treppenhausbeleuchtung, Klingel- und Sprechanlage, Briefkästen',1,'psch',2200,1300,0,'Elektrofachbetrieb'),
+ ('Bodenbelag Podeste, Maler Treppenraum',1,'psch',1600,0,2000,''),
+ ('Flachdach über Hausflur Ost, Technik, Bad W2 dämmen und abdichten',9,'m²',58,400,0,'Dachdecker'),
+ ('Fenster anpassen: W5 Flur und Bad mit hoher Brüstung, Küchenfenster W2 und W5 zum Treppenraum schließen',1,'psch',900,400,0,'Fensterbauer, Brandschutz'),
+ ('Photovoltaik zusätzlich 4 Module (1,72 kWp) auf dem Treppenraumdach',1.72,'kWp',900,300,0,'Elektrofachbetrieb')]
+for t,q,e,pm,fr,lw,gw in NB:
+    w4.cell(r,1,t); w4.cell(r,4,q); w4.cell(r,5,e); w4.cell(r,6,pm).number_format=EUR; w4.cell(r,7,fr).number_format=EUR
+    w4.cell(r,2,f'=D{r}*F{r}+G{r}').number_format=EUR; w4.cell(r,3,lw).number_format=EUR; w4.cell(r,8,gw); r+=1
+w4.cell(r,1,'Summe neu').font=H; w4.cell(r,2,f'=SUM(B{n0}:B{r-1})').number_format=EUR; w4.cell(r,3,f'=SUM(C{n0}:C{r-1})').number_format=EUR; sn=r; r+=2
+for t,f_ in (('Differenz netto (neu minus entfällt)',f'=B{sn}+B{se}'),('Differenz mit 10 % Reserve',f'=(B{sn}+B{se})*1.1'),
+             ('Gesamtkosten Variante A brutto inkl. Reserve',f'=Bauabschnitte!D{tot}'),('Gesamtkosten Variante B brutto inkl. Reserve',f'=Bauabschnitte!D{tot}+(B{sn}+B{se})*1.1'),
+             ('Lohnwert Eigenleistung Variante B',f'=Bauabschnitte!E{s1}+C{sn}+C{se}')):
+    w4.cell(r,1,t).font=H; c=w4.cell(r,2,f_); c.number_format=EUR; c.font=H; r+=1
+w4.cell(r+1,1,'Wohnfläche Variante B 454,59 m² (W4 72,08 m², sonst wie Variante A). Photovoltaik gesamt 7,3 kWp.')
+breit(w4,[92,16,22,9,9,14,14,28])
 wb.save('massnahmen_und_kosten.xlsx'); print('ok')

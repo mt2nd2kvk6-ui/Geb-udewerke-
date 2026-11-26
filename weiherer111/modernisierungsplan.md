@@ -81,6 +81,10 @@ Laufweg-Test im Modell (Skript `pruefung.py`): Alle 42 Ziele (jede Wohnung und j
 
 Der Fußboden des DG liegt 7,29 m (Ost) und 7,54 m (West) über dem mittleren Gelände, also über 7 m. Damit wird das Gebäude voraussichtlich **Gebäudeklasse 4** nach § 2 Abs. 4 LBO BW. Folgen, die in Planung und Kosten berücksichtigt sind: Decken hochfeuerhemmend (F60, Ertüchtigung der Altbaudecken mit Gipsfaser- oder GKF-Bekleidung), Außentreppen aus nichtbrennbaren Baustoffen (Stahl), WDVS mit Brandriegeln, Brandwand zum Nachbarn, Abstand der Photovoltaik von 1,25 m zur Brandwand, Prüfung der Statik und ein Brandschutznachweis durch Fachplaner.
 
+### 3.4 Alternative: Variante B mit innenliegendem Treppenhaus
+
+Statt Hoftreppe, Laubengang und DG-Treppe kann die vorhandene Eingangszone zwischen Anbau West und Altbau zu einem durchgehenden Treppenraum vom Hauseingang bis unter das Dach ausgebaut werden (zweiläufig, Laufbreite 1,05 m, Podeste vor allen OG- und DG-Wohnungen). Die Wohnfläche bleibt gleich (454,59 m²), die Kosten steigen um rund 13.800 € auf 553.021 € (+2,6 %). Dafür sind alle Wege überdacht, der Hof bleibt frei und das Flachdach muss nicht tiefer gelegt werden. Einzelheiten, Brandschutzanforderungen und Vergleich: `variante_innentreppe.md`. Nach heutigem Stand ist Variante B die bessere Wahl, wenn der Brandschutzplaner die Lage bestätigt.
+
 ## 4. Maßnahmen an Hülle und Technik
 
 | Bauteil | Maßnahme | Ziel-U-Wert | Anforderung BEG-Einzelmaßnahme (TMA) |
@@ -185,7 +189,8 @@ Die Mehrmiete entspricht 5,2 % der Modernisierungskosten einschließlich Reserve
 
 ## 10. Unterlagen
 
-* `umbau_rundgang.html`: begehbares 3D-Modell, Umschalter Bestand und Umbau
+* `umbau_rundgang.html`: begehbares 3D-Modell, Umschalter Bestand, Umbau A (Außentreppe) und Umbau B (Innentreppe)
+* `variante_innentreppe.md`: Variante B mit Vergleich
 * `plaene/`: Grundrisse EG, OG, DG für Bestand und Umbau, Schnitte A-A (Bestand und Umbau) und B-B (Umbau) als SVG
 * `flaechen_und_mieten.xlsx`, `massnahmen_und_kosten.xlsx`
 * `pruefliste.md`: Annahmen, offene Punkte, Zuständigkeiten

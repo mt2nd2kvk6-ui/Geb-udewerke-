@@ -1,0 +1,293 @@
+{
+ "raeume": [
+  {
+   "whg": "W1",
+   "raum": "Flur",
+   "flaeche": 6.88,
+   "grund": 6.88,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W1",
+   "raum": "Schlafen",
+   "flaeche": 19.03,
+   "grund": 19.03,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W1",
+   "raum": "Wohnen",
+   "flaeche": 31.92,
+   "grund": 31.92,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W1",
+   "raum": "Bad",
+   "flaeche": 6.04,
+   "grund": 6.04,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W1",
+   "raum": "Küche",
+   "flaeche": 5.51,
+   "grund": 5.51,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W1",
+   "raum": "Abstellraum",
+   "flaeche": 3.14,
+   "grund": 3.14,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Wohnen",
+   "flaeche": 16.35,
+   "grund": 16.35,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Schlafen",
+   "flaeche": 14.6,
+   "grund": 14.6,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Küche",
+   "flaeche": 12.01,
+   "grund": 12.01,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Flur",
+   "flaeche": 8.47,
+   "grund": 8.47,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Ankleide",
+   "flaeche": 9.77,
+   "grund": 9.77,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W2",
+   "raum": "Bad",
+   "flaeche": 3.37,
+   "grund": 3.37,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Zugang",
+   "flaeche": 4.43,
+   "grund": 4.43,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Küche",
+   "flaeche": 6.68,
+   "grund": 6.68,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Wohnen/Essen",
+   "flaeche": 28.25,
+   "grund": 28.25,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Schlafen",
+   "flaeche": 16.08,
+   "grund": 16.08,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Bad",
+   "flaeche": 6.4,
+   "grund": 6.4,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W3",
+   "raum": "Balkon",
+   "flaeche": 5.82,
+   "grund": 23.28,
+   "quelle": "Aufmaß (Balkon 1/4)"
+  },
+  {
+   "whg": "W4",
+   "raum": "Schlafen",
+   "flaeche": 14.01,
+   "grund": 14.01,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W4",
+   "raum": "Bad",
+   "flaeche": 5.07,
+   "grund": 5.07,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W4",
+   "raum": "Zimmer",
+   "flaeche": 12.71,
+   "grund": 12.71,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W4",
+   "raum": "Flur",
+   "flaeche": 8.79,
+   "grund": 8.79,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W4",
+   "raum": "Wohnen/Kochen",
+   "flaeche": 28.95,
+   "grund": 28.95,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W4",
+   "raum": "Diele",
+   "flaeche": 2.55,
+   "grund": 2.55,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Wohnen",
+   "flaeche": 16.35,
+   "grund": 16.35,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Schlafen",
+   "flaeche": 14.6,
+   "grund": 14.6,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Küche/Essen",
+   "flaeche": 12.02,
+   "grund": 12.02,
+   "quelle": "Aufmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Flur",
+   "flaeche": 8.47,
+   "grund": 8.47,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Bad",
+   "flaeche": 4.87,
+   "grund": 4.87,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W5",
+   "raum": "Abstell/Waschen",
+   "flaeche": 4.59,
+   "grund": 4.59,
+   "quelle": "Planmaß"
+  },
+  {
+   "whg": "W6",
+   "raum": "Schlafen",
+   "flaeche": 12.12,
+   "grund": 14.92,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 72 %"
+  },
+  {
+   "whg": "W6",
+   "raum": "Zimmer",
+   "flaeche": 10.45,
+   "grund": 13.08,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 72 %"
+  },
+  {
+   "whg": "W6",
+   "raum": "Flur",
+   "flaeche": 4.87,
+   "grund": 4.87,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 90 %"
+  },
+  {
+   "whg": "W6",
+   "raum": "Bad",
+   "flaeche": 4.62,
+   "grund": 4.62,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 100 %"
+  },
+  {
+   "whg": "W6",
+   "raum": "Abstellraum",
+   "flaeche": 3.09,
+   "grund": 4.97,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 13 %"
+  },
+  {
+   "whg": "W6",
+   "raum": "Wohnen/Kochen",
+   "flaeche": 25.87,
+   "grund": 31.35,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 76 %"
+  },
+  {
+   "whg": "W7",
+   "raum": "Diele",
+   "flaeche": 5.3,
+   "grund": 5.3,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 100 %"
+  },
+  {
+   "whg": "W7",
+   "raum": "Bad",
+   "flaeche": 4.4,
+   "grund": 4.4,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 100 %"
+  },
+  {
+   "whg": "W7",
+   "raum": "Schlafen",
+   "flaeche": 9.89,
+   "grund": 10.54,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 88 %"
+  },
+  {
+   "whg": "W7",
+   "raum": "Wohnen/Kochen",
+   "flaeche": 36.25,
+   "grund": 43.85,
+   "quelle": "Planmaß, Dachschräge gewichtet (unter 1 m 0, 1 bis 2 m halb), LBO-Anteil h≥2,20 m: 64 %"
+  }
+ ],
+ "summen": {
+  "W1": 72.52,
+  "W2": 64.57000000000001,
+  "W3": 67.66,
+  "W4": 72.08,
+  "W5": 60.89999999999999,
+  "W6": 61.02000000000001,
+  "W7": 55.84
+ }
+}

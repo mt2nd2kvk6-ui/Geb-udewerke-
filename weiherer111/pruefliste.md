@@ -92,6 +92,10 @@ Stand: 26.11.2026. Reihenfolge nach Dringlichkeit. „Vor BA 0“ heißt: vor Ba
 | G5 | Keller ist im Modell massiv dargestellt; Technikraum der Wärmepumpe im KG. | |
 | G6 | Zählerschrank im ehemaligen WC am Hausflur (Technik und Zähler). | |
 
+## Variante B (Innentreppe)
+
+Die zusätzlichen Punkte V1 bis V7 stehen in `variante_innentreppe.md`.
+
 ## H. Selbst geprüft im Modell (Skript `pruefung.py`)
 
 * Laufweg von Hof und Straße in jede Wohnung und jeden Raum, über alle Treppen, auf Laubengang, P1 und P2: 42 von 42 Zielen erreichbar, größte Stufe 0,185 m, Kopfhöhe auf allen Wegen mindestens 2,00 m, Durchgangsbreite mindestens 0,50 m.

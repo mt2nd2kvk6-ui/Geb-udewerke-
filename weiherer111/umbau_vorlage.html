@@ -28,10 +28,10 @@ input[type=range]{width:140px}
 .note{font-size:13px;color:var(--mut);padding:0 max(3vw,12px) 16px;margin:0;max-width:90ch}
 [hidden]{display:none!important}
 </style></head><body>
-<header><h1>Weiherer Straße 111: Umbau zu 7 Wohnungen</h1><p class="sub">Planungsstudie, maßstäblich nach Aufmaß Nagel vom 24.09.2026. Umschalten zwischen Bestand und Umbau, begehbar in der Ich-Perspektive.</p></header>
+<header><h1>Weiherer Straße 111: Umbau zu 7 Wohnungen</h1><p class="sub">Planungsstudie, maßstäblich nach Aufmaß Nagel vom 24.09.2026. Umschalten zwischen Bestand und zwei Umbauvarianten: A mit Außentreppe und Laubengang, B mit innenliegendem Treppenhaus. Begehbar in der Ich-Perspektive.</p></header>
 <div id="view"><div id="joy"><div id="knob"></div></div><div id="where"></div><div id="tag"></div><div id="hint">Links ziehen zum Gehen, rechts ziehen zum Umsehen</div></div>
 <div class="bar">
- <div class="g" role="group" aria-label="Stand"><button id="dsb" aria-pressed="false">Bestand</button><button id="dsu" aria-pressed="true">Umbau</button></div>
+ <div class="g" role="group" aria-label="Stand"><button id="dsb" aria-pressed="false">Bestand</button><button id="dsu" aria-pressed="true">Umbau A Außentreppe</button><button id="dsi" aria-pressed="false">Umbau B Innentreppe</button></div>
  <div class="g" role="group" aria-label="Modus"><button id="mw" aria-pressed="false">Rundgang</button><button id="mo" aria-pressed="true">Modell</button></div>
  <select id="sp" aria-label="Startpunkt"></select>
  <div class="g" id="lay" aria-label="Ebenen ausblenden"></div>
@@ -42,7 +42,7 @@ input[type=range]{width:140px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 {
-const DS={b:__BESTAND__,u:__UMBAU__};
+const DS={b:__BESTAND__,u:__UMBAU__,i:__INNEN__};
 const view=document.getElementById('view');
 if(!window.THREE){view.insertAdjacentHTML('beforeend','<p style="padding:20px">3D-Bibliothek konnte nicht geladen werden. Bitte mit Internetverbindung öffnen.</p>')}else{
 const COL={fas:'#eeeae2',wdvs:'#f3f0e9',putz:'#f7f6f2',sock:'#9e9a92',sockD:'#5b5e63',park:'#b0865c',vinyl:'#c9a87e',fli:'#d4d4cf',fliW:'#ecebe7',fliS:'#b7bbbc',dachA:'#8a4232',dachN:'#3d4147',blech:'#4a4e54',zink:'#7d8287',stahl:'#2c2f33',verz:'#aab0b5',gitter:'#90979c',gitterV:'#9ea5aa',deck:'#92704e',wei:'#f0f0ec',dunk:'#3a3a3c',stoff:'#5c6878',holz:'#9c7550',bett:'#d6d0c4',san:'#fafafa',gras:'#76925a',pfl:'#aaa79e',terr:'#bdb9b0',kies:'#a49f95',beton:'#c4c2bc',glas:'#a9c9d8',pv:'#1d2838',tuer:'#f4f4f1',tuerA:'#3a3e44',rahmen:'#383c42',anschl:'#e8a062',wp:'#d8dbde',luft:'#dcdcdc'};
@@ -77,7 +77,7 @@ function tri(b,a,c,d){const ux=c[0]-a[0],uy=c[1]-a[1],uz=c[2]-a[2],vx=d[0]-a[0],
  for(const q of [a,c,d]){b.p.push(q[0],q[1],q[2]);if(ny>=nx&&ny>=nz)b.u.push(q[0],q[2]);else if(nx>=nz)b.u.push(q[2],q[1]);else b.u.push(q[0],q[1])}}
 function quad(b,a,c,d,e){tri(b,a,c,d);tri(b,a,d,e)}
 const scene=new THREE.Scene();scene.background=new THREE.Color('#cfdde6');
-const MESH={b:[],u:[]};
+const MESH={b:[],u:[],i:[]};
 for(const ds in DS){const D=DS[ds],BUF={};const buf=(l,m)=>{const k=l+'|'+m;return BUF[k]||(BUF[k]={l,m,p:[],u:[]})};
  for(const [x0,x1,y0,y1,z0,z1,m,l] of D.b){const b=buf(l,m),P=(x,y,z)=>[x,z,y];
   const c=[P(x0,y0,z0),P(x1,y0,z0),P(x1,y1,z0),P(x0,y1,z0),P(x0,y0,z1),P(x1,y0,z1),P(x1,y1,z1),P(x0,y1,z1)];
@@ -103,7 +103,13 @@ const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});R.s
 view.prepend(R.domElement);
 const cam=new THREE.PerspectiveCamera(70,1,.05,300);
 // Startpunkte: [Name, Auge(x,yPlan,z), Ziel] oder [Name,'o',th,ph,rad] fuer Modellansicht
-const SPS={u:[['Außen von Südwest (Modell)','o',-.8,1.05,42],['Außen von Nordwest (Modell)','o',-2.35,1.1,40],['Außen von Südost (Modell)','o',.8,1.05,42],['Dach mit Photovoltaik (Modell)','o',-.3,.45,34],
+const SPS={i:[['Außen von Südwest (Modell)','o',-.8,1.05,42],['Außen von Nordwest (Modell)','o',-2.35,1.1,40],['Außen von Südost (Modell)','o',.8,1.05,42],['Dach mit Photovoltaik (Modell)','o',-.3,.45,34],
+ ['Straße, Eingang W1',[5.2,-5.2,2.06],[5.2,0,3.0]],['Hof vor dem Hauseingang',[5.0,20.5,2.06],[7.2,14.0,3.0]],['Treppenhaus Eingang',[7.6,13.3,2.06],[6.7,10.5,2.6]],
+ ['Treppenhaus EG (Hausflur)',[7.8,9.0,3.9],[6.7,12.0,4.2]],['Treppenhaus OG vor W4 und W5',[7.8,10.0,7.05],[6.2,8.6,6.9]],['Treppenhaus DG vor W6 und W7',[7.8,10.0,9.6],[6.2,8.6,9.5]],
+ ['W1 Wohnen (EG West)',[5.0,9.8,3.9],[1.0,6.0,3.6]],['W2 Flur (EG Altbau)',[10.8,7.2,3.9],[10.3,4.5,3.8]],['W3 Wohnen/Essen (EG Garten)',[14.2,12.8,4.8],[9.0,16.5,4.4]],
+ ['W4 Wohnen/Kochen (OG West)',[3.6,12.9,7.05],[0.8,8.8,6.8]],['W5 Küche/Essen (OG Altbau)',[9.0,6.2,6.65],[7.0,2.0,6.5]],
+ ['W6 Wohnen/Kochen (DG West)',[3.6,9.2,9.6],[1.2,13.0,9.2]],['W7 Wohnen/Kochen (DG Ost)',[10.0,6.2,9.35],[14.5,3.2,9.4]]],
+ u:[['Außen von Südwest (Modell)','o',-.8,1.05,42],['Außen von Nordwest (Modell)','o',-2.35,1.1,40],['Außen von Südost (Modell)','o',.8,1.05,42],['Dach mit Photovoltaik (Modell)','o',-.3,.45,34],
  ['Straße, Eingang W1',[5.2,-5.2,2.06],[5.2,0,3.0]],['Hof, Hauseingang und Hoftreppe',[2.0,21.5,2.06],[6.0,14.0,3.6]],['EG Hausflur',[7.2,9.6,3.9],[10.3,8.4,3.8]],
  ['W1 Wohnen (EG West)',[5.0,9.8,3.9],[1.0,6.0,3.6]],['W2 Flur (EG Altbau)',[10.8,7.2,3.9],[10.3,4.5,3.8]],['W3 Wohnen/Essen (EG Garten)',[14.2,12.8,4.8],[9.0,16.5,4.4]],
  ['Hoftreppe, Zwischenpodest',[2.0,15.2,4.65],[6.0,15.8,5.6]],['Podest P1 vor W4',[7.0,15.6,7.05],[6.0,13.2,6.9]],['Laubengang vor W5',[8.0,8.9,6.63],[11.0,8.4,6.5]],
@@ -112,15 +118,15 @@ const SPS={u:[['Außen von Südwest (Modell)','o',-.8,1.05,42],['Außen von Nord
  b:[['Außen von Südwest (Modell)','o',-.8,1.05,40],['Außen von Nordwest (Modell)','o',-2.35,1.1,40],['Straße, Eingang W1',[5.2,-4.5,2.06],[5.2,0,3.1]],['Hof, Hauseingang',[7.2,17.0,2.06],[7.2,12.5,2.3]],
  ['EG Hausflur',[7.2,8.8,3.9],[10.3,7.0,3.8]],['EG W1 Wohnen/Schlafen',[5.0,9.5,3.9],[1.0,2.5,3.6]],['EG W2 Wohnen',[10.2,3.5,3.9],[6.5,1.0,3.6]],
  ['EG W3 Wohnen/Essen',[14.2,12.8,4.8],[9.0,16.5,4.4]],['OG Hausflur',[10.3,6.8,6.65],[10.3,4.3,6.5]],['OG Wohnen West',[5.4,13.2,7.05],[0.8,8.6,6.7]],['Dachboden',[11.4,4.4,9.26],[7.0,4.0,9.0]]]};
-const LAYS={u:[['D','Dach'],['DG','DG'],['OG','OG'],['A','Treppen, Laubengang'],['EG','EG']],b:[['D','Dach'],['DG','Dachboden'],['OG','OG']]};
+const LAYS={i:[['D','Dach'],['DG','DG'],['OG','OG'],['A','Treppenhaus'],['EG','EG']],u:[['D','Dach'],['DG','DG'],['OG','OG'],['A','Treppen, Laubengang'],['EG','EG']],b:[['D','Dach'],['DG','Dachboden'],['OG','OG']]};
 const sp=document.getElementById('sp'),lay=document.getElementById('lay'),tag=document.getElementById('tag');
 let cur='u',mode='o',solid=[];const hid={};
 const EYE=1.65;const P=new THREE.Vector3();let yaw=0,pitch=0;const OT=new THREE.Vector3(7.5,5,12);let th=-.8,ph=1.05,rad=42;
 function vis(){for(const ds in MESH)for(const me of MESH[ds])me.visible=ds===cur&&(mode==='w'||!hid[ds+me.userData.l])}
 function go(i){const s=SPS[cur][i];if(s[1]==='o'){th=s[2];ph=s[3];rad=s[4];setMode('o');return}
  P.set(s[1][0],s[1][2]-EYE,s[1][1]);const dx=s[2][0]-s[1][0],dz=s[2][1]-s[1][1];yaw=Math.atan2(dx,dz);pitch=Math.atan2(s[2][2]-s[1][2],Math.hypot(dx,dz));setMode('w')}
-function setDS(d){cur=d;solid=MESH[d];document.getElementById('dsb').setAttribute('aria-pressed',d==='b');document.getElementById('dsu').setAttribute('aria-pressed',d==='u');
- tag.textContent=d==='u'?'Umbau':'Bestand';sp.innerHTML=SPS[d].map((s,i)=>'<option value="'+i+'">'+s[0]+'</option>').join('');
+function setDS(d){cur=d;solid=MESH[d];document.getElementById('dsb').setAttribute('aria-pressed',d==='b');document.getElementById('dsu').setAttribute('aria-pressed',d==='u');document.getElementById('dsi').setAttribute('aria-pressed',d==='i');
+ tag.textContent={u:'Umbau A Außentreppe',i:'Umbau B Innentreppe',b:'Bestand'}[d];sp.innerHTML=SPS[d].map((s,i)=>'<option value="'+i+'">'+s[0]+'</option>').join('');
  lay.innerHTML=LAYS[d].map(l=>'<button data-l="'+l[0]+'" aria-pressed="'+(!!hid[d+l[0]])+'">'+l[1]+' aus</button>').join('');
  lay.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const k=cur+b.dataset.l;hid[k]=!hid[k];b.setAttribute('aria-pressed',!!hid[k]);vis()}));
  if(mode==='w'){const i=SPS[d].findIndex(s=>s[1]!=='o');sp.value=i;go(i)}else{sp.value=0;go(0)}vis()}
@@ -142,7 +148,7 @@ const mw=document.getElementById('mw'),mo=document.getElementById('mo');
 function setMode(m){mode=m;mw.setAttribute('aria-pressed',m==='w');mo.setAttribute('aria-pressed',m==='o');lay.hidden=m!=='o';cam.fov=m==='w'?70:40;cam.updateProjectionMatrix();vis();
  const h=document.getElementById('hint');h.textContent=m==='w'?'Links ziehen zum Gehen, rechts ziehen zum Umsehen':'Ziehen zum Drehen, zwei Finger oder Mausrad zum Zoomen';h.style.display=''}
 mw.addEventListener('click',()=>{const i=SPS[cur].findIndex(s=>s[1]!=='o');sp.value=i;go(i)});mo.addEventListener('click',()=>setMode('o'));
-document.getElementById('dsb').addEventListener('click',()=>setDS('b'));document.getElementById('dsu').addEventListener('click',()=>setDS('u'));
+document.getElementById('dsb').addEventListener('click',()=>setDS('b'));document.getElementById('dsu').addEventListener('click',()=>setDS('u'));document.getElementById('dsi').addEventListener('click',()=>setDS('i'));
 const rc=new THREE.Raycaster(),dn=new THREE.Vector3(0,-1,0),tmp=new THREE.Vector3(),dir=new THREE.Vector3();let EH=1.65;const UP=new THREE.Vector3(0,1,0);
 const see=i=>!(i.object.material.transparent);
 function ceil(){tmp.set(P.x,P.y+.3,P.z);rc.set(tmp,UP);rc.far=2.2;const h=rc.intersectObjects(solid,false);for(const i of h)if(see(i))return i.point.y-P.y;return 9}
